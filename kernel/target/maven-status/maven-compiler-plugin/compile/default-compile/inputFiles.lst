@@ -1,0 +1,13 @@
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/behavior/State.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/structure/SIGNAL.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/structure/Sensor.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/NamedElement.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/generator/Generator.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/generator/Visitable.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/structure/TYPE.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/generator/Visitor.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/App.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/structure/Actuator.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/behavior/Action.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/behavior/Transition.java
+/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/kernel/src/main/java/fr/unice/polytech/si5/dsl/structure/Brick.java

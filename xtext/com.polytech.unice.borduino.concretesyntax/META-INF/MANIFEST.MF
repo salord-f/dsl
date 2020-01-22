@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.polytech.unice.borduino.concretesyntax
+Bundle-ManifestVersion: 2
+Bundle-Name: com.polytech.unice.borduino.concretesyntax
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.polytech.unice.borduino.concretesyntax; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: ArduinoML,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.polytech.unice.borduino.concretesyntax.serializer,
+ com.polytech.unice.borduino.concretesyntax,
+ com.polytech.unice.borduino.concretesyntax.scoping,
+ com.polytech.unice.borduino.concretesyntax.parser.antlr.internal,
+ com.polytech.unice.borduino.concretesyntax.parser.antlr,
+ com.polytech.unice.borduino.concretesyntax.validation,
+ com.polytech.unice.borduino.concretesyntax.formatting2,
+ com.polytech.unice.borduino.concretesyntax.services,
+ com.polytech.unice.borduino.concretesyntax.generator
+Import-Package: org.apache.log4j
