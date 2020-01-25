@@ -6,9 +6,8 @@ import fr.unice.polytech.si5.dsl.behavior.State;
 import fr.unice.polytech.si5.dsl.behavior.Transition;
 import fr.unice.polytech.si5.dsl.generator.Generator;
 import fr.unice.polytech.si5.dsl.generator.Visitor;
-import fr.unice.polytech.si5.dsl.structure.Actuator;
-import fr.unice.polytech.si5.dsl.structure.BasicActuator;
-import fr.unice.polytech.si5.dsl.structure.SIGNAL;
+import fr.unice.polytech.si5.dsl.behavior.SIGNAL;
+import fr.unice.polytech.si5.dsl.structure.SimplePinActuator;
 import fr.unice.polytech.si5.dsl.structure.Sensor;
 import org.junit.Test;
 
@@ -25,7 +24,7 @@ public class BasicTest {
         Sensor button = new Sensor();
         button.setPin(9).setName("button");
 
-        BasicActuator led = new BasicActuator();
+        SimplePinActuator led = new SimplePinActuator();
         led.setPin(12).setName("LED");
 
         // Creating actions
@@ -49,13 +48,11 @@ public class BasicTest {
         // Creating transitions
         Transition on2off = new Transition()
                 .setNext(off)
-                .setSensor(button)
-                .setSignal(SIGNAL.HIGH);
+                .addCondition(button, SIGNAL.HIGH);
 
         Transition off2on = new Transition()
                 .setNext(on)
-                .setSensor(button)
-                .setSignal(SIGNAL.HIGH);
+                .addCondition(button, SIGNAL.HIGH);
 
         // Binding transitions to states
         on.setTransition(on2off);

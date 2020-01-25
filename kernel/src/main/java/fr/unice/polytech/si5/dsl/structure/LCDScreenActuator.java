@@ -8,9 +8,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class Sensor extends Brick<Sensor> {
-
-    private int pin;
+public class LCDScreenActuator extends Actuator<LCDScreenActuator> {
 
     @Override
     @SuppressWarnings("rawtypes")

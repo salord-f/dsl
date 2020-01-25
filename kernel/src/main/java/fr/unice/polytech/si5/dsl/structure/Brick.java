@@ -1,17 +1,15 @@
 package fr.unice.polytech.si5.dsl.structure;
 
-import fr.unice.polytech.si5.dsl.NamedElement;
 import fr.unice.polytech.si5.dsl.generator.Visitable;
+import fr.unice.polytech.si5.dsl.utils.NamedElement;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
-@Setter
-@Accessors(chain = true)
-public abstract class Brick implements NamedElement, Visitable {
+public abstract class Brick<T> extends NamedElement<T> implements Visitable {
 
-    private String name;
-    //private int pin;
+    private List<Integer> pins = new ArrayList<>();
 
 }

@@ -1,11 +1,11 @@
 package fr.unice.polytech.si5.dsl.behavior;
 
-public enum Operator {
-    OR("||"), AND("&&");
+public enum OPERATOR {
+    NONE(""), OR("||"), AND("&&");
 
     public String value;
 
-    Operator(String value) {
+    OPERATOR(String value) {
         this.value = value;
     }
 }
