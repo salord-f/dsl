@@ -61,14 +61,13 @@ public class BorduinoMLModel {
         return state;
     }
 
-    public Action createAtion(Actuator actuator, DigitalSignalEnum digitalSignalEnum) {
-        return new Action().setActuator(actuator).setValue( new DigitalSignal(digitalSignalEnum));
+    public Action createAction(Actuator actuator, DigitalSignal signal) {
+        return new Action().setActuator(actuator).setValue(signal);
     }
 
-    public Action createAtion(Actuator actuator, String stringSignal) {
-        return new Action().setActuator(actuator).setValue( new StringSignal(stringSignal));
+    public Action createAction(Actuator actuator, StringSignal signal) {
+        return new Action().setActuator(actuator).setValue(signal);
     }
-
 
     public void createTransition(State from, Transition transition) {
         from.setTransition(transition);

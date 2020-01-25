@@ -38,7 +38,7 @@ abstract class BorduinoMLBasescript extends Script {
 
     // initial "state"
     def initial(state) {
-        ((BorduinoMLBinding) this.getBinding()).getModel().setInitialState(state instanceof String ? (State) ((BorduinoMLBinding) this.getBinding()).getVariable(state) : (State) state)
+        ((BorduinoMLBinding) this.getBinding()).getModel().setInitialState((State) ((BorduinoMLBinding) this.getBinding()).getVariable(state))
     }
 
     // sensor "name", number
@@ -72,25 +72,19 @@ abstract class BorduinoMLBasescript extends Script {
         if (this.defining != DEFINING.STATES) {
             return;
         }
-        Action action = null
-
-
-        action = ((BorduinoMLBinding) this.getBinding()).getModel()
-                .createAtion(actuator instanceof String ? (Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator) : (Actuator) actuator, signal);
-
-
-        /*if (signal instanceof DigitalSignalEnum){
-            action = new Action()
-                    .setActuator(actuator instanceof String ? (Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator) : (Actuator) actuator)
-                    .setValue(new DigitalSignal((DigitalSignalEnum)signal))
+        Action action
+        try {
+            DigitalSignal digitalSignal = new DigitalSignal(DigitalSignalEnum.valueOf(signal))
+            action = ((BorduinoMLBinding) this.getBinding())
+                    .getModel()
+                    .createAction((Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator), digitalSignal)
+        } catch (IllegalArgumentException e) {
+            // ignore exception, it's expected
+            StringSignal stringSignal = new StringSignal().setValue(signal)
+            action = ((BorduinoMLBinding) this.getBinding())
+                    .getModel()
+                    .createAction((Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator), stringSignal);
         }
-        else {
-            action = new Action()
-                    .setActuator(actuator instanceof String ? (Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator) : (Actuator) actuator)
-                    .setValue(new StringSignal(signal))
-        }*/
-
-
         this.currentState.actions.add(action)
     }
 
@@ -111,9 +105,11 @@ abstract class BorduinoMLBasescript extends Script {
         }
         Transition transition = new Transition()
                 .setNext(new State().setName(conditions[conditions.length - 1]))
-                .addCondition((Sensor) binding.getVariable(conditions[0]), new DigitalSignal(DigitalSignalEnum.valueOf(conditions[1]))) //-- todo a modif
+                .addCondition((Sensor) binding.getVariable(conditions[0]), new DigitalSignal(DigitalSignalEnum.valueOf(conditions[1])))
+        //-- todo a modif
         for (int i = 2; i < conditions.length - 2; i += 2) {
-            transition.addCondition((Sensor) binding.getVariable(conditions[i + 1]), new DigitalSignal(DigitalSignalEnum.valueOf(conditions[i + 2])), OPERATOR.valueOf(conditions[i])) // -- todo a modif
+            transition.addCondition((Sensor) binding.getVariable(conditions[i + 1]), new DigitalSignal(DigitalSignalEnum.valueOf(conditions[i + 2])), OPERATOR.valueOf(conditions[i]))
+            // -- todo a modif
         }
         ((BorduinoMLBinding) this.getBinding()).getModel().createTransition(this.currentState, transition)
     }
