@@ -50,12 +50,12 @@ public class BasicTest {
         Transition on2off = new Transition()
                 .setNext(off)
                 .setSensor(button)
-                .setValue(SIGNAL.HIGH);
+                .setSignal(SIGNAL.HIGH);
 
         Transition off2on = new Transition()
                 .setNext(on)
                 .setSensor(button)
-                .setValue(SIGNAL.HIGH);
+                .setSignal(SIGNAL.HIGH);
 
         // Binding transitions to states
         on.setTransition(on2off);
@@ -75,6 +75,8 @@ public class BasicTest {
         List expected = Arrays.asList(("// Wiring code generated from an ArduinoML model\n" +
                 "// Application name: Switch!\n" +
                 "\n" +
+                "#include <LiquidCrystal.h>\n" +
+                "\n" +
                 "void setup(){\n" +
                 "  pinMode(9, INPUT);  // button [Sensor]\n" +
                 "  pinMode(12, OUTPUT); // LED [Actuator]\n" +
@@ -85,7 +87,7 @@ public class BasicTest {
                 "void state_on() {\n" +
                 "  digitalWrite(12,HIGH);\n" +
                 "  boolean guard = millis() - time > debounce;\n" +
-                "  if( digitalRead(9) == HIGH && guard ) {\n" +
+                "  if( ( digitalRead(9) == HIGH ) && guard ) {\n" +
                 "    time = millis();\n" +
                 "    state_off();\n" +
                 "  } else {\n" +
@@ -96,7 +98,7 @@ public class BasicTest {
                 "void state_off() {\n" +
                 "  digitalWrite(12,LOW);\n" +
                 "  boolean guard = millis() - time > debounce;\n" +
-                "  if( digitalRead(9) == HIGH && guard ) {\n" +
+                "  if( ( digitalRead(9) == HIGH ) && guard ) {\n" +
                 "    time = millis();\n" +
                 "    state_on();\n" +
                 "  } else {\n" +

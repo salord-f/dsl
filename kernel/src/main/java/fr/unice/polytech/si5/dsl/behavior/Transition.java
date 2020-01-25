@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Getter
 @Setter
 @Accessors(chain = true)
@@ -15,7 +18,8 @@ public class Transition implements Visitable {
 
     private State next;
     private Sensor sensor;
-    private SIGNAL value;
+    private SIGNAL signal;
+    private Map<Reaction, Operator> reactions = new HashMap<>();
 
     @Override
     public void accept(Visitor visitor) {

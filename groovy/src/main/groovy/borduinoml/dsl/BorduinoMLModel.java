@@ -6,7 +6,11 @@ import fr.unice.polytech.si5.dsl.behavior.State;
 import fr.unice.polytech.si5.dsl.behavior.Transition;
 import fr.unice.polytech.si5.dsl.generator.Generator;
 import fr.unice.polytech.si5.dsl.generator.Visitor;
-import fr.unice.polytech.si5.dsl.structure.*;
+
+import fr.unice.polytech.si5.dsl.structure.BasicActuator;
+import fr.unice.polytech.si5.dsl.structure.Brick;
+import fr.unice.polytech.si5.dsl.structure.LcdScreenActuator;
+import fr.unice.polytech.si5.dsl.structure.Sensor;
 import groovy.lang.Binding;
 
 import java.util.ArrayList;
@@ -62,11 +66,7 @@ public class BorduinoMLModel {
         return state;
     }
 
-    public void createTransition(State from, State to, Sensor sensor, SIGNAL value) {
-        Transition transition = new Transition()
-                .setNext(to)
-                .setSensor(sensor)
-                .setValue(value);
+    public void createTransition(State from, Transition transition) {
         from.setTransition(transition);
     }
 

@@ -7,6 +7,12 @@ import fr.unice.polytech.si5.dsl.behavior.Transition;
 import fr.unice.polytech.si5.dsl.structure.*;
 
 import java.util.stream.Collectors;
+import fr.unice.polytech.si5.dsl.behavior.*;
+import fr.unice.polytech.si5.dsl.structure.Actuator;
+import fr.unice.polytech.si5.dsl.structure.Brick;
+import fr.unice.polytech.si5.dsl.structure.Sensor;
+
+import java.util.Map;
 
 public class Generator extends Visitor<StringBuilder> {
 
@@ -78,8 +84,16 @@ public class Generator extends Visitor<StringBuilder> {
 
     @Override
     public void visit(Transition transition) {
-        write(String.format("  if( digitalRead(%d) == %s && guard ) {",
-                transition.getSensor().getPin(), transition.getValue()));
+        StringBuilder condition = new StringBuilder();
+        for (Map.Entry<Reaction, Operator> entry : transition.getReactions().entrySet()) {
+            condition.append(" ")
+                    .append(entry.getValue().value)
+                    .append(" digitalRead(")
+                    .append(entry.getKey().getSensor().getPin())
+                    .append(") == ")
+                    .append(entry.getKey().getSignal());
+        }
+        write(String.format("  if( ( digitalRead(%d) == %s%s ) && guard ) {", transition.getSensor().getPin(), transition.getSignal(), condition.toString()));
         write("    time = millis();");
         write(String.format("    state_%s();", transition.getNext().getName()));
         write("  } else {");

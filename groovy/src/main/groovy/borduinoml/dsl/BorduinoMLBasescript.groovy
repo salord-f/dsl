@@ -1,7 +1,6 @@
 package borduinoml.dsl
 
-import fr.unice.polytech.si5.dsl.behavior.Action
-import fr.unice.polytech.si5.dsl.behavior.State
+import fr.unice.polytech.si5.dsl.behavior.*
 import fr.unice.polytech.si5.dsl.structure.Actuator
 import fr.unice.polytech.si5.dsl.structure.SIGNAL
 import fr.unice.polytech.si5.dsl.structure.Sensor
@@ -90,15 +89,25 @@ abstract class BorduinoMLBasescript extends Script {
     }*/
 
     // transition "sensor", "signal", "state"
-    def transition(sensor, signal, state) {
+    def transition(String... conditions) {
         if (this.defining != DEFINING.STATES) {
             return;
         }
-        ((BorduinoMLBinding) this.getBinding()).getModel().createTransition(
-                currentState,
-                new State().setName(state),
-                sensor instanceof String ? (Sensor) ((BorduinoMLBinding) this.getBinding()).getVariable(sensor) : (Sensor) sensor,
-                SIGNAL.valueOf(signal))
+        Transition transition = new Transition()
+                .setNext(new State().setName(conditions[conditions.length - 1]))
+                .setSensor((Sensor) binding.getVariable(conditions[0]))
+                .setSignal(SIGNAL.valueOf(conditions[1]))
+        for (int i = 2; i < conditions.length - 2; i += 2) {
+            transition.getReactions().put(
+                    new Reaction()
+                            .setSensor((Sensor) binding.getVariable(conditions[i + 1]))
+                            .setSignal(SIGNAL.valueOf(conditions[i + 2])),
+                    Operator.valueOf(conditions[i])
+            )
+        }
+        ((BorduinoMLBinding) this.getBinding()).getModel().createTransition(this.currentState, transition)
+
+
     }
 
     // disable run method while running
