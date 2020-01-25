@@ -1,12 +1,13 @@
 package fr.unice.polytech.si5.dsl.generator;
 
 import fr.unice.polytech.si5.dsl.App;
-import fr.unice.polytech.si5.dsl.behavior.*;
+import fr.unice.polytech.si5.dsl.behavior.Action;
+import fr.unice.polytech.si5.dsl.behavior.Condition;
+import fr.unice.polytech.si5.dsl.behavior.State;
+import fr.unice.polytech.si5.dsl.behavior.Transition;
 import fr.unice.polytech.si5.dsl.structure.Actuator;
 import fr.unice.polytech.si5.dsl.structure.Brick;
 import fr.unice.polytech.si5.dsl.structure.Sensor;
-
-import java.util.Map;
 
 public class Generator extends Visitor<StringBuilder> {
 
@@ -21,6 +22,7 @@ public class Generator extends Visitor<StringBuilder> {
     }
 
     @Override
+    @SuppressWarnings("rawtypes")
     public void visit(App app) {
         write("// Wiring code generated from an ArduinoML model");
         write(String.format("// Application name: %s\n", app.getName()));
@@ -62,16 +64,18 @@ public class Generator extends Visitor<StringBuilder> {
 
     @Override
     public void visit(Transition transition) {
-        StringBuilder condition = new StringBuilder();
-        for (Map.Entry<Reaction, Operator> entry : transition.getReactions().entrySet()) {
-            condition.append(" ")
-                    .append(entry.getValue().value)
+        StringBuilder conditions = new StringBuilder();
+        for (Condition condition : transition.getConditions()) {
+            conditions
+                    .append(condition.getOperator().value)
                     .append(" digitalRead(")
-                    .append(entry.getKey().getSensor().getPin())
+                    .append(condition.getSensor().getPin())
                     .append(") == ")
-                    .append(entry.getKey().getSignal());
+                    .append(condition.getSignal())
+                    .append(" ");
         }
-        write(String.format("  if( ( digitalRead(%d) == %s%s ) && guard ) {", transition.getSensor().getPin(), transition.getSignal(), condition.toString()));
+
+        write(String.format("  if( (%s) && guard ) {", conditions.toString()));
         write("    time = millis();");
         write(String.format("    state_%s();", transition.getNext().getName()));
         write("  } else {");

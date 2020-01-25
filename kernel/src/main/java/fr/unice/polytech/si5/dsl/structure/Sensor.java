@@ -4,11 +4,10 @@ import fr.unice.polytech.si5.dsl.generator.Visitor;
 import lombok.Getter;
 
 @Getter
-public class Sensor extends Brick {
-
-    private final TYPE type = TYPE.SENSOR;
+public class Sensor extends Brick<Sensor> {
 
     @Override
+    @SuppressWarnings("rawtypes")
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
