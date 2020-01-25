@@ -1,17 +1,14 @@
 package fr.unice.polytech.si5.dsl.behavior;
 
-import fr.unice.polytech.si5.dsl.generator.Visitable;
-import fr.unice.polytech.si5.dsl.utils.NamedElement;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 
 @Getter
+@AllArgsConstructor
 public class DigitalSignal extends Signal<DigitalSignal> {
-    private DigitalSignalEnum digitalSignalEnum;
 
-    public DigitalSignal(DigitalSignalEnum digitalSignalEnum) {
-        this.digitalSignalEnum = digitalSignalEnum;
-    }
+    private DigitalSignalEnum digitalSignalEnum;
 
     @Override
     public String toString() {
