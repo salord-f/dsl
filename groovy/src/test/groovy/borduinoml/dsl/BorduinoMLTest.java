@@ -18,6 +18,16 @@ public class BorduinoMLTest {
     }
 
     @Test
+    public void buttonControlScreen() {
+        String[] args = new String[1];
+        args[0] = this.getClass().getClassLoader().getResource("ButtonControlScreen.bsl").getFile();
+
+        BorduinoMLDSL dsl = new BorduinoMLDSL();
+        dsl.eval(new File(args[0]));
+
+    }
+
+    @Test
     public void dualAlarm() {
         String[] args = new String[1];
         args[0] = this.getClass().getClassLoader().getResource("DualAlarm.bsl").getFile();

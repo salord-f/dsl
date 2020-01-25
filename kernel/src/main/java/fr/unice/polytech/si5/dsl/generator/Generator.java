@@ -32,14 +32,14 @@ public class Generator extends Visitor<StringBuilder> {
         for (Brick brick : app.getBricks()) {
             if (brick instanceof LCDScreenActuator) {
                 LCDScreenActuator lcd = (LCDScreenActuator) brick;
-                write("LiquidCrystal" + " " + lcd.getName());
-
-                write("(");
-                write(lcd.getPins()
+                write("LiquidCrystal" + " " + lcd.getName()
+                        + "("
+                        + lcd.getPins()
                         .stream()
                         .map(Object::toString)
-                        .collect(Collectors.joining(", ")));
-                write(");");
+                        .collect(Collectors.joining(", "))
+                        + ");");
+                write("");
             }
         }
 
