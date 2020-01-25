@@ -6,7 +6,7 @@ app "RedButton", {
         sensor "button", 12
     states
         state "off", {
-            action "screen", "LOW"
+            action "screen", "yo"
             transition "button", "HIGH", "on"
         }
         state "on", {

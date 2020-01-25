@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
 @SuppressWarnings("rawtypes")
 public class Action implements Visitable {
 
-    private SIGNAL value;
+    private Signal value;
     private Actuator actuator;
 
     @Override

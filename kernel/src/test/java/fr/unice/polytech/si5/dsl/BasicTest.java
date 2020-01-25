@@ -1,12 +1,9 @@
 package fr.unice.polytech.si5.dsl;
 
 
-import fr.unice.polytech.si5.dsl.behavior.Action;
-import fr.unice.polytech.si5.dsl.behavior.State;
-import fr.unice.polytech.si5.dsl.behavior.Transition;
+import fr.unice.polytech.si5.dsl.behavior.*;
 import fr.unice.polytech.si5.dsl.generator.Generator;
 import fr.unice.polytech.si5.dsl.generator.Visitor;
-import fr.unice.polytech.si5.dsl.behavior.SIGNAL;
 import fr.unice.polytech.si5.dsl.structure.SimplePinActuator;
 import fr.unice.polytech.si5.dsl.structure.Sensor;
 import org.junit.Test;
@@ -30,11 +27,11 @@ public class BasicTest {
         // Creating actions
         Action switchTheLightOn = new Action()
                 .setActuator(led)
-                .setValue(SIGNAL.HIGH);
+                .setValue(new DigitalSignal(DigitalSignalEnum.HIGH));
 
         Action switchTheLightOff = new Action()
                 .setActuator(led)
-                .setValue(SIGNAL.LOW);
+                .setValue(new DigitalSignal(DigitalSignalEnum.LOW));
 
         // Declaring states
         State on = new State().setName("on");
@@ -48,11 +45,11 @@ public class BasicTest {
         // Creating transitions
         Transition on2off = new Transition()
                 .setNext(off)
-                .addCondition(button, SIGNAL.HIGH);
+                .addCondition(button, new DigitalSignal(DigitalSignalEnum.HIGH));
 
         Transition off2on = new Transition()
                 .setNext(on)
-                .addCondition(button, SIGNAL.HIGH);
+                .addCondition(button, new DigitalSignal(DigitalSignalEnum.HIGH));
 
         // Binding transitions to states
         on.setTransition(on2off);

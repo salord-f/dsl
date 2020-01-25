@@ -1,6 +1,6 @@
 package fr.unice.polytech.si5.dsl.behavior;
 
-public enum SIGNAL {
+public enum DigitalSignalEnum {
     HIGH,
     LOW
 }

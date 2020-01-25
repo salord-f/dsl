@@ -1,15 +1,10 @@
 package borduinoml.dsl;
 
 import fr.unice.polytech.si5.dsl.App;
-import fr.unice.polytech.si5.dsl.behavior.Action;
-import fr.unice.polytech.si5.dsl.behavior.State;
-import fr.unice.polytech.si5.dsl.behavior.Transition;
+import fr.unice.polytech.si5.dsl.behavior.*;
 import fr.unice.polytech.si5.dsl.generator.Generator;
 import fr.unice.polytech.si5.dsl.generator.Visitor;
-import fr.unice.polytech.si5.dsl.structure.Brick;
-import fr.unice.polytech.si5.dsl.structure.LCDScreenActuator;
-import fr.unice.polytech.si5.dsl.structure.Sensor;
-import fr.unice.polytech.si5.dsl.structure.SimplePinActuator;
+import fr.unice.polytech.si5.dsl.structure.*;
 import groovy.lang.Binding;
 
 import java.util.ArrayList;
@@ -65,6 +60,15 @@ public class BorduinoMLModel {
         this.binding.setVariable(name, state);
         return state;
     }
+
+    public Action createAtion(Actuator actuator, DigitalSignalEnum digitalSignalEnum) {
+        return new Action().setActuator(actuator).setValue( new DigitalSignal(digitalSignalEnum));
+    }
+
+    public Action createAtion(Actuator actuator, String stringSignal) {
+        return new Action().setActuator(actuator).setValue( new StringSignal(stringSignal));
+    }
+
 
     public void createTransition(State from, Transition transition) {
         from.setTransition(transition);

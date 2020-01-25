@@ -1,6 +1,6 @@
 package borduinoml.dsl
 
-import fr.unice.polytech.si5.dsl.behavior.SIGNAL
+import fr.unice.polytech.si5.dsl.behavior.DigitalSignalEnum
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.codehaus.groovy.control.customizers.SecureASTCustomizer
 
@@ -19,8 +19,8 @@ class BorduinoMLDSL {
 
         shell = new GroovyShell(configuration)
 
-        binding.setVariable("high", SIGNAL.HIGH)
-        binding.setVariable("low", SIGNAL.LOW)
+        binding.setVariable("high", DigitalSignalEnum.HIGH)
+        binding.setVariable("low", DigitalSignalEnum.LOW)
     }
 
     private static CompilerConfiguration getDSLConfiguration() {

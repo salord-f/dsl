@@ -12,14 +12,14 @@ public class Condition {
 
     private OPERATOR operator = OPERATOR.NONE;
     private Sensor sensor;
-    private SIGNAL signal;
+    private Signal signal;
 
-    public Condition(Sensor sensor, SIGNAL signal) {
+    public Condition(Sensor sensor, Signal signal) {
         this.sensor = sensor;
         this.signal = signal;
     }
 
-    public Condition(Sensor sensor, SIGNAL signal, OPERATOR operator) {
+    public Condition(Sensor sensor, Signal signal, OPERATOR operator) {
         this(sensor, signal);
         this.operator = operator;
     }

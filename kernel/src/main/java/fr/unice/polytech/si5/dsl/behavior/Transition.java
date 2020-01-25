@@ -24,12 +24,12 @@ public class Transition implements Visitable {
         visitor.visit(this);
     }
 
-    public Transition addCondition(Sensor sensor, SIGNAL signal, OPERATOR operator) {
+    public Transition addCondition(Sensor sensor, Signal signal, OPERATOR operator) {
         this.conditions.add(new Condition(sensor, signal, operator));
         return this;
     }
 
-    public Transition addCondition(Sensor sensor, SIGNAL signal) {
+    public Transition addCondition(Sensor sensor, Signal signal) {
         return addCondition(sensor, signal, OPERATOR.NONE);
     }
 }
