@@ -6,11 +6,10 @@ import fr.unice.polytech.si5.dsl.behavior.State;
 import fr.unice.polytech.si5.dsl.behavior.Transition;
 import fr.unice.polytech.si5.dsl.generator.Generator;
 import fr.unice.polytech.si5.dsl.generator.Visitor;
-
-import fr.unice.polytech.si5.dsl.structure.BasicActuator;
 import fr.unice.polytech.si5.dsl.structure.Brick;
-import fr.unice.polytech.si5.dsl.structure.LcdScreenActuator;
+import fr.unice.polytech.si5.dsl.structure.LCDScreenActuator;
 import fr.unice.polytech.si5.dsl.structure.Sensor;
+import fr.unice.polytech.si5.dsl.structure.SimplePinActuator;
 import groovy.lang.Binding;
 
 import java.util.ArrayList;
@@ -36,24 +35,25 @@ public class BorduinoMLModel {
     }
 
     public void createSensor(String name, Integer pinNumber) {
-        Sensor sensor = new Sensor();
-        sensor.setPin(pinNumber).setName(name);
+        Sensor sensor = new Sensor()
+                .setPin(pinNumber)
+                .setName(name);
         this.bricks.add(sensor);
         this.binding.setVariable(name, sensor);
     }
 
     public void createActuator(String name, Integer pinNumber) {
-        BasicActuator actuator = new BasicActuator();
-        //((BasicActuator)actuator).setPin(pinNumber);
-        actuator.setPin(pinNumber).setName(name);
+        SimplePinActuator actuator = new SimplePinActuator()
+                .setPin(pinNumber)
+                .setName(name);
         this.bricks.add(actuator);
         this.binding.setVariable(name, actuator);
     }
 
-    public void createActuator(String name, Integer pinNumber, Integer pinNumber2, Integer pinNumber3, Integer pinNumber4, Integer pinNumber5, Integer pinNumber6,Integer pinNumber7) {
-        List<Integer> pins = new ArrayList<>(Arrays.asList(pinNumber, pinNumber2, pinNumber3, pinNumber4, pinNumber5, pinNumber6, pinNumber7));
-        LcdScreenActuator actuator = new LcdScreenActuator();
-        actuator.setPins(pins).setName(name);
+    public void createActuator(String name, Integer... pins) {
+        LCDScreenActuator actuator = new LCDScreenActuator()
+                .setPins(Arrays.asList(pins))
+                .setName(name);
         this.bricks.add(actuator);
         this.binding.setVariable(name, actuator);
     }

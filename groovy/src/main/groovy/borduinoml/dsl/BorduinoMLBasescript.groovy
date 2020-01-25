@@ -2,7 +2,6 @@ package borduinoml.dsl
 
 import fr.unice.polytech.si5.dsl.behavior.*
 import fr.unice.polytech.si5.dsl.structure.Actuator
-import fr.unice.polytech.si5.dsl.structure.SIGNAL
 import fr.unice.polytech.si5.dsl.structure.Sensor
 
 abstract class BorduinoMLBasescript extends Script {
@@ -30,9 +29,10 @@ abstract class BorduinoMLBasescript extends Script {
         }
     }
 
-    def actuator(String name, int number, int number2,int number3,int number4,int number5,int number6, int number7) {
+    def actuator(String name, Integer... pins) {
         if (this.defining == DEFINING.BRICKS) {
-            ((BorduinoMLBinding) this.getBinding()).getModel().createActuator(name, number, number2, number3, number4, number5,number6, number7)
+            assert pins.length == 7
+            ((BorduinoMLBinding) this.getBinding()).getModel().createActuator(name, pins)
         }
     }
 
@@ -95,19 +95,11 @@ abstract class BorduinoMLBasescript extends Script {
         }
         Transition transition = new Transition()
                 .setNext(new State().setName(conditions[conditions.length - 1]))
-                .setSensor((Sensor) binding.getVariable(conditions[0]))
-                .setSignal(SIGNAL.valueOf(conditions[1]))
+                .addCondition((Sensor) binding.getVariable(conditions[0]), SIGNAL.valueOf(conditions[1]))
         for (int i = 2; i < conditions.length - 2; i += 2) {
-            transition.getReactions().put(
-                    new Reaction()
-                            .setSensor((Sensor) binding.getVariable(conditions[i + 1]))
-                            .setSignal(SIGNAL.valueOf(conditions[i + 2])),
-                    Operator.valueOf(conditions[i])
-            )
+            transition.addCondition((Sensor) binding.getVariable(conditions[i + 1]), SIGNAL.valueOf(conditions[i + 2]), OPERATOR.valueOf(conditions[i]))
         }
         ((BorduinoMLBinding) this.getBinding()).getModel().createTransition(this.currentState, transition)
-
-
     }
 
     // disable run method while running

@@ -1,6 +1,6 @@
 package borduinoml.dsl
 
-import fr.unice.polytech.si5.dsl.structure.SIGNAL
+import fr.unice.polytech.si5.dsl.behavior.SIGNAL
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.codehaus.groovy.control.customizers.SecureASTCustomizer
 
