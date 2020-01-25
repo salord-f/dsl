@@ -31,6 +31,12 @@ abstract class BorduinoMLBasescript extends Script {
         }
     }
 
+    def actuator(String name, int number, int number2,int number3,int number4,int number5,int number6, int number7) {
+        if (this.defining == DEFINING.BRICKS) {
+            ((BorduinoMLBinding) this.getBinding()).getModel().createActuator(name, number, number2, number3, number4, number5,number6, number7)
+        }
+    }
+
     // initial "state"
     def initial(state) {
         ((BorduinoMLBinding) this.getBinding()).getModel().setInitialState(state instanceof String ? (State) ((BorduinoMLBinding) this.getBinding()).getVariable(state) : (State) state)
@@ -72,6 +78,16 @@ abstract class BorduinoMLBasescript extends Script {
                 .setValue(SIGNAL.valueOf(signal))
         this.currentState.actions.add(action)
     }
+
+    /*def action(actuator, String signal) {
+        if (this.defining != DEFINING.STATES) {
+            return;
+        }
+        Action action = new Action()
+                .setActuator(actuator instanceof String ? (Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator) : (Actuator) actuator)
+                .setValue(signal)
+        this.currentState.actions.add(action)
+    }*/
 
     // transition "sensor", "signal", "state"
     def transition(sensor, signal, state) {

@@ -12,6 +12,6 @@ import lombok.experimental.Accessors;
 public abstract class Brick implements NamedElement, Visitable {
 
     private String name;
-    private int pin;
+    //private int pin;
 
 }

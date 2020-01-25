@@ -7,6 +7,7 @@ import fr.unice.polytech.si5.dsl.behavior.Transition;
 import fr.unice.polytech.si5.dsl.generator.Generator;
 import fr.unice.polytech.si5.dsl.generator.Visitor;
 import fr.unice.polytech.si5.dsl.structure.Actuator;
+import fr.unice.polytech.si5.dsl.structure.BasicActuator;
 import fr.unice.polytech.si5.dsl.structure.SIGNAL;
 import fr.unice.polytech.si5.dsl.structure.Sensor;
 import org.junit.Test;
@@ -22,10 +23,10 @@ public class BasicTest {
     public void basicTest() {
 
         Sensor button = new Sensor();
-        button.setName("button").setPin(9);
+        button.setPin(9).setName("button");
 
-        Actuator led = new Actuator();
-        led.setName("LED").setPin(12);
+        BasicActuator led = new BasicActuator();
+        led.setPin(12).setName("LED");
 
         // Creating actions
         Action switchTheLightOn = new Action()

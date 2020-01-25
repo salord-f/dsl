@@ -4,9 +4,9 @@ import fr.unice.polytech.si5.dsl.App;
 import fr.unice.polytech.si5.dsl.behavior.Action;
 import fr.unice.polytech.si5.dsl.behavior.State;
 import fr.unice.polytech.si5.dsl.behavior.Transition;
-import fr.unice.polytech.si5.dsl.structure.Actuator;
-import fr.unice.polytech.si5.dsl.structure.Brick;
-import fr.unice.polytech.si5.dsl.structure.Sensor;
+import fr.unice.polytech.si5.dsl.structure.*;
+
+import java.util.stream.Collectors;
 
 public class Generator extends Visitor<StringBuilder> {
 
@@ -24,6 +24,22 @@ public class Generator extends Visitor<StringBuilder> {
     public void visit(App app) {
         write("// Wiring code generated from an ArduinoML model");
         write(String.format("// Application name: %s\n", app.getName()));
+        write("#include <LiquidCrystal.h>\n");
+
+
+        for (Brick brick : app.getBricks()) {
+            if (brick instanceof LcdScreenActuator){
+                LcdScreenActuator lcd = (LcdScreenActuator) brick;
+                write("LiquidCrystal"+ " " + lcd.getName());
+
+                write("(");
+                write(lcd.getPins()
+                        .stream()
+                        .map(Object::toString)
+                        .collect(Collectors.joining(", ")));
+                write(");");
+            }
+        }
 
         write("void setup(){");
         for (Brick brick : app.getBricks()) {
@@ -74,17 +90,29 @@ public class Generator extends Visitor<StringBuilder> {
 
     @Override
     public void visit(Action action) {
-        write(String.format("  digitalWrite(%d,%s);", action.getActuator().getPin(), action.getValue()));
+        Actuator actuator = action.getActuator();
+        if (actuator instanceof BasicActuator){
+            write(String.format("  digitalWrite(%d,%s);", ((BasicActuator)actuator).getPin(), action.getValue()));
+        }
+        else if (actuator instanceof LcdScreenActuator){
+            write("  " + actuator.getName() + ".clear();");
+            write(String.format("  %s.print(\"%s\");", actuator.getName(), action.getValue()));
+        }
     }
 
     @Override
     public void visit(Actuator actuator) {
-        write(String.format("  pinMode(%d, OUTPUT); // %s [Actuator]", actuator.getPin(), actuator.getName()));
+        if (actuator instanceof BasicActuator) {
+            write(String.format("  pinMode(%d, OUTPUT); // %s [Actuator]", ((BasicActuator)actuator).getPin(), actuator.getName()));
+        }
+        else if (actuator instanceof LcdScreenActuator){
+            write(String.format("  %s.begin(16,2); // %s [Actuator]", actuator.getName(), actuator.getName()));
+        }
     }
 
     @Override
     public void visit(Sensor sensor) {
-        write(String.format("  pinMode(%d, INPUT);  // %s [Sensor]", sensor.getPin(), sensor.getName()));
+            write(String.format("  pinMode(%d, INPUT);  // %s [Sensor]", sensor.getPin(), sensor.getName()));
     }
 
 
