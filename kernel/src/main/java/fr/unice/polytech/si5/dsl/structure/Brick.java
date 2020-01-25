@@ -10,6 +10,6 @@ import java.util.List;
 @Getter
 public abstract class Brick<T> extends NamedElement<T> implements Visitable {
 
-    private List<Integer> pins = new ArrayList<>();
+    protected List<Integer> pins = new ArrayList<>();
 
 }
