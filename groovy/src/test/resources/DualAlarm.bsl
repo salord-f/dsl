@@ -2,7 +2,7 @@ app "RedButton", {
     bricks
         actuator "buzzer", 9
         sensor "button_1", 8
-        sensor "button_2", 9
+        sensor "button_2", 10
     states
     state "off", {
         action "buzzer", "LOW"
