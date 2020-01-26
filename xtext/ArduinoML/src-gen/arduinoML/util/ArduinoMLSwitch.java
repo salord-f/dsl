@@ -134,6 +134,53 @@ public class ArduinoMLSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case ArduinoMLPackage.CONDITION: {
+			Condition condition = (Condition) theEObject;
+			T result = caseCondition(condition);
+			if (result == null)
+				result = caseNamedElement(condition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoMLPackage.LCD_SCREEN_ACTUATOR: {
+			LCDScreenActuator lcdScreenActuator = (LCDScreenActuator) theEObject;
+			T result = caseLCDScreenActuator(lcdScreenActuator);
+			if (result == null)
+				result = caseActuator(lcdScreenActuator);
+			if (result == null)
+				result = caseBrick(lcdScreenActuator);
+			if (result == null)
+				result = caseNamedElement(lcdScreenActuator);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoMLPackage.SIGNAL: {
+			Signal signal = (Signal) theEObject;
+			T result = caseSignal(signal);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoMLPackage.DIGITAL_SIGNAL: {
+			DigitalSignal digitalSignal = (DigitalSignal) theEObject;
+			T result = caseDigitalSignal(digitalSignal);
+			if (result == null)
+				result = caseSignal(digitalSignal);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoMLPackage.STRING_SIGNAL: {
+			StringSignal stringSignal = (StringSignal) theEObject;
+			T result = caseStringSignal(stringSignal);
+			if (result == null)
+				result = caseSignal(stringSignal);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -256,6 +303,81 @@ public class ArduinoMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTransition(Transition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCondition(Condition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>LCD Screen Actuator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>LCD Screen Actuator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLCDScreenActuator(LCDScreenActuator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Signal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Signal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSignal(Signal object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Digital Signal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Digital Signal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDigitalSignal(DigitalSignal object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Signal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Signal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringSignal(StringSignal object) {
 		return null;
 	}
 

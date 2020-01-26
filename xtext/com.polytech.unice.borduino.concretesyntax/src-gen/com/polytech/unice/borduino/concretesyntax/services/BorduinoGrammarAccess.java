@@ -43,12 +43,14 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBricksBrickParserRuleCall_6_0 = (RuleCall)cBricksAssignment_6.eContents().get(0);
 		private final Assignment cBricksAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cBricksBrickParserRuleCall_7_0 = (RuleCall)cBricksAssignment_7.eContents().get(0);
-		private final Keyword cStatesKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cStatesAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cStatesStateParserRuleCall_9_0 = (RuleCall)cStatesAssignment_9.eContents().get(0);
+		private final Assignment cBricksAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cBricksBrick2ParserRuleCall_8_0 = (RuleCall)cBricksAssignment_8.eContents().get(0);
+		private final Keyword cStatesKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cStatesAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final RuleCall cStatesStateParserRuleCall_10_0 = (RuleCall)cStatesAssignment_10.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cStatesAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cStatesStateParserRuleCall_11_0 = (RuleCall)cStatesAssignment_11.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//App:
 		//	'app' name=EString 'initial state' initial=[State|EString]
@@ -56,14 +58,15 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		//	'bricks'
 		//	bricks+=Brick
 		//	bricks+=Brick*
+		//	bricks+=Brick2*
 		//	'states'
 		//	states+=State
 		//	states+=State*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'app' name=EString 'initial state' initial=[State|EString] '{' 'bricks' bricks+=Brick bricks+=Brick* 'states'
-		//states+=State states+=State* '}'
+		//'app' name=EString 'initial state' initial=[State|EString] '{' 'bricks' bricks+=Brick bricks+=Brick* bricks+=Brick2*
+		//'states' states+=State states+=State* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'app'
@@ -105,23 +108,29 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		//Brick
 		public RuleCall getBricksBrickParserRuleCall_7_0() { return cBricksBrickParserRuleCall_7_0; }
 		
+		//bricks+=Brick2*
+		public Assignment getBricksAssignment_8() { return cBricksAssignment_8; }
+		
+		//Brick2
+		public RuleCall getBricksBrick2ParserRuleCall_8_0() { return cBricksBrick2ParserRuleCall_8_0; }
+		
 		//'states'
-		public Keyword getStatesKeyword_8() { return cStatesKeyword_8; }
+		public Keyword getStatesKeyword_9() { return cStatesKeyword_9; }
 		
 		//states+=State
-		public Assignment getStatesAssignment_9() { return cStatesAssignment_9; }
-		
-		//State
-		public RuleCall getStatesStateParserRuleCall_9_0() { return cStatesStateParserRuleCall_9_0; }
-		
-		//states+=State*
 		public Assignment getStatesAssignment_10() { return cStatesAssignment_10; }
 		
 		//State
 		public RuleCall getStatesStateParserRuleCall_10_0() { return cStatesStateParserRuleCall_10_0; }
 		
+		//states+=State*
+		public Assignment getStatesAssignment_11() { return cStatesAssignment_11; }
+		
+		//State
+		public RuleCall getStatesStateParserRuleCall_11_0() { return cStatesStateParserRuleCall_11_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 	public class BrickElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Brick");
@@ -166,6 +175,49 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getPinEIntParserRuleCall_3_0() { return cPinEIntParserRuleCall_3_0; }
 	}
+	public class Brick2Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Brick2");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cLCDScreenActuatorParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPinsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPinsEIntParserRuleCall_3_0 = (RuleCall)cPinsAssignment_3.eContents().get(0);
+		private final Assignment cPinsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPinsEIntParserRuleCall_4_0 = (RuleCall)cPinsAssignment_4.eContents().get(0);
+		
+		//Brick2 Brick:
+		//	LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt*
+		public Group getGroup() { return cGroup; }
+		
+		//LCDScreenActuator
+		public RuleCall getLCDScreenActuatorParserRuleCall_0() { return cLCDScreenActuatorParserRuleCall_0; }
+		
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//pins+=EInt
+		public Assignment getPinsAssignment_3() { return cPinsAssignment_3; }
+		
+		//EInt
+		public RuleCall getPinsEIntParserRuleCall_3_0() { return cPinsEIntParserRuleCall_3_0; }
+		
+		//pins+=EInt*
+		public Assignment getPinsAssignment_4() { return cPinsAssignment_4; }
+		
+		//EInt
+		public RuleCall getPinsEIntParserRuleCall_4_0() { return cPinsEIntParserRuleCall_4_0; }
+	}
 	public class ActuatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Actuator");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -185,6 +237,26 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'actuator'
 		public Keyword getActuatorKeyword_1() { return cActuatorKeyword_1; }
+	}
+	public class LCDScreenActuatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.LCDScreenActuator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cLCDScreenActuatorAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cScreenActuatorKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//LCDScreenActuator:
+		//	{LCDScreenActuator}
+		//	'screenActuator';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{LCDScreenActuator} 'screenActuator'
+		public Group getGroup() { return cGroup; }
+		
+		//{LCDScreenActuator}
+		public Action getLCDScreenActuatorAction_0() { return cLCDScreenActuatorAction_0; }
+		
+		//'screenActuator'
+		public Keyword getScreenActuatorKeyword_1() { return cScreenActuatorKeyword_1; }
 	}
 	public class SensorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Sensor");
@@ -308,7 +380,7 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cActuatorActuatorEStringParserRuleCall_0_0_1 = (RuleCall)cActuatorActuatorCrossReference_0_0.eContents().get(1);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueSignalEnumRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueSignalParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//Action:
 		//	actuator=[Actuator|EString] ':' value=Signal;
@@ -333,27 +405,109 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
 		//Signal
-		public RuleCall getValueSignalEnumRuleCall_2_0() { return cValueSignalEnumRuleCall_2_0; }
+		public RuleCall getValueSignalParserRuleCall_2_0() { return cValueSignalParserRuleCall_2_0; }
 	}
 	public class TransitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Transition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cConditionsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cConditionsInitialConditionParserRuleCall_0_0 = (RuleCall)cConditionsAssignment_0.eContents().get(0);
+		private final Assignment cConditionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cConditionsConditionParserRuleCall_1_0 = (RuleCall)cConditionsAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNextAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cNextStateCrossReference_3_0 = (CrossReference)cNextAssignment_3.eContents().get(0);
+		private final RuleCall cNextStateEStringParserRuleCall_3_0_1 = (RuleCall)cNextStateCrossReference_3_0.eContents().get(1);
+		
+		//Transition:
+		//	conditions+=InitialCondition conditions+=Condition* ':' next=[State|EString];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//conditions+=InitialCondition conditions+=Condition* ':' next=[State|EString]
+		public Group getGroup() { return cGroup; }
+		
+		//conditions+=InitialCondition
+		public Assignment getConditionsAssignment_0() { return cConditionsAssignment_0; }
+		
+		//InitialCondition
+		public RuleCall getConditionsInitialConditionParserRuleCall_0_0() { return cConditionsInitialConditionParserRuleCall_0_0; }
+		
+		//conditions+=Condition*
+		public Assignment getConditionsAssignment_1() { return cConditionsAssignment_1; }
+		
+		//Condition
+		public RuleCall getConditionsConditionParserRuleCall_1_0() { return cConditionsConditionParserRuleCall_1_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//next=[State|EString]
+		public Assignment getNextAssignment_3() { return cNextAssignment_3; }
+		
+		//[State|EString]
+		public CrossReference getNextStateCrossReference_3_0() { return cNextStateCrossReference_3_0; }
+		
+		//EString
+		public RuleCall getNextStateEStringParserRuleCall_3_0_1() { return cNextStateEStringParserRuleCall_3_0_1; }
+	}
+	public class ConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Condition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOperatorAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOperatorOperatorEnumRuleCall_0_0 = (RuleCall)cOperatorAssignment_0.eContents().get(0);
+		private final Assignment cSensorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSensorSensorCrossReference_1_0 = (CrossReference)cSensorAssignment_1.eContents().get(0);
+		private final RuleCall cSensorSensorEStringParserRuleCall_1_0_1 = (RuleCall)cSensorSensorCrossReference_1_0.eContents().get(1);
+		private final Keyword cIsKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSignalAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cSignalSignalParserRuleCall_3_0 = (RuleCall)cSignalAssignment_3.eContents().get(0);
+		
+		//Condition:
+		//	operator=Operator sensor=[Sensor|EString] 'is' signal=Signal;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//operator=Operator sensor=[Sensor|EString] 'is' signal=Signal
+		public Group getGroup() { return cGroup; }
+		
+		//operator=Operator
+		public Assignment getOperatorAssignment_0() { return cOperatorAssignment_0; }
+		
+		//Operator
+		public RuleCall getOperatorOperatorEnumRuleCall_0_0() { return cOperatorOperatorEnumRuleCall_0_0; }
+		
+		//sensor=[Sensor|EString]
+		public Assignment getSensorAssignment_1() { return cSensorAssignment_1; }
+		
+		//[Sensor|EString]
+		public CrossReference getSensorSensorCrossReference_1_0() { return cSensorSensorCrossReference_1_0; }
+		
+		//EString
+		public RuleCall getSensorSensorEStringParserRuleCall_1_0_1() { return cSensorSensorEStringParserRuleCall_1_0_1; }
+		
+		//'is'
+		public Keyword getIsKeyword_2() { return cIsKeyword_2; }
+		
+		//signal=Signal
+		public Assignment getSignalAssignment_3() { return cSignalAssignment_3; }
+		
+		//Signal
+		public RuleCall getSignalSignalParserRuleCall_3_0() { return cSignalSignalParserRuleCall_3_0; }
+	}
+	public class InitialConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.InitialCondition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cSensorAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cSensorSensorCrossReference_0_0 = (CrossReference)cSensorAssignment_0.eContents().get(0);
 		private final RuleCall cSensorSensorEStringParserRuleCall_0_0_1 = (RuleCall)cSensorSensorCrossReference_0_0.eContents().get(1);
 		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueSignalEnumRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cNextAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cNextStateCrossReference_4_0 = (CrossReference)cNextAssignment_4.eContents().get(0);
-		private final RuleCall cNextStateEStringParserRuleCall_4_0_1 = (RuleCall)cNextStateCrossReference_4_0.eContents().get(1);
+		private final Assignment cSignalAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSignalSignalParserRuleCall_2_0 = (RuleCall)cSignalAssignment_2.eContents().get(0);
 		
-		//Transition:
-		//	sensor=[Sensor|EString] 'is' value=Signal ':' next=[State|EString];
+		//InitialCondition Condition:
+		//	sensor=[Sensor|EString] 'is' signal=Signal;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//sensor=[Sensor|EString] 'is' value=Signal ':' next=[State|EString]
+		//sensor=[Sensor|EString] 'is' signal=Signal
 		public Group getGroup() { return cGroup; }
 		
 		//sensor=[Sensor|EString]
@@ -368,34 +522,98 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		//'is'
 		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
 		
-		//value=Signal
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		//signal=Signal
+		public Assignment getSignalAssignment_2() { return cSignalAssignment_2; }
 		
 		//Signal
-		public RuleCall getValueSignalEnumRuleCall_2_0() { return cValueSignalEnumRuleCall_2_0; }
+		public RuleCall getSignalSignalParserRuleCall_2_0() { return cSignalSignalParserRuleCall_2_0; }
+	}
+	public class SignalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Signal");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDigitalSignalParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cStringSignalParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//':'
-		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		//Signal:
+		//	DigitalSignal | StringSignal;
+		@Override public ParserRule getRule() { return rule; }
 		
-		//next=[State|EString]
-		public Assignment getNextAssignment_4() { return cNextAssignment_4; }
+		//DigitalSignal | StringSignal
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//[State|EString]
-		public CrossReference getNextStateCrossReference_4_0() { return cNextStateCrossReference_4_0; }
+		//DigitalSignal
+		public RuleCall getDigitalSignalParserRuleCall_0() { return cDigitalSignalParserRuleCall_0; }
+		
+		//StringSignal
+		public RuleCall getStringSignalParserRuleCall_1() { return cStringSignalParserRuleCall_1; }
+	}
+	public class DigitalSignalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.DigitalSignal");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueDigitalSignalEnumEnumRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//DigitalSignal:
+		//	value=DigitalSignalEnum;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//value=DigitalSignalEnum
+		public Assignment getValueAssignment() { return cValueAssignment; }
+		
+		//DigitalSignalEnum
+		public RuleCall getValueDigitalSignalEnumEnumRuleCall_0() { return cValueDigitalSignalEnumEnumRuleCall_0; }
+	}
+	public class StringSignalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.StringSignal");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueEStringParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//StringSignal:
+		//	value=EString;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//value=EString
+		public Assignment getValueAssignment() { return cValueAssignment; }
 		
 		//EString
-		public RuleCall getNextStateEStringParserRuleCall_4_0_1() { return cNextStateEStringParserRuleCall_4_0_1; }
+		public RuleCall getValueEStringParserRuleCall_0() { return cValueEStringParserRuleCall_0; }
 	}
 	
-	public class SignalElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Signal");
+	public class OperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Operator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cANDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cANDAndKeyword_0_0 = (Keyword)cANDEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cOREnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cOROrKeyword_1_0 = (Keyword)cOREnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum Operator:
+		//	AND="and" | OR="or";
+		public EnumRule getRule() { return rule; }
+		
+		//AND="and" | OR="or"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//AND="and"
+		public EnumLiteralDeclaration getANDEnumLiteralDeclaration_0() { return cANDEnumLiteralDeclaration_0; }
+		
+		//"and"
+		public Keyword getANDAndKeyword_0_0() { return cANDAndKeyword_0_0; }
+		
+		//OR="or"
+		public EnumLiteralDeclaration getOREnumLiteralDeclaration_1() { return cOREnumLiteralDeclaration_1; }
+		
+		//"or"
+		public Keyword getOROrKeyword_1_0() { return cOROrKeyword_1_0; }
+	}
+	public class DigitalSignalEnumElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.DigitalSignalEnum");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cHIGHEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cHIGHHIGHKeyword_0_0 = (Keyword)cHIGHEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cLOWEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cLOWLOWKeyword_1_0 = (Keyword)cLOWEnumLiteralDeclaration_1.eContents().get(0);
 		
-		//enum Signal:
+		//enum DigitalSignalEnum:
 		//	HIGH | LOW;
 		public EnumRule getRule() { return rule; }
 		
@@ -405,26 +623,34 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		//HIGH
 		public EnumLiteralDeclaration getHIGHEnumLiteralDeclaration_0() { return cHIGHEnumLiteralDeclaration_0; }
 		
-		//'HIGH'
+		//"HIGH"
 		public Keyword getHIGHHIGHKeyword_0_0() { return cHIGHHIGHKeyword_0_0; }
 		
 		//LOW
 		public EnumLiteralDeclaration getLOWEnumLiteralDeclaration_1() { return cLOWEnumLiteralDeclaration_1; }
 		
-		//'LOW'
+		//"LOW"
 		public Keyword getLOWLOWKeyword_1_0() { return cLOWLOWKeyword_1_0; }
 	}
 	
 	private final AppElements pApp;
 	private final BrickElements pBrick;
+	private final Brick2Elements pBrick2;
 	private final ActuatorElements pActuator;
+	private final LCDScreenActuatorElements pLCDScreenActuator;
 	private final SensorElements pSensor;
 	private final EStringElements pEString;
 	private final EIntElements pEInt;
 	private final StateElements pState;
 	private final ActionElements pAction;
 	private final TransitionElements pTransition;
-	private final SignalElements eSignal;
+	private final ConditionElements pCondition;
+	private final InitialConditionElements pInitialCondition;
+	private final SignalElements pSignal;
+	private final DigitalSignalElements pDigitalSignal;
+	private final StringSignalElements pStringSignal;
+	private final OperatorElements eOperator;
+	private final DigitalSignalEnumElements eDigitalSignalEnum;
 	
 	private final Grammar grammar;
 	
@@ -437,14 +663,22 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pApp = new AppElements();
 		this.pBrick = new BrickElements();
+		this.pBrick2 = new Brick2Elements();
 		this.pActuator = new ActuatorElements();
+		this.pLCDScreenActuator = new LCDScreenActuatorElements();
 		this.pSensor = new SensorElements();
 		this.pEString = new EStringElements();
 		this.pEInt = new EIntElements();
 		this.pState = new StateElements();
 		this.pAction = new ActionElements();
 		this.pTransition = new TransitionElements();
-		this.eSignal = new SignalElements();
+		this.pCondition = new ConditionElements();
+		this.pInitialCondition = new InitialConditionElements();
+		this.pSignal = new SignalElements();
+		this.pDigitalSignal = new DigitalSignalElements();
+		this.pStringSignal = new StringSignalElements();
+		this.eOperator = new OperatorElements();
+		this.eDigitalSignalEnum = new DigitalSignalEnumElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -480,6 +714,7 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 	//	'bricks'
 	//	bricks+=Brick
 	//	bricks+=Brick*
+	//	bricks+=Brick2*
 	//	'states'
 	//	states+=State
 	//	states+=State*
@@ -502,6 +737,16 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		return getBrickAccess().getRule();
 	}
 	
+	//Brick2 Brick:
+	//	LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt*;
+	public Brick2Elements getBrick2Access() {
+		return pBrick2;
+	}
+	
+	public ParserRule getBrick2Rule() {
+		return getBrick2Access().getRule();
+	}
+	
 	//Actuator:
 	//	{Actuator}
 	//	'actuator';
@@ -511,6 +756,17 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getActuatorRule() {
 		return getActuatorAccess().getRule();
+	}
+	
+	//LCDScreenActuator:
+	//	{LCDScreenActuator}
+	//	'screenActuator';
+	public LCDScreenActuatorElements getLCDScreenActuatorAccess() {
+		return pLCDScreenActuator;
+	}
+	
+	public ParserRule getLCDScreenActuatorRule() {
+		return getLCDScreenActuatorAccess().getRule();
 	}
 	
 	//Sensor:
@@ -570,7 +826,7 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Transition:
-	//	sensor=[Sensor|EString] 'is' value=Signal ':' next=[State|EString];
+	//	conditions+=InitialCondition conditions+=Condition* ':' next=[State|EString];
 	public TransitionElements getTransitionAccess() {
 		return pTransition;
 	}
@@ -579,14 +835,74 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		return getTransitionAccess().getRule();
 	}
 	
-	//enum Signal:
-	//	HIGH | LOW;
-	public SignalElements getSignalAccess() {
-		return eSignal;
+	//Condition:
+	//	operator=Operator sensor=[Sensor|EString] 'is' signal=Signal;
+	public ConditionElements getConditionAccess() {
+		return pCondition;
 	}
 	
-	public EnumRule getSignalRule() {
+	public ParserRule getConditionRule() {
+		return getConditionAccess().getRule();
+	}
+	
+	//InitialCondition Condition:
+	//	sensor=[Sensor|EString] 'is' signal=Signal;
+	public InitialConditionElements getInitialConditionAccess() {
+		return pInitialCondition;
+	}
+	
+	public ParserRule getInitialConditionRule() {
+		return getInitialConditionAccess().getRule();
+	}
+	
+	//Signal:
+	//	DigitalSignal | StringSignal;
+	public SignalElements getSignalAccess() {
+		return pSignal;
+	}
+	
+	public ParserRule getSignalRule() {
 		return getSignalAccess().getRule();
+	}
+	
+	//DigitalSignal:
+	//	value=DigitalSignalEnum;
+	public DigitalSignalElements getDigitalSignalAccess() {
+		return pDigitalSignal;
+	}
+	
+	public ParserRule getDigitalSignalRule() {
+		return getDigitalSignalAccess().getRule();
+	}
+	
+	//StringSignal:
+	//	value=EString;
+	public StringSignalElements getStringSignalAccess() {
+		return pStringSignal;
+	}
+	
+	public ParserRule getStringSignalRule() {
+		return getStringSignalAccess().getRule();
+	}
+	
+	//enum Operator:
+	//	AND="and" | OR="or";
+	public OperatorElements getOperatorAccess() {
+		return eOperator;
+	}
+	
+	public EnumRule getOperatorRule() {
+		return getOperatorAccess().getRule();
+	}
+	
+	//enum DigitalSignalEnum:
+	//	HIGH | LOW;
+	public DigitalSignalEnumElements getDigitalSignalEnumAccess() {
+		return eDigitalSignalEnum;
+	}
+	
+	public EnumRule getDigitalSignalEnumRule() {
+		return getDigitalSignalEnumAccess().getRule();
 	}
 	
 	//terminal ID:

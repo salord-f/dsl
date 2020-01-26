@@ -5,9 +5,10 @@ package arduinoML.impl;
 import arduinoML.Action;
 import arduinoML.Actuator;
 import arduinoML.ArduinoMLPackage;
-
 import arduinoML.Signal;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -41,23 +42,14 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	protected Actuator actuator;
 
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Signal VALUE_EDEFAULT = Signal.HIGH;
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected Signal value = VALUE_EDEFAULT;
+	protected Signal value;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,11 +124,53 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(Signal newValue) {
+	public NotificationChain basicSetValue(Signal newValue, NotificationChain msgs) {
 		Signal oldValue = value;
-		value = newValue == null ? VALUE_EDEFAULT : newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.ACTION__VALUE, oldValue, value));
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ArduinoMLPackage.ACTION__VALUE, oldValue, newValue);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(Signal newValue) {
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject) value).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - ArduinoMLPackage.ACTION__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject) newValue).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - ArduinoMLPackage.ACTION__VALUE, null, msgs);
+			msgs = basicSetValue(newValue, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.ACTION__VALUE, newValue, newValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ArduinoMLPackage.ACTION__VALUE:
+			return basicSetValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -187,7 +221,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			setActuator((Actuator) null);
 			return;
 		case ArduinoMLPackage.ACTION__VALUE:
-			setValue(VALUE_EDEFAULT);
+			setValue((Signal) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -204,26 +238,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		case ArduinoMLPackage.ACTION__ACTUATOR:
 			return actuator != null;
 		case ArduinoMLPackage.ACTION__VALUE:
-			return value != VALUE_EDEFAULT;
+			return value != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ActionImpl

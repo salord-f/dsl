@@ -49,30 +49,26 @@ public interface Action extends EObject {
 	void setActuator(Actuator value);
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The default value is <code>"HIGH"</code>.
-	 * The literals are from the enumeration {@link arduinoML.Signal}.
+	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Value</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see arduinoML.Signal
+	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(Signal)
 	 * @see arduinoML.ArduinoMLPackage#getAction_Value()
-	 * @model default="HIGH"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Signal getValue();
 
 	/**
-	 * Sets the value of the '{@link arduinoML.Action#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link arduinoML.Action#getValue <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see arduinoML.Signal
+	 * @param value the new value of the '<em>Value</em>' containment reference.
 	 * @see #getValue()
 	 * @generated
 	 */

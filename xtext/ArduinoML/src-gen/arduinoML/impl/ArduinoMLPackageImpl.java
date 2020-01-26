@@ -8,12 +8,18 @@ import arduinoML.App;
 import arduinoML.ArduinoMLFactory;
 import arduinoML.ArduinoMLPackage;
 import arduinoML.Brick;
+import arduinoML.Condition;
+import arduinoML.DigitalSignal;
+import arduinoML.DigitalSignalEnum;
+import arduinoML.LCDScreenActuator;
 import arduinoML.NamedElement;
+import arduinoML.Operator;
 import arduinoML.Sensor;
-
 import arduinoML.Signal;
 import arduinoML.State;
+import arduinoML.StringSignal;
 import arduinoML.Transition;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -90,7 +96,49 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum signalEEnum = null;
+	private EClass conditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass lcdScreenActuatorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass signalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass digitalSignalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stringSignalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum digitalSignalEnumEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum operatorEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -305,8 +353,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAction_Value() {
-		return (EAttribute) actionEClass.getEStructuralFeatures().get(1);
+	public EReference getAction_Value() {
+		return (EReference) actionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -323,7 +371,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_Sensor() {
+	public EReference getTransition_Next() {
 		return (EReference) transitionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -332,7 +380,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_Next() {
+	public EReference getTransition_Conditions() {
 		return (EReference) transitionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -341,8 +389,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTransition_Value() {
-		return (EAttribute) transitionEClass.getEStructuralFeatures().get(2);
+	public EClass getCondition() {
+		return conditionEClass;
 	}
 
 	/**
@@ -350,8 +398,107 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getSignal() {
-		return signalEEnum;
+	public EReference getCondition_Sensor() {
+		return (EReference) conditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCondition_Signal() {
+		return (EReference) conditionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCondition_Operator() {
+		return (EAttribute) conditionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLCDScreenActuator() {
+		return lcdScreenActuatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLCDScreenActuator_Pins() {
+		return (EAttribute) lcdScreenActuatorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSignal() {
+		return signalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDigitalSignal() {
+		return digitalSignalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDigitalSignal_Value() {
+		return (EAttribute) digitalSignalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStringSignal() {
+		return stringSignalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringSignal_Value() {
+		return (EAttribute) stringSignalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getDigitalSignalEnum() {
+		return digitalSignalEnumEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getOperator() {
+		return operatorEEnum;
 	}
 
 	/**
@@ -405,15 +552,31 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 
 		actionEClass = createEClass(ACTION);
 		createEReference(actionEClass, ACTION__ACTUATOR);
-		createEAttribute(actionEClass, ACTION__VALUE);
+		createEReference(actionEClass, ACTION__VALUE);
 
 		transitionEClass = createEClass(TRANSITION);
-		createEReference(transitionEClass, TRANSITION__SENSOR);
 		createEReference(transitionEClass, TRANSITION__NEXT);
-		createEAttribute(transitionEClass, TRANSITION__VALUE);
+		createEReference(transitionEClass, TRANSITION__CONDITIONS);
+
+		conditionEClass = createEClass(CONDITION);
+		createEReference(conditionEClass, CONDITION__SENSOR);
+		createEAttribute(conditionEClass, CONDITION__OPERATOR);
+		createEReference(conditionEClass, CONDITION__SIGNAL);
+
+		lcdScreenActuatorEClass = createEClass(LCD_SCREEN_ACTUATOR);
+		createEAttribute(lcdScreenActuatorEClass, LCD_SCREEN_ACTUATOR__PINS);
+
+		signalEClass = createEClass(SIGNAL);
+
+		digitalSignalEClass = createEClass(DIGITAL_SIGNAL);
+		createEAttribute(digitalSignalEClass, DIGITAL_SIGNAL__VALUE);
+
+		stringSignalEClass = createEClass(STRING_SIGNAL);
+		createEAttribute(stringSignalEClass, STRING_SIGNAL__VALUE);
 
 		// Create enums
-		signalEEnum = createEEnum(SIGNAL);
+		digitalSignalEnumEEnum = createEEnum(DIGITAL_SIGNAL_ENUM);
+		operatorEEnum = createEEnum(OPERATOR);
 	}
 
 	/**
@@ -449,6 +612,10 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		actuatorEClass.getESuperTypes().add(this.getBrick());
 		sensorEClass.getESuperTypes().add(this.getBrick());
 		stateEClass.getESuperTypes().add(this.getNamedElement());
+		conditionEClass.getESuperTypes().add(this.getNamedElement());
+		lcdScreenActuatorEClass.getESuperTypes().add(this.getActuator());
+		digitalSignalEClass.getESuperTypes().add(this.getSignal());
+		stringSignalEClass.getESuperTypes().add(this.getSignal());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(brickEClass, Brick.class, "Brick", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -490,24 +657,58 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		initEReference(getAction_Actuator(), this.getActuator(), null, "actuator", null, 1, 1, Action.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAction_Value(), this.getSignal(), "value", "HIGH", 0, 1, Action.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAction_Value(), this.getSignal(), null, "value", null, 1, 1, Action.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransition_Sensor(), this.getSensor(), null, "sensor", null, 1, 1, Transition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Next(), this.getState(), null, "next", null, 1, 1, Transition.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getTransition_Value(), this.getSignal(), "value", "HIGH", 0, 1, Transition.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Conditions(), this.getCondition(), null, "conditions", null, 1, -1,
+				Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCondition_Sensor(), this.getSensor(), null, "sensor", null, 1, 1, Condition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCondition_Operator(), this.getOperator(), "operator", "NONE", 0, 1, Condition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCondition_Signal(), this.getSignal(), null, "signal", null, 1, 1, Condition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(lcdScreenActuatorEClass, LCDScreenActuator.class, "LCDScreenActuator", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLCDScreenActuator_Pins(), ecorePackage.getEInt(), "pins", null, 0, -1,
+				LCDScreenActuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(signalEClass, Signal.class, "Signal", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(digitalSignalEClass, DigitalSignal.class, "DigitalSignal", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDigitalSignal_Value(), this.getDigitalSignalEnum(), "value", "HIGH", 0, 1,
+				DigitalSignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(stringSignalEClass, StringSignal.class, "StringSignal", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStringSignal_Value(), ecorePackage.getEString(), "value", "HIGH", 0, 1, StringSignal.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(signalEEnum, Signal.class, "Signal");
-		addEEnumLiteral(signalEEnum, Signal.HIGH);
-		addEEnumLiteral(signalEEnum, Signal.LOW);
+		initEEnum(digitalSignalEnumEEnum, DigitalSignalEnum.class, "DigitalSignalEnum");
+		addEEnumLiteral(digitalSignalEnumEEnum, DigitalSignalEnum.HIGH);
+		addEEnumLiteral(digitalSignalEnumEEnum, DigitalSignalEnum.LOW);
+
+		initEEnum(operatorEEnum, Operator.class, "Operator");
+		addEEnumLiteral(operatorEEnum, Operator.AND);
+		addEEnumLiteral(operatorEEnum, Operator.OR);
+		addEEnumLiteral(operatorEEnum, Operator.NONE);
 
 		// Create resource
 		createResource(eNS_URI);

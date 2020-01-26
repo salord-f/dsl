@@ -9,9 +9,14 @@
   <foreignModel>arduinoML.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="ArduinoML" disposableProviderFactory="true" ecorePackage="arduinoML.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arduinoML.ecore#//Signal">
-      <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//Signal/HIGH"/>
-      <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//Signal/LOW"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arduinoML.ecore#//DigitalSignalEnum">
+      <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//DigitalSignalEnum/HIGH"/>
+      <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//DigitalSignalEnum/LOW"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arduinoML.ecore#//Operator">
+      <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//Operator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//Operator/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//Operator/NONE"/>
     </genEnums>
     <genClasses ecoreClass="arduinoML.ecore#//Brick">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//Brick/pin"/>
@@ -33,12 +38,26 @@
     </genClasses>
     <genClasses ecoreClass="arduinoML.ecore#//Action">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Action/actuator"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//Action/value"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Action/value"/>
     </genClasses>
     <genClasses ecoreClass="arduinoML.ecore#//Transition">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Transition/sensor"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Transition/next"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//Transition/value"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Transition/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="arduinoML.ecore#//Condition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Condition/sensor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//Condition/operator"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Condition/signal"/>
+    </genClasses>
+    <genClasses ecoreClass="arduinoML.ecore#//LCDScreenActuator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//LCDScreenActuator/pins"/>
+    </genClasses>
+    <genClasses ecoreClass="arduinoML.ecore#//Signal"/>
+    <genClasses ecoreClass="arduinoML.ecore#//DigitalSignal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//DigitalSignal/value"/>
+    </genClasses>
+    <genClasses ecoreClass="arduinoML.ecore#//StringSignal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//StringSignal/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

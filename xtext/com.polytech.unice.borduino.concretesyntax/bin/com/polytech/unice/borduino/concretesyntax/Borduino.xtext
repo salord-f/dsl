@@ -10,6 +10,7 @@ App returns App:
 		'bricks'
 		bricks+=Brick
 		(bricks+=Brick)* 
+		(bricks+=Brick2)* 
 		
 		'states'
 		states+=State
@@ -17,12 +18,21 @@ App returns App:
 	'}';
 
 Brick returns Brick:
-	(Actuator | Sensor) name=EString ':' pin=EInt;
+	(Actuator | Sensor ) name=EString ':' pin=EInt;
+	
+Brick2 returns Brick:
+	LCDScreenActuator name=EString ':' pins+=EInt (pins+=EInt)*;
+		
+
 
 Actuator returns Actuator:
 	{Actuator}
 	'actuator';
 
+LCDScreenActuator returns LCDScreenActuator:
+	{LCDScreenActuator}
+	'screenActuator';
+	
 Sensor returns Sensor:
 	{Sensor}
 	'sensor';
@@ -47,7 +57,30 @@ Action returns Action:
 	actuator=[Actuator|EString] ':' value=Signal;
 
 Transition returns Transition:
-	sensor=[Sensor|EString] 'is' value=Signal ':' next=[State|EString];
+	conditions+=InitialCondition (conditions+=Condition)* ':' next=[State|EString];
+	
+Condition returns Condition:
+	operator=Operator sensor=[Sensor|EString] 'is' signal=Signal;
 
-enum Signal returns Signal:
-				HIGH = 'HIGH' | LOW = 'LOW';
+InitialCondition returns Condition:
+	sensor=[Sensor|EString] 'is' signal=Signal;
+
+Signal returns Signal:
+	(DigitalSignal | StringSignal );
+	
+DigitalSignal returns DigitalSignal:
+	value=DigitalSignalEnum;
+
+
+
+StringSignal returns StringSignal:
+	value=EString
+;
+
+
+enum Operator returns Operator :
+	AND = "and" | OR = "or";
+
+enum DigitalSignalEnum returns DigitalSignalEnum :
+	HIGH="HIGH" | LOW="LOW"
+;

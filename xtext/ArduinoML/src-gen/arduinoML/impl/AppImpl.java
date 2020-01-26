@@ -5,8 +5,8 @@ package arduinoML.impl;
 import arduinoML.App;
 import arduinoML.ArduinoMLPackage;
 import arduinoML.Brick;
-
 import arduinoML.State;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -49,6 +49,7 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * @ordered
 	 */
 	protected EList<Brick> bricks;
+
 	/**
 	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -58,6 +59,7 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * @ordered
 	 */
 	protected EList<State> states;
+
 	/**
 	 * The cached value of the '{@link #getInitial() <em>Initial</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -77,6 +79,7 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

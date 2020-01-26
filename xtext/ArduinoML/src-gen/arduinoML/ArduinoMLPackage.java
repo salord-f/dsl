@@ -371,7 +371,7 @@ public interface ArduinoMLPackage extends EPackage {
 	int ACTION__ACTUATOR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -408,31 +408,22 @@ public interface ArduinoMLPackage extends EPackage {
 	int TRANSITION = 7;
 
 	/**
-	 * The feature id for the '<em><b>Sensor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__SENSOR = 0;
-
-	/**
 	 * The feature id for the '<em><b>Next</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__NEXT = 1;
+	int TRANSITION__NEXT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__VALUE = 2;
+	int TRANSITION__CONDITIONS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -441,7 +432,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = 3;
+	int TRANSITION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -453,14 +444,245 @@ public interface ArduinoMLPackage extends EPackage {
 	int TRANSITION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link arduinoML.Signal <em>Signal</em>}' enum.
+	 * The meta object id for the '{@link arduinoML.impl.ConditionImpl <em>Condition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see arduinoML.Signal
+	 * @see arduinoML.impl.ConditionImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getCondition()
+	 * @generated
+	 */
+	int CONDITION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sensor</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__SENSOR = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__OPERATOR = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Signal</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__SIGNAL = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoML.impl.LCDScreenActuatorImpl <em>LCD Screen Actuator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.impl.LCDScreenActuatorImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getLCDScreenActuator()
+	 * @generated
+	 */
+	int LCD_SCREEN_ACTUATOR = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LCD_SCREEN_ACTUATOR__NAME = ACTUATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pin</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LCD_SCREEN_ACTUATOR__PIN = ACTUATOR__PIN;
+
+	/**
+	 * The feature id for the '<em><b>Pins</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LCD_SCREEN_ACTUATOR__PINS = ACTUATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>LCD Screen Actuator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LCD_SCREEN_ACTUATOR_FEATURE_COUNT = ACTUATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>LCD Screen Actuator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LCD_SCREEN_ACTUATOR_OPERATION_COUNT = ACTUATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoML.impl.SignalImpl <em>Signal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.impl.SignalImpl
 	 * @see arduinoML.impl.ArduinoMLPackageImpl#getSignal()
 	 * @generated
 	 */
-	int SIGNAL = 8;
+	int SIGNAL = 10;
+
+	/**
+	 * The number of structural features of the '<em>Signal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIGNAL_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Signal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIGNAL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoML.impl.DigitalSignalImpl <em>Digital Signal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.impl.DigitalSignalImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getDigitalSignal()
+	 * @generated
+	 */
+	int DIGITAL_SIGNAL = 11;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIGITAL_SIGNAL__VALUE = SIGNAL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Digital Signal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIGITAL_SIGNAL_FEATURE_COUNT = SIGNAL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Digital Signal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIGITAL_SIGNAL_OPERATION_COUNT = SIGNAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoML.impl.StringSignalImpl <em>String Signal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.impl.StringSignalImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getStringSignal()
+	 * @generated
+	 */
+	int STRING_SIGNAL = 12;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_SIGNAL__VALUE = SIGNAL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>String Signal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_SIGNAL_FEATURE_COUNT = SIGNAL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>String Signal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_SIGNAL_OPERATION_COUNT = SIGNAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoML.DigitalSignalEnum <em>Digital Signal Enum</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.DigitalSignalEnum
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getDigitalSignalEnum()
+	 * @generated
+	 */
+	int DIGITAL_SIGNAL_ENUM = 13;
+
+	/**
+	 * The meta object id for the '{@link arduinoML.Operator <em>Operator</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.Operator
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getOperator()
+	 * @generated
+	 */
+	int OPERATOR = 14;
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.Brick <em>Brick</em>}'.
@@ -632,15 +854,15 @@ public interface ArduinoMLPackage extends EPackage {
 	EReference getAction_Actuator();
 
 	/**
-	 * Returns the meta object for the attribute '{@link arduinoML.Action#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link arduinoML.Action#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see arduinoML.Action#getValue()
 	 * @see #getAction()
 	 * @generated
 	 */
-	EAttribute getAction_Value();
+	EReference getAction_Value();
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.Transition <em>Transition</em>}'.
@@ -651,17 +873,6 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTransition();
-
-	/**
-	 * Returns the meta object for the reference '{@link arduinoML.Transition#getSensor <em>Sensor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sensor</em>'.
-	 * @see arduinoML.Transition#getSensor()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EReference getTransition_Sensor();
 
 	/**
 	 * Returns the meta object for the reference '{@link arduinoML.Transition#getNext <em>Next</em>}'.
@@ -675,25 +886,151 @@ public interface ArduinoMLPackage extends EPackage {
 	EReference getTransition_Next();
 
 	/**
-	 * Returns the meta object for the attribute '{@link arduinoML.Transition#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference list '{@link arduinoML.Transition#getConditions <em>Conditions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see arduinoML.Transition#getValue()
+	 * @return the meta object for the containment reference list '<em>Conditions</em>'.
+	 * @see arduinoML.Transition#getConditions()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getTransition_Value();
+	EReference getTransition_Conditions();
 
 	/**
-	 * Returns the meta object for enum '{@link arduinoML.Signal <em>Signal</em>}'.
+	 * Returns the meta object for class '{@link arduinoML.Condition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Signal</em>'.
+	 * @return the meta object for class '<em>Condition</em>'.
+	 * @see arduinoML.Condition
+	 * @generated
+	 */
+	EClass getCondition();
+
+	/**
+	 * Returns the meta object for the reference '{@link arduinoML.Condition#getSensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sensor</em>'.
+	 * @see arduinoML.Condition#getSensor()
+	 * @see #getCondition()
+	 * @generated
+	 */
+	EReference getCondition_Sensor();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link arduinoML.Condition#getSignal <em>Signal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Signal</em>'.
+	 * @see arduinoML.Condition#getSignal()
+	 * @see #getCondition()
+	 * @generated
+	 */
+	EReference getCondition_Signal();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduinoML.Condition#getOperator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operator</em>'.
+	 * @see arduinoML.Condition#getOperator()
+	 * @see #getCondition()
+	 * @generated
+	 */
+	EAttribute getCondition_Operator();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoML.LCDScreenActuator <em>LCD Screen Actuator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>LCD Screen Actuator</em>'.
+	 * @see arduinoML.LCDScreenActuator
+	 * @generated
+	 */
+	EClass getLCDScreenActuator();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link arduinoML.LCDScreenActuator#getPins <em>Pins</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Pins</em>'.
+	 * @see arduinoML.LCDScreenActuator#getPins()
+	 * @see #getLCDScreenActuator()
+	 * @generated
+	 */
+	EAttribute getLCDScreenActuator_Pins();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoML.Signal <em>Signal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Signal</em>'.
 	 * @see arduinoML.Signal
 	 * @generated
 	 */
-	EEnum getSignal();
+	EClass getSignal();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoML.DigitalSignal <em>Digital Signal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Digital Signal</em>'.
+	 * @see arduinoML.DigitalSignal
+	 * @generated
+	 */
+	EClass getDigitalSignal();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduinoML.DigitalSignal#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see arduinoML.DigitalSignal#getValue()
+	 * @see #getDigitalSignal()
+	 * @generated
+	 */
+	EAttribute getDigitalSignal_Value();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoML.StringSignal <em>String Signal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Signal</em>'.
+	 * @see arduinoML.StringSignal
+	 * @generated
+	 */
+	EClass getStringSignal();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduinoML.StringSignal#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see arduinoML.StringSignal#getValue()
+	 * @see #getStringSignal()
+	 * @generated
+	 */
+	EAttribute getStringSignal_Value();
+
+	/**
+	 * Returns the meta object for enum '{@link arduinoML.DigitalSignalEnum <em>Digital Signal Enum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Digital Signal Enum</em>'.
+	 * @see arduinoML.DigitalSignalEnum
+	 * @generated
+	 */
+	EEnum getDigitalSignalEnum();
+
+	/**
+	 * Returns the meta object for enum '{@link arduinoML.Operator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Operator</em>'.
+	 * @see arduinoML.Operator
+	 * @generated
+	 */
+	EEnum getOperator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -861,12 +1198,12 @@ public interface ArduinoMLPackage extends EPackage {
 		EReference ACTION__ACTUATOR = eINSTANCE.getAction_Actuator();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACTION__VALUE = eINSTANCE.getAction_Value();
+		EReference ACTION__VALUE = eINSTANCE.getAction_Value();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.impl.TransitionImpl <em>Transition</em>}' class.
@@ -879,14 +1216,6 @@ public interface ArduinoMLPackage extends EPackage {
 		EClass TRANSITION = eINSTANCE.getTransition();
 
 		/**
-		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRANSITION__SENSOR = eINSTANCE.getTransition_Sensor();
-
-		/**
 		 * The meta object literal for the '<em><b>Next</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -895,22 +1224,130 @@ public interface ArduinoMLPackage extends EPackage {
 		EReference TRANSITION__NEXT = eINSTANCE.getTransition_Next();
 
 		/**
+		 * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__CONDITIONS = eINSTANCE.getTransition_Conditions();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.impl.ConditionImpl <em>Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.impl.ConditionImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getCondition()
+		 * @generated
+		 */
+		EClass CONDITION = eINSTANCE.getCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITION__SENSOR = eINSTANCE.getCondition_Sensor();
+
+		/**
+		 * The meta object literal for the '<em><b>Signal</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITION__SIGNAL = eINSTANCE.getCondition_Signal();
+
+		/**
+		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONDITION__OPERATOR = eINSTANCE.getCondition_Operator();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.impl.LCDScreenActuatorImpl <em>LCD Screen Actuator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.impl.LCDScreenActuatorImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getLCDScreenActuator()
+		 * @generated
+		 */
+		EClass LCD_SCREEN_ACTUATOR = eINSTANCE.getLCDScreenActuator();
+
+		/**
+		 * The meta object literal for the '<em><b>Pins</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LCD_SCREEN_ACTUATOR__PINS = eINSTANCE.getLCDScreenActuator_Pins();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.impl.SignalImpl <em>Signal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.impl.SignalImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getSignal()
+		 * @generated
+		 */
+		EClass SIGNAL = eINSTANCE.getSignal();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.impl.DigitalSignalImpl <em>Digital Signal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.impl.DigitalSignalImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getDigitalSignal()
+		 * @generated
+		 */
+		EClass DIGITAL_SIGNAL = eINSTANCE.getDigitalSignal();
+
+		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION__VALUE = eINSTANCE.getTransition_Value();
+		EAttribute DIGITAL_SIGNAL__VALUE = eINSTANCE.getDigitalSignal_Value();
 
 		/**
-		 * The meta object literal for the '{@link arduinoML.Signal <em>Signal</em>}' enum.
+		 * The meta object literal for the '{@link arduinoML.impl.StringSignalImpl <em>String Signal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see arduinoML.Signal
-		 * @see arduinoML.impl.ArduinoMLPackageImpl#getSignal()
+		 * @see arduinoML.impl.StringSignalImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getStringSignal()
 		 * @generated
 		 */
-		EEnum SIGNAL = eINSTANCE.getSignal();
+		EClass STRING_SIGNAL = eINSTANCE.getStringSignal();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_SIGNAL__VALUE = eINSTANCE.getStringSignal_Value();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.DigitalSignalEnum <em>Digital Signal Enum</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.DigitalSignalEnum
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getDigitalSignalEnum()
+		 * @generated
+		 */
+		EEnum DIGITAL_SIGNAL_ENUM = eINSTANCE.getDigitalSignalEnum();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.Operator <em>Operator</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.Operator
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getOperator()
+		 * @generated
+		 */
+		EEnum OPERATOR = eINSTANCE.getOperator();
 
 	}
 

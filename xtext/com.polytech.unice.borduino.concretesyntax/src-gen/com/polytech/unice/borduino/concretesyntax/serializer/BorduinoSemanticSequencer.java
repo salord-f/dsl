@@ -6,8 +6,12 @@ package com.polytech.unice.borduino.concretesyntax.serializer;
 import arduinoML.Actuator;
 import arduinoML.App;
 import arduinoML.ArduinoMLPackage;
+import arduinoML.Condition;
+import arduinoML.DigitalSignal;
+import arduinoML.LCDScreenActuator;
 import arduinoML.Sensor;
 import arduinoML.State;
+import arduinoML.StringSignal;
 import arduinoML.Transition;
 import com.google.inject.Inject;
 import com.polytech.unice.borduino.concretesyntax.services.BorduinoGrammarAccess;
@@ -52,6 +56,29 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case ArduinoMLPackage.APP:
 				sequence_App(context, (App) semanticObject); 
 				return; 
+			case ArduinoMLPackage.CONDITION:
+				if (rule == grammarAccess.getConditionRule()) {
+					sequence_Condition(context, (Condition) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getInitialConditionRule()) {
+					sequence_InitialCondition(context, (Condition) semanticObject); 
+					return; 
+				}
+				else break;
+			case ArduinoMLPackage.DIGITAL_SIGNAL:
+				sequence_DigitalSignal(context, (DigitalSignal) semanticObject); 
+				return; 
+			case ArduinoMLPackage.LCD_SCREEN_ACTUATOR:
+				if (rule == grammarAccess.getBrick2Rule()) {
+					sequence_Brick2_LCDScreenActuator(context, (LCDScreenActuator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getLCDScreenActuatorRule()) {
+					sequence_LCDScreenActuator(context, (LCDScreenActuator) semanticObject); 
+					return; 
+				}
+				else break;
 			case ArduinoMLPackage.SENSOR:
 				if (rule == grammarAccess.getBrickRule()) {
 					sequence_Brick_Sensor(context, (Sensor) semanticObject); 
@@ -64,6 +91,9 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				else break;
 			case ArduinoMLPackage.STATE:
 				sequence_State(context, (State) semanticObject); 
+				return; 
+			case ArduinoMLPackage.STRING_SIGNAL:
+				sequence_StringSignal(context, (StringSignal) semanticObject); 
 				return; 
 			case ArduinoMLPackage.TRANSITION:
 				sequence_Transition(context, (Transition) semanticObject); 
@@ -89,7 +119,7 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getActionAccess().getActuatorActuatorEStringParserRuleCall_0_0_1(), semanticObject.eGet(ArduinoMLPackage.Literals.ACTION__ACTUATOR, false));
-		feeder.accept(grammarAccess.getActionAccess().getValueSignalEnumRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getActionAccess().getValueSignalParserRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -137,11 +167,24 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         initial=[State|EString] 
 	 *         bricks+=Brick 
 	 *         bricks+=Brick* 
+	 *         bricks+=Brick2* 
 	 *         states+=State 
 	 *         states+=State*
 	 *     )
 	 */
 	protected void sequence_App(ISerializationContext context, App semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Brick2 returns LCDScreenActuator
+	 *
+	 * Constraint:
+	 *     (name=EString pins+=EInt pins+=EInt*)
+	 */
+	protected void sequence_Brick2_LCDScreenActuator(ISerializationContext context, LCDScreenActuator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -164,6 +207,82 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		feeder.accept(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_3_0(), semanticObject.getPin());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns Condition
+	 *
+	 * Constraint:
+	 *     (operator=Operator sensor=[Sensor|EString] signal=Signal)
+	 */
+	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.CONDITION__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.CONDITION__OPERATOR));
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.CONDITION__SENSOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.CONDITION__SENSOR));
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.CONDITION__SIGNAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.CONDITION__SIGNAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConditionAccess().getOperatorOperatorEnumRuleCall_0_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getConditionAccess().getSensorSensorEStringParserRuleCall_1_0_1(), semanticObject.eGet(ArduinoMLPackage.Literals.CONDITION__SENSOR, false));
+		feeder.accept(grammarAccess.getConditionAccess().getSignalSignalParserRuleCall_3_0(), semanticObject.getSignal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Signal returns DigitalSignal
+	 *     DigitalSignal returns DigitalSignal
+	 *
+	 * Constraint:
+	 *     value=DigitalSignalEnum
+	 */
+	protected void sequence_DigitalSignal(ISerializationContext context, DigitalSignal semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.DIGITAL_SIGNAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.DIGITAL_SIGNAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDigitalSignalAccess().getValueDigitalSignalEnumEnumRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     InitialCondition returns Condition
+	 *
+	 * Constraint:
+	 *     (sensor=[Sensor|EString] signal=Signal)
+	 */
+	protected void sequence_InitialCondition(ISerializationContext context, Condition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.CONDITION__SENSOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.CONDITION__SENSOR));
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.CONDITION__SIGNAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.CONDITION__SIGNAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getInitialConditionAccess().getSensorSensorEStringParserRuleCall_0_0_1(), semanticObject.eGet(ArduinoMLPackage.Literals.CONDITION__SENSOR, false));
+		feeder.accept(grammarAccess.getInitialConditionAccess().getSignalSignalParserRuleCall_2_0(), semanticObject.getSignal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     LCDScreenActuator returns LCDScreenActuator
+	 *
+	 * Constraint:
+	 *     {LCDScreenActuator}
+	 */
+	protected void sequence_LCDScreenActuator(ISerializationContext context, LCDScreenActuator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -193,25 +312,32 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     Signal returns StringSignal
+	 *     StringSignal returns StringSignal
+	 *
+	 * Constraint:
+	 *     value=EString
+	 */
+	protected void sequence_StringSignal(ISerializationContext context, StringSignal semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.STRING_SIGNAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.STRING_SIGNAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStringSignalAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Transition returns Transition
 	 *
 	 * Constraint:
-	 *     (sensor=[Sensor|EString] value=Signal next=[State|EString])
+	 *     (conditions+=InitialCondition conditions+=Condition* next=[State|EString])
 	 */
 	protected void sequence_Transition(ISerializationContext context, Transition semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.TRANSITION__SENSOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.TRANSITION__SENSOR));
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.TRANSITION__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.TRANSITION__VALUE));
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.TRANSITION__NEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.TRANSITION__NEXT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTransitionAccess().getSensorSensorEStringParserRuleCall_0_0_1(), semanticObject.eGet(ArduinoMLPackage.Literals.TRANSITION__SENSOR, false));
-		feeder.accept(grammarAccess.getTransitionAccess().getValueSignalEnumRuleCall_2_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getTransitionAccess().getNextStateEStringParserRuleCall_4_0_1(), semanticObject.eGet(ArduinoMLPackage.Literals.TRANSITION__NEXT, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

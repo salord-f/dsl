@@ -20,8 +20,8 @@ import arduinoML.homemade.ArduinoMLSwitchPrinter;
 public class Main {
 
 	public static void main(String[] args) {
-		String modelPath = "rsc/FirstExample.bsl";
-		String destinationPath= "rsc/FirstExample.xmi";
+		String modelPath = "rsc/ThirdExample.bsl";
+		String destinationPath= "rsc/ThirdExample.xmi";
 		String code ="";
 		try {
 			ArduinoML2xmi(modelPath, destinationPath);

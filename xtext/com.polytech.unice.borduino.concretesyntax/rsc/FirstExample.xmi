@@ -4,10 +4,14 @@
   <bricks xsi:type="arduinoML:Sensor" name="button" pin="8"/>
   <states name="off">
     <actions actuator="//@bricks.0" value="LOW"/>
-    <transition sensor="//@bricks.1" next="//@states.1"/>
+    <transition next="//@states.1">
+      <initialReaction sensor="//@bricks.1"/>
+    </transition>
   </states>
   <states name="on">
     <actions actuator="//@bricks.0"/>
-    <transition sensor="//@bricks.1" next="//@states.0"/>
+    <transition next="//@states.0">
+      <initialReaction sensor="//@bricks.1"/>
+    </transition>
   </states>
 </arduinoML:App>

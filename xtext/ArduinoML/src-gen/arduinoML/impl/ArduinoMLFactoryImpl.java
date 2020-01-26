@@ -69,6 +69,14 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 			return createAction();
 		case ArduinoMLPackage.TRANSITION:
 			return createTransition();
+		case ArduinoMLPackage.CONDITION:
+			return createCondition();
+		case ArduinoMLPackage.LCD_SCREEN_ACTUATOR:
+			return createLCDScreenActuator();
+		case ArduinoMLPackage.DIGITAL_SIGNAL:
+			return createDigitalSignal();
+		case ArduinoMLPackage.STRING_SIGNAL:
+			return createStringSignal();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -82,8 +90,10 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case ArduinoMLPackage.SIGNAL:
-			return createSignalFromString(eDataType, initialValue);
+		case ArduinoMLPackage.DIGITAL_SIGNAL_ENUM:
+			return createDigitalSignalEnumFromString(eDataType, initialValue);
+		case ArduinoMLPackage.OPERATOR:
+			return createOperatorFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -97,8 +107,10 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case ArduinoMLPackage.SIGNAL:
-			return convertSignalToString(eDataType, instanceValue);
+		case ArduinoMLPackage.DIGITAL_SIGNAL_ENUM:
+			return convertDigitalSignalEnumToString(eDataType, instanceValue);
+		case ArduinoMLPackage.OPERATOR:
+			return convertOperatorToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -169,8 +181,48 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Signal createSignalFromString(EDataType eDataType, String initialValue) {
-		Signal result = Signal.get(initialValue);
+	public Condition createCondition() {
+		ConditionImpl condition = new ConditionImpl();
+		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LCDScreenActuator createLCDScreenActuator() {
+		LCDScreenActuatorImpl lcdScreenActuator = new LCDScreenActuatorImpl();
+		return lcdScreenActuator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DigitalSignal createDigitalSignal() {
+		DigitalSignalImpl digitalSignal = new DigitalSignalImpl();
+		return digitalSignal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StringSignal createStringSignal() {
+		StringSignalImpl stringSignal = new StringSignalImpl();
+		return stringSignal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DigitalSignalEnum createDigitalSignalEnumFromString(EDataType eDataType, String initialValue) {
+		DigitalSignalEnum result = DigitalSignalEnum.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -182,7 +234,29 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertSignalToString(EDataType eDataType, Object instanceValue) {
+	public String convertDigitalSignalEnumToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Operator createOperatorFromString(EDataType eDataType, String initialValue) {
+		Operator result = Operator.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOperatorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

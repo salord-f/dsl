@@ -1,6 +1,8 @@
 package arduinoML.modelDTO;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import fr.unice.polytech.si5.dsl.App;
 import fr.unice.polytech.si5.dsl.behavior.*;
@@ -60,16 +62,42 @@ public class AppDTO {
 		//	addTransition(state.getTransition().getNext(),nextState);
 		//}
 		
-		Sensor transitionSensor = new Sensor();
-		transitionSensor.setName(state.getTransition().getSensor().getName());
-		transitionSensor.setPin(state.getTransition().getSensor().getPin());
+		addConditions(state, transition);
 		
-		transition.setValue(addSignal(state.getTransition().getValue()));
 		transition.setNext(nextState);
-		transition.setSensor(transitionSensor);
 		
 		kernelState.setTransition(transition);
 	}
+
+	private void addConditions(arduinoML.State state, Transition transition) {
+		
+		List<Condition> conditions = new ArrayList<>();
+		for(arduinoML.Condition condition : state.getTransition().getConditions()) {
+			
+			Sensor sensor = new Sensor();
+			sensor.setName(condition.getSensor().getName());
+			sensor.setPin(condition.getSensor().getPin());
+		
+			
+			OPERATOR operator = addOperator(condition.getOperator());
+			arduinoML.Signal signal = condition.getSignal();
+			
+			if(signal instanceof arduinoML.DigitalSignal) {
+				conditions.add(new Condition(sensor,  new DigitalSignal(addSignal((arduinoML.DigitalSignal)signal)) , operator));
+				
+			}else if (signal instanceof arduinoML.StringSignal) {
+				StringSignal stringSignal = new StringSignal();
+				stringSignal.setValue(((arduinoML.StringSignal) signal).getValue());
+				conditions.add(new Condition(sensor, stringSignal , operator));
+
+			} 
+			
+		}
+		
+		transition.setConditions(conditions);
+	}
+
+	
 
 	private void addActions(arduinoML.State state, State kernelState) {
 		List<Action> kernelActions = new ArrayList<>();
@@ -77,12 +105,32 @@ public class AppDTO {
 		for(arduinoML.Action action : state.getActions()) {
 			Action kernelAction = new Action();
 			
-			kernelAction.setValue(addSignal(action.getValue()));
+			arduinoML.Signal signal = action.getValue();
 			
-			Actuator actuator = new Actuator();
-			actuator.setName(action.getActuator().getName());
-			actuator.setPin(action.getActuator().getPin());
-			kernelAction.setActuator(actuator);
+			if( signal instanceof arduinoML.DigitalSignal) {
+				kernelAction.setValue(new DigitalSignal(addSignal((arduinoML.DigitalSignal)signal)));
+			}else if (signal instanceof arduinoML.StringSignal) {
+				StringSignal stringSignal = new StringSignal();
+				stringSignal.setValue(((arduinoML.StringSignal) signal).getValue());
+				kernelAction.setValue(stringSignal);
+			}
+			
+			
+			arduinoML.Actuator actuator = action.getActuator();
+			
+			if(actuator instanceof arduinoML.LCDScreenActuator) {
+				LCDScreenActuator screenActuator = new LCDScreenActuator();
+				screenActuator.setName(actuator.getName());
+				screenActuator.setPins(((arduinoML.LCDScreenActuator) actuator).getPins());
+				kernelAction.setActuator(screenActuator);
+				
+			}
+			else {
+				SimplePinActuator simplePinActuator = new SimplePinActuator();
+				simplePinActuator.setName(actuator.getName());
+				simplePinActuator.setPin(actuator.getPin());
+				kernelAction.setActuator(simplePinActuator);
+			}
 			
 			kernelActions.add(kernelAction);
 			
@@ -90,14 +138,27 @@ public class AppDTO {
 		kernelState.setActions(kernelActions);
 	}
 	
-	private SIGNAL addSignal(arduinoML.Signal signal) {
-		switch(signal) {
+	private DigitalSignalEnum addSignal(arduinoML.DigitalSignal signal) {
+		switch(signal.getValue()) {
 			case HIGH :
-				return(SIGNAL.HIGH);
+				return(DigitalSignalEnum.HIGH);
 			case LOW :
-				return(SIGNAL.LOW);
+				return(DigitalSignalEnum.LOW);
 			default : 
 				return null;
+		}
+	}
+	
+	private OPERATOR addOperator(arduinoML.Operator operator) {
+		switch(operator) {
+			case AND :
+				return(OPERATOR.AND);
+			case OR :
+				return(OPERATOR.OR);
+			case NONE :
+				return(OPERATOR.NONE);
+			default : 
+				return OPERATOR.NONE;
 		}
 	}
 
@@ -107,10 +168,20 @@ public class AppDTO {
 		for(arduinoML.Brick brick : app.getBricks()) {
 			
 			if(brick instanceof arduinoML.Actuator) {
-				Actuator actuator = new Actuator();
-				actuator.setName(brick.getName());
-				actuator.setPin(brick.getPin());
-				kernelBricks.add(actuator);
+				
+				if(brick instanceof arduinoML.LCDScreenActuator) {
+					LCDScreenActuator screenActuator = new LCDScreenActuator();
+					screenActuator.setName(brick.getName());
+					screenActuator.setPins(((arduinoML.LCDScreenActuator) brick).getPins());
+					kernelBricks.add(screenActuator);
+					
+				}else {
+					SimplePinActuator actuator = new SimplePinActuator();
+					actuator.setPin(brick.getPin());
+					actuator.setName(brick.getName());
+					kernelBricks.add(actuator);
+				}
+
 			}
 			
 			if(brick instanceof arduinoML.Sensor) {

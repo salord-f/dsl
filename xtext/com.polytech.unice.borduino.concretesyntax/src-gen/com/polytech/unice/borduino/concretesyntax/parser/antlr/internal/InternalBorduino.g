@@ -166,29 +166,29 @@ ruleApp returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_8='states'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getAppAccess().getStatesKeyword_8());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAppAccess().getStatesStateParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getAppAccess().getBricksBrick2ParserRuleCall_8_0());
 				}
-				lv_states_9_0=ruleState
+				lv_bricks_8_0=ruleBrick2
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAppRule());
 					}
 					add(
 						$current,
-						"states",
-						lv_states_9_0,
-						"com.polytech.unice.borduino.concretesyntax.Borduino.State");
+						"bricks",
+						lv_bricks_8_0,
+						"com.polytech.unice.borduino.concretesyntax.Borduino.Brick2");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)*
+		otherlv_9='states'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getAppAccess().getStatesKeyword_9());
+		}
 		(
 			(
 				{
@@ -207,10 +207,29 @@ ruleApp returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAppAccess().getStatesStateParserRuleCall_11_0());
+				}
+				lv_states_11_0=ruleState
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAppRule());
+					}
+					add(
+						$current,
+						"states",
+						lv_states_11_0,
+						"com.polytech.unice.borduino.concretesyntax.Borduino.State");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)*
-		otherlv_11='}'
+		otherlv_12='}'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getAppAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_12, grammarAccess.getAppAccess().getRightCurlyBracketKeyword_12());
 		}
 	)
 ;
@@ -295,6 +314,94 @@ ruleBrick returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleBrick2
+entryRuleBrick2 returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBrick2Rule()); }
+	iv_ruleBrick2=ruleBrick2
+	{ $current=$iv_ruleBrick2.current; }
+	EOF;
+
+// Rule Brick2
+ruleBrick2 returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getBrick2Access().getLCDScreenActuatorParserRuleCall_0());
+		}
+		this_LCDScreenActuator_0=ruleLCDScreenActuator
+		{
+			$current = $this_LCDScreenActuator_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBrick2Access().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBrick2Rule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"com.polytech.unice.borduino.concretesyntax.Borduino.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getBrick2Access().getColonKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBrick2Access().getPinsEIntParserRuleCall_3_0());
+				}
+				lv_pins_3_0=ruleEInt
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBrick2Rule());
+					}
+					add(
+						$current,
+						"pins",
+						lv_pins_3_0,
+						"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBrick2Access().getPinsEIntParserRuleCall_4_0());
+				}
+				lv_pins_4_0=ruleEInt
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBrick2Rule());
+					}
+					add(
+						$current,
+						"pins",
+						lv_pins_4_0,
+						"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+	)
+;
+
 // Entry rule entryRuleActuator
 entryRuleActuator returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getActuatorRule()); }
@@ -321,6 +428,36 @@ ruleActuator returns [EObject current=null]
 		otherlv_1='actuator'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getActuatorAccess().getActuatorKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRuleLCDScreenActuator
+entryRuleLCDScreenActuator returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLCDScreenActuatorRule()); }
+	iv_ruleLCDScreenActuator=ruleLCDScreenActuator
+	{ $current=$iv_ruleLCDScreenActuator.current; }
+	EOF;
+
+// Rule LCDScreenActuator
+ruleLCDScreenActuator returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getLCDScreenActuatorAccess().getLCDScreenActuatorAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='screenActuator'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getLCDScreenActuatorAccess().getScreenActuatorKeyword_1());
 		}
 	)
 ;
@@ -564,7 +701,7 @@ ruleAction returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getActionAccess().getValueSignalEnumRuleCall_2_0());
+					newCompositeNode(grammarAccess.getActionAccess().getValueSignalParserRuleCall_2_0());
 				}
 				lv_value_2_0=ruleSignal
 				{
@@ -602,45 +739,44 @@ ruleTransition returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTransitionRule());
-					}
+					newCompositeNode(grammarAccess.getTransitionAccess().getConditionsInitialConditionParserRuleCall_0_0());
 				}
-				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getSensorSensorCrossReference_0_0());
-				}
-				ruleEString
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_1='is'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getTransitionAccess().getIsKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getValueSignalEnumRuleCall_2_0());
-				}
-				lv_value_2_0=ruleSignal
+				lv_conditions_0_0=ruleInitialCondition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTransitionRule());
 					}
-					set(
+					add(
 						$current,
-						"value",
-						lv_value_2_0,
-						"com.polytech.unice.borduino.concretesyntax.Borduino.Signal");
+						"conditions",
+						lv_conditions_0_0,
+						"com.polytech.unice.borduino.concretesyntax.Borduino.InitialCondition");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_3=':'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_1_0());
+				}
+				lv_conditions_1_0=ruleCondition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTransitionRule());
+					}
+					add(
+						$current,
+						"conditions",
+						lv_conditions_1_0,
+						"com.polytech.unice.borduino.concretesyntax.Borduino.Condition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_2=':'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getTransitionAccess().getColonKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getColonKeyword_2());
 		}
 		(
 			(
@@ -650,7 +786,7 @@ ruleTransition returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getNextStateCrossReference_4_0());
+					newCompositeNode(grammarAccess.getTransitionAccess().getNextStateCrossReference_3_0());
 				}
 				ruleEString
 				{
@@ -661,8 +797,278 @@ ruleTransition returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleCondition
+entryRuleCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConditionRule()); }
+	iv_ruleCondition=ruleCondition
+	{ $current=$iv_ruleCondition.current; }
+	EOF;
+
+// Rule Condition
+ruleCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConditionAccess().getOperatorOperatorEnumRuleCall_0_0());
+				}
+				lv_operator_0_0=ruleOperator
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionRule());
+					}
+					set(
+						$current,
+						"operator",
+						lv_operator_0_0,
+						"com.polytech.unice.borduino.concretesyntax.Borduino.Operator");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getConditionRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getConditionAccess().getSensorSensorCrossReference_1_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='is'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getConditionAccess().getIsKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConditionAccess().getSignalSignalParserRuleCall_3_0());
+				}
+				lv_signal_3_0=ruleSignal
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionRule());
+					}
+					set(
+						$current,
+						"signal",
+						lv_signal_3_0,
+						"com.polytech.unice.borduino.concretesyntax.Borduino.Signal");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleInitialCondition
+entryRuleInitialCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getInitialConditionRule()); }
+	iv_ruleInitialCondition=ruleInitialCondition
+	{ $current=$iv_ruleInitialCondition.current; }
+	EOF;
+
+// Rule InitialCondition
+ruleInitialCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getInitialConditionRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getInitialConditionAccess().getSensorSensorCrossReference_0_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_1='is'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getInitialConditionAccess().getIsKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getInitialConditionAccess().getSignalSignalParserRuleCall_2_0());
+				}
+				lv_signal_2_0=ruleSignal
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getInitialConditionRule());
+					}
+					set(
+						$current,
+						"signal",
+						lv_signal_2_0,
+						"com.polytech.unice.borduino.concretesyntax.Borduino.Signal");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSignal
+entryRuleSignal returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSignalRule()); }
+	iv_ruleSignal=ruleSignal
+	{ $current=$iv_ruleSignal.current; }
+	EOF;
+
 // Rule Signal
-ruleSignal returns [Enumerator current=null]
+ruleSignal returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getSignalAccess().getDigitalSignalParserRuleCall_0());
+		}
+		this_DigitalSignal_0=ruleDigitalSignal
+		{
+			$current = $this_DigitalSignal_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSignalAccess().getStringSignalParserRuleCall_1());
+		}
+		this_StringSignal_1=ruleStringSignal
+		{
+			$current = $this_StringSignal_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleDigitalSignal
+entryRuleDigitalSignal returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDigitalSignalRule()); }
+	iv_ruleDigitalSignal=ruleDigitalSignal
+	{ $current=$iv_ruleDigitalSignal.current; }
+	EOF;
+
+// Rule DigitalSignal
+ruleDigitalSignal returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getDigitalSignalAccess().getValueDigitalSignalEnumEnumRuleCall_0());
+			}
+			lv_value_0_0=ruleDigitalSignalEnum
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getDigitalSignalRule());
+				}
+				set(
+					$current,
+					"value",
+					lv_value_0_0,
+					"com.polytech.unice.borduino.concretesyntax.Borduino.DigitalSignalEnum");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleStringSignal
+entryRuleStringSignal returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStringSignalRule()); }
+	iv_ruleStringSignal=ruleStringSignal
+	{ $current=$iv_ruleStringSignal.current; }
+	EOF;
+
+// Rule StringSignal
+ruleStringSignal returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getStringSignalAccess().getValueEStringParserRuleCall_0());
+			}
+			lv_value_0_0=ruleEString
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getStringSignalRule());
+				}
+				set(
+					$current,
+					"value",
+					lv_value_0_0,
+					"com.polytech.unice.borduino.concretesyntax.Borduino.EString");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Rule Operator
+ruleOperator returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='and'
+			{
+				$current = grammarAccess.getOperatorAccess().getANDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getOperatorAccess().getANDEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='or'
+			{
+				$current = grammarAccess.getOperatorAccess().getOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getOREnumLiteralDeclaration_1());
+			}
+		)
+	)
+;
+
+// Rule DigitalSignalEnum
+ruleDigitalSignalEnum returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -673,16 +1079,16 @@ ruleSignal returns [Enumerator current=null]
 		(
 			enumLiteral_0='HIGH'
 			{
-				$current = grammarAccess.getSignalAccess().getHIGHEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getSignalAccess().getHIGHEnumLiteralDeclaration_0());
+				$current = grammarAccess.getDigitalSignalEnumAccess().getHIGHEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getDigitalSignalEnumAccess().getHIGHEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='LOW'
 			{
-				$current = grammarAccess.getSignalAccess().getLOWEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getSignalAccess().getLOWEnumLiteralDeclaration_1());
+				$current = grammarAccess.getDigitalSignalEnumAccess().getLOWEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getDigitalSignalEnumAccess().getLOWEnumLiteralDeclaration_1());
 			}
 		)
 	)

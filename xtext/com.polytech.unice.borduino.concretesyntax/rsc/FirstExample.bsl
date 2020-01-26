@@ -1,4 +1,5 @@
 app RedButton initial state off {
+
 	bricks
 		actuator red_led : 12
 		sensor button : 8

@@ -27,10 +27,13 @@ public class InternalBorduinoLexer extends Lexer {
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
     public static final int RULE_INT=6;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -52,10 +55,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:11:7: ( 'HIGH' )
-            // InternalBorduino.g:11:9: 'HIGH'
+            // InternalBorduino.g:11:7: ( 'and' )
+            // InternalBorduino.g:11:9: 'and'
             {
-            match("HIGH"); 
+            match("and"); 
 
 
             }
@@ -73,10 +76,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:12:7: ( 'LOW' )
-            // InternalBorduino.g:12:9: 'LOW'
+            // InternalBorduino.g:12:7: ( 'or' )
+            // InternalBorduino.g:12:9: 'or'
             {
-            match("LOW"); 
+            match("or"); 
 
 
             }
@@ -94,10 +97,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:13:7: ( 'app' )
-            // InternalBorduino.g:13:9: 'app'
+            // InternalBorduino.g:13:7: ( 'HIGH' )
+            // InternalBorduino.g:13:9: 'HIGH'
             {
-            match("app"); 
+            match("HIGH"); 
 
 
             }
@@ -115,10 +118,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:14:7: ( 'initial state' )
-            // InternalBorduino.g:14:9: 'initial state'
+            // InternalBorduino.g:14:7: ( 'LOW' )
+            // InternalBorduino.g:14:9: 'LOW'
             {
-            match("initial state"); 
+            match("LOW"); 
 
 
             }
@@ -136,10 +139,11 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:15:7: ( '{' )
-            // InternalBorduino.g:15:9: '{'
+            // InternalBorduino.g:15:7: ( 'app' )
+            // InternalBorduino.g:15:9: 'app'
             {
-            match('{'); 
+            match("app"); 
+
 
             }
 
@@ -156,10 +160,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:16:7: ( 'bricks' )
-            // InternalBorduino.g:16:9: 'bricks'
+            // InternalBorduino.g:16:7: ( 'initial state' )
+            // InternalBorduino.g:16:9: 'initial state'
             {
-            match("bricks"); 
+            match("initial state"); 
 
 
             }
@@ -177,11 +181,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:17:7: ( 'states' )
-            // InternalBorduino.g:17:9: 'states'
+            // InternalBorduino.g:17:7: ( '{' )
+            // InternalBorduino.g:17:9: '{'
             {
-            match("states"); 
-
+            match('{'); 
 
             }
 
@@ -198,10 +201,11 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:18:7: ( '}' )
-            // InternalBorduino.g:18:9: '}'
+            // InternalBorduino.g:18:7: ( 'bricks' )
+            // InternalBorduino.g:18:9: 'bricks'
             {
-            match('}'); 
+            match("bricks"); 
+
 
             }
 
@@ -218,10 +222,11 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:19:7: ( ':' )
-            // InternalBorduino.g:19:9: ':'
+            // InternalBorduino.g:19:7: ( 'states' )
+            // InternalBorduino.g:19:9: 'states'
             {
-            match(':'); 
+            match("states"); 
+
 
             }
 
@@ -238,11 +243,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:20:7: ( 'actuator' )
-            // InternalBorduino.g:20:9: 'actuator'
+            // InternalBorduino.g:20:7: ( '}' )
+            // InternalBorduino.g:20:9: '}'
             {
-            match("actuator"); 
-
+            match('}'); 
 
             }
 
@@ -259,11 +263,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:21:7: ( 'sensor' )
-            // InternalBorduino.g:21:9: 'sensor'
+            // InternalBorduino.g:21:7: ( ':' )
+            // InternalBorduino.g:21:9: ':'
             {
-            match("sensor"); 
-
+            match(':'); 
 
             }
 
@@ -280,10 +283,11 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:22:7: ( '-' )
-            // InternalBorduino.g:22:9: '-'
+            // InternalBorduino.g:22:7: ( 'actuator' )
+            // InternalBorduino.g:22:9: 'actuator'
             {
-            match('-'); 
+            match("actuator"); 
+
 
             }
 
@@ -300,10 +304,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:23:7: ( 'is' )
-            // InternalBorduino.g:23:9: 'is'
+            // InternalBorduino.g:23:7: ( 'screenActuator' )
+            // InternalBorduino.g:23:9: 'screenActuator'
             {
-            match("is"); 
+            match("screenActuator"); 
 
 
             }
@@ -316,15 +320,77 @@ public class InternalBorduinoLexer extends Lexer {
     }
     // $ANTLR end "T__23"
 
+    // $ANTLR start "T__24"
+    public final void mT__24() throws RecognitionException {
+        try {
+            int _type = T__24;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalBorduino.g:24:7: ( 'sensor' )
+            // InternalBorduino.g:24:9: 'sensor'
+            {
+            match("sensor"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__24"
+
+    // $ANTLR start "T__25"
+    public final void mT__25() throws RecognitionException {
+        try {
+            int _type = T__25;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalBorduino.g:25:7: ( '-' )
+            // InternalBorduino.g:25:9: '-'
+            {
+            match('-'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__25"
+
+    // $ANTLR start "T__26"
+    public final void mT__26() throws RecognitionException {
+        try {
+            int _type = T__26;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalBorduino.g:26:7: ( 'is' )
+            // InternalBorduino.g:26:9: 'is'
+            {
+            match("is"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__26"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1599:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalBorduino.g:1599:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalBorduino.g:2379:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalBorduino.g:2379:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalBorduino.g:1599:11: ( '^' )?
+            // InternalBorduino.g:2379:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -333,7 +399,7 @@ public class InternalBorduinoLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalBorduino.g:1599:11: '^'
+                    // InternalBorduino.g:2379:11: '^'
                     {
                     match('^'); 
 
@@ -351,7 +417,7 @@ public class InternalBorduinoLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalBorduino.g:1599:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalBorduino.g:2379:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -400,10 +466,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1601:10: ( ( '0' .. '9' )+ )
-            // InternalBorduino.g:1601:12: ( '0' .. '9' )+
+            // InternalBorduino.g:2381:10: ( ( '0' .. '9' )+ )
+            // InternalBorduino.g:2381:12: ( '0' .. '9' )+
             {
-            // InternalBorduino.g:1601:12: ( '0' .. '9' )+
+            // InternalBorduino.g:2381:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -417,7 +483,7 @@ public class InternalBorduinoLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalBorduino.g:1601:13: '0' .. '9'
+            	    // InternalBorduino.g:2381:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -449,10 +515,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1603:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalBorduino.g:1603:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalBorduino.g:2383:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalBorduino.g:2383:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalBorduino.g:1603:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalBorduino.g:2383:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -470,10 +536,10 @@ public class InternalBorduinoLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalBorduino.g:1603:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalBorduino.g:2383:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalBorduino.g:1603:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalBorduino.g:2383:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -489,7 +555,7 @@ public class InternalBorduinoLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalBorduino.g:1603:21: '\\\\' .
+                    	    // InternalBorduino.g:2383:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -497,7 +563,7 @@ public class InternalBorduinoLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalBorduino.g:1603:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalBorduino.g:2383:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -522,10 +588,10 @@ public class InternalBorduinoLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalBorduino.g:1603:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalBorduino.g:2383:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalBorduino.g:1603:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalBorduino.g:2383:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -541,7 +607,7 @@ public class InternalBorduinoLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalBorduino.g:1603:54: '\\\\' .
+                    	    // InternalBorduino.g:2383:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -549,7 +615,7 @@ public class InternalBorduinoLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalBorduino.g:1603:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalBorduino.g:2383:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -592,12 +658,12 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1605:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalBorduino.g:1605:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalBorduino.g:2385:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalBorduino.g:2385:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalBorduino.g:1605:24: ( options {greedy=false; } : . )*
+            // InternalBorduino.g:2385:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -622,7 +688,7 @@ public class InternalBorduinoLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalBorduino.g:1605:52: .
+            	    // InternalBorduino.g:2385:52: .
             	    {
             	    matchAny(); 
 
@@ -652,12 +718,12 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1607:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalBorduino.g:1607:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalBorduino.g:2387:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalBorduino.g:2387:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalBorduino.g:1607:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalBorduino.g:2387:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -670,7 +736,7 @@ public class InternalBorduinoLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalBorduino.g:1607:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalBorduino.g:2387:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -690,7 +756,7 @@ public class InternalBorduinoLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalBorduino.g:1607:40: ( ( '\\r' )? '\\n' )?
+            // InternalBorduino.g:2387:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -699,9 +765,9 @@ public class InternalBorduinoLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalBorduino.g:1607:41: ( '\\r' )? '\\n'
+                    // InternalBorduino.g:2387:41: ( '\\r' )? '\\n'
                     {
-                    // InternalBorduino.g:1607:41: ( '\\r' )?
+                    // InternalBorduino.g:2387:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -710,7 +776,7 @@ public class InternalBorduinoLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalBorduino.g:1607:41: '\\r'
+                            // InternalBorduino.g:2387:41: '\\r'
                             {
                             match('\r'); 
 
@@ -742,10 +808,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1609:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalBorduino.g:1609:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalBorduino.g:2389:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalBorduino.g:2389:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalBorduino.g:1609:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalBorduino.g:2389:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -799,8 +865,8 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1611:16: ( . )
-            // InternalBorduino.g:1611:18: .
+            // InternalBorduino.g:2391:16: ( . )
+            // InternalBorduino.g:2391:18: .
             {
             matchAny(); 
 
@@ -815,8 +881,8 @@ public class InternalBorduinoLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalBorduino.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=20;
+        // InternalBorduino.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=23;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -911,49 +977,70 @@ public class InternalBorduinoLexer extends Lexer {
                 }
                 break;
             case 14 :
-                // InternalBorduino.g:1:88: RULE_ID
+                // InternalBorduino.g:1:88: T__24
+                {
+                mT__24(); 
+
+                }
+                break;
+            case 15 :
+                // InternalBorduino.g:1:94: T__25
+                {
+                mT__25(); 
+
+                }
+                break;
+            case 16 :
+                // InternalBorduino.g:1:100: T__26
+                {
+                mT__26(); 
+
+                }
+                break;
+            case 17 :
+                // InternalBorduino.g:1:106: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 15 :
-                // InternalBorduino.g:1:96: RULE_INT
+            case 18 :
+                // InternalBorduino.g:1:114: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 16 :
-                // InternalBorduino.g:1:105: RULE_STRING
+            case 19 :
+                // InternalBorduino.g:1:123: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 17 :
-                // InternalBorduino.g:1:117: RULE_ML_COMMENT
+            case 20 :
+                // InternalBorduino.g:1:135: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 18 :
-                // InternalBorduino.g:1:133: RULE_SL_COMMENT
+            case 21 :
+                // InternalBorduino.g:1:151: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 19 :
-                // InternalBorduino.g:1:149: RULE_WS
+            case 22 :
+                // InternalBorduino.g:1:167: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 20 :
-                // InternalBorduino.g:1:157: RULE_ANY_OTHER
+            case 23 :
+                // InternalBorduino.g:1:175: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -967,91 +1054,111 @@ public class InternalBorduinoLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\4\24\1\uffff\2\24\3\uffff\1\22\2\uffff\3\22\2\uffff\1\24\1\uffff\4\24\1\53\1\uffff\3\24\10\uffff\1\24\1\60\1\61\2\24\1\uffff\3\24\1\67\2\uffff\5\24\1\uffff\7\24\1\104\1\105\1\106\2\24\3\uffff\1\111\2\uffff";
+        "\1\uffff\5\27\1\uffff\2\27\3\uffff\1\23\2\uffff\3\23\2\uffff\3\27\1\uffff\1\55\3\27\1\61\1\uffff\4\27\10\uffff\1\66\1\67\1\27\1\uffff\1\27\1\72\1\27\1\uffff\4\27\2\uffff\1\27\1\101\1\uffff\6\27\1\uffff\7\27\1\117\1\120\1\27\1\122\2\27\2\uffff\1\27\1\uffff\1\126\1\uffff\1\27\1\uffff\5\27\1\135\1\uffff";
     static final String DFA12_eofS =
-        "\112\uffff";
+        "\136\uffff";
     static final String DFA12_minS =
-        "\1\0\1\111\1\117\1\143\1\156\1\uffff\1\162\1\145\3\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\107\1\uffff\1\127\1\160\1\164\1\151\1\60\1\uffff\1\151\1\141\1\156\10\uffff\1\110\2\60\1\165\1\164\1\uffff\1\143\1\164\1\163\1\60\2\uffff\1\141\1\151\1\153\1\145\1\157\1\uffff\1\164\1\141\2\163\1\162\1\157\1\154\3\60\1\162\1\40\3\uffff\1\60\2\uffff";
+        "\1\0\1\143\1\162\1\111\1\117\1\156\1\uffff\1\162\1\143\3\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\144\1\160\1\164\1\uffff\1\60\1\107\1\127\1\151\1\60\1\uffff\1\151\1\141\1\162\1\156\10\uffff\2\60\1\165\1\uffff\1\110\1\60\1\164\1\uffff\1\143\1\164\1\145\1\163\2\uffff\1\141\1\60\1\uffff\1\151\1\153\2\145\1\157\1\164\1\uffff\1\141\2\163\1\156\1\162\1\157\1\154\2\60\1\101\1\60\1\162\1\40\2\uffff\1\143\1\uffff\1\60\1\uffff\1\164\1\uffff\1\165\1\141\1\164\1\157\1\162\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\111\1\117\1\160\1\163\1\uffff\1\162\1\164\3\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\107\1\uffff\1\127\1\160\1\164\1\151\1\172\1\uffff\1\151\1\141\1\156\10\uffff\1\110\2\172\1\165\1\164\1\uffff\1\143\1\164\1\163\1\172\2\uffff\1\141\1\151\1\153\1\145\1\157\1\uffff\1\164\1\141\2\163\1\162\1\157\1\154\3\172\1\162\1\40\3\uffff\1\172\2\uffff";
+        "\1\uffff\1\160\1\162\1\111\1\117\1\163\1\uffff\1\162\1\164\3\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\144\1\160\1\164\1\uffff\1\172\1\107\1\127\1\151\1\172\1\uffff\1\151\1\141\1\162\1\156\10\uffff\2\172\1\165\1\uffff\1\110\1\172\1\164\1\uffff\1\143\1\164\1\145\1\163\2\uffff\1\141\1\172\1\uffff\1\151\1\153\2\145\1\157\1\164\1\uffff\1\141\2\163\1\156\1\162\1\157\1\154\2\172\1\101\1\172\1\162\1\40\2\uffff\1\143\1\uffff\1\172\1\uffff\1\164\1\uffff\1\165\1\141\1\164\1\157\1\162\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\5\uffff\1\5\2\uffff\1\10\1\11\1\14\1\uffff\1\16\1\17\3\uffff\1\23\1\24\1\uffff\1\16\5\uffff\1\5\3\uffff\1\10\1\11\1\14\1\17\1\20\1\21\1\22\1\23\5\uffff\1\15\4\uffff\1\2\1\3\5\uffff\1\1\14\uffff\1\6\1\7\1\13\1\uffff\1\4\1\12";
+        "\6\uffff\1\7\2\uffff\1\12\1\13\1\17\1\uffff\1\21\1\22\3\uffff\1\26\1\27\3\uffff\1\21\5\uffff\1\7\4\uffff\1\12\1\13\1\17\1\22\1\23\1\24\1\25\1\26\3\uffff\1\2\3\uffff\1\20\4\uffff\1\1\1\5\2\uffff\1\4\6\uffff\1\3\15\uffff\1\10\1\11\1\uffff\1\16\1\uffff\1\6\1\uffff\1\14\6\uffff\1\15";
     static final String DFA12_specialS =
-        "\1\1\15\uffff\1\0\1\2\72\uffff}>";
+        "\1\2\16\uffff\1\0\1\1\115\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\22\2\21\2\22\1\21\22\22\1\21\1\22\1\16\4\22\1\17\5\22\1\12\1\22\1\20\12\15\1\11\6\22\7\14\1\1\3\14\1\2\16\14\3\22\1\13\1\14\1\22\1\3\1\6\6\14\1\4\11\14\1\7\7\14\1\5\1\22\1\10\uff82\22",
-            "\1\23",
-            "\1\25",
-            "\1\27\14\uffff\1\26",
-            "\1\30\4\uffff\1\31",
+            "\11\23\2\22\2\23\1\22\22\23\1\22\1\23\1\17\4\23\1\20\5\23\1\13\1\23\1\21\12\16\1\12\6\23\7\15\1\3\3\15\1\4\16\15\3\23\1\14\1\15\1\23\1\1\1\7\6\15\1\5\5\15\1\2\3\15\1\10\7\15\1\6\1\23\1\11\uff82\23",
+            "\1\26\12\uffff\1\24\1\uffff\1\25",
+            "\1\30",
+            "\1\31",
+            "\1\32",
+            "\1\33\4\uffff\1\34",
             "",
-            "\1\33",
-            "\1\35\16\uffff\1\34",
-            "",
-            "",
-            "",
-            "\32\24\4\uffff\1\24\1\uffff\32\24",
+            "\1\36",
+            "\1\40\1\uffff\1\41\16\uffff\1\37",
             "",
             "",
-            "\0\42",
-            "\0\42",
-            "\1\43\4\uffff\1\44",
+            "",
+            "\32\27\4\uffff\1\27\1\uffff\32\27",
             "",
             "",
-            "\1\46",
+            "\0\46",
+            "\0\46",
+            "\1\47\4\uffff\1\50",
             "",
-            "\1\47",
-            "\1\50",
-            "\1\51",
+            "",
             "\1\52",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "",
+            "\1\53",
             "\1\54",
-            "\1\55",
+            "",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
             "\1\56",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\57",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+            "\1\60",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "",
             "\1\62",
             "\1\63",
-            "",
             "\1\64",
             "\1\65",
-            "\1\66",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
             "",
             "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
             "\1\70",
-            "\1\71",
-            "\1\72",
-            "\1\73",
-            "\1\74",
             "",
+            "\1\71",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "\1\73",
+            "",
+            "\1\74",
             "\1\75",
             "\1\76",
             "\1\77",
+            "",
+            "",
             "\1\100",
-            "\1\101",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "",
             "\1\102",
             "\1\103",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+            "\1\104",
+            "\1\105",
+            "\1\106",
             "\1\107",
+            "",
             "\1\110",
+            "\1\111",
+            "\1\112",
+            "\1\113",
+            "\1\114",
+            "\1\115",
+            "\1\116",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "\1\121",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "\1\123",
+            "\1\124",
             "",
             "",
+            "\1\125",
             "",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
             "",
+            "\1\127",
+            "",
+            "\1\130",
+            "\1\131",
+            "\1\132",
+            "\1\133",
+            "\1\134",
+            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
             ""
     };
 
@@ -1085,71 +1192,73 @@ public class InternalBorduinoLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_14 = input.LA(1);
+                        int LA12_15 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_14>='\u0000' && LA12_14<='\uFFFF')) ) {s = 34;}
+                        if ( ((LA12_15>='\u0000' && LA12_15<='\uFFFF')) ) {s = 38;}
 
-                        else s = 18;
+                        else s = 19;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_0 = input.LA(1);
+                        int LA12_16 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='H') ) {s = 1;}
+                        if ( ((LA12_16>='\u0000' && LA12_16<='\uFFFF')) ) {s = 38;}
 
-                        else if ( (LA12_0=='L') ) {s = 2;}
-
-                        else if ( (LA12_0=='a') ) {s = 3;}
-
-                        else if ( (LA12_0=='i') ) {s = 4;}
-
-                        else if ( (LA12_0=='{') ) {s = 5;}
-
-                        else if ( (LA12_0=='b') ) {s = 6;}
-
-                        else if ( (LA12_0=='s') ) {s = 7;}
-
-                        else if ( (LA12_0=='}') ) {s = 8;}
-
-                        else if ( (LA12_0==':') ) {s = 9;}
-
-                        else if ( (LA12_0=='-') ) {s = 10;}
-
-                        else if ( (LA12_0=='^') ) {s = 11;}
-
-                        else if ( ((LA12_0>='A' && LA12_0<='G')||(LA12_0>='I' && LA12_0<='K')||(LA12_0>='M' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='c' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='r')||(LA12_0>='t' && LA12_0<='z')) ) {s = 12;}
-
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 13;}
-
-                        else if ( (LA12_0=='\"') ) {s = 14;}
-
-                        else if ( (LA12_0=='\'') ) {s = 15;}
-
-                        else if ( (LA12_0=='/') ) {s = 16;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 17;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<=',')||LA12_0=='.'||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 18;}
+                        else s = 19;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_15 = input.LA(1);
+                        int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_15>='\u0000' && LA12_15<='\uFFFF')) ) {s = 34;}
+                        if ( (LA12_0=='a') ) {s = 1;}
 
-                        else s = 18;
+                        else if ( (LA12_0=='o') ) {s = 2;}
+
+                        else if ( (LA12_0=='H') ) {s = 3;}
+
+                        else if ( (LA12_0=='L') ) {s = 4;}
+
+                        else if ( (LA12_0=='i') ) {s = 5;}
+
+                        else if ( (LA12_0=='{') ) {s = 6;}
+
+                        else if ( (LA12_0=='b') ) {s = 7;}
+
+                        else if ( (LA12_0=='s') ) {s = 8;}
+
+                        else if ( (LA12_0=='}') ) {s = 9;}
+
+                        else if ( (LA12_0==':') ) {s = 10;}
+
+                        else if ( (LA12_0=='-') ) {s = 11;}
+
+                        else if ( (LA12_0=='^') ) {s = 12;}
+
+                        else if ( ((LA12_0>='A' && LA12_0<='G')||(LA12_0>='I' && LA12_0<='K')||(LA12_0>='M' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='c' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='n')||(LA12_0>='p' && LA12_0<='r')||(LA12_0>='t' && LA12_0<='z')) ) {s = 13;}
+
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 14;}
+
+                        else if ( (LA12_0=='\"') ) {s = 15;}
+
+                        else if ( (LA12_0=='\'') ) {s = 16;}
+
+                        else if ( (LA12_0=='/') ) {s = 17;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 18;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<=',')||LA12_0=='.'||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 19;}
 
                         if ( s>=0 ) return s;
                         break;

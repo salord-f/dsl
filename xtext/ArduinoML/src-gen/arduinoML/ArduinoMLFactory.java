@@ -76,6 +76,42 @@ public interface ArduinoMLFactory extends EFactory {
 	Transition createTransition();
 
 	/**
+	 * Returns a new object of class '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Condition</em>'.
+	 * @generated
+	 */
+	Condition createCondition();
+
+	/**
+	 * Returns a new object of class '<em>LCD Screen Actuator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>LCD Screen Actuator</em>'.
+	 * @generated
+	 */
+	LCDScreenActuator createLCDScreenActuator();
+
+	/**
+	 * Returns a new object of class '<em>Digital Signal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Digital Signal</em>'.
+	 * @generated
+	 */
+	DigitalSignal createDigitalSignal();
+
+	/**
+	 * Returns a new object of class '<em>String Signal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Signal</em>'.
+	 * @generated
+	 */
+	StringSignal createStringSignal();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
