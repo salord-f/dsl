@@ -3,4 +3,4 @@ java -jar target/borduino-1.0-jar-with-dependencies.jar src/test/resources/DualA
 java -jar target/borduino-1.0-jar-with-dependencies.jar src/test/resources/MultiStateAlarm.bsl > output/multi-state-alarm.ino
 java -jar target/borduino-1.0-jar-with-dependencies.jar src/test/resources/StateBasedAlarm.bsl > output/state-based-alarm.ino
 java -jar target/borduino-1.0-jar-with-dependencies.jar src/test/resources/ButtonControlScreen.bsl > output/button-control-screen.ino
-$SHELL
+java -jar target/borduino-1.0-jar-with-dependencies.jar src/test/resources/KeyboardAlarm.bsl > output/keyboard-alarm.ino

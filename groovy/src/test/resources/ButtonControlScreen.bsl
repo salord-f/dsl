@@ -4,14 +4,15 @@ app "RedButton", {
         actuator "buzzer", 9
         actuator "screen", 2, 3, 4, 5, 6, 7, 8
         sensor "button", 12
-        sensor "keyboard"
     states
         state "off", {
-            action "screen", "yo"
-            transition "button", "HIGH", "AND", "keyboard", "BONJOUR", "on"
+            action "red_led", "LOW"
+            action "screen", "I A OFF"
+            transition "button", "HIGH", "on"
         }
         state "on", {
-            action "screen", "HIGH"
+            action "red_led", "HIGH"
+            action "screen", "I AM HIGH"
             transition "button", "LOW", "off"
         }
     initial "off"
