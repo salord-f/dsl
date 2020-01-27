@@ -100,9 +100,6 @@ public class Generator extends Visitor<StringBuilder> {
     public void visit(Transition transition) {
         StringBuilder conditions = new StringBuilder();
         //Sensor sensor = condition.getSensor();
-
-        transition.getSensorType();
-
         for (Condition condition : transition.getConditions()) {
             Sensor sensor = condition.getSensor();
             if (condition.getSignal() instanceof DigitalSignal){

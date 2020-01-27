@@ -16,7 +16,6 @@ import java.util.List;
 @Accessors(chain = true)
 public class Transition implements Visitable {
 
-    private boolean sensorType;
     private State next;
     private List<Condition> conditions = new ArrayList<>();
 
@@ -32,11 +31,7 @@ public class Transition implements Visitable {
     }
 
     public Transition addCondition(Sensor sensor, Signal signal) {
-        sensorType = sensor instanceof SimplePinSensor;
         return addCondition(sensor, signal, OPERATOR.NONE);
     }
 
-    public boolean getSensorType(){
-        return sensorType;
-    }
 }
