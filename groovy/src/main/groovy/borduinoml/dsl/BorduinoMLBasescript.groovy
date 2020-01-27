@@ -50,6 +50,12 @@ abstract class BorduinoMLBasescript extends Script {
         // onPin: { n -> ((BorduinoMLBinding) this.getBinding()).getModel().createSensor(name, n) }]
     }
 
+    def sensor(String name, Integer... pins) {
+        if (this.defining == DEFINING.BRICKS) {
+            assert pins.length == 0
+            ((BorduinoMLBinding) this.getBinding()).getModel().createSensor(name)
+        }
+    }
 
     // states
     def states() {
@@ -103,13 +109,29 @@ abstract class BorduinoMLBasescript extends Script {
         if (this.defining != DEFINING.STATES) {
             return;
         }
-        Transition transition = new Transition()
-                .setNext(new State().setName(conditions[conditions.length - 1]))
-                .addCondition((Sensor) binding.getVariable(conditions[0]), new DigitalSignal(DigitalSignalEnum.valueOf(conditions[1])))
-        //-- todo a modif
+        Transition transition = null;
+        try{
+            DigitalSignal digitalSignal = new DigitalSignal(DigitalSignalEnum.valueOf(conditions[1]))
+            transition = new Transition()
+                    .setNext(new State().setName(conditions[conditions.length - 1]))
+                    .addCondition((Sensor) binding.getVariable(conditions[0]), digitalSignal)
+        }
+        catch (IllegalArgumentException e){
+            StringSignal stringSignal = new StringSignal().setValue(conditions[1])
+            transition = new Transition()
+                    .setNext(new State().setName(conditions[conditions.length - 1]))
+                    .addCondition((Sensor) binding.getVariable(conditions[0]), stringSignal)
+        }
+
         for (int i = 2; i < conditions.length - 2; i += 2) {
-            transition.addCondition((Sensor) binding.getVariable(conditions[i + 1]), new DigitalSignal(DigitalSignalEnum.valueOf(conditions[i + 2])), OPERATOR.valueOf(conditions[i]))
-            // -- todo a modif
+            try{
+                DigitalSignal digitalSignal = new DigitalSignal(DigitalSignalEnum.valueOf(conditions[i + 2]))
+                transition.addCondition((Sensor) binding.getVariable(conditions[i + 1]), digitalSignal, OPERATOR.valueOf(conditions[i]))
+            }
+            catch (IllegalArgumentException e){
+                StringSignal stringSignal = new StringSignal().setValue(conditions[i + 2])
+                transition.addCondition((Sensor) binding.getVariable(conditions[i + 1]), stringSignal, OPERATOR.valueOf(conditions[i]))
+            }
         }
         ((BorduinoMLBinding) this.getBinding()).getModel().createTransition(this.currentState, transition)
     }

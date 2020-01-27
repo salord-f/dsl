@@ -4,9 +4,7 @@ import fr.unice.polytech.si5.dsl.App;
 import fr.unice.polytech.si5.dsl.behavior.Action;
 import fr.unice.polytech.si5.dsl.behavior.State;
 import fr.unice.polytech.si5.dsl.behavior.Transition;
-import fr.unice.polytech.si5.dsl.structure.LCDScreenActuator;
-import fr.unice.polytech.si5.dsl.structure.Sensor;
-import fr.unice.polytech.si5.dsl.structure.SimplePinActuator;
+import fr.unice.polytech.si5.dsl.structure.*;
 import lombok.Getter;
 
 public abstract class Visitor<T> {
@@ -26,6 +24,8 @@ public abstract class Visitor<T> {
 
     public abstract void visit(LCDScreenActuator actuator);
 
-    public abstract void visit(Sensor sensor);
+    public abstract void visit(SimplePinSensor sensor);
+
+    public abstract void visit(KeyboardSensor sensor);
 
 }

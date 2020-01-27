@@ -6,6 +6,7 @@ import fr.unice.polytech.si5.dsl.generator.Generator;
 import fr.unice.polytech.si5.dsl.generator.Visitor;
 import fr.unice.polytech.si5.dsl.structure.SimplePinActuator;
 import fr.unice.polytech.si5.dsl.structure.Sensor;
+import fr.unice.polytech.si5.dsl.structure.SimplePinSensor;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -18,7 +19,7 @@ public class BasicTest {
     @Test
     public void basicTest() {
 
-        Sensor button = new Sensor();
+        SimplePinSensor button = new SimplePinSensor();
         button.setPin(9).setName("button");
 
         SimplePinActuator led = new SimplePinActuator();
@@ -74,6 +75,8 @@ public class BasicTest {
                 "void setup(){\n" +
                 "  pinMode(9, INPUT);  // button [Sensor]\n" +
                 "  pinMode(12, OUTPUT); // LED [Actuator]\n" +
+                "  Serial.begin(9600);\n" +
+                "  while (! Serial); // Wait untilSerial is ready\n" +
                 "}\n" +
                 "\n" +
                 "long time = 0; long debounce = 200;\n" +

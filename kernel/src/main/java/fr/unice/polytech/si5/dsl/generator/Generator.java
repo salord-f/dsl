@@ -1,10 +1,7 @@
 package fr.unice.polytech.si5.dsl.generator;
 
 import fr.unice.polytech.si5.dsl.App;
-import fr.unice.polytech.si5.dsl.behavior.Action;
-import fr.unice.polytech.si5.dsl.behavior.Condition;
-import fr.unice.polytech.si5.dsl.behavior.State;
-import fr.unice.polytech.si5.dsl.behavior.Transition;
+import fr.unice.polytech.si5.dsl.behavior.*;
 import fr.unice.polytech.si5.dsl.structure.*;
 
 import java.util.stream.Collectors;
@@ -47,6 +44,8 @@ public class Generator extends Visitor<StringBuilder> {
         for (Brick brick : app.getBricks()) {
             brick.accept(this);
         }
+        write("  Serial.begin(9600);\n" +
+                "  while (! Serial); // Wait untilSerial is ready");
         write("}\n");
 
         write("long time = 0; long debounce = 200;\n");
@@ -65,6 +64,9 @@ public class Generator extends Visitor<StringBuilder> {
     @Override
     public void visit(State state) {
         write(String.format("void state_%s() {", state.getName()));
+
+        // TODO code keyboard dynamic
+
         for (Action action : state.getActions()) {
             action.accept(this);
         }
@@ -78,17 +80,51 @@ public class Generator extends Visitor<StringBuilder> {
 
     }
 
+             /*   else if (sensor instanceof KeyboardSensor){
+        conditions.append("if(Serial.available() > 0) {");
+        conditions.append("String ");
+        conditions.append(sensor.getName());
+        conditions.append(" = Serial.readString();");
+        ch = Serial.read();");
+        conditions.append("}");
+    }
+
+            conditions.append(condition.getOperator().value)
+            .append(" digitalRead(")
+                    .append(condition.getSensor().getPin())
+            .append(") == ")
+                    .append(condition.getSignal())
+            .append(" ");
+*/
     @Override
     public void visit(Transition transition) {
         StringBuilder conditions = new StringBuilder();
+        //Sensor sensor = condition.getSensor();
+
+        transition.getSensorType();
+
         for (Condition condition : transition.getConditions()) {
-            conditions.append(condition.getOperator().value)
-                    .append(" digitalRead(")
-                    .append(condition.getSensor().getPin())
-                    .append(") == ")
-                    .append(condition.getSignal())
-                    .append(" ");
+            Sensor sensor = condition.getSensor();
+            if (condition.getSignal() instanceof DigitalSignal){
+                conditions.append(condition.getOperator().value)
+                        .append(" digitalRead(")
+                        .append(((SimplePinSensor)sensor).getPin())
+                        .append(") == ")
+                        .append(condition.getSignal().toString())
+                        .append(" ");
+            }
+            else {
+                conditions.append(condition.getOperator().value)
+                        .append(" Serial.readString()")
+                        //.append(((KeyboardSensor)sensor))
+                        .append(" == ")
+                        .append("\"")
+                        .append(condition.getSignal().toString())
+                        .append("\"")
+                        .append(" ");
+            }
         }
+
 
         write(String.format("  if( (%s) && guard ) {", conditions.toString()));
         write("    time = millis();");
@@ -122,8 +158,13 @@ public class Generator extends Visitor<StringBuilder> {
     }
 
     @Override
-    public void visit(Sensor sensor) {
-        write(String.format("  pinMode(%d, INPUT);  // %s [Sensor]", sensor.getPin(), sensor.getName()));
+    public void visit(SimplePinSensor sensor) {
+        write(String.format("  pinMode(%d, INPUT);  // %s [Sensor]", ((SimplePinSensor)sensor).getPin(), sensor.getName()));
+    }
+
+    @Override
+    public void visit(KeyboardSensor sensor) {
+        //TODO//write(String.format("  pinMode(%d, INPUT);  // %s [Sensor]", ((KeyboardSensor)sensor).getPin(), sensor.getName()));
     }
 
 

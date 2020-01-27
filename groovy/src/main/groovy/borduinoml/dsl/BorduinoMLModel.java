@@ -30,8 +30,15 @@ public class BorduinoMLModel {
     }
 
     public void createSensor(String name, Integer pinNumber) {
-        Sensor sensor = new Sensor()
+        Sensor sensor = new SimplePinSensor()
                 .setPin(pinNumber)
+                .setName(name);
+        this.bricks.add(sensor);
+        this.binding.setVariable(name, sensor);
+    }
+
+    public void createSensor(String name) {
+        Sensor sensor = new KeyboardSensor()
                 .setName(name);
         this.bricks.add(sensor);
         this.binding.setVariable(name, sensor);

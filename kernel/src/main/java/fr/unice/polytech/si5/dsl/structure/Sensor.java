@@ -8,13 +8,5 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class Sensor extends Brick<Sensor> {
-
-    private int pin;
-
-    @Override
-    @SuppressWarnings("rawtypes")
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
+public abstract class Sensor<T> extends Brick<Sensor> {
 }
