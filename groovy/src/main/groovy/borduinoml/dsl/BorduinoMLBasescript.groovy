@@ -109,7 +109,7 @@ abstract class BorduinoMLBasescript extends Script {
         if (this.defining != DEFINING.STATES) {
             return;
         }
-        Transition transition = null;
+        Transition transition;
         try{
             DigitalSignal digitalSignal = new DigitalSignal(DigitalSignalEnum.valueOf(conditions[1]))
             transition = new Transition()
