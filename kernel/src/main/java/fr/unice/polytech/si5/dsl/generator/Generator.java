@@ -23,8 +23,13 @@ public class Generator extends Visitor<StringBuilder> {
     public void visit(App app) {
         write("// Wiring code generated from an ArduinoML model");
         write(String.format("// Application name: %s\n", app.getName()));
-        write("#include <LiquidCrystal.h>\n");
 
+        for (Brick brick : app.getBricks()){
+            if (brick instanceof LCDScreenActuator) {
+                write("#include <LiquidCrystal.h>\n");
+                break;
+            }
+        }
 
         for (Brick brick : app.getBricks()) {
             if (brick instanceof LCDScreenActuator) {
@@ -44,9 +49,15 @@ public class Generator extends Visitor<StringBuilder> {
         for (Brick brick : app.getBricks()) {
             brick.accept(this);
         }
-        write("  Serial.begin(9600);\n" +
-                "  while (! Serial); // Wait untilSerial is ready");
-        write("}\n");
+
+        for (Brick brick : app.getBricks()){
+            if (brick instanceof LCDScreenActuator) {
+                write("  Serial.begin(9600);\n" +
+                        "  while (! Serial); // Wait untilSerial is ready");
+                write("}\n");
+                break;
+            }
+        }
 
         write("long time = 0; long debounce = 200;\n");
 

@@ -1,15 +1,16 @@
 app "RedButton", {
     bricks
         actuator "buzzer", 11
+        sensor "button", 12
         sensor "keyboard"
     states
     state "off", {
         action "buzzer", "LOW"
-        transition "keyboard", "SWITCH", "on"
+        transition "keyboard", "SWITCH", "AND", "button", "HIGH", "on"
     }
     state "on", {
             action "buzzer", "HIGH"
-            transition "keyboard", "SWITCH", "off"
+            transition "keyboard", "SWITCH", "AND", "button", "LOW", "off"
         }
     initial "off"
 }
