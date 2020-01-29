@@ -9,22 +9,16 @@
     <pins>2</pins>
     <pins>3</pins>
   </bricks>
-  <bricks xsi:type="arduinoML:KeyboardSensor" name="keyboard">
-    <pins>4</pins>
-    <pins>5</pins>
-    <pins>8</pins>
-    <pins>9</pins>
-  </bricks>
   <states name="off">
     <actions actuator="//@bricks.0">
-      <value xsi:type="arduinoML:DigitalSignal"/>
+      <value xsi:type="arduinoML:DigitalSignal" value="LOW"/>
     </actions>
     <actions actuator="//@bricks.4">
-      <value xsi:type="arduinoML:StringSignal" value="DGFDSFDSF"/>
+      <value xsi:type="arduinoML:StringSignal" value="HELLO WORLD"/>
     </actions>
     <transition next="//@states.1">
-      <conditions sensor="//@bricks.5">
-        <signal xsi:type="arduinoML:StringSignal"/>
+      <conditions sensor="//@bricks.1">
+        <signal xsi:type="arduinoML:DigitalSignal"/>
       </conditions>
       <conditions sensor="//@bricks.3" operator="AND">
         <signal xsi:type="arduinoML:DigitalSignal"/>

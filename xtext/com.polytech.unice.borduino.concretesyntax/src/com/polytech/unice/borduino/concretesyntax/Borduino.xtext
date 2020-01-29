@@ -10,7 +10,6 @@ App returns App:
 		'bricks'
 		bricks+=Brick
 		(bricks+=Brick)* 
-		(bricks+=Brick2)* 
 		
 		'states'
 		states+=State
@@ -18,12 +17,8 @@ App returns App:
 	'}';
 
 Brick returns Brick:
-	(Actuator | Sensor ) name=EString ':' pin=EInt;
+	((Actuator | Sensor ) name=EString ':' pin=EInt) | (LCDScreenActuator name=EString ':' pins+=EInt (pins+=EInt)*) | (KeyboardSensor name=EString) ;
 	
-Brick2 returns Brick:
-	LCDScreenActuator name=EString ':' pins+=EInt (pins+=EInt)*;
-		
-
 
 Actuator returns Actuator:
 	{Actuator}
@@ -32,6 +27,11 @@ Actuator returns Actuator:
 LCDScreenActuator returns LCDScreenActuator:
 	{LCDScreenActuator}
 	'screenActuator';
+	
+KeyboardSensor returns KeyboardSensor :
+	{KeyboardSensor}
+	'keyboardSensor';
+
 	
 Sensor returns Sensor:
 	{Sensor}

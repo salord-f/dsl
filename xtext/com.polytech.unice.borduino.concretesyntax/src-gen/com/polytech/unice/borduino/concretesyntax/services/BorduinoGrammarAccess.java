@@ -43,14 +43,12 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBricksBrickParserRuleCall_6_0 = (RuleCall)cBricksAssignment_6.eContents().get(0);
 		private final Assignment cBricksAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cBricksBrickParserRuleCall_7_0 = (RuleCall)cBricksAssignment_7.eContents().get(0);
-		private final Assignment cBricksAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cBricksBrick2ParserRuleCall_8_0 = (RuleCall)cBricksAssignment_8.eContents().get(0);
-		private final Keyword cStatesKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cStatesKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cStatesAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cStatesStateParserRuleCall_9_0 = (RuleCall)cStatesAssignment_9.eContents().get(0);
 		private final Assignment cStatesAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final RuleCall cStatesStateParserRuleCall_10_0 = (RuleCall)cStatesAssignment_10.eContents().get(0);
-		private final Assignment cStatesAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cStatesStateParserRuleCall_11_0 = (RuleCall)cStatesAssignment_11.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//App:
 		//	'app' name=EString 'initial state' initial=[State|EString]
@@ -58,15 +56,14 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		//	'bricks'
 		//	bricks+=Brick
 		//	bricks+=Brick*
-		//	bricks+=Brick2*
 		//	'states'
 		//	states+=State
 		//	states+=State*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'app' name=EString 'initial state' initial=[State|EString] '{' 'bricks' bricks+=Brick bricks+=Brick* bricks+=Brick2*
-		//'states' states+=State states+=State* '}'
+		//'app' name=EString 'initial state' initial=[State|EString] '{' 'bricks' bricks+=Brick bricks+=Brick* 'states'
+		//states+=State states+=State* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'app'
@@ -108,115 +105,124 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		//Brick
 		public RuleCall getBricksBrickParserRuleCall_7_0() { return cBricksBrickParserRuleCall_7_0; }
 		
-		//bricks+=Brick2*
-		public Assignment getBricksAssignment_8() { return cBricksAssignment_8; }
-		
-		//Brick2
-		public RuleCall getBricksBrick2ParserRuleCall_8_0() { return cBricksBrick2ParserRuleCall_8_0; }
-		
 		//'states'
-		public Keyword getStatesKeyword_9() { return cStatesKeyword_9; }
+		public Keyword getStatesKeyword_8() { return cStatesKeyword_8; }
 		
 		//states+=State
+		public Assignment getStatesAssignment_9() { return cStatesAssignment_9; }
+		
+		//State
+		public RuleCall getStatesStateParserRuleCall_9_0() { return cStatesStateParserRuleCall_9_0; }
+		
+		//states+=State*
 		public Assignment getStatesAssignment_10() { return cStatesAssignment_10; }
 		
 		//State
 		public RuleCall getStatesStateParserRuleCall_10_0() { return cStatesStateParserRuleCall_10_0; }
 		
-		//states+=State*
-		public Assignment getStatesAssignment_11() { return cStatesAssignment_11; }
-		
-		//State
-		public RuleCall getStatesStateParserRuleCall_11_0() { return cStatesStateParserRuleCall_11_0; }
-		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	public class BrickElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Brick");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final RuleCall cActuatorParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
-		private final RuleCall cSensorParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cPinAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cPinEIntParserRuleCall_3_0 = (RuleCall)cPinAssignment_3.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Alternatives cAlternatives_0_0 = (Alternatives)cGroup_0.eContents().get(0);
+		private final RuleCall cActuatorParserRuleCall_0_0_0 = (RuleCall)cAlternatives_0_0.eContents().get(0);
+		private final RuleCall cSensorParserRuleCall_0_0_1 = (RuleCall)cAlternatives_0_0.eContents().get(1);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Keyword cColonKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cPinAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cPinEIntParserRuleCall_0_3_0 = (RuleCall)cPinAssignment_0_3.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final RuleCall cLCDScreenActuatorParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final Keyword cColonKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cPinsAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cPinsEIntParserRuleCall_1_3_0 = (RuleCall)cPinsAssignment_1_3.eContents().get(0);
+		private final Assignment cPinsAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final RuleCall cPinsEIntParserRuleCall_1_4_0 = (RuleCall)cPinsAssignment_1_4.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final RuleCall cKeyboardSensorParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
 		
 		//Brick:
-		//	(Actuator | Sensor) name=EString ':' pin=EInt;
+		//	(Actuator | Sensor) name=EString ':' pin=EInt | LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt* |
+		//	KeyboardSensor name=EString;
 		@Override public ParserRule getRule() { return rule; }
+		
+		//(Actuator | Sensor) name=EString ':' pin=EInt | LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt* |
+		//KeyboardSensor name=EString
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//(Actuator | Sensor) name=EString ':' pin=EInt
-		public Group getGroup() { return cGroup; }
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//Actuator | Sensor
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
 		
 		//Actuator
-		public RuleCall getActuatorParserRuleCall_0_0() { return cActuatorParserRuleCall_0_0; }
+		public RuleCall getActuatorParserRuleCall_0_0_0() { return cActuatorParserRuleCall_0_0_0; }
 		
 		//Sensor
-		public RuleCall getSensorParserRuleCall_0_1() { return cSensorParserRuleCall_0_1; }
+		public RuleCall getSensorParserRuleCall_0_0_1() { return cSensorParserRuleCall_0_0_1; }
 		
 		//name=EString
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		public RuleCall getNameEStringParserRuleCall_0_1_0() { return cNameEStringParserRuleCall_0_1_0; }
 		
 		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		public Keyword getColonKeyword_0_2() { return cColonKeyword_0_2; }
 		
 		//pin=EInt
-		public Assignment getPinAssignment_3() { return cPinAssignment_3; }
+		public Assignment getPinAssignment_0_3() { return cPinAssignment_0_3; }
 		
 		//EInt
-		public RuleCall getPinEIntParserRuleCall_3_0() { return cPinEIntParserRuleCall_3_0; }
-	}
-	public class Brick2Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Brick2");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cLCDScreenActuatorParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cPinsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cPinsEIntParserRuleCall_3_0 = (RuleCall)cPinsAssignment_3.eContents().get(0);
-		private final Assignment cPinsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cPinsEIntParserRuleCall_4_0 = (RuleCall)cPinsAssignment_4.eContents().get(0);
-		
-		//Brick2 Brick:
-		//	LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt*;
-		@Override public ParserRule getRule() { return rule; }
+		public RuleCall getPinEIntParserRuleCall_0_3_0() { return cPinEIntParserRuleCall_0_3_0; }
 		
 		//LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt*
-		public Group getGroup() { return cGroup; }
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//LCDScreenActuator
-		public RuleCall getLCDScreenActuatorParserRuleCall_0() { return cLCDScreenActuatorParserRuleCall_0; }
+		public RuleCall getLCDScreenActuatorParserRuleCall_1_0() { return cLCDScreenActuatorParserRuleCall_1_0; }
 		
 		//name=EString
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		public RuleCall getNameEStringParserRuleCall_1_1_0() { return cNameEStringParserRuleCall_1_1_0; }
 		
 		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		public Keyword getColonKeyword_1_2() { return cColonKeyword_1_2; }
 		
 		//pins+=EInt
-		public Assignment getPinsAssignment_3() { return cPinsAssignment_3; }
+		public Assignment getPinsAssignment_1_3() { return cPinsAssignment_1_3; }
 		
 		//EInt
-		public RuleCall getPinsEIntParserRuleCall_3_0() { return cPinsEIntParserRuleCall_3_0; }
+		public RuleCall getPinsEIntParserRuleCall_1_3_0() { return cPinsEIntParserRuleCall_1_3_0; }
 		
 		//pins+=EInt*
-		public Assignment getPinsAssignment_4() { return cPinsAssignment_4; }
+		public Assignment getPinsAssignment_1_4() { return cPinsAssignment_1_4; }
 		
 		//EInt
-		public RuleCall getPinsEIntParserRuleCall_4_0() { return cPinsEIntParserRuleCall_4_0; }
+		public RuleCall getPinsEIntParserRuleCall_1_4_0() { return cPinsEIntParserRuleCall_1_4_0; }
+		
+		//KeyboardSensor name=EString
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//KeyboardSensor
+		public RuleCall getKeyboardSensorParserRuleCall_2_0() { return cKeyboardSensorParserRuleCall_2_0; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_1_0() { return cNameEStringParserRuleCall_2_1_0; }
 	}
 	public class ActuatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Actuator");
@@ -257,6 +263,26 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'screenActuator'
 		public Keyword getScreenActuatorKeyword_1() { return cScreenActuatorKeyword_1; }
+	}
+	public class KeyboardSensorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.KeyboardSensor");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cKeyboardSensorAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cKeyboardSensorKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//KeyboardSensor:
+		//	{KeyboardSensor}
+		//	'keyboardSensor';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{KeyboardSensor} 'keyboardSensor'
+		public Group getGroup() { return cGroup; }
+		
+		//{KeyboardSensor}
+		public Action getKeyboardSensorAction_0() { return cKeyboardSensorAction_0; }
+		
+		//'keyboardSensor'
+		public Keyword getKeyboardSensorKeyword_1() { return cKeyboardSensorKeyword_1; }
 	}
 	public class SensorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.polytech.unice.borduino.concretesyntax.Borduino.Sensor");
@@ -635,9 +661,9 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final AppElements pApp;
 	private final BrickElements pBrick;
-	private final Brick2Elements pBrick2;
 	private final ActuatorElements pActuator;
 	private final LCDScreenActuatorElements pLCDScreenActuator;
+	private final KeyboardSensorElements pKeyboardSensor;
 	private final SensorElements pSensor;
 	private final EStringElements pEString;
 	private final EIntElements pEInt;
@@ -663,9 +689,9 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pApp = new AppElements();
 		this.pBrick = new BrickElements();
-		this.pBrick2 = new Brick2Elements();
 		this.pActuator = new ActuatorElements();
 		this.pLCDScreenActuator = new LCDScreenActuatorElements();
+		this.pKeyboardSensor = new KeyboardSensorElements();
 		this.pSensor = new SensorElements();
 		this.pEString = new EStringElements();
 		this.pEInt = new EIntElements();
@@ -714,7 +740,6 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 	//	'bricks'
 	//	bricks+=Brick
 	//	bricks+=Brick*
-	//	bricks+=Brick2*
 	//	'states'
 	//	states+=State
 	//	states+=State*
@@ -728,23 +753,14 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Brick:
-	//	(Actuator | Sensor) name=EString ':' pin=EInt;
+	//	(Actuator | Sensor) name=EString ':' pin=EInt | LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt* |
+	//	KeyboardSensor name=EString;
 	public BrickElements getBrickAccess() {
 		return pBrick;
 	}
 	
 	public ParserRule getBrickRule() {
 		return getBrickAccess().getRule();
-	}
-	
-	//Brick2 Brick:
-	//	LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt*;
-	public Brick2Elements getBrick2Access() {
-		return pBrick2;
-	}
-	
-	public ParserRule getBrick2Rule() {
-		return getBrick2Access().getRule();
 	}
 	
 	//Actuator:
@@ -767,6 +783,17 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getLCDScreenActuatorRule() {
 		return getLCDScreenActuatorAccess().getRule();
+	}
+	
+	//KeyboardSensor:
+	//	{KeyboardSensor}
+	//	'keyboardSensor';
+	public KeyboardSensorElements getKeyboardSensorAccess() {
+		return pKeyboardSensor;
+	}
+	
+	public ParserRule getKeyboardSensorRule() {
+		return getKeyboardSensorAccess().getRule();
 	}
 	
 	//Sensor:

@@ -74,23 +74,46 @@ public class AppDTO {
 		List<Condition> conditions = new ArrayList<>();
 		for(arduinoML.Condition condition : state.getTransition().getConditions()) {
 			
-			Sensor sensor = new Sensor();
-			sensor.setName(condition.getSensor().getName());
-			sensor.setPin(condition.getSensor().getPin());
+			arduinoML.Sensor amlSensor = condition.getSensor();
+			
+			if(amlSensor instanceof arduinoML.KeyboardSensor) {
+				KeyboardSensor sensor = new KeyboardSensor();
+				sensor.setName(amlSensor.getName());
+				
+				OPERATOR operator = addOperator(condition.getOperator());
+				arduinoML.Signal signal = condition.getSignal();
+				
+				if(signal instanceof arduinoML.DigitalSignal) {
+					conditions.add(new Condition(sensor,  new DigitalSignal(addSignal((arduinoML.DigitalSignal)signal)) , operator));
+					
+				}else if (signal instanceof arduinoML.StringSignal) {
+					StringSignal stringSignal = new StringSignal();
+					stringSignal.setValue(((arduinoML.StringSignal) signal).getValue());
+					conditions.add(new Condition(sensor, stringSignal , operator));
+
+				} 
+			}else {
+				SimplePinSensor sensor = new SimplePinSensor();
+				sensor.setName(amlSensor.getName());
+				sensor.setPin(amlSensor.getPin());
+				OPERATOR operator = addOperator(condition.getOperator());
+				arduinoML.Signal signal = condition.getSignal();
+				
+				if(signal instanceof arduinoML.DigitalSignal) {
+					conditions.add(new Condition(sensor,  new DigitalSignal(addSignal((arduinoML.DigitalSignal)signal)) , operator));
+					
+				}else if (signal instanceof arduinoML.StringSignal) {
+					StringSignal stringSignal = new StringSignal();
+					stringSignal.setValue(((arduinoML.StringSignal) signal).getValue());
+					conditions.add(new Condition(sensor, stringSignal , operator));
+
+				} 
+				
+			}
+
 		
 			
-			OPERATOR operator = addOperator(condition.getOperator());
-			arduinoML.Signal signal = condition.getSignal();
 			
-			if(signal instanceof arduinoML.DigitalSignal) {
-				conditions.add(new Condition(sensor,  new DigitalSignal(addSignal((arduinoML.DigitalSignal)signal)) , operator));
-				
-			}else if (signal instanceof arduinoML.StringSignal) {
-				StringSignal stringSignal = new StringSignal();
-				stringSignal.setValue(((arduinoML.StringSignal) signal).getValue());
-				conditions.add(new Condition(sensor, stringSignal , operator));
-
-			} 
 			
 		}
 		
@@ -185,10 +208,18 @@ public class AppDTO {
 			}
 			
 			if(brick instanceof arduinoML.Sensor) {
-				Sensor sensor = new Sensor();
-				sensor.setName(brick.getName());
-				sensor.setPin(brick.getPin());
-				kernelBricks.add(sensor);
+				if(brick instanceof arduinoML.KeyboardSensor) {
+					KeyboardSensor sensor = new KeyboardSensor();
+					sensor.setName(brick.getName());
+					kernelBricks.add(sensor);
+				}else {
+					SimplePinSensor sensor = new SimplePinSensor();
+					sensor.setName(brick.getName());
+					sensor.setPin(brick.getPin());
+					kernelBricks.add(sensor);
+
+				}
+
 			}
 		}
 		kernelApp.setBricks(kernelBricks);

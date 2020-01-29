@@ -112,6 +112,15 @@ public interface ArduinoMLFactory extends EFactory {
 	StringSignal createStringSignal();
 
 	/**
+	 * Returns a new object of class '<em>Keyboard Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Keyboard Sensor</em>'.
+	 * @generated
+	 */
+	KeyboardSensor createKeyboardSensor();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

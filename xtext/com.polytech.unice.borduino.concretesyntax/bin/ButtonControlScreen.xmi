@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<arduinoML:App xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduinoML="http://www.example.org/arduinoML" initial="//@states.0" name="ButtonControlScreen">
+  <bricks xsi:type="arduinoML:Actuator" name="red_led" pin="11"/>
+  <bricks xsi:type="arduinoML:Actuator" name="buzzer" pin="9"/>
+  <bricks xsi:type="arduinoML:LCDScreenActuator" name="screen">
+    <pins>2</pins>
+    <pins>3</pins>
+    <pins>4</pins>
+    <pins>5</pins>
+    <pins>6</pins>
+    <pins>7</pins>
+    <pins>8</pins>
+  </bricks>
+  <bricks xsi:type="arduinoML:Sensor" name="button" pin="12"/>
+  <states name="off">
+    <actions actuator="//@bricks.0">
+      <value xsi:type="arduinoML:DigitalSignal" value="LOW"/>
+    </actions>
+    <actions actuator="//@bricks.2">
+      <value xsi:type="arduinoML:StringSignal" value="I AM OFF"/>
+    </actions>
+    <transition next="//@states.1">
+      <conditions sensor="//@bricks.3">
+        <signal xsi:type="arduinoML:DigitalSignal"/>
+      </conditions>
+    </transition>
+  </states>
+  <states name="on">
+    <actions actuator="//@bricks.0">
+      <value xsi:type="arduinoML:DigitalSignal"/>
+    </actions>
+    <actions actuator="//@bricks.2">
+      <value xsi:type="arduinoML:StringSignal" value="I AM HIGH"/>
+    </actions>
+    <transition next="//@states.0">
+      <conditions sensor="//@bricks.3">
+        <signal xsi:type="arduinoML:DigitalSignal" value="LOW"/>
+      </conditions>
+    </transition>
+  </states>
+</arduinoML:App>

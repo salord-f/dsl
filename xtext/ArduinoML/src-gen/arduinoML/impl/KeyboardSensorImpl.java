@@ -4,6 +4,7 @@ package arduinoML.impl;
 
 import arduinoML.ArduinoMLPackage;
 import arduinoML.KeyboardSensor;
+
 import org.eclipse.emf.ecore.EClass;
 
 /**

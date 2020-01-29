@@ -6,11 +6,11 @@ import arduinoML.ArduinoMLPackage;
 import arduinoML.Condition;
 import arduinoML.Operator;
 import arduinoML.Sensor;
-
 import arduinoML.Signal;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -136,6 +136,28 @@ public class ConditionImpl extends NamedElementImpl implements Condition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Operator getOperator() {
+		return operator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOperator(Operator newOperator) {
+		Operator oldOperator = operator;
+		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.CONDITION__OPERATOR, oldOperator,
+					operator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Signal getSignal() {
 		return signal;
 	}
@@ -193,28 +215,6 @@ public class ConditionImpl extends NamedElementImpl implements Condition {
 			return basicSetSignal(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Operator getOperator() {
-		return operator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOperator(Operator newOperator) {
-		Operator oldOperator = operator;
-		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.CONDITION__OPERATOR, oldOperator,
-					operator));
 	}
 
 	/**

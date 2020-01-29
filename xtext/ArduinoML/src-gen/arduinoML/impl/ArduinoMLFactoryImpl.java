@@ -77,6 +77,8 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 			return createDigitalSignal();
 		case ArduinoMLPackage.STRING_SIGNAL:
 			return createStringSignal();
+		case ArduinoMLPackage.KEYBOARD_SENSOR:
+			return createKeyboardSensor();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -214,6 +216,16 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	public StringSignal createStringSignal() {
 		StringSignalImpl stringSignal = new StringSignalImpl();
 		return stringSignal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public KeyboardSensor createKeyboardSensor() {
+		KeyboardSensorImpl keyboardSensor = new KeyboardSensorImpl();
+		return keyboardSensor;
 	}
 
 	/**

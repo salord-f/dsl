@@ -31,16 +31,19 @@ public class BorduinoParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, BorduinoGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getBrickAccess().getAlternatives_0(), "rule__Brick__Alternatives_0");
+			builder.put(grammarAccess.getBrickAccess().getAlternatives(), "rule__Brick__Alternatives");
+			builder.put(grammarAccess.getBrickAccess().getAlternatives_0_0(), "rule__Brick__Alternatives_0_0");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getSignalAccess().getAlternatives(), "rule__Signal__Alternatives");
 			builder.put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 			builder.put(grammarAccess.getDigitalSignalEnumAccess().getAlternatives(), "rule__DigitalSignalEnum__Alternatives");
 			builder.put(grammarAccess.getAppAccess().getGroup(), "rule__App__Group__0");
-			builder.put(grammarAccess.getBrickAccess().getGroup(), "rule__Brick__Group__0");
-			builder.put(grammarAccess.getBrick2Access().getGroup(), "rule__Brick2__Group__0");
+			builder.put(grammarAccess.getBrickAccess().getGroup_0(), "rule__Brick__Group_0__0");
+			builder.put(grammarAccess.getBrickAccess().getGroup_1(), "rule__Brick__Group_1__0");
+			builder.put(grammarAccess.getBrickAccess().getGroup_2(), "rule__Brick__Group_2__0");
 			builder.put(grammarAccess.getActuatorAccess().getGroup(), "rule__Actuator__Group__0");
 			builder.put(grammarAccess.getLCDScreenActuatorAccess().getGroup(), "rule__LCDScreenActuator__Group__0");
+			builder.put(grammarAccess.getKeyboardSensorAccess().getGroup(), "rule__KeyboardSensor__Group__0");
 			builder.put(grammarAccess.getSensorAccess().getGroup(), "rule__Sensor__Group__0");
 			builder.put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 			builder.put(grammarAccess.getStateAccess().getGroup(), "rule__State__Group__0");
@@ -52,14 +55,14 @@ public class BorduinoParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAppAccess().getInitialAssignment_3(), "rule__App__InitialAssignment_3");
 			builder.put(grammarAccess.getAppAccess().getBricksAssignment_6(), "rule__App__BricksAssignment_6");
 			builder.put(grammarAccess.getAppAccess().getBricksAssignment_7(), "rule__App__BricksAssignment_7");
-			builder.put(grammarAccess.getAppAccess().getBricksAssignment_8(), "rule__App__BricksAssignment_8");
+			builder.put(grammarAccess.getAppAccess().getStatesAssignment_9(), "rule__App__StatesAssignment_9");
 			builder.put(grammarAccess.getAppAccess().getStatesAssignment_10(), "rule__App__StatesAssignment_10");
-			builder.put(grammarAccess.getAppAccess().getStatesAssignment_11(), "rule__App__StatesAssignment_11");
-			builder.put(grammarAccess.getBrickAccess().getNameAssignment_1(), "rule__Brick__NameAssignment_1");
-			builder.put(grammarAccess.getBrickAccess().getPinAssignment_3(), "rule__Brick__PinAssignment_3");
-			builder.put(grammarAccess.getBrick2Access().getNameAssignment_1(), "rule__Brick2__NameAssignment_1");
-			builder.put(grammarAccess.getBrick2Access().getPinsAssignment_3(), "rule__Brick2__PinsAssignment_3");
-			builder.put(grammarAccess.getBrick2Access().getPinsAssignment_4(), "rule__Brick2__PinsAssignment_4");
+			builder.put(grammarAccess.getBrickAccess().getNameAssignment_0_1(), "rule__Brick__NameAssignment_0_1");
+			builder.put(grammarAccess.getBrickAccess().getPinAssignment_0_3(), "rule__Brick__PinAssignment_0_3");
+			builder.put(grammarAccess.getBrickAccess().getNameAssignment_1_1(), "rule__Brick__NameAssignment_1_1");
+			builder.put(grammarAccess.getBrickAccess().getPinsAssignment_1_3(), "rule__Brick__PinsAssignment_1_3");
+			builder.put(grammarAccess.getBrickAccess().getPinsAssignment_1_4(), "rule__Brick__PinsAssignment_1_4");
+			builder.put(grammarAccess.getBrickAccess().getNameAssignment_2_1(), "rule__Brick__NameAssignment_2_1");
 			builder.put(grammarAccess.getStateAccess().getNameAssignment_0(), "rule__State__NameAssignment_0");
 			builder.put(grammarAccess.getStateAccess().getActionsAssignment_2(), "rule__State__ActionsAssignment_2");
 			builder.put(grammarAccess.getStateAccess().getActionsAssignment_3(), "rule__State__ActionsAssignment_3");

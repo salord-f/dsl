@@ -1,4 +1,4 @@
-'-'=25
+'-'=26
 ':'=21
 'HIGH'=13
 'LOW'=14
@@ -7,10 +7,11 @@
 'app'=15
 'bricks'=18
 'initial state'=16
-'is'=26
+'is'=27
+'keyboardSensor'=24
 'or'=12
 'screenActuator'=23
-'sensor'=24
+'sensor'=25
 'states'=19
 '{'=17
 '}'=20
@@ -37,3 +38,4 @@ T__23=23
 T__24=24
 T__25=25
 T__26=26
+T__27=27

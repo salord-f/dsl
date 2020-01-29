@@ -11,6 +11,7 @@ import arduinoML.Brick;
 import arduinoML.Condition;
 import arduinoML.DigitalSignal;
 import arduinoML.DigitalSignalEnum;
+import arduinoML.KeyboardSensor;
 import arduinoML.LCDScreenActuator;
 import arduinoML.NamedElement;
 import arduinoML.Operator;
@@ -125,6 +126,13 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * @generated
 	 */
 	private EClass stringSignalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass keyboardSensorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -407,8 +415,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCondition_Signal() {
-		return (EReference) conditionEClass.getEStructuralFeatures().get(2);
+	public EAttribute getCondition_Operator() {
+		return (EAttribute) conditionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -416,8 +424,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCondition_Operator() {
-		return (EAttribute) conditionEClass.getEStructuralFeatures().get(1);
+	public EReference getCondition_Signal() {
+		return (EReference) conditionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -481,6 +489,15 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 */
 	public EAttribute getStringSignal_Value() {
 		return (EAttribute) stringSignalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getKeyboardSensor() {
+		return keyboardSensorEClass;
 	}
 
 	/**
@@ -574,6 +591,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		stringSignalEClass = createEClass(STRING_SIGNAL);
 		createEAttribute(stringSignalEClass, STRING_SIGNAL__VALUE);
 
+		keyboardSensorEClass = createEClass(KEYBOARD_SENSOR);
+
 		// Create enums
 		digitalSignalEnumEEnum = createEEnum(DIGITAL_SIGNAL_ENUM);
 		operatorEEnum = createEEnum(OPERATOR);
@@ -616,6 +635,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		lcdScreenActuatorEClass.getESuperTypes().add(this.getActuator());
 		digitalSignalEClass.getESuperTypes().add(this.getSignal());
 		stringSignalEClass.getESuperTypes().add(this.getSignal());
+		keyboardSensorEClass.getESuperTypes().add(this.getSensor());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(brickEClass, Brick.class, "Brick", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -699,6 +719,9 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStringSignal_Value(), ecorePackage.getEString(), "value", "HIGH", 0, 1, StringSignal.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(keyboardSensorEClass, KeyboardSensor.class, "KeyboardSensor", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(digitalSignalEnumEEnum, DigitalSignalEnum.class, "DigitalSignalEnum");

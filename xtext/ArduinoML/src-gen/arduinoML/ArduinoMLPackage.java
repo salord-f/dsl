@@ -665,6 +665,52 @@ public interface ArduinoMLPackage extends EPackage {
 	int STRING_SIGNAL_OPERATION_COUNT = SIGNAL_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link arduinoML.impl.KeyboardSensorImpl <em>Keyboard Sensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.impl.KeyboardSensorImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getKeyboardSensor()
+	 * @generated
+	 */
+	int KEYBOARD_SENSOR = 13;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYBOARD_SENSOR__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pin</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYBOARD_SENSOR__PIN = SENSOR__PIN;
+
+	/**
+	 * The number of structural features of the '<em>Keyboard Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYBOARD_SENSOR_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Keyboard Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYBOARD_SENSOR_OPERATION_COUNT = SENSOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link arduinoML.DigitalSignalEnum <em>Digital Signal Enum</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -672,7 +718,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @see arduinoML.impl.ArduinoMLPackageImpl#getDigitalSignalEnum()
 	 * @generated
 	 */
-	int DIGITAL_SIGNAL_ENUM = 13;
+	int DIGITAL_SIGNAL_ENUM = 14;
 
 	/**
 	 * The meta object id for the '{@link arduinoML.Operator <em>Operator</em>}' enum.
@@ -682,7 +728,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @see arduinoML.impl.ArduinoMLPackageImpl#getOperator()
 	 * @generated
 	 */
-	int OPERATOR = 14;
+	int OPERATOR = 15;
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.Brick <em>Brick</em>}'.
@@ -1013,6 +1059,16 @@ public interface ArduinoMLPackage extends EPackage {
 	EAttribute getStringSignal_Value();
 
 	/**
+	 * Returns the meta object for class '{@link arduinoML.KeyboardSensor <em>Keyboard Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Keyboard Sensor</em>'.
+	 * @see arduinoML.KeyboardSensor
+	 * @generated
+	 */
+	EClass getKeyboardSensor();
+
+	/**
 	 * Returns the meta object for enum '{@link arduinoML.DigitalSignalEnum <em>Digital Signal Enum</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1328,6 +1384,16 @@ public interface ArduinoMLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STRING_SIGNAL__VALUE = eINSTANCE.getStringSignal_Value();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.impl.KeyboardSensorImpl <em>Keyboard Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.impl.KeyboardSensorImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getKeyboardSensor()
+		 * @generated
+		 */
+		EClass KEYBOARD_SENSOR = eINSTANCE.getKeyboardSensor();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.DigitalSignalEnum <em>Digital Signal Enum</em>}' enum.

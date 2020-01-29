@@ -8,6 +8,7 @@ import arduinoML.App;
 import arduinoML.ArduinoMLPackage;
 import arduinoML.Condition;
 import arduinoML.DigitalSignal;
+import arduinoML.KeyboardSensor;
 import arduinoML.LCDScreenActuator;
 import arduinoML.Sensor;
 import arduinoML.State;
@@ -69,9 +70,19 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case ArduinoMLPackage.DIGITAL_SIGNAL:
 				sequence_DigitalSignal(context, (DigitalSignal) semanticObject); 
 				return; 
+			case ArduinoMLPackage.KEYBOARD_SENSOR:
+				if (rule == grammarAccess.getBrickRule()) {
+					sequence_Brick_KeyboardSensor(context, (KeyboardSensor) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getKeyboardSensorRule()) {
+					sequence_KeyboardSensor(context, (KeyboardSensor) semanticObject); 
+					return; 
+				}
+				else break;
 			case ArduinoMLPackage.LCD_SCREEN_ACTUATOR:
-				if (rule == grammarAccess.getBrick2Rule()) {
-					sequence_Brick2_LCDScreenActuator(context, (LCDScreenActuator) semanticObject); 
+				if (rule == grammarAccess.getBrickRule()) {
+					sequence_Brick_LCDScreenActuator(context, (LCDScreenActuator) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getLCDScreenActuatorRule()) {
@@ -151,8 +162,8 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.BRICK__PIN));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_3_0(), semanticObject.getPin());
+		feeder.accept(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_0_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_0_3_0(), semanticObject.getPin());
 		feeder.finish();
 	}
 	
@@ -167,7 +178,6 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         initial=[State|EString] 
 	 *         bricks+=Brick 
 	 *         bricks+=Brick* 
-	 *         bricks+=Brick2* 
 	 *         states+=State 
 	 *         states+=State*
 	 *     )
@@ -179,12 +189,30 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Brick2 returns LCDScreenActuator
+	 *     Brick returns KeyboardSensor
+	 *
+	 * Constraint:
+	 *     name=EString
+	 */
+	protected void sequence_Brick_KeyboardSensor(ISerializationContext context, KeyboardSensor semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.NAMED_ELEMENT__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_2_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Brick returns LCDScreenActuator
 	 *
 	 * Constraint:
 	 *     (name=EString pins+=EInt pins+=EInt*)
 	 */
-	protected void sequence_Brick2_LCDScreenActuator(ISerializationContext context, LCDScreenActuator semanticObject) {
+	protected void sequence_Brick_LCDScreenActuator(ISerializationContext context, LCDScreenActuator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -204,8 +232,8 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.BRICK__PIN));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_3_0(), semanticObject.getPin());
+		feeder.accept(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_0_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_0_3_0(), semanticObject.getPin());
 		feeder.finish();
 	}
 	
@@ -271,6 +299,18 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		feeder.accept(grammarAccess.getInitialConditionAccess().getSensorSensorEStringParserRuleCall_0_0_1(), semanticObject.eGet(ArduinoMLPackage.Literals.CONDITION__SENSOR, false));
 		feeder.accept(grammarAccess.getInitialConditionAccess().getSignalSignalParserRuleCall_2_0(), semanticObject.getSignal());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     KeyboardSensor returns KeyboardSensor
+	 *
+	 * Constraint:
+	 *     {KeyboardSensor}
+	 */
+	protected void sequence_KeyboardSensor(ISerializationContext context, KeyboardSensor semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

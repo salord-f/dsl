@@ -59,5 +59,6 @@
     <genClasses ecoreClass="arduinoML.ecore#//StringSignal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//StringSignal/value"/>
     </genClasses>
+    <genClasses ecoreClass="arduinoML.ecore#//KeyboardSensor"/>
   </genPackages>
 </genmodel:GenModel>
