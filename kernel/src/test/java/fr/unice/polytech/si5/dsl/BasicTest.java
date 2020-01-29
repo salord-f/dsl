@@ -70,13 +70,9 @@ public class BasicTest {
         List expected = Arrays.asList(("// Wiring code generated from an ArduinoML model\n" +
                 "// Application name: Switch!\n" +
                 "\n" +
-                "#include <LiquidCrystal.h>\n" +
-                "\n" +
                 "void setup(){\n" +
                 "  pinMode(9, INPUT);  // button [Sensor]\n" +
                 "  pinMode(12, OUTPUT); // LED [Actuator]\n" +
-                "  Serial.begin(9600);\n" +
-                "  while (! Serial); // Wait untilSerial is ready\n" +
                 "}\n" +
                 "\n" +
                 "long time = 0; long debounce = 200;\n" +
