@@ -54,10 +54,10 @@ public class Generator extends Visitor<StringBuilder> {
             if (brick instanceof LCDScreenActuator) {
                 write("  Serial.begin(9600);\n" +
                         "  while (! Serial); // Wait untilSerial is ready");
-                write("}\n");
                 break;
             }
         }
+        write("}\n");
 
         write("long time = 0; long debounce = 200;\n");
 
