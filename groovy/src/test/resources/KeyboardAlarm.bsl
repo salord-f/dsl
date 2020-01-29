@@ -1,6 +1,6 @@
 app "RedButton", {
     bricks
-        actuator "buzzer", 11
+        actuator "buzzer", 9
         sensor "keyboard"
     states
     state "off", {
