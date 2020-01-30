@@ -114,7 +114,7 @@ public class Generator extends Visitor<StringBuilder> {
         for (Condition condition : transition.getConditions()) {
             Sensor sensor = condition.getSensor();
             if (condition.getSignal() instanceof DigitalSignal){
-                conditions.append(condition.getOperator().value)
+                conditions.append(transition.getConditions().get(0) != condition ? condition.getOperator().value : "")
                         .append(" digitalRead(")
                         .append(((SimplePinSensor)sensor).getPin())
                         .append(") == ")
