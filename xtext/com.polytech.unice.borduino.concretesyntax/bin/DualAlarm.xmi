@@ -14,6 +14,9 @@
       <conditions sensor="//@bricks.2" operator="AND">
         <signal xsi:type="arduinoML:DigitalSignal"/>
       </conditions>
+      <conditions sensor="//@bricks.2" operator="OR">
+        <signal xsi:type="arduinoML:DigitalSignal" value="LOW"/>
+      </conditions>
     </transition>
   </states>
   <states name="on">
@@ -24,7 +27,7 @@
       <conditions sensor="//@bricks.1">
         <signal xsi:type="arduinoML:DigitalSignal" value="LOW"/>
       </conditions>
-      <conditions sensor="//@bricks.2" operator="AND">
+      <conditions sensor="//@bricks.2" operator="OR">
         <signal xsi:type="arduinoML:DigitalSignal" value="LOW"/>
       </conditions>
     </transition>

@@ -12,6 +12,6 @@ app DualAlarm initial state off {
 		
 		on {
 			buzzer : HIGH
-			button_1 is LOW and button_2 is LOW : off
+			button_1 is LOW or button_2 is LOW : off
 		}
 }
