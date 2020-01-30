@@ -277,62 +277,9 @@ ruleBrick returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_0_3_0());
+						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_0_3_0());
 					}
-					lv_pin_4_0=ruleEInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBrickRule());
-						}
-						set(
-							$current,
-							"pin",
-							lv_pin_4_0,
-							"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
-		    |
-		(
-			{
-				newCompositeNode(grammarAccess.getBrickAccess().getLCDScreenActuatorParserRuleCall_1_0());
-			}
-			this_LCDScreenActuator_5=ruleLCDScreenActuator
-			{
-				$current = $this_LCDScreenActuator_5.current;
-				afterParserOrEnumRuleCall();
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_1_1_0());
-					}
-					lv_name_6_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBrickRule());
-						}
-						set(
-							$current,
-							"name",
-							lv_name_6_0,
-							"com.polytech.unice.borduino.concretesyntax.Borduino.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_7=':'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getBrickAccess().getColonKeyword_1_2());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_1_3_0());
-					}
-					lv_pins_8_0=ruleEInt
+					lv_pins_4_0=ruleEInt
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBrickRule());
@@ -340,7 +287,7 @@ ruleBrick returns [EObject current=null]
 						add(
 							$current,
 							"pins",
-							lv_pins_8_0,
+							lv_pins_4_0,
 							"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
 						afterParserOrEnumRuleCall();
 					}
@@ -349,7 +296,60 @@ ruleBrick returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_1_4_0());
+						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_0_4_0());
+					}
+					lv_pins_5_0=ruleEInt
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getBrickRule());
+						}
+						add(
+							$current,
+							"pins",
+							lv_pins_5_0,
+							"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)
+		    |
+		(
+			{
+				newCompositeNode(grammarAccess.getBrickAccess().getLCDScreenActuatorParserRuleCall_1_0());
+			}
+			this_LCDScreenActuator_6=ruleLCDScreenActuator
+			{
+				$current = $this_LCDScreenActuator_6.current;
+				afterParserOrEnumRuleCall();
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_1_1_0());
+					}
+					lv_name_7_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getBrickRule());
+						}
+						set(
+							$current,
+							"name",
+							lv_name_7_0,
+							"com.polytech.unice.borduino.concretesyntax.Borduino.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_8=':'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getBrickAccess().getColonKeyword_1_2());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_1_3_0());
 					}
 					lv_pins_9_0=ruleEInt
 					{
@@ -364,6 +364,25 @@ ruleBrick returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_1_4_0());
+					}
+					lv_pins_10_0=ruleEInt
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getBrickRule());
+						}
+						add(
+							$current,
+							"pins",
+							lv_pins_10_0,
+							"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)*
 		)
 		    |
@@ -371,9 +390,9 @@ ruleBrick returns [EObject current=null]
 			{
 				newCompositeNode(grammarAccess.getBrickAccess().getKeyboardSensorParserRuleCall_2_0());
 			}
-			this_KeyboardSensor_10=ruleKeyboardSensor
+			this_KeyboardSensor_11=ruleKeyboardSensor
 			{
-				$current = $this_KeyboardSensor_10.current;
+				$current = $this_KeyboardSensor_11.current;
 				afterParserOrEnumRuleCall();
 			}
 			(
@@ -381,7 +400,7 @@ ruleBrick returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_2_1_0());
 					}
-					lv_name_11_0=ruleEString
+					lv_name_12_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBrickRule());
@@ -389,7 +408,7 @@ ruleBrick returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_11_0,
+							lv_name_12_0,
 							"com.polytech.unice.borduino.concretesyntax.Borduino.EString");
 						afterParserOrEnumRuleCall();
 					}

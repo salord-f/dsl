@@ -2,6 +2,8 @@
  */
 package arduinoML;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Brick</b></em>'.
@@ -11,7 +13,7 @@ package arduinoML;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link arduinoML.Brick#getPin <em>Pin</em>}</li>
+ *   <li>{@link arduinoML.Brick#getPins <em>Pins</em>}</li>
  * </ul>
  *
  * @see arduinoML.ArduinoMLPackage#getBrick()
@@ -20,29 +22,19 @@ package arduinoML;
  */
 public interface Brick extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Pin</b></em>' attribute.
+	 * Returns the value of the '<em><b>Pins</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.Integer}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Pin</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Pins</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pin</em>' attribute.
-	 * @see #setPin(int)
-	 * @see arduinoML.ArduinoMLPackage#getBrick_Pin()
+	 * @return the value of the '<em>Pins</em>' attribute list.
+	 * @see arduinoML.ArduinoMLPackage#getBrick_Pins()
 	 * @model
 	 * @generated
 	 */
-	int getPin();
-
-	/**
-	 * Sets the value of the '{@link arduinoML.Brick#getPin <em>Pin</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pin</em>' attribute.
-	 * @see #getPin()
-	 * @generated
-	 */
-	void setPin(int value);
+	EList<Integer> getPins();
 
 } // Brick

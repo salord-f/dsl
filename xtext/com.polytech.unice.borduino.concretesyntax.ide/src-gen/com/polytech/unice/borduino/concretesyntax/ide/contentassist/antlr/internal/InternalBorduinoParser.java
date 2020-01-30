@@ -3169,17 +3169,22 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_0__3"
-    // InternalBorduino.g:1021:1: rule__Brick__Group_0__3 : rule__Brick__Group_0__3__Impl ;
+    // InternalBorduino.g:1021:1: rule__Brick__Group_0__3 : rule__Brick__Group_0__3__Impl rule__Brick__Group_0__4 ;
     public final void rule__Brick__Group_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1025:1: ( rule__Brick__Group_0__3__Impl )
-            // InternalBorduino.g:1026:2: rule__Brick__Group_0__3__Impl
+            // InternalBorduino.g:1025:1: ( rule__Brick__Group_0__3__Impl rule__Brick__Group_0__4 )
+            // InternalBorduino.g:1026:2: rule__Brick__Group_0__3__Impl rule__Brick__Group_0__4
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_13);
             rule__Brick__Group_0__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Brick__Group_0__4();
 
             state._fsp--;
 
@@ -3202,31 +3207,31 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_0__3__Impl"
-    // InternalBorduino.g:1032:1: rule__Brick__Group_0__3__Impl : ( ( rule__Brick__PinAssignment_0_3 ) ) ;
+    // InternalBorduino.g:1033:1: rule__Brick__Group_0__3__Impl : ( ( rule__Brick__PinsAssignment_0_3 ) ) ;
     public final void rule__Brick__Group_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1036:1: ( ( ( rule__Brick__PinAssignment_0_3 ) ) )
-            // InternalBorduino.g:1037:1: ( ( rule__Brick__PinAssignment_0_3 ) )
+            // InternalBorduino.g:1037:1: ( ( ( rule__Brick__PinsAssignment_0_3 ) ) )
+            // InternalBorduino.g:1038:1: ( ( rule__Brick__PinsAssignment_0_3 ) )
             {
-            // InternalBorduino.g:1037:1: ( ( rule__Brick__PinAssignment_0_3 ) )
-            // InternalBorduino.g:1038:2: ( rule__Brick__PinAssignment_0_3 )
+            // InternalBorduino.g:1038:1: ( ( rule__Brick__PinsAssignment_0_3 ) )
+            // InternalBorduino.g:1039:2: ( rule__Brick__PinsAssignment_0_3 )
             {
-             before(grammarAccess.getBrickAccess().getPinAssignment_0_3()); 
-            // InternalBorduino.g:1039:2: ( rule__Brick__PinAssignment_0_3 )
-            // InternalBorduino.g:1039:3: rule__Brick__PinAssignment_0_3
+             before(grammarAccess.getBrickAccess().getPinsAssignment_0_3()); 
+            // InternalBorduino.g:1040:2: ( rule__Brick__PinsAssignment_0_3 )
+            // InternalBorduino.g:1040:3: rule__Brick__PinsAssignment_0_3
             {
             pushFollow(FOLLOW_2);
-            rule__Brick__PinAssignment_0_3();
+            rule__Brick__PinsAssignment_0_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBrickAccess().getPinAssignment_0_3()); 
+             after(grammarAccess.getBrickAccess().getPinsAssignment_0_3()); 
 
             }
 
@@ -3248,15 +3253,113 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Brick__Group_0__3__Impl"
 
 
+    // $ANTLR start "rule__Brick__Group_0__4"
+    // InternalBorduino.g:1048:1: rule__Brick__Group_0__4 : rule__Brick__Group_0__4__Impl ;
+    public final void rule__Brick__Group_0__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBorduino.g:1052:1: ( rule__Brick__Group_0__4__Impl )
+            // InternalBorduino.g:1053:2: rule__Brick__Group_0__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Brick__Group_0__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Brick__Group_0__4"
+
+
+    // $ANTLR start "rule__Brick__Group_0__4__Impl"
+    // InternalBorduino.g:1059:1: rule__Brick__Group_0__4__Impl : ( ( rule__Brick__PinsAssignment_0_4 )* ) ;
+    public final void rule__Brick__Group_0__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBorduino.g:1063:1: ( ( ( rule__Brick__PinsAssignment_0_4 )* ) )
+            // InternalBorduino.g:1064:1: ( ( rule__Brick__PinsAssignment_0_4 )* )
+            {
+            // InternalBorduino.g:1064:1: ( ( rule__Brick__PinsAssignment_0_4 )* )
+            // InternalBorduino.g:1065:2: ( rule__Brick__PinsAssignment_0_4 )*
+            {
+             before(grammarAccess.getBrickAccess().getPinsAssignment_0_4()); 
+            // InternalBorduino.g:1066:2: ( rule__Brick__PinsAssignment_0_4 )*
+            loop9:
+            do {
+                int alt9=2;
+                int LA9_0 = input.LA(1);
+
+                if ( (LA9_0==RULE_INT||LA9_0==26) ) {
+                    alt9=1;
+                }
+
+
+                switch (alt9) {
+            	case 1 :
+            	    // InternalBorduino.g:1066:3: rule__Brick__PinsAssignment_0_4
+            	    {
+            	    pushFollow(FOLLOW_14);
+            	    rule__Brick__PinsAssignment_0_4();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop9;
+                }
+            } while (true);
+
+             after(grammarAccess.getBrickAccess().getPinsAssignment_0_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Brick__Group_0__4__Impl"
+
+
     // $ANTLR start "rule__Brick__Group_1__0"
-    // InternalBorduino.g:1048:1: rule__Brick__Group_1__0 : rule__Brick__Group_1__0__Impl rule__Brick__Group_1__1 ;
+    // InternalBorduino.g:1075:1: rule__Brick__Group_1__0 : rule__Brick__Group_1__0__Impl rule__Brick__Group_1__1 ;
     public final void rule__Brick__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1052:1: ( rule__Brick__Group_1__0__Impl rule__Brick__Group_1__1 )
-            // InternalBorduino.g:1053:2: rule__Brick__Group_1__0__Impl rule__Brick__Group_1__1
+            // InternalBorduino.g:1079:1: ( rule__Brick__Group_1__0__Impl rule__Brick__Group_1__1 )
+            // InternalBorduino.g:1080:2: rule__Brick__Group_1__0__Impl rule__Brick__Group_1__1
             {
             pushFollow(FOLLOW_3);
             rule__Brick__Group_1__0__Impl();
@@ -3287,17 +3390,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_1__0__Impl"
-    // InternalBorduino.g:1060:1: rule__Brick__Group_1__0__Impl : ( ruleLCDScreenActuator ) ;
+    // InternalBorduino.g:1087:1: rule__Brick__Group_1__0__Impl : ( ruleLCDScreenActuator ) ;
     public final void rule__Brick__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1064:1: ( ( ruleLCDScreenActuator ) )
-            // InternalBorduino.g:1065:1: ( ruleLCDScreenActuator )
+            // InternalBorduino.g:1091:1: ( ( ruleLCDScreenActuator ) )
+            // InternalBorduino.g:1092:1: ( ruleLCDScreenActuator )
             {
-            // InternalBorduino.g:1065:1: ( ruleLCDScreenActuator )
-            // InternalBorduino.g:1066:2: ruleLCDScreenActuator
+            // InternalBorduino.g:1092:1: ( ruleLCDScreenActuator )
+            // InternalBorduino.g:1093:2: ruleLCDScreenActuator
             {
              before(grammarAccess.getBrickAccess().getLCDScreenActuatorParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -3328,14 +3431,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_1__1"
-    // InternalBorduino.g:1075:1: rule__Brick__Group_1__1 : rule__Brick__Group_1__1__Impl rule__Brick__Group_1__2 ;
+    // InternalBorduino.g:1102:1: rule__Brick__Group_1__1 : rule__Brick__Group_1__1__Impl rule__Brick__Group_1__2 ;
     public final void rule__Brick__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1079:1: ( rule__Brick__Group_1__1__Impl rule__Brick__Group_1__2 )
-            // InternalBorduino.g:1080:2: rule__Brick__Group_1__1__Impl rule__Brick__Group_1__2
+            // InternalBorduino.g:1106:1: ( rule__Brick__Group_1__1__Impl rule__Brick__Group_1__2 )
+            // InternalBorduino.g:1107:2: rule__Brick__Group_1__1__Impl rule__Brick__Group_1__2
             {
             pushFollow(FOLLOW_12);
             rule__Brick__Group_1__1__Impl();
@@ -3366,21 +3469,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_1__1__Impl"
-    // InternalBorduino.g:1087:1: rule__Brick__Group_1__1__Impl : ( ( rule__Brick__NameAssignment_1_1 ) ) ;
+    // InternalBorduino.g:1114:1: rule__Brick__Group_1__1__Impl : ( ( rule__Brick__NameAssignment_1_1 ) ) ;
     public final void rule__Brick__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1091:1: ( ( ( rule__Brick__NameAssignment_1_1 ) ) )
-            // InternalBorduino.g:1092:1: ( ( rule__Brick__NameAssignment_1_1 ) )
+            // InternalBorduino.g:1118:1: ( ( ( rule__Brick__NameAssignment_1_1 ) ) )
+            // InternalBorduino.g:1119:1: ( ( rule__Brick__NameAssignment_1_1 ) )
             {
-            // InternalBorduino.g:1092:1: ( ( rule__Brick__NameAssignment_1_1 ) )
-            // InternalBorduino.g:1093:2: ( rule__Brick__NameAssignment_1_1 )
+            // InternalBorduino.g:1119:1: ( ( rule__Brick__NameAssignment_1_1 ) )
+            // InternalBorduino.g:1120:2: ( rule__Brick__NameAssignment_1_1 )
             {
              before(grammarAccess.getBrickAccess().getNameAssignment_1_1()); 
-            // InternalBorduino.g:1094:2: ( rule__Brick__NameAssignment_1_1 )
-            // InternalBorduino.g:1094:3: rule__Brick__NameAssignment_1_1
+            // InternalBorduino.g:1121:2: ( rule__Brick__NameAssignment_1_1 )
+            // InternalBorduino.g:1121:3: rule__Brick__NameAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Brick__NameAssignment_1_1();
@@ -3413,14 +3516,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_1__2"
-    // InternalBorduino.g:1102:1: rule__Brick__Group_1__2 : rule__Brick__Group_1__2__Impl rule__Brick__Group_1__3 ;
+    // InternalBorduino.g:1129:1: rule__Brick__Group_1__2 : rule__Brick__Group_1__2__Impl rule__Brick__Group_1__3 ;
     public final void rule__Brick__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1106:1: ( rule__Brick__Group_1__2__Impl rule__Brick__Group_1__3 )
-            // InternalBorduino.g:1107:2: rule__Brick__Group_1__2__Impl rule__Brick__Group_1__3
+            // InternalBorduino.g:1133:1: ( rule__Brick__Group_1__2__Impl rule__Brick__Group_1__3 )
+            // InternalBorduino.g:1134:2: rule__Brick__Group_1__2__Impl rule__Brick__Group_1__3
             {
             pushFollow(FOLLOW_13);
             rule__Brick__Group_1__2__Impl();
@@ -3451,17 +3554,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_1__2__Impl"
-    // InternalBorduino.g:1114:1: rule__Brick__Group_1__2__Impl : ( ':' ) ;
+    // InternalBorduino.g:1141:1: rule__Brick__Group_1__2__Impl : ( ':' ) ;
     public final void rule__Brick__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1118:1: ( ( ':' ) )
-            // InternalBorduino.g:1119:1: ( ':' )
+            // InternalBorduino.g:1145:1: ( ( ':' ) )
+            // InternalBorduino.g:1146:1: ( ':' )
             {
-            // InternalBorduino.g:1119:1: ( ':' )
-            // InternalBorduino.g:1120:2: ':'
+            // InternalBorduino.g:1146:1: ( ':' )
+            // InternalBorduino.g:1147:2: ':'
             {
              before(grammarAccess.getBrickAccess().getColonKeyword_1_2()); 
             match(input,21,FOLLOW_2); 
@@ -3488,14 +3591,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_1__3"
-    // InternalBorduino.g:1129:1: rule__Brick__Group_1__3 : rule__Brick__Group_1__3__Impl rule__Brick__Group_1__4 ;
+    // InternalBorduino.g:1156:1: rule__Brick__Group_1__3 : rule__Brick__Group_1__3__Impl rule__Brick__Group_1__4 ;
     public final void rule__Brick__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1133:1: ( rule__Brick__Group_1__3__Impl rule__Brick__Group_1__4 )
-            // InternalBorduino.g:1134:2: rule__Brick__Group_1__3__Impl rule__Brick__Group_1__4
+            // InternalBorduino.g:1160:1: ( rule__Brick__Group_1__3__Impl rule__Brick__Group_1__4 )
+            // InternalBorduino.g:1161:2: rule__Brick__Group_1__3__Impl rule__Brick__Group_1__4
             {
             pushFollow(FOLLOW_13);
             rule__Brick__Group_1__3__Impl();
@@ -3526,21 +3629,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_1__3__Impl"
-    // InternalBorduino.g:1141:1: rule__Brick__Group_1__3__Impl : ( ( rule__Brick__PinsAssignment_1_3 ) ) ;
+    // InternalBorduino.g:1168:1: rule__Brick__Group_1__3__Impl : ( ( rule__Brick__PinsAssignment_1_3 ) ) ;
     public final void rule__Brick__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1145:1: ( ( ( rule__Brick__PinsAssignment_1_3 ) ) )
-            // InternalBorduino.g:1146:1: ( ( rule__Brick__PinsAssignment_1_3 ) )
+            // InternalBorduino.g:1172:1: ( ( ( rule__Brick__PinsAssignment_1_3 ) ) )
+            // InternalBorduino.g:1173:1: ( ( rule__Brick__PinsAssignment_1_3 ) )
             {
-            // InternalBorduino.g:1146:1: ( ( rule__Brick__PinsAssignment_1_3 ) )
-            // InternalBorduino.g:1147:2: ( rule__Brick__PinsAssignment_1_3 )
+            // InternalBorduino.g:1173:1: ( ( rule__Brick__PinsAssignment_1_3 ) )
+            // InternalBorduino.g:1174:2: ( rule__Brick__PinsAssignment_1_3 )
             {
              before(grammarAccess.getBrickAccess().getPinsAssignment_1_3()); 
-            // InternalBorduino.g:1148:2: ( rule__Brick__PinsAssignment_1_3 )
-            // InternalBorduino.g:1148:3: rule__Brick__PinsAssignment_1_3
+            // InternalBorduino.g:1175:2: ( rule__Brick__PinsAssignment_1_3 )
+            // InternalBorduino.g:1175:3: rule__Brick__PinsAssignment_1_3
             {
             pushFollow(FOLLOW_2);
             rule__Brick__PinsAssignment_1_3();
@@ -3573,14 +3676,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_1__4"
-    // InternalBorduino.g:1156:1: rule__Brick__Group_1__4 : rule__Brick__Group_1__4__Impl ;
+    // InternalBorduino.g:1183:1: rule__Brick__Group_1__4 : rule__Brick__Group_1__4__Impl ;
     public final void rule__Brick__Group_1__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1160:1: ( rule__Brick__Group_1__4__Impl )
-            // InternalBorduino.g:1161:2: rule__Brick__Group_1__4__Impl
+            // InternalBorduino.g:1187:1: ( rule__Brick__Group_1__4__Impl )
+            // InternalBorduino.g:1188:2: rule__Brick__Group_1__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Brick__Group_1__4__Impl();
@@ -3606,33 +3709,33 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_1__4__Impl"
-    // InternalBorduino.g:1167:1: rule__Brick__Group_1__4__Impl : ( ( rule__Brick__PinsAssignment_1_4 )* ) ;
+    // InternalBorduino.g:1194:1: rule__Brick__Group_1__4__Impl : ( ( rule__Brick__PinsAssignment_1_4 )* ) ;
     public final void rule__Brick__Group_1__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1171:1: ( ( ( rule__Brick__PinsAssignment_1_4 )* ) )
-            // InternalBorduino.g:1172:1: ( ( rule__Brick__PinsAssignment_1_4 )* )
+            // InternalBorduino.g:1198:1: ( ( ( rule__Brick__PinsAssignment_1_4 )* ) )
+            // InternalBorduino.g:1199:1: ( ( rule__Brick__PinsAssignment_1_4 )* )
             {
-            // InternalBorduino.g:1172:1: ( ( rule__Brick__PinsAssignment_1_4 )* )
-            // InternalBorduino.g:1173:2: ( rule__Brick__PinsAssignment_1_4 )*
+            // InternalBorduino.g:1199:1: ( ( rule__Brick__PinsAssignment_1_4 )* )
+            // InternalBorduino.g:1200:2: ( rule__Brick__PinsAssignment_1_4 )*
             {
              before(grammarAccess.getBrickAccess().getPinsAssignment_1_4()); 
-            // InternalBorduino.g:1174:2: ( rule__Brick__PinsAssignment_1_4 )*
-            loop9:
+            // InternalBorduino.g:1201:2: ( rule__Brick__PinsAssignment_1_4 )*
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA9_0==RULE_INT||LA9_0==26) ) {
-                    alt9=1;
+                if ( (LA10_0==RULE_INT||LA10_0==26) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalBorduino.g:1174:3: rule__Brick__PinsAssignment_1_4
+            	    // InternalBorduino.g:1201:3: rule__Brick__PinsAssignment_1_4
             	    {
             	    pushFollow(FOLLOW_14);
             	    rule__Brick__PinsAssignment_1_4();
@@ -3644,7 +3747,7 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop10;
                 }
             } while (true);
 
@@ -3671,14 +3774,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_2__0"
-    // InternalBorduino.g:1183:1: rule__Brick__Group_2__0 : rule__Brick__Group_2__0__Impl rule__Brick__Group_2__1 ;
+    // InternalBorduino.g:1210:1: rule__Brick__Group_2__0 : rule__Brick__Group_2__0__Impl rule__Brick__Group_2__1 ;
     public final void rule__Brick__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1187:1: ( rule__Brick__Group_2__0__Impl rule__Brick__Group_2__1 )
-            // InternalBorduino.g:1188:2: rule__Brick__Group_2__0__Impl rule__Brick__Group_2__1
+            // InternalBorduino.g:1214:1: ( rule__Brick__Group_2__0__Impl rule__Brick__Group_2__1 )
+            // InternalBorduino.g:1215:2: rule__Brick__Group_2__0__Impl rule__Brick__Group_2__1
             {
             pushFollow(FOLLOW_3);
             rule__Brick__Group_2__0__Impl();
@@ -3709,17 +3812,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_2__0__Impl"
-    // InternalBorduino.g:1195:1: rule__Brick__Group_2__0__Impl : ( ruleKeyboardSensor ) ;
+    // InternalBorduino.g:1222:1: rule__Brick__Group_2__0__Impl : ( ruleKeyboardSensor ) ;
     public final void rule__Brick__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1199:1: ( ( ruleKeyboardSensor ) )
-            // InternalBorduino.g:1200:1: ( ruleKeyboardSensor )
+            // InternalBorduino.g:1226:1: ( ( ruleKeyboardSensor ) )
+            // InternalBorduino.g:1227:1: ( ruleKeyboardSensor )
             {
-            // InternalBorduino.g:1200:1: ( ruleKeyboardSensor )
-            // InternalBorduino.g:1201:2: ruleKeyboardSensor
+            // InternalBorduino.g:1227:1: ( ruleKeyboardSensor )
+            // InternalBorduino.g:1228:2: ruleKeyboardSensor
             {
              before(grammarAccess.getBrickAccess().getKeyboardSensorParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -3750,14 +3853,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_2__1"
-    // InternalBorduino.g:1210:1: rule__Brick__Group_2__1 : rule__Brick__Group_2__1__Impl ;
+    // InternalBorduino.g:1237:1: rule__Brick__Group_2__1 : rule__Brick__Group_2__1__Impl ;
     public final void rule__Brick__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1214:1: ( rule__Brick__Group_2__1__Impl )
-            // InternalBorduino.g:1215:2: rule__Brick__Group_2__1__Impl
+            // InternalBorduino.g:1241:1: ( rule__Brick__Group_2__1__Impl )
+            // InternalBorduino.g:1242:2: rule__Brick__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Brick__Group_2__1__Impl();
@@ -3783,21 +3886,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__Group_2__1__Impl"
-    // InternalBorduino.g:1221:1: rule__Brick__Group_2__1__Impl : ( ( rule__Brick__NameAssignment_2_1 ) ) ;
+    // InternalBorduino.g:1248:1: rule__Brick__Group_2__1__Impl : ( ( rule__Brick__NameAssignment_2_1 ) ) ;
     public final void rule__Brick__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1225:1: ( ( ( rule__Brick__NameAssignment_2_1 ) ) )
-            // InternalBorduino.g:1226:1: ( ( rule__Brick__NameAssignment_2_1 ) )
+            // InternalBorduino.g:1252:1: ( ( ( rule__Brick__NameAssignment_2_1 ) ) )
+            // InternalBorduino.g:1253:1: ( ( rule__Brick__NameAssignment_2_1 ) )
             {
-            // InternalBorduino.g:1226:1: ( ( rule__Brick__NameAssignment_2_1 ) )
-            // InternalBorduino.g:1227:2: ( rule__Brick__NameAssignment_2_1 )
+            // InternalBorduino.g:1253:1: ( ( rule__Brick__NameAssignment_2_1 ) )
+            // InternalBorduino.g:1254:2: ( rule__Brick__NameAssignment_2_1 )
             {
              before(grammarAccess.getBrickAccess().getNameAssignment_2_1()); 
-            // InternalBorduino.g:1228:2: ( rule__Brick__NameAssignment_2_1 )
-            // InternalBorduino.g:1228:3: rule__Brick__NameAssignment_2_1
+            // InternalBorduino.g:1255:2: ( rule__Brick__NameAssignment_2_1 )
+            // InternalBorduino.g:1255:3: rule__Brick__NameAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Brick__NameAssignment_2_1();
@@ -3830,14 +3933,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Actuator__Group__0"
-    // InternalBorduino.g:1237:1: rule__Actuator__Group__0 : rule__Actuator__Group__0__Impl rule__Actuator__Group__1 ;
+    // InternalBorduino.g:1264:1: rule__Actuator__Group__0 : rule__Actuator__Group__0__Impl rule__Actuator__Group__1 ;
     public final void rule__Actuator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1241:1: ( rule__Actuator__Group__0__Impl rule__Actuator__Group__1 )
-            // InternalBorduino.g:1242:2: rule__Actuator__Group__0__Impl rule__Actuator__Group__1
+            // InternalBorduino.g:1268:1: ( rule__Actuator__Group__0__Impl rule__Actuator__Group__1 )
+            // InternalBorduino.g:1269:2: rule__Actuator__Group__0__Impl rule__Actuator__Group__1
             {
             pushFollow(FOLLOW_15);
             rule__Actuator__Group__0__Impl();
@@ -3868,21 +3971,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Actuator__Group__0__Impl"
-    // InternalBorduino.g:1249:1: rule__Actuator__Group__0__Impl : ( () ) ;
+    // InternalBorduino.g:1276:1: rule__Actuator__Group__0__Impl : ( () ) ;
     public final void rule__Actuator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1253:1: ( ( () ) )
-            // InternalBorduino.g:1254:1: ( () )
+            // InternalBorduino.g:1280:1: ( ( () ) )
+            // InternalBorduino.g:1281:1: ( () )
             {
-            // InternalBorduino.g:1254:1: ( () )
-            // InternalBorduino.g:1255:2: ()
+            // InternalBorduino.g:1281:1: ( () )
+            // InternalBorduino.g:1282:2: ()
             {
              before(grammarAccess.getActuatorAccess().getActuatorAction_0()); 
-            // InternalBorduino.g:1256:2: ()
-            // InternalBorduino.g:1256:3: 
+            // InternalBorduino.g:1283:2: ()
+            // InternalBorduino.g:1283:3: 
             {
             }
 
@@ -3905,14 +4008,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Actuator__Group__1"
-    // InternalBorduino.g:1264:1: rule__Actuator__Group__1 : rule__Actuator__Group__1__Impl ;
+    // InternalBorduino.g:1291:1: rule__Actuator__Group__1 : rule__Actuator__Group__1__Impl ;
     public final void rule__Actuator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1268:1: ( rule__Actuator__Group__1__Impl )
-            // InternalBorduino.g:1269:2: rule__Actuator__Group__1__Impl
+            // InternalBorduino.g:1295:1: ( rule__Actuator__Group__1__Impl )
+            // InternalBorduino.g:1296:2: rule__Actuator__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Actuator__Group__1__Impl();
@@ -3938,17 +4041,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Actuator__Group__1__Impl"
-    // InternalBorduino.g:1275:1: rule__Actuator__Group__1__Impl : ( 'actuator' ) ;
+    // InternalBorduino.g:1302:1: rule__Actuator__Group__1__Impl : ( 'actuator' ) ;
     public final void rule__Actuator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1279:1: ( ( 'actuator' ) )
-            // InternalBorduino.g:1280:1: ( 'actuator' )
+            // InternalBorduino.g:1306:1: ( ( 'actuator' ) )
+            // InternalBorduino.g:1307:1: ( 'actuator' )
             {
-            // InternalBorduino.g:1280:1: ( 'actuator' )
-            // InternalBorduino.g:1281:2: 'actuator'
+            // InternalBorduino.g:1307:1: ( 'actuator' )
+            // InternalBorduino.g:1308:2: 'actuator'
             {
              before(grammarAccess.getActuatorAccess().getActuatorKeyword_1()); 
             match(input,22,FOLLOW_2); 
@@ -3975,14 +4078,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LCDScreenActuator__Group__0"
-    // InternalBorduino.g:1291:1: rule__LCDScreenActuator__Group__0 : rule__LCDScreenActuator__Group__0__Impl rule__LCDScreenActuator__Group__1 ;
+    // InternalBorduino.g:1318:1: rule__LCDScreenActuator__Group__0 : rule__LCDScreenActuator__Group__0__Impl rule__LCDScreenActuator__Group__1 ;
     public final void rule__LCDScreenActuator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1295:1: ( rule__LCDScreenActuator__Group__0__Impl rule__LCDScreenActuator__Group__1 )
-            // InternalBorduino.g:1296:2: rule__LCDScreenActuator__Group__0__Impl rule__LCDScreenActuator__Group__1
+            // InternalBorduino.g:1322:1: ( rule__LCDScreenActuator__Group__0__Impl rule__LCDScreenActuator__Group__1 )
+            // InternalBorduino.g:1323:2: rule__LCDScreenActuator__Group__0__Impl rule__LCDScreenActuator__Group__1
             {
             pushFollow(FOLLOW_16);
             rule__LCDScreenActuator__Group__0__Impl();
@@ -4013,21 +4116,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LCDScreenActuator__Group__0__Impl"
-    // InternalBorduino.g:1303:1: rule__LCDScreenActuator__Group__0__Impl : ( () ) ;
+    // InternalBorduino.g:1330:1: rule__LCDScreenActuator__Group__0__Impl : ( () ) ;
     public final void rule__LCDScreenActuator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1307:1: ( ( () ) )
-            // InternalBorduino.g:1308:1: ( () )
+            // InternalBorduino.g:1334:1: ( ( () ) )
+            // InternalBorduino.g:1335:1: ( () )
             {
-            // InternalBorduino.g:1308:1: ( () )
-            // InternalBorduino.g:1309:2: ()
+            // InternalBorduino.g:1335:1: ( () )
+            // InternalBorduino.g:1336:2: ()
             {
              before(grammarAccess.getLCDScreenActuatorAccess().getLCDScreenActuatorAction_0()); 
-            // InternalBorduino.g:1310:2: ()
-            // InternalBorduino.g:1310:3: 
+            // InternalBorduino.g:1337:2: ()
+            // InternalBorduino.g:1337:3: 
             {
             }
 
@@ -4050,14 +4153,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LCDScreenActuator__Group__1"
-    // InternalBorduino.g:1318:1: rule__LCDScreenActuator__Group__1 : rule__LCDScreenActuator__Group__1__Impl ;
+    // InternalBorduino.g:1345:1: rule__LCDScreenActuator__Group__1 : rule__LCDScreenActuator__Group__1__Impl ;
     public final void rule__LCDScreenActuator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1322:1: ( rule__LCDScreenActuator__Group__1__Impl )
-            // InternalBorduino.g:1323:2: rule__LCDScreenActuator__Group__1__Impl
+            // InternalBorduino.g:1349:1: ( rule__LCDScreenActuator__Group__1__Impl )
+            // InternalBorduino.g:1350:2: rule__LCDScreenActuator__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LCDScreenActuator__Group__1__Impl();
@@ -4083,17 +4186,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LCDScreenActuator__Group__1__Impl"
-    // InternalBorduino.g:1329:1: rule__LCDScreenActuator__Group__1__Impl : ( 'screenActuator' ) ;
+    // InternalBorduino.g:1356:1: rule__LCDScreenActuator__Group__1__Impl : ( 'screenActuator' ) ;
     public final void rule__LCDScreenActuator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1333:1: ( ( 'screenActuator' ) )
-            // InternalBorduino.g:1334:1: ( 'screenActuator' )
+            // InternalBorduino.g:1360:1: ( ( 'screenActuator' ) )
+            // InternalBorduino.g:1361:1: ( 'screenActuator' )
             {
-            // InternalBorduino.g:1334:1: ( 'screenActuator' )
-            // InternalBorduino.g:1335:2: 'screenActuator'
+            // InternalBorduino.g:1361:1: ( 'screenActuator' )
+            // InternalBorduino.g:1362:2: 'screenActuator'
             {
              before(grammarAccess.getLCDScreenActuatorAccess().getScreenActuatorKeyword_1()); 
             match(input,23,FOLLOW_2); 
@@ -4120,14 +4223,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__KeyboardSensor__Group__0"
-    // InternalBorduino.g:1345:1: rule__KeyboardSensor__Group__0 : rule__KeyboardSensor__Group__0__Impl rule__KeyboardSensor__Group__1 ;
+    // InternalBorduino.g:1372:1: rule__KeyboardSensor__Group__0 : rule__KeyboardSensor__Group__0__Impl rule__KeyboardSensor__Group__1 ;
     public final void rule__KeyboardSensor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1349:1: ( rule__KeyboardSensor__Group__0__Impl rule__KeyboardSensor__Group__1 )
-            // InternalBorduino.g:1350:2: rule__KeyboardSensor__Group__0__Impl rule__KeyboardSensor__Group__1
+            // InternalBorduino.g:1376:1: ( rule__KeyboardSensor__Group__0__Impl rule__KeyboardSensor__Group__1 )
+            // InternalBorduino.g:1377:2: rule__KeyboardSensor__Group__0__Impl rule__KeyboardSensor__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__KeyboardSensor__Group__0__Impl();
@@ -4158,21 +4261,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__KeyboardSensor__Group__0__Impl"
-    // InternalBorduino.g:1357:1: rule__KeyboardSensor__Group__0__Impl : ( () ) ;
+    // InternalBorduino.g:1384:1: rule__KeyboardSensor__Group__0__Impl : ( () ) ;
     public final void rule__KeyboardSensor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1361:1: ( ( () ) )
-            // InternalBorduino.g:1362:1: ( () )
+            // InternalBorduino.g:1388:1: ( ( () ) )
+            // InternalBorduino.g:1389:1: ( () )
             {
-            // InternalBorduino.g:1362:1: ( () )
-            // InternalBorduino.g:1363:2: ()
+            // InternalBorduino.g:1389:1: ( () )
+            // InternalBorduino.g:1390:2: ()
             {
              before(grammarAccess.getKeyboardSensorAccess().getKeyboardSensorAction_0()); 
-            // InternalBorduino.g:1364:2: ()
-            // InternalBorduino.g:1364:3: 
+            // InternalBorduino.g:1391:2: ()
+            // InternalBorduino.g:1391:3: 
             {
             }
 
@@ -4195,14 +4298,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__KeyboardSensor__Group__1"
-    // InternalBorduino.g:1372:1: rule__KeyboardSensor__Group__1 : rule__KeyboardSensor__Group__1__Impl ;
+    // InternalBorduino.g:1399:1: rule__KeyboardSensor__Group__1 : rule__KeyboardSensor__Group__1__Impl ;
     public final void rule__KeyboardSensor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1376:1: ( rule__KeyboardSensor__Group__1__Impl )
-            // InternalBorduino.g:1377:2: rule__KeyboardSensor__Group__1__Impl
+            // InternalBorduino.g:1403:1: ( rule__KeyboardSensor__Group__1__Impl )
+            // InternalBorduino.g:1404:2: rule__KeyboardSensor__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__KeyboardSensor__Group__1__Impl();
@@ -4228,17 +4331,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__KeyboardSensor__Group__1__Impl"
-    // InternalBorduino.g:1383:1: rule__KeyboardSensor__Group__1__Impl : ( 'keyboardSensor' ) ;
+    // InternalBorduino.g:1410:1: rule__KeyboardSensor__Group__1__Impl : ( 'keyboardSensor' ) ;
     public final void rule__KeyboardSensor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1387:1: ( ( 'keyboardSensor' ) )
-            // InternalBorduino.g:1388:1: ( 'keyboardSensor' )
+            // InternalBorduino.g:1414:1: ( ( 'keyboardSensor' ) )
+            // InternalBorduino.g:1415:1: ( 'keyboardSensor' )
             {
-            // InternalBorduino.g:1388:1: ( 'keyboardSensor' )
-            // InternalBorduino.g:1389:2: 'keyboardSensor'
+            // InternalBorduino.g:1415:1: ( 'keyboardSensor' )
+            // InternalBorduino.g:1416:2: 'keyboardSensor'
             {
              before(grammarAccess.getKeyboardSensorAccess().getKeyboardSensorKeyword_1()); 
             match(input,24,FOLLOW_2); 
@@ -4265,14 +4368,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sensor__Group__0"
-    // InternalBorduino.g:1399:1: rule__Sensor__Group__0 : rule__Sensor__Group__0__Impl rule__Sensor__Group__1 ;
+    // InternalBorduino.g:1426:1: rule__Sensor__Group__0 : rule__Sensor__Group__0__Impl rule__Sensor__Group__1 ;
     public final void rule__Sensor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1403:1: ( rule__Sensor__Group__0__Impl rule__Sensor__Group__1 )
-            // InternalBorduino.g:1404:2: rule__Sensor__Group__0__Impl rule__Sensor__Group__1
+            // InternalBorduino.g:1430:1: ( rule__Sensor__Group__0__Impl rule__Sensor__Group__1 )
+            // InternalBorduino.g:1431:2: rule__Sensor__Group__0__Impl rule__Sensor__Group__1
             {
             pushFollow(FOLLOW_17);
             rule__Sensor__Group__0__Impl();
@@ -4303,21 +4406,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sensor__Group__0__Impl"
-    // InternalBorduino.g:1411:1: rule__Sensor__Group__0__Impl : ( () ) ;
+    // InternalBorduino.g:1438:1: rule__Sensor__Group__0__Impl : ( () ) ;
     public final void rule__Sensor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1415:1: ( ( () ) )
-            // InternalBorduino.g:1416:1: ( () )
+            // InternalBorduino.g:1442:1: ( ( () ) )
+            // InternalBorduino.g:1443:1: ( () )
             {
-            // InternalBorduino.g:1416:1: ( () )
-            // InternalBorduino.g:1417:2: ()
+            // InternalBorduino.g:1443:1: ( () )
+            // InternalBorduino.g:1444:2: ()
             {
              before(grammarAccess.getSensorAccess().getSensorAction_0()); 
-            // InternalBorduino.g:1418:2: ()
-            // InternalBorduino.g:1418:3: 
+            // InternalBorduino.g:1445:2: ()
+            // InternalBorduino.g:1445:3: 
             {
             }
 
@@ -4340,14 +4443,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sensor__Group__1"
-    // InternalBorduino.g:1426:1: rule__Sensor__Group__1 : rule__Sensor__Group__1__Impl ;
+    // InternalBorduino.g:1453:1: rule__Sensor__Group__1 : rule__Sensor__Group__1__Impl ;
     public final void rule__Sensor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1430:1: ( rule__Sensor__Group__1__Impl )
-            // InternalBorduino.g:1431:2: rule__Sensor__Group__1__Impl
+            // InternalBorduino.g:1457:1: ( rule__Sensor__Group__1__Impl )
+            // InternalBorduino.g:1458:2: rule__Sensor__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__Group__1__Impl();
@@ -4373,17 +4476,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sensor__Group__1__Impl"
-    // InternalBorduino.g:1437:1: rule__Sensor__Group__1__Impl : ( 'sensor' ) ;
+    // InternalBorduino.g:1464:1: rule__Sensor__Group__1__Impl : ( 'sensor' ) ;
     public final void rule__Sensor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1441:1: ( ( 'sensor' ) )
-            // InternalBorduino.g:1442:1: ( 'sensor' )
+            // InternalBorduino.g:1468:1: ( ( 'sensor' ) )
+            // InternalBorduino.g:1469:1: ( 'sensor' )
             {
-            // InternalBorduino.g:1442:1: ( 'sensor' )
-            // InternalBorduino.g:1443:2: 'sensor'
+            // InternalBorduino.g:1469:1: ( 'sensor' )
+            // InternalBorduino.g:1470:2: 'sensor'
             {
              before(grammarAccess.getSensorAccess().getSensorKeyword_1()); 
             match(input,25,FOLLOW_2); 
@@ -4410,14 +4513,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EInt__Group__0"
-    // InternalBorduino.g:1453:1: rule__EInt__Group__0 : rule__EInt__Group__0__Impl rule__EInt__Group__1 ;
+    // InternalBorduino.g:1480:1: rule__EInt__Group__0 : rule__EInt__Group__0__Impl rule__EInt__Group__1 ;
     public final void rule__EInt__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1457:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
-            // InternalBorduino.g:1458:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
+            // InternalBorduino.g:1484:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
+            // InternalBorduino.g:1485:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__EInt__Group__0__Impl();
@@ -4448,29 +4551,29 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EInt__Group__0__Impl"
-    // InternalBorduino.g:1465:1: rule__EInt__Group__0__Impl : ( ( '-' )? ) ;
+    // InternalBorduino.g:1492:1: rule__EInt__Group__0__Impl : ( ( '-' )? ) ;
     public final void rule__EInt__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1469:1: ( ( ( '-' )? ) )
-            // InternalBorduino.g:1470:1: ( ( '-' )? )
+            // InternalBorduino.g:1496:1: ( ( ( '-' )? ) )
+            // InternalBorduino.g:1497:1: ( ( '-' )? )
             {
-            // InternalBorduino.g:1470:1: ( ( '-' )? )
-            // InternalBorduino.g:1471:2: ( '-' )?
+            // InternalBorduino.g:1497:1: ( ( '-' )? )
+            // InternalBorduino.g:1498:2: ( '-' )?
             {
              before(grammarAccess.getEIntAccess().getHyphenMinusKeyword_0()); 
-            // InternalBorduino.g:1472:2: ( '-' )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // InternalBorduino.g:1499:2: ( '-' )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0==26) ) {
-                alt10=1;
+            if ( (LA11_0==26) ) {
+                alt11=1;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // InternalBorduino.g:1472:3: '-'
+                    // InternalBorduino.g:1499:3: '-'
                     {
                     match(input,26,FOLLOW_2); 
 
@@ -4502,14 +4605,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EInt__Group__1"
-    // InternalBorduino.g:1480:1: rule__EInt__Group__1 : rule__EInt__Group__1__Impl ;
+    // InternalBorduino.g:1507:1: rule__EInt__Group__1 : rule__EInt__Group__1__Impl ;
     public final void rule__EInt__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1484:1: ( rule__EInt__Group__1__Impl )
-            // InternalBorduino.g:1485:2: rule__EInt__Group__1__Impl
+            // InternalBorduino.g:1511:1: ( rule__EInt__Group__1__Impl )
+            // InternalBorduino.g:1512:2: rule__EInt__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EInt__Group__1__Impl();
@@ -4535,17 +4638,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EInt__Group__1__Impl"
-    // InternalBorduino.g:1491:1: rule__EInt__Group__1__Impl : ( RULE_INT ) ;
+    // InternalBorduino.g:1518:1: rule__EInt__Group__1__Impl : ( RULE_INT ) ;
     public final void rule__EInt__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1495:1: ( ( RULE_INT ) )
-            // InternalBorduino.g:1496:1: ( RULE_INT )
+            // InternalBorduino.g:1522:1: ( ( RULE_INT ) )
+            // InternalBorduino.g:1523:1: ( RULE_INT )
             {
-            // InternalBorduino.g:1496:1: ( RULE_INT )
-            // InternalBorduino.g:1497:2: RULE_INT
+            // InternalBorduino.g:1523:1: ( RULE_INT )
+            // InternalBorduino.g:1524:2: RULE_INT
             {
              before(grammarAccess.getEIntAccess().getINTTerminalRuleCall_1()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4572,14 +4675,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__0"
-    // InternalBorduino.g:1507:1: rule__State__Group__0 : rule__State__Group__0__Impl rule__State__Group__1 ;
+    // InternalBorduino.g:1534:1: rule__State__Group__0 : rule__State__Group__0__Impl rule__State__Group__1 ;
     public final void rule__State__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1511:1: ( rule__State__Group__0__Impl rule__State__Group__1 )
-            // InternalBorduino.g:1512:2: rule__State__Group__0__Impl rule__State__Group__1
+            // InternalBorduino.g:1538:1: ( rule__State__Group__0__Impl rule__State__Group__1 )
+            // InternalBorduino.g:1539:2: rule__State__Group__0__Impl rule__State__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__State__Group__0__Impl();
@@ -4610,21 +4713,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__0__Impl"
-    // InternalBorduino.g:1519:1: rule__State__Group__0__Impl : ( ( rule__State__NameAssignment_0 ) ) ;
+    // InternalBorduino.g:1546:1: rule__State__Group__0__Impl : ( ( rule__State__NameAssignment_0 ) ) ;
     public final void rule__State__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1523:1: ( ( ( rule__State__NameAssignment_0 ) ) )
-            // InternalBorduino.g:1524:1: ( ( rule__State__NameAssignment_0 ) )
+            // InternalBorduino.g:1550:1: ( ( ( rule__State__NameAssignment_0 ) ) )
+            // InternalBorduino.g:1551:1: ( ( rule__State__NameAssignment_0 ) )
             {
-            // InternalBorduino.g:1524:1: ( ( rule__State__NameAssignment_0 ) )
-            // InternalBorduino.g:1525:2: ( rule__State__NameAssignment_0 )
+            // InternalBorduino.g:1551:1: ( ( rule__State__NameAssignment_0 ) )
+            // InternalBorduino.g:1552:2: ( rule__State__NameAssignment_0 )
             {
              before(grammarAccess.getStateAccess().getNameAssignment_0()); 
-            // InternalBorduino.g:1526:2: ( rule__State__NameAssignment_0 )
-            // InternalBorduino.g:1526:3: rule__State__NameAssignment_0
+            // InternalBorduino.g:1553:2: ( rule__State__NameAssignment_0 )
+            // InternalBorduino.g:1553:3: rule__State__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__State__NameAssignment_0();
@@ -4657,14 +4760,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__1"
-    // InternalBorduino.g:1534:1: rule__State__Group__1 : rule__State__Group__1__Impl rule__State__Group__2 ;
+    // InternalBorduino.g:1561:1: rule__State__Group__1 : rule__State__Group__1__Impl rule__State__Group__2 ;
     public final void rule__State__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1538:1: ( rule__State__Group__1__Impl rule__State__Group__2 )
-            // InternalBorduino.g:1539:2: rule__State__Group__1__Impl rule__State__Group__2
+            // InternalBorduino.g:1565:1: ( rule__State__Group__1__Impl rule__State__Group__2 )
+            // InternalBorduino.g:1566:2: rule__State__Group__1__Impl rule__State__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__State__Group__1__Impl();
@@ -4695,17 +4798,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__1__Impl"
-    // InternalBorduino.g:1546:1: rule__State__Group__1__Impl : ( '{' ) ;
+    // InternalBorduino.g:1573:1: rule__State__Group__1__Impl : ( '{' ) ;
     public final void rule__State__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1550:1: ( ( '{' ) )
-            // InternalBorduino.g:1551:1: ( '{' )
+            // InternalBorduino.g:1577:1: ( ( '{' ) )
+            // InternalBorduino.g:1578:1: ( '{' )
             {
-            // InternalBorduino.g:1551:1: ( '{' )
-            // InternalBorduino.g:1552:2: '{'
+            // InternalBorduino.g:1578:1: ( '{' )
+            // InternalBorduino.g:1579:2: '{'
             {
              before(grammarAccess.getStateAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,17,FOLLOW_2); 
@@ -4732,14 +4835,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__2"
-    // InternalBorduino.g:1561:1: rule__State__Group__2 : rule__State__Group__2__Impl rule__State__Group__3 ;
+    // InternalBorduino.g:1588:1: rule__State__Group__2 : rule__State__Group__2__Impl rule__State__Group__3 ;
     public final void rule__State__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1565:1: ( rule__State__Group__2__Impl rule__State__Group__3 )
-            // InternalBorduino.g:1566:2: rule__State__Group__2__Impl rule__State__Group__3
+            // InternalBorduino.g:1592:1: ( rule__State__Group__2__Impl rule__State__Group__3 )
+            // InternalBorduino.g:1593:2: rule__State__Group__2__Impl rule__State__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__State__Group__2__Impl();
@@ -4770,21 +4873,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__2__Impl"
-    // InternalBorduino.g:1573:1: rule__State__Group__2__Impl : ( ( rule__State__ActionsAssignment_2 ) ) ;
+    // InternalBorduino.g:1600:1: rule__State__Group__2__Impl : ( ( rule__State__ActionsAssignment_2 ) ) ;
     public final void rule__State__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1577:1: ( ( ( rule__State__ActionsAssignment_2 ) ) )
-            // InternalBorduino.g:1578:1: ( ( rule__State__ActionsAssignment_2 ) )
+            // InternalBorduino.g:1604:1: ( ( ( rule__State__ActionsAssignment_2 ) ) )
+            // InternalBorduino.g:1605:1: ( ( rule__State__ActionsAssignment_2 ) )
             {
-            // InternalBorduino.g:1578:1: ( ( rule__State__ActionsAssignment_2 ) )
-            // InternalBorduino.g:1579:2: ( rule__State__ActionsAssignment_2 )
+            // InternalBorduino.g:1605:1: ( ( rule__State__ActionsAssignment_2 ) )
+            // InternalBorduino.g:1606:2: ( rule__State__ActionsAssignment_2 )
             {
              before(grammarAccess.getStateAccess().getActionsAssignment_2()); 
-            // InternalBorduino.g:1580:2: ( rule__State__ActionsAssignment_2 )
-            // InternalBorduino.g:1580:3: rule__State__ActionsAssignment_2
+            // InternalBorduino.g:1607:2: ( rule__State__ActionsAssignment_2 )
+            // InternalBorduino.g:1607:3: rule__State__ActionsAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__State__ActionsAssignment_2();
@@ -4817,14 +4920,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__3"
-    // InternalBorduino.g:1588:1: rule__State__Group__3 : rule__State__Group__3__Impl rule__State__Group__4 ;
+    // InternalBorduino.g:1615:1: rule__State__Group__3 : rule__State__Group__3__Impl rule__State__Group__4 ;
     public final void rule__State__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1592:1: ( rule__State__Group__3__Impl rule__State__Group__4 )
-            // InternalBorduino.g:1593:2: rule__State__Group__3__Impl rule__State__Group__4
+            // InternalBorduino.g:1619:1: ( rule__State__Group__3__Impl rule__State__Group__4 )
+            // InternalBorduino.g:1620:2: rule__State__Group__3__Impl rule__State__Group__4
             {
             pushFollow(FOLLOW_3);
             rule__State__Group__3__Impl();
@@ -4855,48 +4958,48 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__3__Impl"
-    // InternalBorduino.g:1600:1: rule__State__Group__3__Impl : ( ( rule__State__ActionsAssignment_3 )* ) ;
+    // InternalBorduino.g:1627:1: rule__State__Group__3__Impl : ( ( rule__State__ActionsAssignment_3 )* ) ;
     public final void rule__State__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1604:1: ( ( ( rule__State__ActionsAssignment_3 )* ) )
-            // InternalBorduino.g:1605:1: ( ( rule__State__ActionsAssignment_3 )* )
+            // InternalBorduino.g:1631:1: ( ( ( rule__State__ActionsAssignment_3 )* ) )
+            // InternalBorduino.g:1632:1: ( ( rule__State__ActionsAssignment_3 )* )
             {
-            // InternalBorduino.g:1605:1: ( ( rule__State__ActionsAssignment_3 )* )
-            // InternalBorduino.g:1606:2: ( rule__State__ActionsAssignment_3 )*
+            // InternalBorduino.g:1632:1: ( ( rule__State__ActionsAssignment_3 )* )
+            // InternalBorduino.g:1633:2: ( rule__State__ActionsAssignment_3 )*
             {
              before(grammarAccess.getStateAccess().getActionsAssignment_3()); 
-            // InternalBorduino.g:1607:2: ( rule__State__ActionsAssignment_3 )*
-            loop11:
+            // InternalBorduino.g:1634:2: ( rule__State__ActionsAssignment_3 )*
+            loop12:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA11_0==RULE_STRING) ) {
-                    int LA11_1 = input.LA(2);
+                if ( (LA12_0==RULE_STRING) ) {
+                    int LA12_1 = input.LA(2);
 
-                    if ( (LA11_1==21) ) {
-                        alt11=1;
+                    if ( (LA12_1==21) ) {
+                        alt12=1;
                     }
 
 
                 }
-                else if ( (LA11_0==RULE_ID) ) {
-                    int LA11_2 = input.LA(2);
+                else if ( (LA12_0==RULE_ID) ) {
+                    int LA12_2 = input.LA(2);
 
-                    if ( (LA11_2==21) ) {
-                        alt11=1;
+                    if ( (LA12_2==21) ) {
+                        alt12=1;
                     }
 
 
                 }
 
 
-                switch (alt11) {
+                switch (alt12) {
             	case 1 :
-            	    // InternalBorduino.g:1607:3: rule__State__ActionsAssignment_3
+            	    // InternalBorduino.g:1634:3: rule__State__ActionsAssignment_3
             	    {
             	    pushFollow(FOLLOW_11);
             	    rule__State__ActionsAssignment_3();
@@ -4908,7 +5011,7 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop12;
                 }
             } while (true);
 
@@ -4935,14 +5038,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__4"
-    // InternalBorduino.g:1615:1: rule__State__Group__4 : rule__State__Group__4__Impl rule__State__Group__5 ;
+    // InternalBorduino.g:1642:1: rule__State__Group__4 : rule__State__Group__4__Impl rule__State__Group__5 ;
     public final void rule__State__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1619:1: ( rule__State__Group__4__Impl rule__State__Group__5 )
-            // InternalBorduino.g:1620:2: rule__State__Group__4__Impl rule__State__Group__5
+            // InternalBorduino.g:1646:1: ( rule__State__Group__4__Impl rule__State__Group__5 )
+            // InternalBorduino.g:1647:2: rule__State__Group__4__Impl rule__State__Group__5
             {
             pushFollow(FOLLOW_18);
             rule__State__Group__4__Impl();
@@ -4973,21 +5076,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__4__Impl"
-    // InternalBorduino.g:1627:1: rule__State__Group__4__Impl : ( ( rule__State__TransitionAssignment_4 ) ) ;
+    // InternalBorduino.g:1654:1: rule__State__Group__4__Impl : ( ( rule__State__TransitionAssignment_4 ) ) ;
     public final void rule__State__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1631:1: ( ( ( rule__State__TransitionAssignment_4 ) ) )
-            // InternalBorduino.g:1632:1: ( ( rule__State__TransitionAssignment_4 ) )
+            // InternalBorduino.g:1658:1: ( ( ( rule__State__TransitionAssignment_4 ) ) )
+            // InternalBorduino.g:1659:1: ( ( rule__State__TransitionAssignment_4 ) )
             {
-            // InternalBorduino.g:1632:1: ( ( rule__State__TransitionAssignment_4 ) )
-            // InternalBorduino.g:1633:2: ( rule__State__TransitionAssignment_4 )
+            // InternalBorduino.g:1659:1: ( ( rule__State__TransitionAssignment_4 ) )
+            // InternalBorduino.g:1660:2: ( rule__State__TransitionAssignment_4 )
             {
              before(grammarAccess.getStateAccess().getTransitionAssignment_4()); 
-            // InternalBorduino.g:1634:2: ( rule__State__TransitionAssignment_4 )
-            // InternalBorduino.g:1634:3: rule__State__TransitionAssignment_4
+            // InternalBorduino.g:1661:2: ( rule__State__TransitionAssignment_4 )
+            // InternalBorduino.g:1661:3: rule__State__TransitionAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__State__TransitionAssignment_4();
@@ -5020,14 +5123,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__5"
-    // InternalBorduino.g:1642:1: rule__State__Group__5 : rule__State__Group__5__Impl ;
+    // InternalBorduino.g:1669:1: rule__State__Group__5 : rule__State__Group__5__Impl ;
     public final void rule__State__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1646:1: ( rule__State__Group__5__Impl )
-            // InternalBorduino.g:1647:2: rule__State__Group__5__Impl
+            // InternalBorduino.g:1673:1: ( rule__State__Group__5__Impl )
+            // InternalBorduino.g:1674:2: rule__State__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__State__Group__5__Impl();
@@ -5053,17 +5156,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__5__Impl"
-    // InternalBorduino.g:1653:1: rule__State__Group__5__Impl : ( '}' ) ;
+    // InternalBorduino.g:1680:1: rule__State__Group__5__Impl : ( '}' ) ;
     public final void rule__State__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1657:1: ( ( '}' ) )
-            // InternalBorduino.g:1658:1: ( '}' )
+            // InternalBorduino.g:1684:1: ( ( '}' ) )
+            // InternalBorduino.g:1685:1: ( '}' )
             {
-            // InternalBorduino.g:1658:1: ( '}' )
-            // InternalBorduino.g:1659:2: '}'
+            // InternalBorduino.g:1685:1: ( '}' )
+            // InternalBorduino.g:1686:2: '}'
             {
              before(grammarAccess.getStateAccess().getRightCurlyBracketKeyword_5()); 
             match(input,20,FOLLOW_2); 
@@ -5090,14 +5193,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__0"
-    // InternalBorduino.g:1669:1: rule__Action__Group__0 : rule__Action__Group__0__Impl rule__Action__Group__1 ;
+    // InternalBorduino.g:1696:1: rule__Action__Group__0 : rule__Action__Group__0__Impl rule__Action__Group__1 ;
     public final void rule__Action__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1673:1: ( rule__Action__Group__0__Impl rule__Action__Group__1 )
-            // InternalBorduino.g:1674:2: rule__Action__Group__0__Impl rule__Action__Group__1
+            // InternalBorduino.g:1700:1: ( rule__Action__Group__0__Impl rule__Action__Group__1 )
+            // InternalBorduino.g:1701:2: rule__Action__Group__0__Impl rule__Action__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Action__Group__0__Impl();
@@ -5128,21 +5231,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__0__Impl"
-    // InternalBorduino.g:1681:1: rule__Action__Group__0__Impl : ( ( rule__Action__ActuatorAssignment_0 ) ) ;
+    // InternalBorduino.g:1708:1: rule__Action__Group__0__Impl : ( ( rule__Action__ActuatorAssignment_0 ) ) ;
     public final void rule__Action__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1685:1: ( ( ( rule__Action__ActuatorAssignment_0 ) ) )
-            // InternalBorduino.g:1686:1: ( ( rule__Action__ActuatorAssignment_0 ) )
+            // InternalBorduino.g:1712:1: ( ( ( rule__Action__ActuatorAssignment_0 ) ) )
+            // InternalBorduino.g:1713:1: ( ( rule__Action__ActuatorAssignment_0 ) )
             {
-            // InternalBorduino.g:1686:1: ( ( rule__Action__ActuatorAssignment_0 ) )
-            // InternalBorduino.g:1687:2: ( rule__Action__ActuatorAssignment_0 )
+            // InternalBorduino.g:1713:1: ( ( rule__Action__ActuatorAssignment_0 ) )
+            // InternalBorduino.g:1714:2: ( rule__Action__ActuatorAssignment_0 )
             {
              before(grammarAccess.getActionAccess().getActuatorAssignment_0()); 
-            // InternalBorduino.g:1688:2: ( rule__Action__ActuatorAssignment_0 )
-            // InternalBorduino.g:1688:3: rule__Action__ActuatorAssignment_0
+            // InternalBorduino.g:1715:2: ( rule__Action__ActuatorAssignment_0 )
+            // InternalBorduino.g:1715:3: rule__Action__ActuatorAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Action__ActuatorAssignment_0();
@@ -5175,14 +5278,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__1"
-    // InternalBorduino.g:1696:1: rule__Action__Group__1 : rule__Action__Group__1__Impl rule__Action__Group__2 ;
+    // InternalBorduino.g:1723:1: rule__Action__Group__1 : rule__Action__Group__1__Impl rule__Action__Group__2 ;
     public final void rule__Action__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1700:1: ( rule__Action__Group__1__Impl rule__Action__Group__2 )
-            // InternalBorduino.g:1701:2: rule__Action__Group__1__Impl rule__Action__Group__2
+            // InternalBorduino.g:1727:1: ( rule__Action__Group__1__Impl rule__Action__Group__2 )
+            // InternalBorduino.g:1728:2: rule__Action__Group__1__Impl rule__Action__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__Action__Group__1__Impl();
@@ -5213,17 +5316,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__1__Impl"
-    // InternalBorduino.g:1708:1: rule__Action__Group__1__Impl : ( ':' ) ;
+    // InternalBorduino.g:1735:1: rule__Action__Group__1__Impl : ( ':' ) ;
     public final void rule__Action__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1712:1: ( ( ':' ) )
-            // InternalBorduino.g:1713:1: ( ':' )
+            // InternalBorduino.g:1739:1: ( ( ':' ) )
+            // InternalBorduino.g:1740:1: ( ':' )
             {
-            // InternalBorduino.g:1713:1: ( ':' )
-            // InternalBorduino.g:1714:2: ':'
+            // InternalBorduino.g:1740:1: ( ':' )
+            // InternalBorduino.g:1741:2: ':'
             {
              before(grammarAccess.getActionAccess().getColonKeyword_1()); 
             match(input,21,FOLLOW_2); 
@@ -5250,14 +5353,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__2"
-    // InternalBorduino.g:1723:1: rule__Action__Group__2 : rule__Action__Group__2__Impl ;
+    // InternalBorduino.g:1750:1: rule__Action__Group__2 : rule__Action__Group__2__Impl ;
     public final void rule__Action__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1727:1: ( rule__Action__Group__2__Impl )
-            // InternalBorduino.g:1728:2: rule__Action__Group__2__Impl
+            // InternalBorduino.g:1754:1: ( rule__Action__Group__2__Impl )
+            // InternalBorduino.g:1755:2: rule__Action__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Action__Group__2__Impl();
@@ -5283,21 +5386,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__2__Impl"
-    // InternalBorduino.g:1734:1: rule__Action__Group__2__Impl : ( ( rule__Action__ValueAssignment_2 ) ) ;
+    // InternalBorduino.g:1761:1: rule__Action__Group__2__Impl : ( ( rule__Action__ValueAssignment_2 ) ) ;
     public final void rule__Action__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1738:1: ( ( ( rule__Action__ValueAssignment_2 ) ) )
-            // InternalBorduino.g:1739:1: ( ( rule__Action__ValueAssignment_2 ) )
+            // InternalBorduino.g:1765:1: ( ( ( rule__Action__ValueAssignment_2 ) ) )
+            // InternalBorduino.g:1766:1: ( ( rule__Action__ValueAssignment_2 ) )
             {
-            // InternalBorduino.g:1739:1: ( ( rule__Action__ValueAssignment_2 ) )
-            // InternalBorduino.g:1740:2: ( rule__Action__ValueAssignment_2 )
+            // InternalBorduino.g:1766:1: ( ( rule__Action__ValueAssignment_2 ) )
+            // InternalBorduino.g:1767:2: ( rule__Action__ValueAssignment_2 )
             {
              before(grammarAccess.getActionAccess().getValueAssignment_2()); 
-            // InternalBorduino.g:1741:2: ( rule__Action__ValueAssignment_2 )
-            // InternalBorduino.g:1741:3: rule__Action__ValueAssignment_2
+            // InternalBorduino.g:1768:2: ( rule__Action__ValueAssignment_2 )
+            // InternalBorduino.g:1768:3: rule__Action__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Action__ValueAssignment_2();
@@ -5330,14 +5433,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__Group__0"
-    // InternalBorduino.g:1750:1: rule__Transition__Group__0 : rule__Transition__Group__0__Impl rule__Transition__Group__1 ;
+    // InternalBorduino.g:1777:1: rule__Transition__Group__0 : rule__Transition__Group__0__Impl rule__Transition__Group__1 ;
     public final void rule__Transition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1754:1: ( rule__Transition__Group__0__Impl rule__Transition__Group__1 )
-            // InternalBorduino.g:1755:2: rule__Transition__Group__0__Impl rule__Transition__Group__1
+            // InternalBorduino.g:1781:1: ( rule__Transition__Group__0__Impl rule__Transition__Group__1 )
+            // InternalBorduino.g:1782:2: rule__Transition__Group__0__Impl rule__Transition__Group__1
             {
             pushFollow(FOLLOW_20);
             rule__Transition__Group__0__Impl();
@@ -5368,21 +5471,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__Group__0__Impl"
-    // InternalBorduino.g:1762:1: rule__Transition__Group__0__Impl : ( ( rule__Transition__ConditionsAssignment_0 ) ) ;
+    // InternalBorduino.g:1789:1: rule__Transition__Group__0__Impl : ( ( rule__Transition__ConditionsAssignment_0 ) ) ;
     public final void rule__Transition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1766:1: ( ( ( rule__Transition__ConditionsAssignment_0 ) ) )
-            // InternalBorduino.g:1767:1: ( ( rule__Transition__ConditionsAssignment_0 ) )
+            // InternalBorduino.g:1793:1: ( ( ( rule__Transition__ConditionsAssignment_0 ) ) )
+            // InternalBorduino.g:1794:1: ( ( rule__Transition__ConditionsAssignment_0 ) )
             {
-            // InternalBorduino.g:1767:1: ( ( rule__Transition__ConditionsAssignment_0 ) )
-            // InternalBorduino.g:1768:2: ( rule__Transition__ConditionsAssignment_0 )
+            // InternalBorduino.g:1794:1: ( ( rule__Transition__ConditionsAssignment_0 ) )
+            // InternalBorduino.g:1795:2: ( rule__Transition__ConditionsAssignment_0 )
             {
              before(grammarAccess.getTransitionAccess().getConditionsAssignment_0()); 
-            // InternalBorduino.g:1769:2: ( rule__Transition__ConditionsAssignment_0 )
-            // InternalBorduino.g:1769:3: rule__Transition__ConditionsAssignment_0
+            // InternalBorduino.g:1796:2: ( rule__Transition__ConditionsAssignment_0 )
+            // InternalBorduino.g:1796:3: rule__Transition__ConditionsAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Transition__ConditionsAssignment_0();
@@ -5415,14 +5518,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__Group__1"
-    // InternalBorduino.g:1777:1: rule__Transition__Group__1 : rule__Transition__Group__1__Impl rule__Transition__Group__2 ;
+    // InternalBorduino.g:1804:1: rule__Transition__Group__1 : rule__Transition__Group__1__Impl rule__Transition__Group__2 ;
     public final void rule__Transition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1781:1: ( rule__Transition__Group__1__Impl rule__Transition__Group__2 )
-            // InternalBorduino.g:1782:2: rule__Transition__Group__1__Impl rule__Transition__Group__2
+            // InternalBorduino.g:1808:1: ( rule__Transition__Group__1__Impl rule__Transition__Group__2 )
+            // InternalBorduino.g:1809:2: rule__Transition__Group__1__Impl rule__Transition__Group__2
             {
             pushFollow(FOLLOW_20);
             rule__Transition__Group__1__Impl();
@@ -5453,33 +5556,33 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__Group__1__Impl"
-    // InternalBorduino.g:1789:1: rule__Transition__Group__1__Impl : ( ( rule__Transition__ConditionsAssignment_1 )* ) ;
+    // InternalBorduino.g:1816:1: rule__Transition__Group__1__Impl : ( ( rule__Transition__ConditionsAssignment_1 )* ) ;
     public final void rule__Transition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1793:1: ( ( ( rule__Transition__ConditionsAssignment_1 )* ) )
-            // InternalBorduino.g:1794:1: ( ( rule__Transition__ConditionsAssignment_1 )* )
+            // InternalBorduino.g:1820:1: ( ( ( rule__Transition__ConditionsAssignment_1 )* ) )
+            // InternalBorduino.g:1821:1: ( ( rule__Transition__ConditionsAssignment_1 )* )
             {
-            // InternalBorduino.g:1794:1: ( ( rule__Transition__ConditionsAssignment_1 )* )
-            // InternalBorduino.g:1795:2: ( rule__Transition__ConditionsAssignment_1 )*
+            // InternalBorduino.g:1821:1: ( ( rule__Transition__ConditionsAssignment_1 )* )
+            // InternalBorduino.g:1822:2: ( rule__Transition__ConditionsAssignment_1 )*
             {
              before(grammarAccess.getTransitionAccess().getConditionsAssignment_1()); 
-            // InternalBorduino.g:1796:2: ( rule__Transition__ConditionsAssignment_1 )*
-            loop12:
+            // InternalBorduino.g:1823:2: ( rule__Transition__ConditionsAssignment_1 )*
+            loop13:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( ((LA12_0>=11 && LA12_0<=12)) ) {
-                    alt12=1;
+                if ( ((LA13_0>=11 && LA13_0<=12)) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt13) {
             	case 1 :
-            	    // InternalBorduino.g:1796:3: rule__Transition__ConditionsAssignment_1
+            	    // InternalBorduino.g:1823:3: rule__Transition__ConditionsAssignment_1
             	    {
             	    pushFollow(FOLLOW_21);
             	    rule__Transition__ConditionsAssignment_1();
@@ -5491,7 +5594,7 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop13;
                 }
             } while (true);
 
@@ -5518,14 +5621,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__Group__2"
-    // InternalBorduino.g:1804:1: rule__Transition__Group__2 : rule__Transition__Group__2__Impl rule__Transition__Group__3 ;
+    // InternalBorduino.g:1831:1: rule__Transition__Group__2 : rule__Transition__Group__2__Impl rule__Transition__Group__3 ;
     public final void rule__Transition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1808:1: ( rule__Transition__Group__2__Impl rule__Transition__Group__3 )
-            // InternalBorduino.g:1809:2: rule__Transition__Group__2__Impl rule__Transition__Group__3
+            // InternalBorduino.g:1835:1: ( rule__Transition__Group__2__Impl rule__Transition__Group__3 )
+            // InternalBorduino.g:1836:2: rule__Transition__Group__2__Impl rule__Transition__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__Transition__Group__2__Impl();
@@ -5556,17 +5659,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__Group__2__Impl"
-    // InternalBorduino.g:1816:1: rule__Transition__Group__2__Impl : ( ':' ) ;
+    // InternalBorduino.g:1843:1: rule__Transition__Group__2__Impl : ( ':' ) ;
     public final void rule__Transition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1820:1: ( ( ':' ) )
-            // InternalBorduino.g:1821:1: ( ':' )
+            // InternalBorduino.g:1847:1: ( ( ':' ) )
+            // InternalBorduino.g:1848:1: ( ':' )
             {
-            // InternalBorduino.g:1821:1: ( ':' )
-            // InternalBorduino.g:1822:2: ':'
+            // InternalBorduino.g:1848:1: ( ':' )
+            // InternalBorduino.g:1849:2: ':'
             {
              before(grammarAccess.getTransitionAccess().getColonKeyword_2()); 
             match(input,21,FOLLOW_2); 
@@ -5593,14 +5696,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__Group__3"
-    // InternalBorduino.g:1831:1: rule__Transition__Group__3 : rule__Transition__Group__3__Impl ;
+    // InternalBorduino.g:1858:1: rule__Transition__Group__3 : rule__Transition__Group__3__Impl ;
     public final void rule__Transition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1835:1: ( rule__Transition__Group__3__Impl )
-            // InternalBorduino.g:1836:2: rule__Transition__Group__3__Impl
+            // InternalBorduino.g:1862:1: ( rule__Transition__Group__3__Impl )
+            // InternalBorduino.g:1863:2: rule__Transition__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Transition__Group__3__Impl();
@@ -5626,21 +5729,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__Group__3__Impl"
-    // InternalBorduino.g:1842:1: rule__Transition__Group__3__Impl : ( ( rule__Transition__NextAssignment_3 ) ) ;
+    // InternalBorduino.g:1869:1: rule__Transition__Group__3__Impl : ( ( rule__Transition__NextAssignment_3 ) ) ;
     public final void rule__Transition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1846:1: ( ( ( rule__Transition__NextAssignment_3 ) ) )
-            // InternalBorduino.g:1847:1: ( ( rule__Transition__NextAssignment_3 ) )
+            // InternalBorduino.g:1873:1: ( ( ( rule__Transition__NextAssignment_3 ) ) )
+            // InternalBorduino.g:1874:1: ( ( rule__Transition__NextAssignment_3 ) )
             {
-            // InternalBorduino.g:1847:1: ( ( rule__Transition__NextAssignment_3 ) )
-            // InternalBorduino.g:1848:2: ( rule__Transition__NextAssignment_3 )
+            // InternalBorduino.g:1874:1: ( ( rule__Transition__NextAssignment_3 ) )
+            // InternalBorduino.g:1875:2: ( rule__Transition__NextAssignment_3 )
             {
              before(grammarAccess.getTransitionAccess().getNextAssignment_3()); 
-            // InternalBorduino.g:1849:2: ( rule__Transition__NextAssignment_3 )
-            // InternalBorduino.g:1849:3: rule__Transition__NextAssignment_3
+            // InternalBorduino.g:1876:2: ( rule__Transition__NextAssignment_3 )
+            // InternalBorduino.g:1876:3: rule__Transition__NextAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Transition__NextAssignment_3();
@@ -5673,14 +5776,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__Group__0"
-    // InternalBorduino.g:1858:1: rule__Condition__Group__0 : rule__Condition__Group__0__Impl rule__Condition__Group__1 ;
+    // InternalBorduino.g:1885:1: rule__Condition__Group__0 : rule__Condition__Group__0__Impl rule__Condition__Group__1 ;
     public final void rule__Condition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1862:1: ( rule__Condition__Group__0__Impl rule__Condition__Group__1 )
-            // InternalBorduino.g:1863:2: rule__Condition__Group__0__Impl rule__Condition__Group__1
+            // InternalBorduino.g:1889:1: ( rule__Condition__Group__0__Impl rule__Condition__Group__1 )
+            // InternalBorduino.g:1890:2: rule__Condition__Group__0__Impl rule__Condition__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Condition__Group__0__Impl();
@@ -5711,21 +5814,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__Group__0__Impl"
-    // InternalBorduino.g:1870:1: rule__Condition__Group__0__Impl : ( ( rule__Condition__OperatorAssignment_0 ) ) ;
+    // InternalBorduino.g:1897:1: rule__Condition__Group__0__Impl : ( ( rule__Condition__OperatorAssignment_0 ) ) ;
     public final void rule__Condition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1874:1: ( ( ( rule__Condition__OperatorAssignment_0 ) ) )
-            // InternalBorduino.g:1875:1: ( ( rule__Condition__OperatorAssignment_0 ) )
+            // InternalBorduino.g:1901:1: ( ( ( rule__Condition__OperatorAssignment_0 ) ) )
+            // InternalBorduino.g:1902:1: ( ( rule__Condition__OperatorAssignment_0 ) )
             {
-            // InternalBorduino.g:1875:1: ( ( rule__Condition__OperatorAssignment_0 ) )
-            // InternalBorduino.g:1876:2: ( rule__Condition__OperatorAssignment_0 )
+            // InternalBorduino.g:1902:1: ( ( rule__Condition__OperatorAssignment_0 ) )
+            // InternalBorduino.g:1903:2: ( rule__Condition__OperatorAssignment_0 )
             {
              before(grammarAccess.getConditionAccess().getOperatorAssignment_0()); 
-            // InternalBorduino.g:1877:2: ( rule__Condition__OperatorAssignment_0 )
-            // InternalBorduino.g:1877:3: rule__Condition__OperatorAssignment_0
+            // InternalBorduino.g:1904:2: ( rule__Condition__OperatorAssignment_0 )
+            // InternalBorduino.g:1904:3: rule__Condition__OperatorAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Condition__OperatorAssignment_0();
@@ -5758,14 +5861,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__Group__1"
-    // InternalBorduino.g:1885:1: rule__Condition__Group__1 : rule__Condition__Group__1__Impl rule__Condition__Group__2 ;
+    // InternalBorduino.g:1912:1: rule__Condition__Group__1 : rule__Condition__Group__1__Impl rule__Condition__Group__2 ;
     public final void rule__Condition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1889:1: ( rule__Condition__Group__1__Impl rule__Condition__Group__2 )
-            // InternalBorduino.g:1890:2: rule__Condition__Group__1__Impl rule__Condition__Group__2
+            // InternalBorduino.g:1916:1: ( rule__Condition__Group__1__Impl rule__Condition__Group__2 )
+            // InternalBorduino.g:1917:2: rule__Condition__Group__1__Impl rule__Condition__Group__2
             {
             pushFollow(FOLLOW_22);
             rule__Condition__Group__1__Impl();
@@ -5796,21 +5899,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__Group__1__Impl"
-    // InternalBorduino.g:1897:1: rule__Condition__Group__1__Impl : ( ( rule__Condition__SensorAssignment_1 ) ) ;
+    // InternalBorduino.g:1924:1: rule__Condition__Group__1__Impl : ( ( rule__Condition__SensorAssignment_1 ) ) ;
     public final void rule__Condition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1901:1: ( ( ( rule__Condition__SensorAssignment_1 ) ) )
-            // InternalBorduino.g:1902:1: ( ( rule__Condition__SensorAssignment_1 ) )
+            // InternalBorduino.g:1928:1: ( ( ( rule__Condition__SensorAssignment_1 ) ) )
+            // InternalBorduino.g:1929:1: ( ( rule__Condition__SensorAssignment_1 ) )
             {
-            // InternalBorduino.g:1902:1: ( ( rule__Condition__SensorAssignment_1 ) )
-            // InternalBorduino.g:1903:2: ( rule__Condition__SensorAssignment_1 )
+            // InternalBorduino.g:1929:1: ( ( rule__Condition__SensorAssignment_1 ) )
+            // InternalBorduino.g:1930:2: ( rule__Condition__SensorAssignment_1 )
             {
              before(grammarAccess.getConditionAccess().getSensorAssignment_1()); 
-            // InternalBorduino.g:1904:2: ( rule__Condition__SensorAssignment_1 )
-            // InternalBorduino.g:1904:3: rule__Condition__SensorAssignment_1
+            // InternalBorduino.g:1931:2: ( rule__Condition__SensorAssignment_1 )
+            // InternalBorduino.g:1931:3: rule__Condition__SensorAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Condition__SensorAssignment_1();
@@ -5843,14 +5946,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__Group__2"
-    // InternalBorduino.g:1912:1: rule__Condition__Group__2 : rule__Condition__Group__2__Impl rule__Condition__Group__3 ;
+    // InternalBorduino.g:1939:1: rule__Condition__Group__2 : rule__Condition__Group__2__Impl rule__Condition__Group__3 ;
     public final void rule__Condition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1916:1: ( rule__Condition__Group__2__Impl rule__Condition__Group__3 )
-            // InternalBorduino.g:1917:2: rule__Condition__Group__2__Impl rule__Condition__Group__3
+            // InternalBorduino.g:1943:1: ( rule__Condition__Group__2__Impl rule__Condition__Group__3 )
+            // InternalBorduino.g:1944:2: rule__Condition__Group__2__Impl rule__Condition__Group__3
             {
             pushFollow(FOLLOW_19);
             rule__Condition__Group__2__Impl();
@@ -5881,17 +5984,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__Group__2__Impl"
-    // InternalBorduino.g:1924:1: rule__Condition__Group__2__Impl : ( 'is' ) ;
+    // InternalBorduino.g:1951:1: rule__Condition__Group__2__Impl : ( 'is' ) ;
     public final void rule__Condition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1928:1: ( ( 'is' ) )
-            // InternalBorduino.g:1929:1: ( 'is' )
+            // InternalBorduino.g:1955:1: ( ( 'is' ) )
+            // InternalBorduino.g:1956:1: ( 'is' )
             {
-            // InternalBorduino.g:1929:1: ( 'is' )
-            // InternalBorduino.g:1930:2: 'is'
+            // InternalBorduino.g:1956:1: ( 'is' )
+            // InternalBorduino.g:1957:2: 'is'
             {
              before(grammarAccess.getConditionAccess().getIsKeyword_2()); 
             match(input,27,FOLLOW_2); 
@@ -5918,14 +6021,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__Group__3"
-    // InternalBorduino.g:1939:1: rule__Condition__Group__3 : rule__Condition__Group__3__Impl ;
+    // InternalBorduino.g:1966:1: rule__Condition__Group__3 : rule__Condition__Group__3__Impl ;
     public final void rule__Condition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1943:1: ( rule__Condition__Group__3__Impl )
-            // InternalBorduino.g:1944:2: rule__Condition__Group__3__Impl
+            // InternalBorduino.g:1970:1: ( rule__Condition__Group__3__Impl )
+            // InternalBorduino.g:1971:2: rule__Condition__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Condition__Group__3__Impl();
@@ -5951,21 +6054,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__Group__3__Impl"
-    // InternalBorduino.g:1950:1: rule__Condition__Group__3__Impl : ( ( rule__Condition__SignalAssignment_3 ) ) ;
+    // InternalBorduino.g:1977:1: rule__Condition__Group__3__Impl : ( ( rule__Condition__SignalAssignment_3 ) ) ;
     public final void rule__Condition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1954:1: ( ( ( rule__Condition__SignalAssignment_3 ) ) )
-            // InternalBorduino.g:1955:1: ( ( rule__Condition__SignalAssignment_3 ) )
+            // InternalBorduino.g:1981:1: ( ( ( rule__Condition__SignalAssignment_3 ) ) )
+            // InternalBorduino.g:1982:1: ( ( rule__Condition__SignalAssignment_3 ) )
             {
-            // InternalBorduino.g:1955:1: ( ( rule__Condition__SignalAssignment_3 ) )
-            // InternalBorduino.g:1956:2: ( rule__Condition__SignalAssignment_3 )
+            // InternalBorduino.g:1982:1: ( ( rule__Condition__SignalAssignment_3 ) )
+            // InternalBorduino.g:1983:2: ( rule__Condition__SignalAssignment_3 )
             {
              before(grammarAccess.getConditionAccess().getSignalAssignment_3()); 
-            // InternalBorduino.g:1957:2: ( rule__Condition__SignalAssignment_3 )
-            // InternalBorduino.g:1957:3: rule__Condition__SignalAssignment_3
+            // InternalBorduino.g:1984:2: ( rule__Condition__SignalAssignment_3 )
+            // InternalBorduino.g:1984:3: rule__Condition__SignalAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Condition__SignalAssignment_3();
@@ -5998,14 +6101,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__InitialCondition__Group__0"
-    // InternalBorduino.g:1966:1: rule__InitialCondition__Group__0 : rule__InitialCondition__Group__0__Impl rule__InitialCondition__Group__1 ;
+    // InternalBorduino.g:1993:1: rule__InitialCondition__Group__0 : rule__InitialCondition__Group__0__Impl rule__InitialCondition__Group__1 ;
     public final void rule__InitialCondition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1970:1: ( rule__InitialCondition__Group__0__Impl rule__InitialCondition__Group__1 )
-            // InternalBorduino.g:1971:2: rule__InitialCondition__Group__0__Impl rule__InitialCondition__Group__1
+            // InternalBorduino.g:1997:1: ( rule__InitialCondition__Group__0__Impl rule__InitialCondition__Group__1 )
+            // InternalBorduino.g:1998:2: rule__InitialCondition__Group__0__Impl rule__InitialCondition__Group__1
             {
             pushFollow(FOLLOW_22);
             rule__InitialCondition__Group__0__Impl();
@@ -6036,21 +6139,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__InitialCondition__Group__0__Impl"
-    // InternalBorduino.g:1978:1: rule__InitialCondition__Group__0__Impl : ( ( rule__InitialCondition__SensorAssignment_0 ) ) ;
+    // InternalBorduino.g:2005:1: rule__InitialCondition__Group__0__Impl : ( ( rule__InitialCondition__SensorAssignment_0 ) ) ;
     public final void rule__InitialCondition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1982:1: ( ( ( rule__InitialCondition__SensorAssignment_0 ) ) )
-            // InternalBorduino.g:1983:1: ( ( rule__InitialCondition__SensorAssignment_0 ) )
+            // InternalBorduino.g:2009:1: ( ( ( rule__InitialCondition__SensorAssignment_0 ) ) )
+            // InternalBorduino.g:2010:1: ( ( rule__InitialCondition__SensorAssignment_0 ) )
             {
-            // InternalBorduino.g:1983:1: ( ( rule__InitialCondition__SensorAssignment_0 ) )
-            // InternalBorduino.g:1984:2: ( rule__InitialCondition__SensorAssignment_0 )
+            // InternalBorduino.g:2010:1: ( ( rule__InitialCondition__SensorAssignment_0 ) )
+            // InternalBorduino.g:2011:2: ( rule__InitialCondition__SensorAssignment_0 )
             {
              before(grammarAccess.getInitialConditionAccess().getSensorAssignment_0()); 
-            // InternalBorduino.g:1985:2: ( rule__InitialCondition__SensorAssignment_0 )
-            // InternalBorduino.g:1985:3: rule__InitialCondition__SensorAssignment_0
+            // InternalBorduino.g:2012:2: ( rule__InitialCondition__SensorAssignment_0 )
+            // InternalBorduino.g:2012:3: rule__InitialCondition__SensorAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__InitialCondition__SensorAssignment_0();
@@ -6083,14 +6186,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__InitialCondition__Group__1"
-    // InternalBorduino.g:1993:1: rule__InitialCondition__Group__1 : rule__InitialCondition__Group__1__Impl rule__InitialCondition__Group__2 ;
+    // InternalBorduino.g:2020:1: rule__InitialCondition__Group__1 : rule__InitialCondition__Group__1__Impl rule__InitialCondition__Group__2 ;
     public final void rule__InitialCondition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:1997:1: ( rule__InitialCondition__Group__1__Impl rule__InitialCondition__Group__2 )
-            // InternalBorduino.g:1998:2: rule__InitialCondition__Group__1__Impl rule__InitialCondition__Group__2
+            // InternalBorduino.g:2024:1: ( rule__InitialCondition__Group__1__Impl rule__InitialCondition__Group__2 )
+            // InternalBorduino.g:2025:2: rule__InitialCondition__Group__1__Impl rule__InitialCondition__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__InitialCondition__Group__1__Impl();
@@ -6121,17 +6224,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__InitialCondition__Group__1__Impl"
-    // InternalBorduino.g:2005:1: rule__InitialCondition__Group__1__Impl : ( 'is' ) ;
+    // InternalBorduino.g:2032:1: rule__InitialCondition__Group__1__Impl : ( 'is' ) ;
     public final void rule__InitialCondition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2009:1: ( ( 'is' ) )
-            // InternalBorduino.g:2010:1: ( 'is' )
+            // InternalBorduino.g:2036:1: ( ( 'is' ) )
+            // InternalBorduino.g:2037:1: ( 'is' )
             {
-            // InternalBorduino.g:2010:1: ( 'is' )
-            // InternalBorduino.g:2011:2: 'is'
+            // InternalBorduino.g:2037:1: ( 'is' )
+            // InternalBorduino.g:2038:2: 'is'
             {
              before(grammarAccess.getInitialConditionAccess().getIsKeyword_1()); 
             match(input,27,FOLLOW_2); 
@@ -6158,14 +6261,14 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__InitialCondition__Group__2"
-    // InternalBorduino.g:2020:1: rule__InitialCondition__Group__2 : rule__InitialCondition__Group__2__Impl ;
+    // InternalBorduino.g:2047:1: rule__InitialCondition__Group__2 : rule__InitialCondition__Group__2__Impl ;
     public final void rule__InitialCondition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2024:1: ( rule__InitialCondition__Group__2__Impl )
-            // InternalBorduino.g:2025:2: rule__InitialCondition__Group__2__Impl
+            // InternalBorduino.g:2051:1: ( rule__InitialCondition__Group__2__Impl )
+            // InternalBorduino.g:2052:2: rule__InitialCondition__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__InitialCondition__Group__2__Impl();
@@ -6191,21 +6294,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__InitialCondition__Group__2__Impl"
-    // InternalBorduino.g:2031:1: rule__InitialCondition__Group__2__Impl : ( ( rule__InitialCondition__SignalAssignment_2 ) ) ;
+    // InternalBorduino.g:2058:1: rule__InitialCondition__Group__2__Impl : ( ( rule__InitialCondition__SignalAssignment_2 ) ) ;
     public final void rule__InitialCondition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2035:1: ( ( ( rule__InitialCondition__SignalAssignment_2 ) ) )
-            // InternalBorduino.g:2036:1: ( ( rule__InitialCondition__SignalAssignment_2 ) )
+            // InternalBorduino.g:2062:1: ( ( ( rule__InitialCondition__SignalAssignment_2 ) ) )
+            // InternalBorduino.g:2063:1: ( ( rule__InitialCondition__SignalAssignment_2 ) )
             {
-            // InternalBorduino.g:2036:1: ( ( rule__InitialCondition__SignalAssignment_2 ) )
-            // InternalBorduino.g:2037:2: ( rule__InitialCondition__SignalAssignment_2 )
+            // InternalBorduino.g:2063:1: ( ( rule__InitialCondition__SignalAssignment_2 ) )
+            // InternalBorduino.g:2064:2: ( rule__InitialCondition__SignalAssignment_2 )
             {
              before(grammarAccess.getInitialConditionAccess().getSignalAssignment_2()); 
-            // InternalBorduino.g:2038:2: ( rule__InitialCondition__SignalAssignment_2 )
-            // InternalBorduino.g:2038:3: rule__InitialCondition__SignalAssignment_2
+            // InternalBorduino.g:2065:2: ( rule__InitialCondition__SignalAssignment_2 )
+            // InternalBorduino.g:2065:3: rule__InitialCondition__SignalAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__InitialCondition__SignalAssignment_2();
@@ -6238,17 +6341,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__App__NameAssignment_1"
-    // InternalBorduino.g:2047:1: rule__App__NameAssignment_1 : ( ruleEString ) ;
+    // InternalBorduino.g:2074:1: rule__App__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__App__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2051:1: ( ( ruleEString ) )
-            // InternalBorduino.g:2052:2: ( ruleEString )
+            // InternalBorduino.g:2078:1: ( ( ruleEString ) )
+            // InternalBorduino.g:2079:2: ( ruleEString )
             {
-            // InternalBorduino.g:2052:2: ( ruleEString )
-            // InternalBorduino.g:2053:3: ruleEString
+            // InternalBorduino.g:2079:2: ( ruleEString )
+            // InternalBorduino.g:2080:3: ruleEString
             {
              before(grammarAccess.getAppAccess().getNameEStringParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6279,21 +6382,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__App__InitialAssignment_3"
-    // InternalBorduino.g:2062:1: rule__App__InitialAssignment_3 : ( ( ruleEString ) ) ;
+    // InternalBorduino.g:2089:1: rule__App__InitialAssignment_3 : ( ( ruleEString ) ) ;
     public final void rule__App__InitialAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2066:1: ( ( ( ruleEString ) ) )
-            // InternalBorduino.g:2067:2: ( ( ruleEString ) )
+            // InternalBorduino.g:2093:1: ( ( ( ruleEString ) ) )
+            // InternalBorduino.g:2094:2: ( ( ruleEString ) )
             {
-            // InternalBorduino.g:2067:2: ( ( ruleEString ) )
-            // InternalBorduino.g:2068:3: ( ruleEString )
+            // InternalBorduino.g:2094:2: ( ( ruleEString ) )
+            // InternalBorduino.g:2095:3: ( ruleEString )
             {
              before(grammarAccess.getAppAccess().getInitialStateCrossReference_3_0()); 
-            // InternalBorduino.g:2069:3: ( ruleEString )
-            // InternalBorduino.g:2070:4: ruleEString
+            // InternalBorduino.g:2096:3: ( ruleEString )
+            // InternalBorduino.g:2097:4: ruleEString
             {
              before(grammarAccess.getAppAccess().getInitialStateEStringParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
@@ -6328,17 +6431,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__App__BricksAssignment_6"
-    // InternalBorduino.g:2081:1: rule__App__BricksAssignment_6 : ( ruleBrick ) ;
+    // InternalBorduino.g:2108:1: rule__App__BricksAssignment_6 : ( ruleBrick ) ;
     public final void rule__App__BricksAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2085:1: ( ( ruleBrick ) )
-            // InternalBorduino.g:2086:2: ( ruleBrick )
+            // InternalBorduino.g:2112:1: ( ( ruleBrick ) )
+            // InternalBorduino.g:2113:2: ( ruleBrick )
             {
-            // InternalBorduino.g:2086:2: ( ruleBrick )
-            // InternalBorduino.g:2087:3: ruleBrick
+            // InternalBorduino.g:2113:2: ( ruleBrick )
+            // InternalBorduino.g:2114:3: ruleBrick
             {
              before(grammarAccess.getAppAccess().getBricksBrickParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -6369,17 +6472,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__App__BricksAssignment_7"
-    // InternalBorduino.g:2096:1: rule__App__BricksAssignment_7 : ( ruleBrick ) ;
+    // InternalBorduino.g:2123:1: rule__App__BricksAssignment_7 : ( ruleBrick ) ;
     public final void rule__App__BricksAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2100:1: ( ( ruleBrick ) )
-            // InternalBorduino.g:2101:2: ( ruleBrick )
+            // InternalBorduino.g:2127:1: ( ( ruleBrick ) )
+            // InternalBorduino.g:2128:2: ( ruleBrick )
             {
-            // InternalBorduino.g:2101:2: ( ruleBrick )
-            // InternalBorduino.g:2102:3: ruleBrick
+            // InternalBorduino.g:2128:2: ( ruleBrick )
+            // InternalBorduino.g:2129:3: ruleBrick
             {
              before(grammarAccess.getAppAccess().getBricksBrickParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -6410,17 +6513,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__App__StatesAssignment_9"
-    // InternalBorduino.g:2111:1: rule__App__StatesAssignment_9 : ( ruleState ) ;
+    // InternalBorduino.g:2138:1: rule__App__StatesAssignment_9 : ( ruleState ) ;
     public final void rule__App__StatesAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2115:1: ( ( ruleState ) )
-            // InternalBorduino.g:2116:2: ( ruleState )
+            // InternalBorduino.g:2142:1: ( ( ruleState ) )
+            // InternalBorduino.g:2143:2: ( ruleState )
             {
-            // InternalBorduino.g:2116:2: ( ruleState )
-            // InternalBorduino.g:2117:3: ruleState
+            // InternalBorduino.g:2143:2: ( ruleState )
+            // InternalBorduino.g:2144:3: ruleState
             {
              before(grammarAccess.getAppAccess().getStatesStateParserRuleCall_9_0()); 
             pushFollow(FOLLOW_2);
@@ -6451,17 +6554,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__App__StatesAssignment_10"
-    // InternalBorduino.g:2126:1: rule__App__StatesAssignment_10 : ( ruleState ) ;
+    // InternalBorduino.g:2153:1: rule__App__StatesAssignment_10 : ( ruleState ) ;
     public final void rule__App__StatesAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2130:1: ( ( ruleState ) )
-            // InternalBorduino.g:2131:2: ( ruleState )
+            // InternalBorduino.g:2157:1: ( ( ruleState ) )
+            // InternalBorduino.g:2158:2: ( ruleState )
             {
-            // InternalBorduino.g:2131:2: ( ruleState )
-            // InternalBorduino.g:2132:3: ruleState
+            // InternalBorduino.g:2158:2: ( ruleState )
+            // InternalBorduino.g:2159:3: ruleState
             {
              before(grammarAccess.getAppAccess().getStatesStateParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -6492,17 +6595,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__NameAssignment_0_1"
-    // InternalBorduino.g:2141:1: rule__Brick__NameAssignment_0_1 : ( ruleEString ) ;
+    // InternalBorduino.g:2168:1: rule__Brick__NameAssignment_0_1 : ( ruleEString ) ;
     public final void rule__Brick__NameAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2145:1: ( ( ruleEString ) )
-            // InternalBorduino.g:2146:2: ( ruleEString )
+            // InternalBorduino.g:2172:1: ( ( ruleEString ) )
+            // InternalBorduino.g:2173:2: ( ruleEString )
             {
-            // InternalBorduino.g:2146:2: ( ruleEString )
-            // InternalBorduino.g:2147:3: ruleEString
+            // InternalBorduino.g:2173:2: ( ruleEString )
+            // InternalBorduino.g:2174:3: ruleEString
             {
              before(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6532,26 +6635,26 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Brick__NameAssignment_0_1"
 
 
-    // $ANTLR start "rule__Brick__PinAssignment_0_3"
-    // InternalBorduino.g:2156:1: rule__Brick__PinAssignment_0_3 : ( ruleEInt ) ;
-    public final void rule__Brick__PinAssignment_0_3() throws RecognitionException {
+    // $ANTLR start "rule__Brick__PinsAssignment_0_3"
+    // InternalBorduino.g:2183:1: rule__Brick__PinsAssignment_0_3 : ( ruleEInt ) ;
+    public final void rule__Brick__PinsAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2160:1: ( ( ruleEInt ) )
-            // InternalBorduino.g:2161:2: ( ruleEInt )
+            // InternalBorduino.g:2187:1: ( ( ruleEInt ) )
+            // InternalBorduino.g:2188:2: ( ruleEInt )
             {
-            // InternalBorduino.g:2161:2: ( ruleEInt )
-            // InternalBorduino.g:2162:3: ruleEInt
+            // InternalBorduino.g:2188:2: ( ruleEInt )
+            // InternalBorduino.g:2189:3: ruleEInt
             {
-             before(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_0_3_0()); 
+             before(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_0_3_0()); 
             pushFollow(FOLLOW_2);
             ruleEInt();
 
             state._fsp--;
 
-             after(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_0_3_0()); 
+             after(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_0_3_0()); 
 
             }
 
@@ -6570,21 +6673,62 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Brick__PinAssignment_0_3"
+    // $ANTLR end "rule__Brick__PinsAssignment_0_3"
+
+
+    // $ANTLR start "rule__Brick__PinsAssignment_0_4"
+    // InternalBorduino.g:2198:1: rule__Brick__PinsAssignment_0_4 : ( ruleEInt ) ;
+    public final void rule__Brick__PinsAssignment_0_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBorduino.g:2202:1: ( ( ruleEInt ) )
+            // InternalBorduino.g:2203:2: ( ruleEInt )
+            {
+            // InternalBorduino.g:2203:2: ( ruleEInt )
+            // InternalBorduino.g:2204:3: ruleEInt
+            {
+             before(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_0_4_0()); 
+            pushFollow(FOLLOW_2);
+            ruleEInt();
+
+            state._fsp--;
+
+             after(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_0_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Brick__PinsAssignment_0_4"
 
 
     // $ANTLR start "rule__Brick__NameAssignment_1_1"
-    // InternalBorduino.g:2171:1: rule__Brick__NameAssignment_1_1 : ( ruleEString ) ;
+    // InternalBorduino.g:2213:1: rule__Brick__NameAssignment_1_1 : ( ruleEString ) ;
     public final void rule__Brick__NameAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2175:1: ( ( ruleEString ) )
-            // InternalBorduino.g:2176:2: ( ruleEString )
+            // InternalBorduino.g:2217:1: ( ( ruleEString ) )
+            // InternalBorduino.g:2218:2: ( ruleEString )
             {
-            // InternalBorduino.g:2176:2: ( ruleEString )
-            // InternalBorduino.g:2177:3: ruleEString
+            // InternalBorduino.g:2218:2: ( ruleEString )
+            // InternalBorduino.g:2219:3: ruleEString
             {
              before(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6615,17 +6759,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__PinsAssignment_1_3"
-    // InternalBorduino.g:2186:1: rule__Brick__PinsAssignment_1_3 : ( ruleEInt ) ;
+    // InternalBorduino.g:2228:1: rule__Brick__PinsAssignment_1_3 : ( ruleEInt ) ;
     public final void rule__Brick__PinsAssignment_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2190:1: ( ( ruleEInt ) )
-            // InternalBorduino.g:2191:2: ( ruleEInt )
+            // InternalBorduino.g:2232:1: ( ( ruleEInt ) )
+            // InternalBorduino.g:2233:2: ( ruleEInt )
             {
-            // InternalBorduino.g:2191:2: ( ruleEInt )
-            // InternalBorduino.g:2192:3: ruleEInt
+            // InternalBorduino.g:2233:2: ( ruleEInt )
+            // InternalBorduino.g:2234:3: ruleEInt
             {
              before(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_1_3_0()); 
             pushFollow(FOLLOW_2);
@@ -6656,17 +6800,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__PinsAssignment_1_4"
-    // InternalBorduino.g:2201:1: rule__Brick__PinsAssignment_1_4 : ( ruleEInt ) ;
+    // InternalBorduino.g:2243:1: rule__Brick__PinsAssignment_1_4 : ( ruleEInt ) ;
     public final void rule__Brick__PinsAssignment_1_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2205:1: ( ( ruleEInt ) )
-            // InternalBorduino.g:2206:2: ( ruleEInt )
+            // InternalBorduino.g:2247:1: ( ( ruleEInt ) )
+            // InternalBorduino.g:2248:2: ( ruleEInt )
             {
-            // InternalBorduino.g:2206:2: ( ruleEInt )
-            // InternalBorduino.g:2207:3: ruleEInt
+            // InternalBorduino.g:2248:2: ( ruleEInt )
+            // InternalBorduino.g:2249:3: ruleEInt
             {
              before(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_1_4_0()); 
             pushFollow(FOLLOW_2);
@@ -6697,17 +6841,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Brick__NameAssignment_2_1"
-    // InternalBorduino.g:2216:1: rule__Brick__NameAssignment_2_1 : ( ruleEString ) ;
+    // InternalBorduino.g:2258:1: rule__Brick__NameAssignment_2_1 : ( ruleEString ) ;
     public final void rule__Brick__NameAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2220:1: ( ( ruleEString ) )
-            // InternalBorduino.g:2221:2: ( ruleEString )
+            // InternalBorduino.g:2262:1: ( ( ruleEString ) )
+            // InternalBorduino.g:2263:2: ( ruleEString )
             {
-            // InternalBorduino.g:2221:2: ( ruleEString )
-            // InternalBorduino.g:2222:3: ruleEString
+            // InternalBorduino.g:2263:2: ( ruleEString )
+            // InternalBorduino.g:2264:3: ruleEString
             {
              before(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6738,17 +6882,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__NameAssignment_0"
-    // InternalBorduino.g:2231:1: rule__State__NameAssignment_0 : ( ruleEString ) ;
+    // InternalBorduino.g:2273:1: rule__State__NameAssignment_0 : ( ruleEString ) ;
     public final void rule__State__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2235:1: ( ( ruleEString ) )
-            // InternalBorduino.g:2236:2: ( ruleEString )
+            // InternalBorduino.g:2277:1: ( ( ruleEString ) )
+            // InternalBorduino.g:2278:2: ( ruleEString )
             {
-            // InternalBorduino.g:2236:2: ( ruleEString )
-            // InternalBorduino.g:2237:3: ruleEString
+            // InternalBorduino.g:2278:2: ( ruleEString )
+            // InternalBorduino.g:2279:3: ruleEString
             {
              before(grammarAccess.getStateAccess().getNameEStringParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -6779,17 +6923,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__ActionsAssignment_2"
-    // InternalBorduino.g:2246:1: rule__State__ActionsAssignment_2 : ( ruleAction ) ;
+    // InternalBorduino.g:2288:1: rule__State__ActionsAssignment_2 : ( ruleAction ) ;
     public final void rule__State__ActionsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2250:1: ( ( ruleAction ) )
-            // InternalBorduino.g:2251:2: ( ruleAction )
+            // InternalBorduino.g:2292:1: ( ( ruleAction ) )
+            // InternalBorduino.g:2293:2: ( ruleAction )
             {
-            // InternalBorduino.g:2251:2: ( ruleAction )
-            // InternalBorduino.g:2252:3: ruleAction
+            // InternalBorduino.g:2293:2: ( ruleAction )
+            // InternalBorduino.g:2294:3: ruleAction
             {
              before(grammarAccess.getStateAccess().getActionsActionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6820,17 +6964,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__ActionsAssignment_3"
-    // InternalBorduino.g:2261:1: rule__State__ActionsAssignment_3 : ( ruleAction ) ;
+    // InternalBorduino.g:2303:1: rule__State__ActionsAssignment_3 : ( ruleAction ) ;
     public final void rule__State__ActionsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2265:1: ( ( ruleAction ) )
-            // InternalBorduino.g:2266:2: ( ruleAction )
+            // InternalBorduino.g:2307:1: ( ( ruleAction ) )
+            // InternalBorduino.g:2308:2: ( ruleAction )
             {
-            // InternalBorduino.g:2266:2: ( ruleAction )
-            // InternalBorduino.g:2267:3: ruleAction
+            // InternalBorduino.g:2308:2: ( ruleAction )
+            // InternalBorduino.g:2309:3: ruleAction
             {
              before(grammarAccess.getStateAccess().getActionsActionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -6861,17 +7005,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__TransitionAssignment_4"
-    // InternalBorduino.g:2276:1: rule__State__TransitionAssignment_4 : ( ruleTransition ) ;
+    // InternalBorduino.g:2318:1: rule__State__TransitionAssignment_4 : ( ruleTransition ) ;
     public final void rule__State__TransitionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2280:1: ( ( ruleTransition ) )
-            // InternalBorduino.g:2281:2: ( ruleTransition )
+            // InternalBorduino.g:2322:1: ( ( ruleTransition ) )
+            // InternalBorduino.g:2323:2: ( ruleTransition )
             {
-            // InternalBorduino.g:2281:2: ( ruleTransition )
-            // InternalBorduino.g:2282:3: ruleTransition
+            // InternalBorduino.g:2323:2: ( ruleTransition )
+            // InternalBorduino.g:2324:3: ruleTransition
             {
              before(grammarAccess.getStateAccess().getTransitionTransitionParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -6902,21 +7046,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__ActuatorAssignment_0"
-    // InternalBorduino.g:2291:1: rule__Action__ActuatorAssignment_0 : ( ( ruleEString ) ) ;
+    // InternalBorduino.g:2333:1: rule__Action__ActuatorAssignment_0 : ( ( ruleEString ) ) ;
     public final void rule__Action__ActuatorAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2295:1: ( ( ( ruleEString ) ) )
-            // InternalBorduino.g:2296:2: ( ( ruleEString ) )
+            // InternalBorduino.g:2337:1: ( ( ( ruleEString ) ) )
+            // InternalBorduino.g:2338:2: ( ( ruleEString ) )
             {
-            // InternalBorduino.g:2296:2: ( ( ruleEString ) )
-            // InternalBorduino.g:2297:3: ( ruleEString )
+            // InternalBorduino.g:2338:2: ( ( ruleEString ) )
+            // InternalBorduino.g:2339:3: ( ruleEString )
             {
              before(grammarAccess.getActionAccess().getActuatorActuatorCrossReference_0_0()); 
-            // InternalBorduino.g:2298:3: ( ruleEString )
-            // InternalBorduino.g:2299:4: ruleEString
+            // InternalBorduino.g:2340:3: ( ruleEString )
+            // InternalBorduino.g:2341:4: ruleEString
             {
              before(grammarAccess.getActionAccess().getActuatorActuatorEStringParserRuleCall_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -6951,17 +7095,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__ValueAssignment_2"
-    // InternalBorduino.g:2310:1: rule__Action__ValueAssignment_2 : ( ruleSignal ) ;
+    // InternalBorduino.g:2352:1: rule__Action__ValueAssignment_2 : ( ruleSignal ) ;
     public final void rule__Action__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2314:1: ( ( ruleSignal ) )
-            // InternalBorduino.g:2315:2: ( ruleSignal )
+            // InternalBorduino.g:2356:1: ( ( ruleSignal ) )
+            // InternalBorduino.g:2357:2: ( ruleSignal )
             {
-            // InternalBorduino.g:2315:2: ( ruleSignal )
-            // InternalBorduino.g:2316:3: ruleSignal
+            // InternalBorduino.g:2357:2: ( ruleSignal )
+            // InternalBorduino.g:2358:3: ruleSignal
             {
              before(grammarAccess.getActionAccess().getValueSignalParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6992,17 +7136,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__ConditionsAssignment_0"
-    // InternalBorduino.g:2325:1: rule__Transition__ConditionsAssignment_0 : ( ruleInitialCondition ) ;
+    // InternalBorduino.g:2367:1: rule__Transition__ConditionsAssignment_0 : ( ruleInitialCondition ) ;
     public final void rule__Transition__ConditionsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2329:1: ( ( ruleInitialCondition ) )
-            // InternalBorduino.g:2330:2: ( ruleInitialCondition )
+            // InternalBorduino.g:2371:1: ( ( ruleInitialCondition ) )
+            // InternalBorduino.g:2372:2: ( ruleInitialCondition )
             {
-            // InternalBorduino.g:2330:2: ( ruleInitialCondition )
-            // InternalBorduino.g:2331:3: ruleInitialCondition
+            // InternalBorduino.g:2372:2: ( ruleInitialCondition )
+            // InternalBorduino.g:2373:3: ruleInitialCondition
             {
              before(grammarAccess.getTransitionAccess().getConditionsInitialConditionParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7033,17 +7177,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__ConditionsAssignment_1"
-    // InternalBorduino.g:2340:1: rule__Transition__ConditionsAssignment_1 : ( ruleCondition ) ;
+    // InternalBorduino.g:2382:1: rule__Transition__ConditionsAssignment_1 : ( ruleCondition ) ;
     public final void rule__Transition__ConditionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2344:1: ( ( ruleCondition ) )
-            // InternalBorduino.g:2345:2: ( ruleCondition )
+            // InternalBorduino.g:2386:1: ( ( ruleCondition ) )
+            // InternalBorduino.g:2387:2: ( ruleCondition )
             {
-            // InternalBorduino.g:2345:2: ( ruleCondition )
-            // InternalBorduino.g:2346:3: ruleCondition
+            // InternalBorduino.g:2387:2: ( ruleCondition )
+            // InternalBorduino.g:2388:3: ruleCondition
             {
              before(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7074,21 +7218,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Transition__NextAssignment_3"
-    // InternalBorduino.g:2355:1: rule__Transition__NextAssignment_3 : ( ( ruleEString ) ) ;
+    // InternalBorduino.g:2397:1: rule__Transition__NextAssignment_3 : ( ( ruleEString ) ) ;
     public final void rule__Transition__NextAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2359:1: ( ( ( ruleEString ) ) )
-            // InternalBorduino.g:2360:2: ( ( ruleEString ) )
+            // InternalBorduino.g:2401:1: ( ( ( ruleEString ) ) )
+            // InternalBorduino.g:2402:2: ( ( ruleEString ) )
             {
-            // InternalBorduino.g:2360:2: ( ( ruleEString ) )
-            // InternalBorduino.g:2361:3: ( ruleEString )
+            // InternalBorduino.g:2402:2: ( ( ruleEString ) )
+            // InternalBorduino.g:2403:3: ( ruleEString )
             {
              before(grammarAccess.getTransitionAccess().getNextStateCrossReference_3_0()); 
-            // InternalBorduino.g:2362:3: ( ruleEString )
-            // InternalBorduino.g:2363:4: ruleEString
+            // InternalBorduino.g:2404:3: ( ruleEString )
+            // InternalBorduino.g:2405:4: ruleEString
             {
              before(grammarAccess.getTransitionAccess().getNextStateEStringParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
@@ -7123,17 +7267,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__OperatorAssignment_0"
-    // InternalBorduino.g:2374:1: rule__Condition__OperatorAssignment_0 : ( ruleOperator ) ;
+    // InternalBorduino.g:2416:1: rule__Condition__OperatorAssignment_0 : ( ruleOperator ) ;
     public final void rule__Condition__OperatorAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2378:1: ( ( ruleOperator ) )
-            // InternalBorduino.g:2379:2: ( ruleOperator )
+            // InternalBorduino.g:2420:1: ( ( ruleOperator ) )
+            // InternalBorduino.g:2421:2: ( ruleOperator )
             {
-            // InternalBorduino.g:2379:2: ( ruleOperator )
-            // InternalBorduino.g:2380:3: ruleOperator
+            // InternalBorduino.g:2421:2: ( ruleOperator )
+            // InternalBorduino.g:2422:3: ruleOperator
             {
              before(grammarAccess.getConditionAccess().getOperatorOperatorEnumRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7164,21 +7308,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__SensorAssignment_1"
-    // InternalBorduino.g:2389:1: rule__Condition__SensorAssignment_1 : ( ( ruleEString ) ) ;
+    // InternalBorduino.g:2431:1: rule__Condition__SensorAssignment_1 : ( ( ruleEString ) ) ;
     public final void rule__Condition__SensorAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2393:1: ( ( ( ruleEString ) ) )
-            // InternalBorduino.g:2394:2: ( ( ruleEString ) )
+            // InternalBorduino.g:2435:1: ( ( ( ruleEString ) ) )
+            // InternalBorduino.g:2436:2: ( ( ruleEString ) )
             {
-            // InternalBorduino.g:2394:2: ( ( ruleEString ) )
-            // InternalBorduino.g:2395:3: ( ruleEString )
+            // InternalBorduino.g:2436:2: ( ( ruleEString ) )
+            // InternalBorduino.g:2437:3: ( ruleEString )
             {
              before(grammarAccess.getConditionAccess().getSensorSensorCrossReference_1_0()); 
-            // InternalBorduino.g:2396:3: ( ruleEString )
-            // InternalBorduino.g:2397:4: ruleEString
+            // InternalBorduino.g:2438:3: ( ruleEString )
+            // InternalBorduino.g:2439:4: ruleEString
             {
              before(grammarAccess.getConditionAccess().getSensorSensorEStringParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -7213,17 +7357,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Condition__SignalAssignment_3"
-    // InternalBorduino.g:2408:1: rule__Condition__SignalAssignment_3 : ( ruleSignal ) ;
+    // InternalBorduino.g:2450:1: rule__Condition__SignalAssignment_3 : ( ruleSignal ) ;
     public final void rule__Condition__SignalAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2412:1: ( ( ruleSignal ) )
-            // InternalBorduino.g:2413:2: ( ruleSignal )
+            // InternalBorduino.g:2454:1: ( ( ruleSignal ) )
+            // InternalBorduino.g:2455:2: ( ruleSignal )
             {
-            // InternalBorduino.g:2413:2: ( ruleSignal )
-            // InternalBorduino.g:2414:3: ruleSignal
+            // InternalBorduino.g:2455:2: ( ruleSignal )
+            // InternalBorduino.g:2456:3: ruleSignal
             {
              before(grammarAccess.getConditionAccess().getSignalSignalParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -7254,21 +7398,21 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__InitialCondition__SensorAssignment_0"
-    // InternalBorduino.g:2423:1: rule__InitialCondition__SensorAssignment_0 : ( ( ruleEString ) ) ;
+    // InternalBorduino.g:2465:1: rule__InitialCondition__SensorAssignment_0 : ( ( ruleEString ) ) ;
     public final void rule__InitialCondition__SensorAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2427:1: ( ( ( ruleEString ) ) )
-            // InternalBorduino.g:2428:2: ( ( ruleEString ) )
+            // InternalBorduino.g:2469:1: ( ( ( ruleEString ) ) )
+            // InternalBorduino.g:2470:2: ( ( ruleEString ) )
             {
-            // InternalBorduino.g:2428:2: ( ( ruleEString ) )
-            // InternalBorduino.g:2429:3: ( ruleEString )
+            // InternalBorduino.g:2470:2: ( ( ruleEString ) )
+            // InternalBorduino.g:2471:3: ( ruleEString )
             {
              before(grammarAccess.getInitialConditionAccess().getSensorSensorCrossReference_0_0()); 
-            // InternalBorduino.g:2430:3: ( ruleEString )
-            // InternalBorduino.g:2431:4: ruleEString
+            // InternalBorduino.g:2472:3: ( ruleEString )
+            // InternalBorduino.g:2473:4: ruleEString
             {
              before(grammarAccess.getInitialConditionAccess().getSensorSensorEStringParserRuleCall_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -7303,17 +7447,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__InitialCondition__SignalAssignment_2"
-    // InternalBorduino.g:2442:1: rule__InitialCondition__SignalAssignment_2 : ( ruleSignal ) ;
+    // InternalBorduino.g:2484:1: rule__InitialCondition__SignalAssignment_2 : ( ruleSignal ) ;
     public final void rule__InitialCondition__SignalAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2446:1: ( ( ruleSignal ) )
-            // InternalBorduino.g:2447:2: ( ruleSignal )
+            // InternalBorduino.g:2488:1: ( ( ruleSignal ) )
+            // InternalBorduino.g:2489:2: ( ruleSignal )
             {
-            // InternalBorduino.g:2447:2: ( ruleSignal )
-            // InternalBorduino.g:2448:3: ruleSignal
+            // InternalBorduino.g:2489:2: ( ruleSignal )
+            // InternalBorduino.g:2490:3: ruleSignal
             {
              before(grammarAccess.getInitialConditionAccess().getSignalSignalParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7344,17 +7488,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DigitalSignal__ValueAssignment"
-    // InternalBorduino.g:2457:1: rule__DigitalSignal__ValueAssignment : ( ruleDigitalSignalEnum ) ;
+    // InternalBorduino.g:2499:1: rule__DigitalSignal__ValueAssignment : ( ruleDigitalSignalEnum ) ;
     public final void rule__DigitalSignal__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2461:1: ( ( ruleDigitalSignalEnum ) )
-            // InternalBorduino.g:2462:2: ( ruleDigitalSignalEnum )
+            // InternalBorduino.g:2503:1: ( ( ruleDigitalSignalEnum ) )
+            // InternalBorduino.g:2504:2: ( ruleDigitalSignalEnum )
             {
-            // InternalBorduino.g:2462:2: ( ruleDigitalSignalEnum )
-            // InternalBorduino.g:2463:3: ruleDigitalSignalEnum
+            // InternalBorduino.g:2504:2: ( ruleDigitalSignalEnum )
+            // InternalBorduino.g:2505:3: ruleDigitalSignalEnum
             {
              before(grammarAccess.getDigitalSignalAccess().getValueDigitalSignalEnumEnumRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -7385,17 +7529,17 @@ public class InternalBorduinoParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringSignal__ValueAssignment"
-    // InternalBorduino.g:2472:1: rule__StringSignal__ValueAssignment : ( ruleEString ) ;
+    // InternalBorduino.g:2514:1: rule__StringSignal__ValueAssignment : ( ruleEString ) ;
     public final void rule__StringSignal__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBorduino.g:2476:1: ( ( ruleEString ) )
-            // InternalBorduino.g:2477:2: ( ruleEString )
+            // InternalBorduino.g:2518:1: ( ( ruleEString ) )
+            // InternalBorduino.g:2519:2: ( ruleEString )
             {
-            // InternalBorduino.g:2477:2: ( ruleEString )
-            // InternalBorduino.g:2478:3: ruleEString
+            // InternalBorduino.g:2519:2: ( ruleEString )
+            // InternalBorduino.g:2520:3: ruleEString
             {
              before(grammarAccess.getStringSignalAccess().getValueEStringParserRuleCall_0()); 
             pushFollow(FOLLOW_2);

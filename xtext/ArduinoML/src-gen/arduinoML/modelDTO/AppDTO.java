@@ -95,7 +95,7 @@ public class AppDTO {
 			}else {
 				SimplePinSensor sensor = new SimplePinSensor();
 				sensor.setName(amlSensor.getName());
-				sensor.setPin(amlSensor.getPin());
+				sensor.setPin(amlSensor.getPins().get(0));
 				OPERATOR operator = addOperator(condition.getOperator());
 				arduinoML.Signal signal = condition.getSignal();
 				
@@ -151,7 +151,7 @@ public class AppDTO {
 			else {
 				SimplePinActuator simplePinActuator = new SimplePinActuator();
 				simplePinActuator.setName(actuator.getName());
-				simplePinActuator.setPin(actuator.getPin());
+				simplePinActuator.setPin(actuator.getPins().get(0));
 				kernelAction.setActuator(simplePinActuator);
 			}
 			
@@ -200,7 +200,7 @@ public class AppDTO {
 					
 				}else {
 					SimplePinActuator actuator = new SimplePinActuator();
-					actuator.setPin(brick.getPin());
+					actuator.setPin(brick.getPins().get(0));
 					actuator.setName(brick.getName());
 					kernelBricks.add(actuator);
 				}
@@ -215,7 +215,7 @@ public class AppDTO {
 				}else {
 					SimplePinSensor sensor = new SimplePinSensor();
 					sensor.setName(brick.getName());
-					sensor.setPin(brick.getPin());
+					sensor.setPin(brick.getPins().get(0));
 					kernelBricks.add(sensor);
 
 				}

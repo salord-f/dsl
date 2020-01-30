@@ -43,9 +43,9 @@
         <children xmi:type="notation:Node" xmi:id="_GO7HIDV8EeqPT-bmiUMJHQ" type="2003" element="_GOj6wDV8EeqPT-bmiUMJHQ">
           <children xmi:type="notation:Node" xmi:id="_GO-xgDV8EeqPT-bmiUMJHQ" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_GPAmsDV8EeqPT-bmiUMJHQ" type="7004">
-            <children xmi:type="notation:Node" xmi:id="_ZlkLsDV8EeqPT-bmiUMJHQ" type="3010" element="_ZleFEDV8EeqPT-bmiUMJHQ">
-              <styles xmi:type="notation:FontStyle" xmi:id="_ZlkLsTV8EeqPT-bmiUMJHQ" fontColor="2697711" fontName="Cantarell" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_ZlkLsjV8EeqPT-bmiUMJHQ"/>
+            <children xmi:type="notation:Node" xmi:id="_gcg7AEOWEeq7QeaQ_AxW7A" type="3010" element="_gbyiQUOWEeq7QeaQ_AxW7A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_gcg7AUOWEeq7QeaQ_AxW7A" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_gcg7AkOWEeq7QeaQ_AxW7A"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_GPAmsTV8EeqPT-bmiUMJHQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_GPAmsjV8EeqPT-bmiUMJHQ"/>
@@ -178,10 +178,6 @@
         <children xmi:type="notation:Node" xmi:id="_Yd738ECCEeqUqfgCPuwR_g" type="2003" element="_YdXQMECCEeqUqfgCPuwR_g">
           <children xmi:type="notation:Node" xmi:id="_YeAJYECCEeqUqfgCPuwR_g" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_YeAwcECCEeqUqfgCPuwR_g" type="7004">
-            <children xmi:type="notation:Node" xmi:id="_vumFkECDEeqUqfgCPuwR_g" type="3010" element="_vuYqMECDEeqUqfgCPuwR_g">
-              <styles xmi:type="notation:FontStyle" xmi:id="_vumFkUCDEeqUqfgCPuwR_g" fontColor="2697711" fontName="Cantarell" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_vumFkkCDEeqUqfgCPuwR_g"/>
-            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_YeAwcUCCEeqUqfgCPuwR_g"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_YeAwckCCEeqUqfgCPuwR_g"/>
           </children>
@@ -566,10 +562,10 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_ZleFEDV8EeqPT-bmiUMJHQ" name="pin : EInt" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="arduinoML.ecore#//Brick/pin"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="arduinoML.ecore#//Brick/pin"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_br6NIjV8EeqPT-bmiUMJHQ" labelAlignment="LEFT">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_gbyiQUOWEeq7QeaQ_AxW7A" name="pins : EInt" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="arduinoML.ecore#//Brick/pins"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="arduinoML.ecore#//Brick/pins"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_gbzwYEOWEeq7QeaQ_AxW7A" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
@@ -919,14 +915,6 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_vuYqMECDEeqUqfgCPuwR_g" name="pins : EInt" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="arduinoML.ecore#//LCDScreenActuator/pins"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="arduinoML.ecore#//LCDScreenActuator/pins"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_l0LOY0CEEeqUqfgCPuwR_g" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ef9r00CCEeqUqfgCPuwR_g" sourceNode="_YdXQMECCEeqUqfgCPuwR_g" targetNode="_s1PsoDV8EeqPT-bmiUMJHQ">
       <target xmi:type="ecore:EClass" href="arduinoML.ecore#//LCDScreenActuator"/>

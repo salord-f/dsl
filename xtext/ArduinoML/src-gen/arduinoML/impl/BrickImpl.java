@@ -5,11 +5,10 @@ package arduinoML.impl;
 import arduinoML.ArduinoMLPackage;
 import arduinoML.Brick;
 
-import org.eclipse.emf.common.notify.Notification;
-
+import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,31 +18,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link arduinoML.impl.BrickImpl#getPin <em>Pin</em>}</li>
+ *   <li>{@link arduinoML.impl.BrickImpl#getPins <em>Pins</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class BrickImpl extends NamedElementImpl implements Brick {
 	/**
-	 * The default value of the '{@link #getPin() <em>Pin</em>}' attribute.
+	 * The cached value of the '{@link #getPins() <em>Pins</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPin()
+	 * @see #getPins()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int PIN_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getPin() <em>Pin</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPin()
-	 * @generated
-	 * @ordered
-	 */
-	protected int pin = PIN_EDEFAULT;
+	protected EList<Integer> pins;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,20 +58,11 @@ public abstract class BrickImpl extends NamedElementImpl implements Brick {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getPin() {
-		return pin;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPin(int newPin) {
-		int oldPin = pin;
-		pin = newPin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.BRICK__PIN, oldPin, pin));
+	public EList<Integer> getPins() {
+		if (pins == null) {
+			pins = new EDataTypeUniqueEList<Integer>(Integer.class, this, ArduinoMLPackage.BRICK__PINS);
+		}
+		return pins;
 	}
 
 	/**
@@ -93,8 +73,8 @@ public abstract class BrickImpl extends NamedElementImpl implements Brick {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ArduinoMLPackage.BRICK__PIN:
-			return getPin();
+		case ArduinoMLPackage.BRICK__PINS:
+			return getPins();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,11 +84,13 @@ public abstract class BrickImpl extends NamedElementImpl implements Brick {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ArduinoMLPackage.BRICK__PIN:
-			setPin((Integer) newValue);
+		case ArduinoMLPackage.BRICK__PINS:
+			getPins().clear();
+			getPins().addAll((Collection<? extends Integer>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +104,8 @@ public abstract class BrickImpl extends NamedElementImpl implements Brick {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ArduinoMLPackage.BRICK__PIN:
-			setPin(PIN_EDEFAULT);
+		case ArduinoMLPackage.BRICK__PINS:
+			getPins().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -137,8 +119,8 @@ public abstract class BrickImpl extends NamedElementImpl implements Brick {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ArduinoMLPackage.BRICK__PIN:
-			return pin != PIN_EDEFAULT;
+		case ArduinoMLPackage.BRICK__PINS:
+			return pins != null && !pins.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,8 +136,8 @@ public abstract class BrickImpl extends NamedElementImpl implements Brick {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (pin: ");
-		result.append(pin);
+		result.append(" (pins: ");
+		result.append(pins);
 		result.append(')');
 		return result.toString();
 	}

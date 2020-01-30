@@ -133,8 +133,10 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cNameEStringParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
 		private final Keyword cColonKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Assignment cPinAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
-		private final RuleCall cPinEIntParserRuleCall_0_3_0 = (RuleCall)cPinAssignment_0_3.eContents().get(0);
+		private final Assignment cPinsAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cPinsEIntParserRuleCall_0_3_0 = (RuleCall)cPinsAssignment_0_3.eContents().get(0);
+		private final Assignment cPinsAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cPinsEIntParserRuleCall_0_4_0 = (RuleCall)cPinsAssignment_0_4.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final RuleCall cLCDScreenActuatorParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
 		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -150,15 +152,15 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
 		
 		//Brick:
-		//	(Actuator | Sensor) name=EString ':' pin=EInt | LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt* |
-		//	KeyboardSensor name=EString;
+		//	(Actuator | Sensor) name=EString ':' pins+=EInt pins+=EInt* | LCDScreenActuator name=EString ':' pins+=EInt
+		//	pins+=EInt* | KeyboardSensor name=EString;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(Actuator | Sensor) name=EString ':' pin=EInt | LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt* |
-		//KeyboardSensor name=EString
+		//(Actuator | Sensor) name=EString ':' pins+=EInt pins+=EInt* | LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt*
+		//| KeyboardSensor name=EString
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//(Actuator | Sensor) name=EString ':' pin=EInt
+		//(Actuator | Sensor) name=EString ':' pins+=EInt pins+=EInt*
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//Actuator | Sensor
@@ -179,11 +181,17 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_0_2() { return cColonKeyword_0_2; }
 		
-		//pin=EInt
-		public Assignment getPinAssignment_0_3() { return cPinAssignment_0_3; }
+		//pins+=EInt
+		public Assignment getPinsAssignment_0_3() { return cPinsAssignment_0_3; }
 		
 		//EInt
-		public RuleCall getPinEIntParserRuleCall_0_3_0() { return cPinEIntParserRuleCall_0_3_0; }
+		public RuleCall getPinsEIntParserRuleCall_0_3_0() { return cPinsEIntParserRuleCall_0_3_0; }
+		
+		//pins+=EInt*
+		public Assignment getPinsAssignment_0_4() { return cPinsAssignment_0_4; }
+		
+		//EInt
+		public RuleCall getPinsEIntParserRuleCall_0_4_0() { return cPinsEIntParserRuleCall_0_4_0; }
 		
 		//LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt*
 		public Group getGroup_1() { return cGroup_1; }
@@ -753,8 +761,8 @@ public class BorduinoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Brick:
-	//	(Actuator | Sensor) name=EString ':' pin=EInt | LCDScreenActuator name=EString ':' pins+=EInt pins+=EInt* |
-	//	KeyboardSensor name=EString;
+	//	(Actuator | Sensor) name=EString ':' pins+=EInt pins+=EInt* | LCDScreenActuator name=EString ':' pins+=EInt
+	//	pins+=EInt* | KeyboardSensor name=EString;
 	public BrickElements getBrickAccess() {
 		return pBrick;
 	}

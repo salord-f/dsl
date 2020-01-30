@@ -17,7 +17,7 @@ App returns App:
 	'}';
 
 Brick returns Brick:
-	((Actuator | Sensor ) name=EString ':' pin=EInt) | (LCDScreenActuator name=EString ':' pins+=EInt (pins+=EInt)*) | (KeyboardSensor name=EString) ;
+	((Actuator | Sensor ) name=EString ':' pins+=EInt (pins+=EInt)* ) | (LCDScreenActuator name=EString ':' pins+=EInt (pins+=EInt)*) | (KeyboardSensor name=EString) ;
 	
 
 Actuator returns Actuator:

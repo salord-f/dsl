@@ -58,7 +58,8 @@ public class BorduinoParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAppAccess().getStatesAssignment_9(), "rule__App__StatesAssignment_9");
 			builder.put(grammarAccess.getAppAccess().getStatesAssignment_10(), "rule__App__StatesAssignment_10");
 			builder.put(grammarAccess.getBrickAccess().getNameAssignment_0_1(), "rule__Brick__NameAssignment_0_1");
-			builder.put(grammarAccess.getBrickAccess().getPinAssignment_0_3(), "rule__Brick__PinAssignment_0_3");
+			builder.put(grammarAccess.getBrickAccess().getPinsAssignment_0_3(), "rule__Brick__PinsAssignment_0_3");
+			builder.put(grammarAccess.getBrickAccess().getPinsAssignment_0_4(), "rule__Brick__PinsAssignment_0_4");
 			builder.put(grammarAccess.getBrickAccess().getNameAssignment_1_1(), "rule__Brick__NameAssignment_1_1");
 			builder.put(grammarAccess.getBrickAccess().getPinsAssignment_1_3(), "rule__Brick__PinsAssignment_1_3");
 			builder.put(grammarAccess.getBrickAccess().getPinsAssignment_1_4(), "rule__Brick__PinsAssignment_1_4");

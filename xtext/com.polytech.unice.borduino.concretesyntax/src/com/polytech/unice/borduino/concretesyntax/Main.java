@@ -20,8 +20,8 @@ import arduinoML.homemade.ArduinoMLSwitchPrinter;
 public class Main {
 
 	public static void main(String[] args) {
-		String modelPath = "rsc/StateBasedAlarm.bsl";
-		String destinationPath= "rsc/StateBasedAlarm.xmi";
+		String modelPath = "rsc/ChainedOperators.bsl";
+		String destinationPath= "rsc/ChainedOperators.xmi";
 		String code ="";
 		try {
 			ArduinoML2xmi(modelPath, destinationPath);

@@ -19,7 +19,7 @@
       <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//Operator/NONE"/>
     </genEnums>
     <genClasses ecoreClass="arduinoML.ecore#//Brick">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//Brick/pin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//Brick/pins"/>
     </genClasses>
     <genClasses ecoreClass="arduinoML.ecore#//Actuator"/>
     <genClasses ecoreClass="arduinoML.ecore#//Sensor"/>
@@ -49,9 +49,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//Condition/operator"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Condition/signal"/>
     </genClasses>
-    <genClasses ecoreClass="arduinoML.ecore#//LCDScreenActuator">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//LCDScreenActuator/pins"/>
-    </genClasses>
+    <genClasses ecoreClass="arduinoML.ecore#//LCDScreenActuator"/>
     <genClasses ecoreClass="arduinoML.ecore#//Signal"/>
     <genClasses ecoreClass="arduinoML.ecore#//DigitalSignal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//DigitalSignal/value"/>

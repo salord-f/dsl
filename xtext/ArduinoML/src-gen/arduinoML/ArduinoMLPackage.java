@@ -114,13 +114,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int BRICK__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pin</b></em>' attribute.
+	 * The feature id for the '<em><b>Pins</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BRICK__PIN = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int BRICK__PINS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Brick</em>' class.
@@ -160,13 +160,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int ACTUATOR__NAME = BRICK__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pin</b></em>' attribute.
+	 * The feature id for the '<em><b>Pins</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTUATOR__PIN = BRICK__PIN;
+	int ACTUATOR__PINS = BRICK__PINS;
 
 	/**
 	 * The number of structural features of the '<em>Actuator</em>' class.
@@ -206,13 +206,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int SENSOR__NAME = BRICK__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pin</b></em>' attribute.
+	 * The feature id for the '<em><b>Pins</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR__PIN = BRICK__PIN;
+	int SENSOR__PINS = BRICK__PINS;
 
 	/**
 	 * The number of structural features of the '<em>Sensor</em>' class.
@@ -527,22 +527,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int LCD_SCREEN_ACTUATOR__NAME = ACTUATOR__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pin</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LCD_SCREEN_ACTUATOR__PIN = ACTUATOR__PIN;
-
-	/**
 	 * The feature id for the '<em><b>Pins</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LCD_SCREEN_ACTUATOR__PINS = ACTUATOR_FEATURE_COUNT + 0;
+	int LCD_SCREEN_ACTUATOR__PINS = ACTUATOR__PINS;
 
 	/**
 	 * The number of structural features of the '<em>LCD Screen Actuator</em>' class.
@@ -551,7 +542,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LCD_SCREEN_ACTUATOR_FEATURE_COUNT = ACTUATOR_FEATURE_COUNT + 1;
+	int LCD_SCREEN_ACTUATOR_FEATURE_COUNT = ACTUATOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>LCD Screen Actuator</em>' class.
@@ -684,13 +675,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int KEYBOARD_SENSOR__NAME = SENSOR__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pin</b></em>' attribute.
+	 * The feature id for the '<em><b>Pins</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KEYBOARD_SENSOR__PIN = SENSOR__PIN;
+	int KEYBOARD_SENSOR__PINS = SENSOR__PINS;
 
 	/**
 	 * The number of structural features of the '<em>Keyboard Sensor</em>' class.
@@ -741,15 +732,15 @@ public interface ArduinoMLPackage extends EPackage {
 	EClass getBrick();
 
 	/**
-	 * Returns the meta object for the attribute '{@link arduinoML.Brick#getPin <em>Pin</em>}'.
+	 * Returns the meta object for the attribute list '{@link arduinoML.Brick#getPins <em>Pins</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pin</em>'.
-	 * @see arduinoML.Brick#getPin()
+	 * @return the meta object for the attribute list '<em>Pins</em>'.
+	 * @see arduinoML.Brick#getPins()
 	 * @see #getBrick()
 	 * @generated
 	 */
-	EAttribute getBrick_Pin();
+	EAttribute getBrick_Pins();
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.Actuator <em>Actuator</em>}'.
@@ -996,17 +987,6 @@ public interface ArduinoMLPackage extends EPackage {
 	EClass getLCDScreenActuator();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link arduinoML.LCDScreenActuator#getPins <em>Pins</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Pins</em>'.
-	 * @see arduinoML.LCDScreenActuator#getPins()
-	 * @see #getLCDScreenActuator()
-	 * @generated
-	 */
-	EAttribute getLCDScreenActuator_Pins();
-
-	/**
 	 * Returns the meta object for class '{@link arduinoML.Signal <em>Signal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1122,12 +1102,12 @@ public interface ArduinoMLPackage extends EPackage {
 		EClass BRICK = eINSTANCE.getBrick();
 
 		/**
-		 * The meta object literal for the '<em><b>Pin</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Pins</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BRICK__PIN = eINSTANCE.getBrick_Pin();
+		EAttribute BRICK__PINS = eINSTANCE.getBrick_Pins();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.impl.ActuatorImpl <em>Actuator</em>}' class.
@@ -1330,14 +1310,6 @@ public interface ArduinoMLPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LCD_SCREEN_ACTUATOR = eINSTANCE.getLCDScreenActuator();
-
-		/**
-		 * The meta object literal for the '<em><b>Pins</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LCD_SCREEN_ACTUATOR__PINS = eINSTANCE.getLCDScreenActuator_Pins();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.impl.SignalImpl <em>Signal</em>}' class.

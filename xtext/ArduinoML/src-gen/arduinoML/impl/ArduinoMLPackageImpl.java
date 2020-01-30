@@ -226,7 +226,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBrick_Pin() {
+	public EAttribute getBrick_Pins() {
 		return (EAttribute) brickEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -442,15 +442,6 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLCDScreenActuator_Pins() {
-		return (EAttribute) lcdScreenActuatorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSignal() {
 		return signalEClass;
 	}
@@ -548,7 +539,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 
 		// Create classes and their features
 		brickEClass = createEClass(BRICK);
-		createEAttribute(brickEClass, BRICK__PIN);
+		createEAttribute(brickEClass, BRICK__PINS);
 
 		actuatorEClass = createEClass(ACTUATOR);
 
@@ -581,7 +572,6 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		createEReference(conditionEClass, CONDITION__SIGNAL);
 
 		lcdScreenActuatorEClass = createEClass(LCD_SCREEN_ACTUATOR);
-		createEAttribute(lcdScreenActuatorEClass, LCD_SCREEN_ACTUATOR__PINS);
 
 		signalEClass = createEClass(SIGNAL);
 
@@ -639,7 +629,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(brickEClass, Brick.class, "Brick", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBrick_Pin(), ecorePackage.getEInt(), "pin", null, 0, 1, Brick.class, !IS_TRANSIENT,
+		initEAttribute(getBrick_Pins(), ecorePackage.getEInt(), "pins", null, 0, -1, Brick.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE,
@@ -703,9 +693,6 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 
 		initEClass(lcdScreenActuatorEClass, LCDScreenActuator.class, "LCDScreenActuator", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLCDScreenActuator_Pins(), ecorePackage.getEInt(), "pins", null, 0, -1,
-				LCDScreenActuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(signalEClass, Signal.class, "Signal", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

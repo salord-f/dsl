@@ -152,19 +152,10 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Brick returns Actuator
 	 *
 	 * Constraint:
-	 *     (name=EString pin=EInt)
+	 *     (name=EString pins+=EInt pins+=EInt*)
 	 */
 	protected void sequence_Actuator_Brick(ISerializationContext context, Actuator semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.NAMED_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.BRICK__PIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.BRICK__PIN));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_0_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_0_3_0(), semanticObject.getPin());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -222,19 +213,10 @@ public class BorduinoSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Brick returns Sensor
 	 *
 	 * Constraint:
-	 *     (name=EString pin=EInt)
+	 *     (name=EString pins+=EInt pins+=EInt*)
 	 */
 	protected void sequence_Brick_Sensor(ISerializationContext context, Sensor semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.NAMED_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.BRICK__PIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.BRICK__PIN));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_0_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_0_3_0(), semanticObject.getPin());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

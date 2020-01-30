@@ -459,72 +459,74 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBrick"
-    // InternalBorduino.g:226:1: ruleBrick returns [EObject current=null] : ( ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pin_4_0= ruleEInt ) ) ) | (this_LCDScreenActuator_5= ruleLCDScreenActuator ( (lv_name_6_0= ruleEString ) ) otherlv_7= ':' ( (lv_pins_8_0= ruleEInt ) ) ( (lv_pins_9_0= ruleEInt ) )* ) | (this_KeyboardSensor_10= ruleKeyboardSensor ( (lv_name_11_0= ruleEString ) ) ) ) ;
+    // InternalBorduino.g:226:1: ruleBrick returns [EObject current=null] : ( ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pins_4_0= ruleEInt ) ) ( (lv_pins_5_0= ruleEInt ) )* ) | (this_LCDScreenActuator_6= ruleLCDScreenActuator ( (lv_name_7_0= ruleEString ) ) otherlv_8= ':' ( (lv_pins_9_0= ruleEInt ) ) ( (lv_pins_10_0= ruleEInt ) )* ) | (this_KeyboardSensor_11= ruleKeyboardSensor ( (lv_name_12_0= ruleEString ) ) ) ) ;
     public final EObject ruleBrick() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_3=null;
-        Token otherlv_7=null;
+        Token otherlv_8=null;
         EObject this_Actuator_0 = null;
 
         EObject this_Sensor_1 = null;
 
         AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_pin_4_0 = null;
+        AntlrDatatypeRuleToken lv_pins_4_0 = null;
 
-        EObject this_LCDScreenActuator_5 = null;
+        AntlrDatatypeRuleToken lv_pins_5_0 = null;
 
-        AntlrDatatypeRuleToken lv_name_6_0 = null;
+        EObject this_LCDScreenActuator_6 = null;
 
-        AntlrDatatypeRuleToken lv_pins_8_0 = null;
+        AntlrDatatypeRuleToken lv_name_7_0 = null;
 
         AntlrDatatypeRuleToken lv_pins_9_0 = null;
 
-        EObject this_KeyboardSensor_10 = null;
+        AntlrDatatypeRuleToken lv_pins_10_0 = null;
 
-        AntlrDatatypeRuleToken lv_name_11_0 = null;
+        EObject this_KeyboardSensor_11 = null;
+
+        AntlrDatatypeRuleToken lv_name_12_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalBorduino.g:232:2: ( ( ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pin_4_0= ruleEInt ) ) ) | (this_LCDScreenActuator_5= ruleLCDScreenActuator ( (lv_name_6_0= ruleEString ) ) otherlv_7= ':' ( (lv_pins_8_0= ruleEInt ) ) ( (lv_pins_9_0= ruleEInt ) )* ) | (this_KeyboardSensor_10= ruleKeyboardSensor ( (lv_name_11_0= ruleEString ) ) ) ) )
-            // InternalBorduino.g:233:2: ( ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pin_4_0= ruleEInt ) ) ) | (this_LCDScreenActuator_5= ruleLCDScreenActuator ( (lv_name_6_0= ruleEString ) ) otherlv_7= ':' ( (lv_pins_8_0= ruleEInt ) ) ( (lv_pins_9_0= ruleEInt ) )* ) | (this_KeyboardSensor_10= ruleKeyboardSensor ( (lv_name_11_0= ruleEString ) ) ) )
+            // InternalBorduino.g:232:2: ( ( ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pins_4_0= ruleEInt ) ) ( (lv_pins_5_0= ruleEInt ) )* ) | (this_LCDScreenActuator_6= ruleLCDScreenActuator ( (lv_name_7_0= ruleEString ) ) otherlv_8= ':' ( (lv_pins_9_0= ruleEInt ) ) ( (lv_pins_10_0= ruleEInt ) )* ) | (this_KeyboardSensor_11= ruleKeyboardSensor ( (lv_name_12_0= ruleEString ) ) ) ) )
+            // InternalBorduino.g:233:2: ( ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pins_4_0= ruleEInt ) ) ( (lv_pins_5_0= ruleEInt ) )* ) | (this_LCDScreenActuator_6= ruleLCDScreenActuator ( (lv_name_7_0= ruleEString ) ) otherlv_8= ':' ( (lv_pins_9_0= ruleEInt ) ) ( (lv_pins_10_0= ruleEInt ) )* ) | (this_KeyboardSensor_11= ruleKeyboardSensor ( (lv_name_12_0= ruleEString ) ) ) )
             {
-            // InternalBorduino.g:233:2: ( ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pin_4_0= ruleEInt ) ) ) | (this_LCDScreenActuator_5= ruleLCDScreenActuator ( (lv_name_6_0= ruleEString ) ) otherlv_7= ':' ( (lv_pins_8_0= ruleEInt ) ) ( (lv_pins_9_0= ruleEInt ) )* ) | (this_KeyboardSensor_10= ruleKeyboardSensor ( (lv_name_11_0= ruleEString ) ) ) )
-            int alt5=3;
+            // InternalBorduino.g:233:2: ( ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pins_4_0= ruleEInt ) ) ( (lv_pins_5_0= ruleEInt ) )* ) | (this_LCDScreenActuator_6= ruleLCDScreenActuator ( (lv_name_7_0= ruleEString ) ) otherlv_8= ':' ( (lv_pins_9_0= ruleEInt ) ) ( (lv_pins_10_0= ruleEInt ) )* ) | (this_KeyboardSensor_11= ruleKeyboardSensor ( (lv_name_12_0= ruleEString ) ) ) )
+            int alt6=3;
             switch ( input.LA(1) ) {
             case 18:
             case 21:
                 {
-                alt5=1;
+                alt6=1;
                 }
                 break;
             case 19:
                 {
-                alt5=2;
+                alt6=2;
                 }
                 break;
             case 20:
                 {
-                alt5=3;
+                alt6=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt5) {
+            switch (alt6) {
                 case 1 :
-                    // InternalBorduino.g:234:3: ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pin_4_0= ruleEInt ) ) )
+                    // InternalBorduino.g:234:3: ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pins_4_0= ruleEInt ) ) ( (lv_pins_5_0= ruleEInt ) )* )
                     {
-                    // InternalBorduino.g:234:3: ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pin_4_0= ruleEInt ) ) )
-                    // InternalBorduino.g:235:4: (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pin_4_0= ruleEInt ) )
+                    // InternalBorduino.g:234:3: ( (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pins_4_0= ruleEInt ) ) ( (lv_pins_5_0= ruleEInt ) )* )
+                    // InternalBorduino.g:235:4: (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor ) ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_pins_4_0= ruleEInt ) ) ( (lv_pins_5_0= ruleEInt ) )*
                     {
                     // InternalBorduino.g:235:4: (this_Actuator_0= ruleActuator | this_Sensor_1= ruleSensor )
                     int alt3=2;
@@ -617,107 +619,17 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_3, grammarAccess.getBrickAccess().getColonKeyword_0_2());
                     			
-                    // InternalBorduino.g:277:4: ( (lv_pin_4_0= ruleEInt ) )
-                    // InternalBorduino.g:278:5: (lv_pin_4_0= ruleEInt )
+                    // InternalBorduino.g:277:4: ( (lv_pins_4_0= ruleEInt ) )
+                    // InternalBorduino.g:278:5: (lv_pins_4_0= ruleEInt )
                     {
-                    // InternalBorduino.g:278:5: (lv_pin_4_0= ruleEInt )
-                    // InternalBorduino.g:279:6: lv_pin_4_0= ruleEInt
-                    {
-
-                    						newCompositeNode(grammarAccess.getBrickAccess().getPinEIntParserRuleCall_0_3_0());
-                    					
-                    pushFollow(FOLLOW_2);
-                    lv_pin_4_0=ruleEInt();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getBrickRule());
-                    						}
-                    						set(
-                    							current,
-                    							"pin",
-                    							lv_pin_4_0,
-                    							"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalBorduino.g:298:3: (this_LCDScreenActuator_5= ruleLCDScreenActuator ( (lv_name_6_0= ruleEString ) ) otherlv_7= ':' ( (lv_pins_8_0= ruleEInt ) ) ( (lv_pins_9_0= ruleEInt ) )* )
-                    {
-                    // InternalBorduino.g:298:3: (this_LCDScreenActuator_5= ruleLCDScreenActuator ( (lv_name_6_0= ruleEString ) ) otherlv_7= ':' ( (lv_pins_8_0= ruleEInt ) ) ( (lv_pins_9_0= ruleEInt ) )* )
-                    // InternalBorduino.g:299:4: this_LCDScreenActuator_5= ruleLCDScreenActuator ( (lv_name_6_0= ruleEString ) ) otherlv_7= ':' ( (lv_pins_8_0= ruleEInt ) ) ( (lv_pins_9_0= ruleEInt ) )*
+                    // InternalBorduino.g:278:5: (lv_pins_4_0= ruleEInt )
+                    // InternalBorduino.g:279:6: lv_pins_4_0= ruleEInt
                     {
 
-                    				newCompositeNode(grammarAccess.getBrickAccess().getLCDScreenActuatorParserRuleCall_1_0());
-                    			
-                    pushFollow(FOLLOW_3);
-                    this_LCDScreenActuator_5=ruleLCDScreenActuator();
-
-                    state._fsp--;
-
-
-                    				current = this_LCDScreenActuator_5;
-                    				afterParserOrEnumRuleCall();
-                    			
-                    // InternalBorduino.g:307:4: ( (lv_name_6_0= ruleEString ) )
-                    // InternalBorduino.g:308:5: (lv_name_6_0= ruleEString )
-                    {
-                    // InternalBorduino.g:308:5: (lv_name_6_0= ruleEString )
-                    // InternalBorduino.g:309:6: lv_name_6_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_1_1_0());
-                    					
-                    pushFollow(FOLLOW_10);
-                    lv_name_6_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getBrickRule());
-                    						}
-                    						set(
-                    							current,
-                    							"name",
-                    							lv_name_6_0,
-                    							"com.polytech.unice.borduino.concretesyntax.Borduino.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    otherlv_7=(Token)match(input,17,FOLLOW_11); 
-
-                    				newLeafNode(otherlv_7, grammarAccess.getBrickAccess().getColonKeyword_1_2());
-                    			
-                    // InternalBorduino.g:330:4: ( (lv_pins_8_0= ruleEInt ) )
-                    // InternalBorduino.g:331:5: (lv_pins_8_0= ruleEInt )
-                    {
-                    // InternalBorduino.g:331:5: (lv_pins_8_0= ruleEInt )
-                    // InternalBorduino.g:332:6: lv_pins_8_0= ruleEInt
-                    {
-
-                    						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_1_3_0());
+                    						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_0_3_0());
                     					
                     pushFollow(FOLLOW_12);
-                    lv_pins_8_0=ruleEInt();
+                    lv_pins_4_0=ruleEInt();
 
                     state._fsp--;
 
@@ -728,7 +640,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"pins",
-                    							lv_pins_8_0,
+                    							lv_pins_4_0,
                     							"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
                     						afterParserOrEnumRuleCall();
                     					
@@ -738,7 +650,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalBorduino.g:349:4: ( (lv_pins_9_0= ruleEInt ) )*
+                    // InternalBorduino.g:296:4: ( (lv_pins_5_0= ruleEInt ) )*
                     loop4:
                     do {
                         int alt4=2;
@@ -751,16 +663,16 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalBorduino.g:350:5: (lv_pins_9_0= ruleEInt )
+                    	    // InternalBorduino.g:297:5: (lv_pins_5_0= ruleEInt )
                     	    {
-                    	    // InternalBorduino.g:350:5: (lv_pins_9_0= ruleEInt )
-                    	    // InternalBorduino.g:351:6: lv_pins_9_0= ruleEInt
+                    	    // InternalBorduino.g:297:5: (lv_pins_5_0= ruleEInt )
+                    	    // InternalBorduino.g:298:6: lv_pins_5_0= ruleEInt
                     	    {
 
-                    	    						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_1_4_0());
+                    	    						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_0_4_0());
                     	    					
                     	    pushFollow(FOLLOW_12);
-                    	    lv_pins_9_0=ruleEInt();
+                    	    lv_pins_5_0=ruleEInt();
 
                     	    state._fsp--;
 
@@ -771,7 +683,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
                     	    						add(
                     	    							current,
                     	    							"pins",
-                    	    							lv_pins_9_0,
+                    	    							lv_pins_5_0,
                     	    							"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
                     	    						afterParserOrEnumRuleCall();
                     	    					
@@ -793,35 +705,35 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 3 :
-                    // InternalBorduino.g:370:3: (this_KeyboardSensor_10= ruleKeyboardSensor ( (lv_name_11_0= ruleEString ) ) )
+                case 2 :
+                    // InternalBorduino.g:317:3: (this_LCDScreenActuator_6= ruleLCDScreenActuator ( (lv_name_7_0= ruleEString ) ) otherlv_8= ':' ( (lv_pins_9_0= ruleEInt ) ) ( (lv_pins_10_0= ruleEInt ) )* )
                     {
-                    // InternalBorduino.g:370:3: (this_KeyboardSensor_10= ruleKeyboardSensor ( (lv_name_11_0= ruleEString ) ) )
-                    // InternalBorduino.g:371:4: this_KeyboardSensor_10= ruleKeyboardSensor ( (lv_name_11_0= ruleEString ) )
+                    // InternalBorduino.g:317:3: (this_LCDScreenActuator_6= ruleLCDScreenActuator ( (lv_name_7_0= ruleEString ) ) otherlv_8= ':' ( (lv_pins_9_0= ruleEInt ) ) ( (lv_pins_10_0= ruleEInt ) )* )
+                    // InternalBorduino.g:318:4: this_LCDScreenActuator_6= ruleLCDScreenActuator ( (lv_name_7_0= ruleEString ) ) otherlv_8= ':' ( (lv_pins_9_0= ruleEInt ) ) ( (lv_pins_10_0= ruleEInt ) )*
                     {
 
-                    				newCompositeNode(grammarAccess.getBrickAccess().getKeyboardSensorParserRuleCall_2_0());
+                    				newCompositeNode(grammarAccess.getBrickAccess().getLCDScreenActuatorParserRuleCall_1_0());
                     			
                     pushFollow(FOLLOW_3);
-                    this_KeyboardSensor_10=ruleKeyboardSensor();
+                    this_LCDScreenActuator_6=ruleLCDScreenActuator();
 
                     state._fsp--;
 
 
-                    				current = this_KeyboardSensor_10;
+                    				current = this_LCDScreenActuator_6;
                     				afterParserOrEnumRuleCall();
                     			
-                    // InternalBorduino.g:379:4: ( (lv_name_11_0= ruleEString ) )
-                    // InternalBorduino.g:380:5: (lv_name_11_0= ruleEString )
+                    // InternalBorduino.g:326:4: ( (lv_name_7_0= ruleEString ) )
+                    // InternalBorduino.g:327:5: (lv_name_7_0= ruleEString )
                     {
-                    // InternalBorduino.g:380:5: (lv_name_11_0= ruleEString )
-                    // InternalBorduino.g:381:6: lv_name_11_0= ruleEString
+                    // InternalBorduino.g:327:5: (lv_name_7_0= ruleEString )
+                    // InternalBorduino.g:328:6: lv_name_7_0= ruleEString
                     {
 
-                    						newCompositeNode(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_2_1_0());
+                    						newCompositeNode(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_2);
-                    lv_name_11_0=ruleEString();
+                    pushFollow(FOLLOW_10);
+                    lv_name_7_0=ruleEString();
 
                     state._fsp--;
 
@@ -832,7 +744,146 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"name",
-                    							lv_name_11_0,
+                    							lv_name_7_0,
+                    							"com.polytech.unice.borduino.concretesyntax.Borduino.EString");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_8=(Token)match(input,17,FOLLOW_11); 
+
+                    				newLeafNode(otherlv_8, grammarAccess.getBrickAccess().getColonKeyword_1_2());
+                    			
+                    // InternalBorduino.g:349:4: ( (lv_pins_9_0= ruleEInt ) )
+                    // InternalBorduino.g:350:5: (lv_pins_9_0= ruleEInt )
+                    {
+                    // InternalBorduino.g:350:5: (lv_pins_9_0= ruleEInt )
+                    // InternalBorduino.g:351:6: lv_pins_9_0= ruleEInt
+                    {
+
+                    						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_1_3_0());
+                    					
+                    pushFollow(FOLLOW_12);
+                    lv_pins_9_0=ruleEInt();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getBrickRule());
+                    						}
+                    						add(
+                    							current,
+                    							"pins",
+                    							lv_pins_9_0,
+                    							"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalBorduino.g:368:4: ( (lv_pins_10_0= ruleEInt ) )*
+                    loop5:
+                    do {
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
+
+                        if ( (LA5_0==RULE_INT||LA5_0==22) ) {
+                            alt5=1;
+                        }
+
+
+                        switch (alt5) {
+                    	case 1 :
+                    	    // InternalBorduino.g:369:5: (lv_pins_10_0= ruleEInt )
+                    	    {
+                    	    // InternalBorduino.g:369:5: (lv_pins_10_0= ruleEInt )
+                    	    // InternalBorduino.g:370:6: lv_pins_10_0= ruleEInt
+                    	    {
+
+                    	    						newCompositeNode(grammarAccess.getBrickAccess().getPinsEIntParserRuleCall_1_4_0());
+                    	    					
+                    	    pushFollow(FOLLOW_12);
+                    	    lv_pins_10_0=ruleEInt();
+
+                    	    state._fsp--;
+
+
+                    	    						if (current==null) {
+                    	    							current = createModelElementForParent(grammarAccess.getBrickRule());
+                    	    						}
+                    	    						add(
+                    	    							current,
+                    	    							"pins",
+                    	    							lv_pins_10_0,
+                    	    							"com.polytech.unice.borduino.concretesyntax.Borduino.EInt");
+                    	    						afterParserOrEnumRuleCall();
+                    	    					
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop5;
+                        }
+                    } while (true);
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalBorduino.g:389:3: (this_KeyboardSensor_11= ruleKeyboardSensor ( (lv_name_12_0= ruleEString ) ) )
+                    {
+                    // InternalBorduino.g:389:3: (this_KeyboardSensor_11= ruleKeyboardSensor ( (lv_name_12_0= ruleEString ) ) )
+                    // InternalBorduino.g:390:4: this_KeyboardSensor_11= ruleKeyboardSensor ( (lv_name_12_0= ruleEString ) )
+                    {
+
+                    				newCompositeNode(grammarAccess.getBrickAccess().getKeyboardSensorParserRuleCall_2_0());
+                    			
+                    pushFollow(FOLLOW_3);
+                    this_KeyboardSensor_11=ruleKeyboardSensor();
+
+                    state._fsp--;
+
+
+                    				current = this_KeyboardSensor_11;
+                    				afterParserOrEnumRuleCall();
+                    			
+                    // InternalBorduino.g:398:4: ( (lv_name_12_0= ruleEString ) )
+                    // InternalBorduino.g:399:5: (lv_name_12_0= ruleEString )
+                    {
+                    // InternalBorduino.g:399:5: (lv_name_12_0= ruleEString )
+                    // InternalBorduino.g:400:6: lv_name_12_0= ruleEString
+                    {
+
+                    						newCompositeNode(grammarAccess.getBrickAccess().getNameEStringParserRuleCall_2_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_name_12_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getBrickRule());
+                    						}
+                    						set(
+                    							current,
+                    							"name",
+                    							lv_name_12_0,
                     							"com.polytech.unice.borduino.concretesyntax.Borduino.EString");
                     						afterParserOrEnumRuleCall();
                     					
@@ -871,7 +922,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActuator"
-    // InternalBorduino.g:403:1: entryRuleActuator returns [EObject current=null] : iv_ruleActuator= ruleActuator EOF ;
+    // InternalBorduino.g:422:1: entryRuleActuator returns [EObject current=null] : iv_ruleActuator= ruleActuator EOF ;
     public final EObject entryRuleActuator() throws RecognitionException {
         EObject current = null;
 
@@ -879,8 +930,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:403:49: (iv_ruleActuator= ruleActuator EOF )
-            // InternalBorduino.g:404:2: iv_ruleActuator= ruleActuator EOF
+            // InternalBorduino.g:422:49: (iv_ruleActuator= ruleActuator EOF )
+            // InternalBorduino.g:423:2: iv_ruleActuator= ruleActuator EOF
             {
              newCompositeNode(grammarAccess.getActuatorRule()); 
             pushFollow(FOLLOW_1);
@@ -907,7 +958,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActuator"
-    // InternalBorduino.g:410:1: ruleActuator returns [EObject current=null] : ( () otherlv_1= 'actuator' ) ;
+    // InternalBorduino.g:429:1: ruleActuator returns [EObject current=null] : ( () otherlv_1= 'actuator' ) ;
     public final EObject ruleActuator() throws RecognitionException {
         EObject current = null;
 
@@ -917,14 +968,14 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:416:2: ( ( () otherlv_1= 'actuator' ) )
-            // InternalBorduino.g:417:2: ( () otherlv_1= 'actuator' )
+            // InternalBorduino.g:435:2: ( ( () otherlv_1= 'actuator' ) )
+            // InternalBorduino.g:436:2: ( () otherlv_1= 'actuator' )
             {
-            // InternalBorduino.g:417:2: ( () otherlv_1= 'actuator' )
-            // InternalBorduino.g:418:3: () otherlv_1= 'actuator'
+            // InternalBorduino.g:436:2: ( () otherlv_1= 'actuator' )
+            // InternalBorduino.g:437:3: () otherlv_1= 'actuator'
             {
-            // InternalBorduino.g:418:3: ()
-            // InternalBorduino.g:419:4: 
+            // InternalBorduino.g:437:3: ()
+            // InternalBorduino.g:438:4: 
             {
 
             				current = forceCreateModelElement(
@@ -961,7 +1012,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLCDScreenActuator"
-    // InternalBorduino.g:433:1: entryRuleLCDScreenActuator returns [EObject current=null] : iv_ruleLCDScreenActuator= ruleLCDScreenActuator EOF ;
+    // InternalBorduino.g:452:1: entryRuleLCDScreenActuator returns [EObject current=null] : iv_ruleLCDScreenActuator= ruleLCDScreenActuator EOF ;
     public final EObject entryRuleLCDScreenActuator() throws RecognitionException {
         EObject current = null;
 
@@ -969,8 +1020,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:433:58: (iv_ruleLCDScreenActuator= ruleLCDScreenActuator EOF )
-            // InternalBorduino.g:434:2: iv_ruleLCDScreenActuator= ruleLCDScreenActuator EOF
+            // InternalBorduino.g:452:58: (iv_ruleLCDScreenActuator= ruleLCDScreenActuator EOF )
+            // InternalBorduino.g:453:2: iv_ruleLCDScreenActuator= ruleLCDScreenActuator EOF
             {
              newCompositeNode(grammarAccess.getLCDScreenActuatorRule()); 
             pushFollow(FOLLOW_1);
@@ -997,7 +1048,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLCDScreenActuator"
-    // InternalBorduino.g:440:1: ruleLCDScreenActuator returns [EObject current=null] : ( () otherlv_1= 'screenActuator' ) ;
+    // InternalBorduino.g:459:1: ruleLCDScreenActuator returns [EObject current=null] : ( () otherlv_1= 'screenActuator' ) ;
     public final EObject ruleLCDScreenActuator() throws RecognitionException {
         EObject current = null;
 
@@ -1007,14 +1058,14 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:446:2: ( ( () otherlv_1= 'screenActuator' ) )
-            // InternalBorduino.g:447:2: ( () otherlv_1= 'screenActuator' )
+            // InternalBorduino.g:465:2: ( ( () otherlv_1= 'screenActuator' ) )
+            // InternalBorduino.g:466:2: ( () otherlv_1= 'screenActuator' )
             {
-            // InternalBorduino.g:447:2: ( () otherlv_1= 'screenActuator' )
-            // InternalBorduino.g:448:3: () otherlv_1= 'screenActuator'
+            // InternalBorduino.g:466:2: ( () otherlv_1= 'screenActuator' )
+            // InternalBorduino.g:467:3: () otherlv_1= 'screenActuator'
             {
-            // InternalBorduino.g:448:3: ()
-            // InternalBorduino.g:449:4: 
+            // InternalBorduino.g:467:3: ()
+            // InternalBorduino.g:468:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1051,7 +1102,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleKeyboardSensor"
-    // InternalBorduino.g:463:1: entryRuleKeyboardSensor returns [EObject current=null] : iv_ruleKeyboardSensor= ruleKeyboardSensor EOF ;
+    // InternalBorduino.g:482:1: entryRuleKeyboardSensor returns [EObject current=null] : iv_ruleKeyboardSensor= ruleKeyboardSensor EOF ;
     public final EObject entryRuleKeyboardSensor() throws RecognitionException {
         EObject current = null;
 
@@ -1059,8 +1110,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:463:55: (iv_ruleKeyboardSensor= ruleKeyboardSensor EOF )
-            // InternalBorduino.g:464:2: iv_ruleKeyboardSensor= ruleKeyboardSensor EOF
+            // InternalBorduino.g:482:55: (iv_ruleKeyboardSensor= ruleKeyboardSensor EOF )
+            // InternalBorduino.g:483:2: iv_ruleKeyboardSensor= ruleKeyboardSensor EOF
             {
              newCompositeNode(grammarAccess.getKeyboardSensorRule()); 
             pushFollow(FOLLOW_1);
@@ -1087,7 +1138,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKeyboardSensor"
-    // InternalBorduino.g:470:1: ruleKeyboardSensor returns [EObject current=null] : ( () otherlv_1= 'keyboardSensor' ) ;
+    // InternalBorduino.g:489:1: ruleKeyboardSensor returns [EObject current=null] : ( () otherlv_1= 'keyboardSensor' ) ;
     public final EObject ruleKeyboardSensor() throws RecognitionException {
         EObject current = null;
 
@@ -1097,14 +1148,14 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:476:2: ( ( () otherlv_1= 'keyboardSensor' ) )
-            // InternalBorduino.g:477:2: ( () otherlv_1= 'keyboardSensor' )
+            // InternalBorduino.g:495:2: ( ( () otherlv_1= 'keyboardSensor' ) )
+            // InternalBorduino.g:496:2: ( () otherlv_1= 'keyboardSensor' )
             {
-            // InternalBorduino.g:477:2: ( () otherlv_1= 'keyboardSensor' )
-            // InternalBorduino.g:478:3: () otherlv_1= 'keyboardSensor'
+            // InternalBorduino.g:496:2: ( () otherlv_1= 'keyboardSensor' )
+            // InternalBorduino.g:497:3: () otherlv_1= 'keyboardSensor'
             {
-            // InternalBorduino.g:478:3: ()
-            // InternalBorduino.g:479:4: 
+            // InternalBorduino.g:497:3: ()
+            // InternalBorduino.g:498:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1141,7 +1192,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSensor"
-    // InternalBorduino.g:493:1: entryRuleSensor returns [EObject current=null] : iv_ruleSensor= ruleSensor EOF ;
+    // InternalBorduino.g:512:1: entryRuleSensor returns [EObject current=null] : iv_ruleSensor= ruleSensor EOF ;
     public final EObject entryRuleSensor() throws RecognitionException {
         EObject current = null;
 
@@ -1149,8 +1200,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:493:47: (iv_ruleSensor= ruleSensor EOF )
-            // InternalBorduino.g:494:2: iv_ruleSensor= ruleSensor EOF
+            // InternalBorduino.g:512:47: (iv_ruleSensor= ruleSensor EOF )
+            // InternalBorduino.g:513:2: iv_ruleSensor= ruleSensor EOF
             {
              newCompositeNode(grammarAccess.getSensorRule()); 
             pushFollow(FOLLOW_1);
@@ -1177,7 +1228,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSensor"
-    // InternalBorduino.g:500:1: ruleSensor returns [EObject current=null] : ( () otherlv_1= 'sensor' ) ;
+    // InternalBorduino.g:519:1: ruleSensor returns [EObject current=null] : ( () otherlv_1= 'sensor' ) ;
     public final EObject ruleSensor() throws RecognitionException {
         EObject current = null;
 
@@ -1187,14 +1238,14 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:506:2: ( ( () otherlv_1= 'sensor' ) )
-            // InternalBorduino.g:507:2: ( () otherlv_1= 'sensor' )
+            // InternalBorduino.g:525:2: ( ( () otherlv_1= 'sensor' ) )
+            // InternalBorduino.g:526:2: ( () otherlv_1= 'sensor' )
             {
-            // InternalBorduino.g:507:2: ( () otherlv_1= 'sensor' )
-            // InternalBorduino.g:508:3: () otherlv_1= 'sensor'
+            // InternalBorduino.g:526:2: ( () otherlv_1= 'sensor' )
+            // InternalBorduino.g:527:3: () otherlv_1= 'sensor'
             {
-            // InternalBorduino.g:508:3: ()
-            // InternalBorduino.g:509:4: 
+            // InternalBorduino.g:527:3: ()
+            // InternalBorduino.g:528:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1231,7 +1282,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalBorduino.g:523:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalBorduino.g:542:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -1239,8 +1290,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:523:47: (iv_ruleEString= ruleEString EOF )
-            // InternalBorduino.g:524:2: iv_ruleEString= ruleEString EOF
+            // InternalBorduino.g:542:47: (iv_ruleEString= ruleEString EOF )
+            // InternalBorduino.g:543:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -1267,7 +1318,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalBorduino.g:530:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalBorduino.g:549:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1278,28 +1329,28 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:536:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalBorduino.g:537:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalBorduino.g:555:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalBorduino.g:556:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalBorduino.g:537:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalBorduino.g:556:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA6_0==RULE_STRING) ) {
-                alt6=1;
+            if ( (LA7_0==RULE_STRING) ) {
+                alt7=1;
             }
-            else if ( (LA6_0==RULE_ID) ) {
-                alt6=2;
+            else if ( (LA7_0==RULE_ID) ) {
+                alt7=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // InternalBorduino.g:538:3: this_STRING_0= RULE_STRING
+                    // InternalBorduino.g:557:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1312,7 +1363,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBorduino.g:546:3: this_ID_1= RULE_ID
+                    // InternalBorduino.g:565:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1347,7 +1398,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // InternalBorduino.g:557:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalBorduino.g:576:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -1355,8 +1406,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:557:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalBorduino.g:558:2: iv_ruleEInt= ruleEInt EOF
+            // InternalBorduino.g:576:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalBorduino.g:577:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -1383,7 +1434,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // InternalBorduino.g:564:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // InternalBorduino.g:583:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1394,22 +1445,22 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:570:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // InternalBorduino.g:571:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalBorduino.g:589:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalBorduino.g:590:2: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // InternalBorduino.g:571:2: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // InternalBorduino.g:572:3: (kw= '-' )? this_INT_1= RULE_INT
+            // InternalBorduino.g:590:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalBorduino.g:591:3: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // InternalBorduino.g:572:3: (kw= '-' )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalBorduino.g:591:3: (kw= '-' )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==22) ) {
-                alt7=1;
+            if ( (LA8_0==22) ) {
+                alt8=1;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // InternalBorduino.g:573:4: kw= '-'
+                    // InternalBorduino.g:592:4: kw= '-'
                     {
                     kw=(Token)match(input,22,FOLLOW_13); 
 
@@ -1452,7 +1503,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleState"
-    // InternalBorduino.g:590:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
+    // InternalBorduino.g:609:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
     public final EObject entryRuleState() throws RecognitionException {
         EObject current = null;
 
@@ -1460,8 +1511,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:590:46: (iv_ruleState= ruleState EOF )
-            // InternalBorduino.g:591:2: iv_ruleState= ruleState EOF
+            // InternalBorduino.g:609:46: (iv_ruleState= ruleState EOF )
+            // InternalBorduino.g:610:2: iv_ruleState= ruleState EOF
             {
              newCompositeNode(grammarAccess.getStateRule()); 
             pushFollow(FOLLOW_1);
@@ -1488,7 +1539,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleState"
-    // InternalBorduino.g:597:1: ruleState returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' ) ;
+    // InternalBorduino.g:616:1: ruleState returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' ) ;
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
@@ -1507,17 +1558,17 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:603:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' ) )
-            // InternalBorduino.g:604:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' )
+            // InternalBorduino.g:622:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' ) )
+            // InternalBorduino.g:623:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' )
             {
-            // InternalBorduino.g:604:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' )
-            // InternalBorduino.g:605:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}'
+            // InternalBorduino.g:623:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' )
+            // InternalBorduino.g:624:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}'
             {
-            // InternalBorduino.g:605:3: ( (lv_name_0_0= ruleEString ) )
-            // InternalBorduino.g:606:4: (lv_name_0_0= ruleEString )
+            // InternalBorduino.g:624:3: ( (lv_name_0_0= ruleEString ) )
+            // InternalBorduino.g:625:4: (lv_name_0_0= ruleEString )
             {
-            // InternalBorduino.g:606:4: (lv_name_0_0= ruleEString )
-            // InternalBorduino.g:607:5: lv_name_0_0= ruleEString
+            // InternalBorduino.g:625:4: (lv_name_0_0= ruleEString )
+            // InternalBorduino.g:626:5: lv_name_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getStateAccess().getNameEStringParserRuleCall_0_0());
@@ -1548,11 +1599,11 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getStateAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalBorduino.g:628:3: ( (lv_actions_2_0= ruleAction ) )
-            // InternalBorduino.g:629:4: (lv_actions_2_0= ruleAction )
+            // InternalBorduino.g:647:3: ( (lv_actions_2_0= ruleAction ) )
+            // InternalBorduino.g:648:4: (lv_actions_2_0= ruleAction )
             {
-            // InternalBorduino.g:629:4: (lv_actions_2_0= ruleAction )
-            // InternalBorduino.g:630:5: lv_actions_2_0= ruleAction
+            // InternalBorduino.g:648:4: (lv_actions_2_0= ruleAction )
+            // InternalBorduino.g:649:5: lv_actions_2_0= ruleAction
             {
 
             					newCompositeNode(grammarAccess.getStateAccess().getActionsActionParserRuleCall_2_0());
@@ -1579,38 +1630,38 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalBorduino.g:647:3: ( (lv_actions_3_0= ruleAction ) )*
-            loop8:
+            // InternalBorduino.g:666:3: ( (lv_actions_3_0= ruleAction ) )*
+            loop9:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( (LA8_0==RULE_STRING) ) {
-                    int LA8_1 = input.LA(2);
+                if ( (LA9_0==RULE_STRING) ) {
+                    int LA9_1 = input.LA(2);
 
-                    if ( (LA8_1==17) ) {
-                        alt8=1;
+                    if ( (LA9_1==17) ) {
+                        alt9=1;
                     }
 
 
                 }
-                else if ( (LA8_0==RULE_ID) ) {
-                    int LA8_2 = input.LA(2);
+                else if ( (LA9_0==RULE_ID) ) {
+                    int LA9_2 = input.LA(2);
 
-                    if ( (LA8_2==17) ) {
-                        alt8=1;
+                    if ( (LA9_2==17) ) {
+                        alt9=1;
                     }
 
 
                 }
 
 
-                switch (alt8) {
+                switch (alt9) {
             	case 1 :
-            	    // InternalBorduino.g:648:4: (lv_actions_3_0= ruleAction )
+            	    // InternalBorduino.g:667:4: (lv_actions_3_0= ruleAction )
             	    {
-            	    // InternalBorduino.g:648:4: (lv_actions_3_0= ruleAction )
-            	    // InternalBorduino.g:649:5: lv_actions_3_0= ruleAction
+            	    // InternalBorduino.g:667:4: (lv_actions_3_0= ruleAction )
+            	    // InternalBorduino.g:668:5: lv_actions_3_0= ruleAction
             	    {
 
             	    					newCompositeNode(grammarAccess.getStateAccess().getActionsActionParserRuleCall_3_0());
@@ -1639,15 +1690,15 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop9;
                 }
             } while (true);
 
-            // InternalBorduino.g:666:3: ( (lv_transition_4_0= ruleTransition ) )
-            // InternalBorduino.g:667:4: (lv_transition_4_0= ruleTransition )
+            // InternalBorduino.g:685:3: ( (lv_transition_4_0= ruleTransition ) )
+            // InternalBorduino.g:686:4: (lv_transition_4_0= ruleTransition )
             {
-            // InternalBorduino.g:667:4: (lv_transition_4_0= ruleTransition )
-            // InternalBorduino.g:668:5: lv_transition_4_0= ruleTransition
+            // InternalBorduino.g:686:4: (lv_transition_4_0= ruleTransition )
+            // InternalBorduino.g:687:5: lv_transition_4_0= ruleTransition
             {
 
             					newCompositeNode(grammarAccess.getStateAccess().getTransitionTransitionParserRuleCall_4_0());
@@ -1701,7 +1752,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAction"
-    // InternalBorduino.g:693:1: entryRuleAction returns [EObject current=null] : iv_ruleAction= ruleAction EOF ;
+    // InternalBorduino.g:712:1: entryRuleAction returns [EObject current=null] : iv_ruleAction= ruleAction EOF ;
     public final EObject entryRuleAction() throws RecognitionException {
         EObject current = null;
 
@@ -1709,8 +1760,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:693:47: (iv_ruleAction= ruleAction EOF )
-            // InternalBorduino.g:694:2: iv_ruleAction= ruleAction EOF
+            // InternalBorduino.g:712:47: (iv_ruleAction= ruleAction EOF )
+            // InternalBorduino.g:713:2: iv_ruleAction= ruleAction EOF
             {
              newCompositeNode(grammarAccess.getActionRule()); 
             pushFollow(FOLLOW_1);
@@ -1737,7 +1788,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAction"
-    // InternalBorduino.g:700:1: ruleAction returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= ':' ( (lv_value_2_0= ruleSignal ) ) ) ;
+    // InternalBorduino.g:719:1: ruleAction returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= ':' ( (lv_value_2_0= ruleSignal ) ) ) ;
     public final EObject ruleAction() throws RecognitionException {
         EObject current = null;
 
@@ -1749,17 +1800,17 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:706:2: ( ( ( ( ruleEString ) ) otherlv_1= ':' ( (lv_value_2_0= ruleSignal ) ) ) )
-            // InternalBorduino.g:707:2: ( ( ( ruleEString ) ) otherlv_1= ':' ( (lv_value_2_0= ruleSignal ) ) )
+            // InternalBorduino.g:725:2: ( ( ( ( ruleEString ) ) otherlv_1= ':' ( (lv_value_2_0= ruleSignal ) ) ) )
+            // InternalBorduino.g:726:2: ( ( ( ruleEString ) ) otherlv_1= ':' ( (lv_value_2_0= ruleSignal ) ) )
             {
-            // InternalBorduino.g:707:2: ( ( ( ruleEString ) ) otherlv_1= ':' ( (lv_value_2_0= ruleSignal ) ) )
-            // InternalBorduino.g:708:3: ( ( ruleEString ) ) otherlv_1= ':' ( (lv_value_2_0= ruleSignal ) )
+            // InternalBorduino.g:726:2: ( ( ( ruleEString ) ) otherlv_1= ':' ( (lv_value_2_0= ruleSignal ) ) )
+            // InternalBorduino.g:727:3: ( ( ruleEString ) ) otherlv_1= ':' ( (lv_value_2_0= ruleSignal ) )
             {
-            // InternalBorduino.g:708:3: ( ( ruleEString ) )
-            // InternalBorduino.g:709:4: ( ruleEString )
+            // InternalBorduino.g:727:3: ( ( ruleEString ) )
+            // InternalBorduino.g:728:4: ( ruleEString )
             {
-            // InternalBorduino.g:709:4: ( ruleEString )
-            // InternalBorduino.g:710:5: ruleEString
+            // InternalBorduino.g:728:4: ( ruleEString )
+            // InternalBorduino.g:729:5: ruleEString
             {
 
             					if (current==null) {
@@ -1787,11 +1838,11 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getActionAccess().getColonKeyword_1());
             		
-            // InternalBorduino.g:728:3: ( (lv_value_2_0= ruleSignal ) )
-            // InternalBorduino.g:729:4: (lv_value_2_0= ruleSignal )
+            // InternalBorduino.g:747:3: ( (lv_value_2_0= ruleSignal ) )
+            // InternalBorduino.g:748:4: (lv_value_2_0= ruleSignal )
             {
-            // InternalBorduino.g:729:4: (lv_value_2_0= ruleSignal )
-            // InternalBorduino.g:730:5: lv_value_2_0= ruleSignal
+            // InternalBorduino.g:748:4: (lv_value_2_0= ruleSignal )
+            // InternalBorduino.g:749:5: lv_value_2_0= ruleSignal
             {
 
             					newCompositeNode(grammarAccess.getActionAccess().getValueSignalParserRuleCall_2_0());
@@ -1841,7 +1892,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransition"
-    // InternalBorduino.g:751:1: entryRuleTransition returns [EObject current=null] : iv_ruleTransition= ruleTransition EOF ;
+    // InternalBorduino.g:770:1: entryRuleTransition returns [EObject current=null] : iv_ruleTransition= ruleTransition EOF ;
     public final EObject entryRuleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -1849,8 +1900,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:751:51: (iv_ruleTransition= ruleTransition EOF )
-            // InternalBorduino.g:752:2: iv_ruleTransition= ruleTransition EOF
+            // InternalBorduino.g:770:51: (iv_ruleTransition= ruleTransition EOF )
+            // InternalBorduino.g:771:2: iv_ruleTransition= ruleTransition EOF
             {
              newCompositeNode(grammarAccess.getTransitionRule()); 
             pushFollow(FOLLOW_1);
@@ -1877,7 +1928,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransition"
-    // InternalBorduino.g:758:1: ruleTransition returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleInitialCondition ) ) ( (lv_conditions_1_0= ruleCondition ) )* otherlv_2= ':' ( ( ruleEString ) ) ) ;
+    // InternalBorduino.g:777:1: ruleTransition returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleInitialCondition ) ) ( (lv_conditions_1_0= ruleCondition ) )* otherlv_2= ':' ( ( ruleEString ) ) ) ;
     public final EObject ruleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -1891,17 +1942,17 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:764:2: ( ( ( (lv_conditions_0_0= ruleInitialCondition ) ) ( (lv_conditions_1_0= ruleCondition ) )* otherlv_2= ':' ( ( ruleEString ) ) ) )
-            // InternalBorduino.g:765:2: ( ( (lv_conditions_0_0= ruleInitialCondition ) ) ( (lv_conditions_1_0= ruleCondition ) )* otherlv_2= ':' ( ( ruleEString ) ) )
+            // InternalBorduino.g:783:2: ( ( ( (lv_conditions_0_0= ruleInitialCondition ) ) ( (lv_conditions_1_0= ruleCondition ) )* otherlv_2= ':' ( ( ruleEString ) ) ) )
+            // InternalBorduino.g:784:2: ( ( (lv_conditions_0_0= ruleInitialCondition ) ) ( (lv_conditions_1_0= ruleCondition ) )* otherlv_2= ':' ( ( ruleEString ) ) )
             {
-            // InternalBorduino.g:765:2: ( ( (lv_conditions_0_0= ruleInitialCondition ) ) ( (lv_conditions_1_0= ruleCondition ) )* otherlv_2= ':' ( ( ruleEString ) ) )
-            // InternalBorduino.g:766:3: ( (lv_conditions_0_0= ruleInitialCondition ) ) ( (lv_conditions_1_0= ruleCondition ) )* otherlv_2= ':' ( ( ruleEString ) )
+            // InternalBorduino.g:784:2: ( ( (lv_conditions_0_0= ruleInitialCondition ) ) ( (lv_conditions_1_0= ruleCondition ) )* otherlv_2= ':' ( ( ruleEString ) ) )
+            // InternalBorduino.g:785:3: ( (lv_conditions_0_0= ruleInitialCondition ) ) ( (lv_conditions_1_0= ruleCondition ) )* otherlv_2= ':' ( ( ruleEString ) )
             {
-            // InternalBorduino.g:766:3: ( (lv_conditions_0_0= ruleInitialCondition ) )
-            // InternalBorduino.g:767:4: (lv_conditions_0_0= ruleInitialCondition )
+            // InternalBorduino.g:785:3: ( (lv_conditions_0_0= ruleInitialCondition ) )
+            // InternalBorduino.g:786:4: (lv_conditions_0_0= ruleInitialCondition )
             {
-            // InternalBorduino.g:767:4: (lv_conditions_0_0= ruleInitialCondition )
-            // InternalBorduino.g:768:5: lv_conditions_0_0= ruleInitialCondition
+            // InternalBorduino.g:786:4: (lv_conditions_0_0= ruleInitialCondition )
+            // InternalBorduino.g:787:5: lv_conditions_0_0= ruleInitialCondition
             {
 
             					newCompositeNode(grammarAccess.getTransitionAccess().getConditionsInitialConditionParserRuleCall_0_0());
@@ -1928,23 +1979,23 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalBorduino.g:785:3: ( (lv_conditions_1_0= ruleCondition ) )*
-            loop9:
+            // InternalBorduino.g:804:3: ( (lv_conditions_1_0= ruleCondition ) )*
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( ((LA9_0>=24 && LA9_0<=25)) ) {
-                    alt9=1;
+                if ( ((LA10_0>=24 && LA10_0<=25)) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalBorduino.g:786:4: (lv_conditions_1_0= ruleCondition )
+            	    // InternalBorduino.g:805:4: (lv_conditions_1_0= ruleCondition )
             	    {
-            	    // InternalBorduino.g:786:4: (lv_conditions_1_0= ruleCondition )
-            	    // InternalBorduino.g:787:5: lv_conditions_1_0= ruleCondition
+            	    // InternalBorduino.g:805:4: (lv_conditions_1_0= ruleCondition )
+            	    // InternalBorduino.g:806:5: lv_conditions_1_0= ruleCondition
             	    {
 
             	    					newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_1_0());
@@ -1973,7 +2024,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop10;
                 }
             } while (true);
 
@@ -1981,11 +2032,11 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getColonKeyword_2());
             		
-            // InternalBorduino.g:808:3: ( ( ruleEString ) )
-            // InternalBorduino.g:809:4: ( ruleEString )
+            // InternalBorduino.g:827:3: ( ( ruleEString ) )
+            // InternalBorduino.g:828:4: ( ruleEString )
             {
-            // InternalBorduino.g:809:4: ( ruleEString )
-            // InternalBorduino.g:810:5: ruleEString
+            // InternalBorduino.g:828:4: ( ruleEString )
+            // InternalBorduino.g:829:5: ruleEString
             {
 
             					if (current==null) {
@@ -2032,7 +2083,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCondition"
-    // InternalBorduino.g:828:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
+    // InternalBorduino.g:847:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
     public final EObject entryRuleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -2040,8 +2091,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:828:50: (iv_ruleCondition= ruleCondition EOF )
-            // InternalBorduino.g:829:2: iv_ruleCondition= ruleCondition EOF
+            // InternalBorduino.g:847:50: (iv_ruleCondition= ruleCondition EOF )
+            // InternalBorduino.g:848:2: iv_ruleCondition= ruleCondition EOF
             {
              newCompositeNode(grammarAccess.getConditionRule()); 
             pushFollow(FOLLOW_1);
@@ -2068,7 +2119,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCondition"
-    // InternalBorduino.g:835:1: ruleCondition returns [EObject current=null] : ( ( (lv_operator_0_0= ruleOperator ) ) ( ( ruleEString ) ) otherlv_2= 'is' ( (lv_signal_3_0= ruleSignal ) ) ) ;
+    // InternalBorduino.g:854:1: ruleCondition returns [EObject current=null] : ( ( (lv_operator_0_0= ruleOperator ) ) ( ( ruleEString ) ) otherlv_2= 'is' ( (lv_signal_3_0= ruleSignal ) ) ) ;
     public final EObject ruleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -2082,17 +2133,17 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:841:2: ( ( ( (lv_operator_0_0= ruleOperator ) ) ( ( ruleEString ) ) otherlv_2= 'is' ( (lv_signal_3_0= ruleSignal ) ) ) )
-            // InternalBorduino.g:842:2: ( ( (lv_operator_0_0= ruleOperator ) ) ( ( ruleEString ) ) otherlv_2= 'is' ( (lv_signal_3_0= ruleSignal ) ) )
+            // InternalBorduino.g:860:2: ( ( ( (lv_operator_0_0= ruleOperator ) ) ( ( ruleEString ) ) otherlv_2= 'is' ( (lv_signal_3_0= ruleSignal ) ) ) )
+            // InternalBorduino.g:861:2: ( ( (lv_operator_0_0= ruleOperator ) ) ( ( ruleEString ) ) otherlv_2= 'is' ( (lv_signal_3_0= ruleSignal ) ) )
             {
-            // InternalBorduino.g:842:2: ( ( (lv_operator_0_0= ruleOperator ) ) ( ( ruleEString ) ) otherlv_2= 'is' ( (lv_signal_3_0= ruleSignal ) ) )
-            // InternalBorduino.g:843:3: ( (lv_operator_0_0= ruleOperator ) ) ( ( ruleEString ) ) otherlv_2= 'is' ( (lv_signal_3_0= ruleSignal ) )
+            // InternalBorduino.g:861:2: ( ( (lv_operator_0_0= ruleOperator ) ) ( ( ruleEString ) ) otherlv_2= 'is' ( (lv_signal_3_0= ruleSignal ) ) )
+            // InternalBorduino.g:862:3: ( (lv_operator_0_0= ruleOperator ) ) ( ( ruleEString ) ) otherlv_2= 'is' ( (lv_signal_3_0= ruleSignal ) )
             {
-            // InternalBorduino.g:843:3: ( (lv_operator_0_0= ruleOperator ) )
-            // InternalBorduino.g:844:4: (lv_operator_0_0= ruleOperator )
+            // InternalBorduino.g:862:3: ( (lv_operator_0_0= ruleOperator ) )
+            // InternalBorduino.g:863:4: (lv_operator_0_0= ruleOperator )
             {
-            // InternalBorduino.g:844:4: (lv_operator_0_0= ruleOperator )
-            // InternalBorduino.g:845:5: lv_operator_0_0= ruleOperator
+            // InternalBorduino.g:863:4: (lv_operator_0_0= ruleOperator )
+            // InternalBorduino.g:864:5: lv_operator_0_0= ruleOperator
             {
 
             					newCompositeNode(grammarAccess.getConditionAccess().getOperatorOperatorEnumRuleCall_0_0());
@@ -2119,11 +2170,11 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalBorduino.g:862:3: ( ( ruleEString ) )
-            // InternalBorduino.g:863:4: ( ruleEString )
+            // InternalBorduino.g:881:3: ( ( ruleEString ) )
+            // InternalBorduino.g:882:4: ( ruleEString )
             {
-            // InternalBorduino.g:863:4: ( ruleEString )
-            // InternalBorduino.g:864:5: ruleEString
+            // InternalBorduino.g:882:4: ( ruleEString )
+            // InternalBorduino.g:883:5: ruleEString
             {
 
             					if (current==null) {
@@ -2151,11 +2202,11 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getConditionAccess().getIsKeyword_2());
             		
-            // InternalBorduino.g:882:3: ( (lv_signal_3_0= ruleSignal ) )
-            // InternalBorduino.g:883:4: (lv_signal_3_0= ruleSignal )
+            // InternalBorduino.g:901:3: ( (lv_signal_3_0= ruleSignal ) )
+            // InternalBorduino.g:902:4: (lv_signal_3_0= ruleSignal )
             {
-            // InternalBorduino.g:883:4: (lv_signal_3_0= ruleSignal )
-            // InternalBorduino.g:884:5: lv_signal_3_0= ruleSignal
+            // InternalBorduino.g:902:4: (lv_signal_3_0= ruleSignal )
+            // InternalBorduino.g:903:5: lv_signal_3_0= ruleSignal
             {
 
             					newCompositeNode(grammarAccess.getConditionAccess().getSignalSignalParserRuleCall_3_0());
@@ -2205,7 +2256,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInitialCondition"
-    // InternalBorduino.g:905:1: entryRuleInitialCondition returns [EObject current=null] : iv_ruleInitialCondition= ruleInitialCondition EOF ;
+    // InternalBorduino.g:924:1: entryRuleInitialCondition returns [EObject current=null] : iv_ruleInitialCondition= ruleInitialCondition EOF ;
     public final EObject entryRuleInitialCondition() throws RecognitionException {
         EObject current = null;
 
@@ -2213,8 +2264,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:905:57: (iv_ruleInitialCondition= ruleInitialCondition EOF )
-            // InternalBorduino.g:906:2: iv_ruleInitialCondition= ruleInitialCondition EOF
+            // InternalBorduino.g:924:57: (iv_ruleInitialCondition= ruleInitialCondition EOF )
+            // InternalBorduino.g:925:2: iv_ruleInitialCondition= ruleInitialCondition EOF
             {
              newCompositeNode(grammarAccess.getInitialConditionRule()); 
             pushFollow(FOLLOW_1);
@@ -2241,7 +2292,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInitialCondition"
-    // InternalBorduino.g:912:1: ruleInitialCondition returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= 'is' ( (lv_signal_2_0= ruleSignal ) ) ) ;
+    // InternalBorduino.g:931:1: ruleInitialCondition returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= 'is' ( (lv_signal_2_0= ruleSignal ) ) ) ;
     public final EObject ruleInitialCondition() throws RecognitionException {
         EObject current = null;
 
@@ -2253,17 +2304,17 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:918:2: ( ( ( ( ruleEString ) ) otherlv_1= 'is' ( (lv_signal_2_0= ruleSignal ) ) ) )
-            // InternalBorduino.g:919:2: ( ( ( ruleEString ) ) otherlv_1= 'is' ( (lv_signal_2_0= ruleSignal ) ) )
+            // InternalBorduino.g:937:2: ( ( ( ( ruleEString ) ) otherlv_1= 'is' ( (lv_signal_2_0= ruleSignal ) ) ) )
+            // InternalBorduino.g:938:2: ( ( ( ruleEString ) ) otherlv_1= 'is' ( (lv_signal_2_0= ruleSignal ) ) )
             {
-            // InternalBorduino.g:919:2: ( ( ( ruleEString ) ) otherlv_1= 'is' ( (lv_signal_2_0= ruleSignal ) ) )
-            // InternalBorduino.g:920:3: ( ( ruleEString ) ) otherlv_1= 'is' ( (lv_signal_2_0= ruleSignal ) )
+            // InternalBorduino.g:938:2: ( ( ( ruleEString ) ) otherlv_1= 'is' ( (lv_signal_2_0= ruleSignal ) ) )
+            // InternalBorduino.g:939:3: ( ( ruleEString ) ) otherlv_1= 'is' ( (lv_signal_2_0= ruleSignal ) )
             {
-            // InternalBorduino.g:920:3: ( ( ruleEString ) )
-            // InternalBorduino.g:921:4: ( ruleEString )
+            // InternalBorduino.g:939:3: ( ( ruleEString ) )
+            // InternalBorduino.g:940:4: ( ruleEString )
             {
-            // InternalBorduino.g:921:4: ( ruleEString )
-            // InternalBorduino.g:922:5: ruleEString
+            // InternalBorduino.g:940:4: ( ruleEString )
+            // InternalBorduino.g:941:5: ruleEString
             {
 
             					if (current==null) {
@@ -2291,11 +2342,11 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getInitialConditionAccess().getIsKeyword_1());
             		
-            // InternalBorduino.g:940:3: ( (lv_signal_2_0= ruleSignal ) )
-            // InternalBorduino.g:941:4: (lv_signal_2_0= ruleSignal )
+            // InternalBorduino.g:959:3: ( (lv_signal_2_0= ruleSignal ) )
+            // InternalBorduino.g:960:4: (lv_signal_2_0= ruleSignal )
             {
-            // InternalBorduino.g:941:4: (lv_signal_2_0= ruleSignal )
-            // InternalBorduino.g:942:5: lv_signal_2_0= ruleSignal
+            // InternalBorduino.g:960:4: (lv_signal_2_0= ruleSignal )
+            // InternalBorduino.g:961:5: lv_signal_2_0= ruleSignal
             {
 
             					newCompositeNode(grammarAccess.getInitialConditionAccess().getSignalSignalParserRuleCall_2_0());
@@ -2345,7 +2396,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSignal"
-    // InternalBorduino.g:963:1: entryRuleSignal returns [EObject current=null] : iv_ruleSignal= ruleSignal EOF ;
+    // InternalBorduino.g:982:1: entryRuleSignal returns [EObject current=null] : iv_ruleSignal= ruleSignal EOF ;
     public final EObject entryRuleSignal() throws RecognitionException {
         EObject current = null;
 
@@ -2353,8 +2404,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:963:47: (iv_ruleSignal= ruleSignal EOF )
-            // InternalBorduino.g:964:2: iv_ruleSignal= ruleSignal EOF
+            // InternalBorduino.g:982:47: (iv_ruleSignal= ruleSignal EOF )
+            // InternalBorduino.g:983:2: iv_ruleSignal= ruleSignal EOF
             {
              newCompositeNode(grammarAccess.getSignalRule()); 
             pushFollow(FOLLOW_1);
@@ -2381,7 +2432,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSignal"
-    // InternalBorduino.g:970:1: ruleSignal returns [EObject current=null] : (this_DigitalSignal_0= ruleDigitalSignal | this_StringSignal_1= ruleStringSignal ) ;
+    // InternalBorduino.g:989:1: ruleSignal returns [EObject current=null] : (this_DigitalSignal_0= ruleDigitalSignal | this_StringSignal_1= ruleStringSignal ) ;
     public final EObject ruleSignal() throws RecognitionException {
         EObject current = null;
 
@@ -2394,28 +2445,28 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:976:2: ( (this_DigitalSignal_0= ruleDigitalSignal | this_StringSignal_1= ruleStringSignal ) )
-            // InternalBorduino.g:977:2: (this_DigitalSignal_0= ruleDigitalSignal | this_StringSignal_1= ruleStringSignal )
+            // InternalBorduino.g:995:2: ( (this_DigitalSignal_0= ruleDigitalSignal | this_StringSignal_1= ruleStringSignal ) )
+            // InternalBorduino.g:996:2: (this_DigitalSignal_0= ruleDigitalSignal | this_StringSignal_1= ruleStringSignal )
             {
-            // InternalBorduino.g:977:2: (this_DigitalSignal_0= ruleDigitalSignal | this_StringSignal_1= ruleStringSignal )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // InternalBorduino.g:996:2: (this_DigitalSignal_0= ruleDigitalSignal | this_StringSignal_1= ruleStringSignal )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( ((LA10_0>=26 && LA10_0<=27)) ) {
-                alt10=1;
+            if ( ((LA11_0>=26 && LA11_0<=27)) ) {
+                alt11=1;
             }
-            else if ( ((LA10_0>=RULE_STRING && LA10_0<=RULE_ID)) ) {
-                alt10=2;
+            else if ( ((LA11_0>=RULE_STRING && LA11_0<=RULE_ID)) ) {
+                alt11=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // InternalBorduino.g:978:3: this_DigitalSignal_0= ruleDigitalSignal
+                    // InternalBorduino.g:997:3: this_DigitalSignal_0= ruleDigitalSignal
                     {
 
                     			newCompositeNode(grammarAccess.getSignalAccess().getDigitalSignalParserRuleCall_0());
@@ -2433,7 +2484,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBorduino.g:987:3: this_StringSignal_1= ruleStringSignal
+                    // InternalBorduino.g:1006:3: this_StringSignal_1= ruleStringSignal
                     {
 
                     			newCompositeNode(grammarAccess.getSignalAccess().getStringSignalParserRuleCall_1());
@@ -2473,7 +2524,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDigitalSignal"
-    // InternalBorduino.g:999:1: entryRuleDigitalSignal returns [EObject current=null] : iv_ruleDigitalSignal= ruleDigitalSignal EOF ;
+    // InternalBorduino.g:1018:1: entryRuleDigitalSignal returns [EObject current=null] : iv_ruleDigitalSignal= ruleDigitalSignal EOF ;
     public final EObject entryRuleDigitalSignal() throws RecognitionException {
         EObject current = null;
 
@@ -2481,8 +2532,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:999:54: (iv_ruleDigitalSignal= ruleDigitalSignal EOF )
-            // InternalBorduino.g:1000:2: iv_ruleDigitalSignal= ruleDigitalSignal EOF
+            // InternalBorduino.g:1018:54: (iv_ruleDigitalSignal= ruleDigitalSignal EOF )
+            // InternalBorduino.g:1019:2: iv_ruleDigitalSignal= ruleDigitalSignal EOF
             {
              newCompositeNode(grammarAccess.getDigitalSignalRule()); 
             pushFollow(FOLLOW_1);
@@ -2509,7 +2560,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDigitalSignal"
-    // InternalBorduino.g:1006:1: ruleDigitalSignal returns [EObject current=null] : ( (lv_value_0_0= ruleDigitalSignalEnum ) ) ;
+    // InternalBorduino.g:1025:1: ruleDigitalSignal returns [EObject current=null] : ( (lv_value_0_0= ruleDigitalSignalEnum ) ) ;
     public final EObject ruleDigitalSignal() throws RecognitionException {
         EObject current = null;
 
@@ -2520,14 +2571,14 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:1012:2: ( ( (lv_value_0_0= ruleDigitalSignalEnum ) ) )
-            // InternalBorduino.g:1013:2: ( (lv_value_0_0= ruleDigitalSignalEnum ) )
+            // InternalBorduino.g:1031:2: ( ( (lv_value_0_0= ruleDigitalSignalEnum ) ) )
+            // InternalBorduino.g:1032:2: ( (lv_value_0_0= ruleDigitalSignalEnum ) )
             {
-            // InternalBorduino.g:1013:2: ( (lv_value_0_0= ruleDigitalSignalEnum ) )
-            // InternalBorduino.g:1014:3: (lv_value_0_0= ruleDigitalSignalEnum )
+            // InternalBorduino.g:1032:2: ( (lv_value_0_0= ruleDigitalSignalEnum ) )
+            // InternalBorduino.g:1033:3: (lv_value_0_0= ruleDigitalSignalEnum )
             {
-            // InternalBorduino.g:1014:3: (lv_value_0_0= ruleDigitalSignalEnum )
-            // InternalBorduino.g:1015:4: lv_value_0_0= ruleDigitalSignalEnum
+            // InternalBorduino.g:1033:3: (lv_value_0_0= ruleDigitalSignalEnum )
+            // InternalBorduino.g:1034:4: lv_value_0_0= ruleDigitalSignalEnum
             {
 
             				newCompositeNode(grammarAccess.getDigitalSignalAccess().getValueDigitalSignalEnumEnumRuleCall_0());
@@ -2574,7 +2625,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringSignal"
-    // InternalBorduino.g:1035:1: entryRuleStringSignal returns [EObject current=null] : iv_ruleStringSignal= ruleStringSignal EOF ;
+    // InternalBorduino.g:1054:1: entryRuleStringSignal returns [EObject current=null] : iv_ruleStringSignal= ruleStringSignal EOF ;
     public final EObject entryRuleStringSignal() throws RecognitionException {
         EObject current = null;
 
@@ -2582,8 +2633,8 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBorduino.g:1035:53: (iv_ruleStringSignal= ruleStringSignal EOF )
-            // InternalBorduino.g:1036:2: iv_ruleStringSignal= ruleStringSignal EOF
+            // InternalBorduino.g:1054:53: (iv_ruleStringSignal= ruleStringSignal EOF )
+            // InternalBorduino.g:1055:2: iv_ruleStringSignal= ruleStringSignal EOF
             {
              newCompositeNode(grammarAccess.getStringSignalRule()); 
             pushFollow(FOLLOW_1);
@@ -2610,7 +2661,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringSignal"
-    // InternalBorduino.g:1042:1: ruleStringSignal returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
+    // InternalBorduino.g:1061:1: ruleStringSignal returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
     public final EObject ruleStringSignal() throws RecognitionException {
         EObject current = null;
 
@@ -2621,14 +2672,14 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:1048:2: ( ( (lv_value_0_0= ruleEString ) ) )
-            // InternalBorduino.g:1049:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalBorduino.g:1067:2: ( ( (lv_value_0_0= ruleEString ) ) )
+            // InternalBorduino.g:1068:2: ( (lv_value_0_0= ruleEString ) )
             {
-            // InternalBorduino.g:1049:2: ( (lv_value_0_0= ruleEString ) )
-            // InternalBorduino.g:1050:3: (lv_value_0_0= ruleEString )
+            // InternalBorduino.g:1068:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalBorduino.g:1069:3: (lv_value_0_0= ruleEString )
             {
-            // InternalBorduino.g:1050:3: (lv_value_0_0= ruleEString )
-            // InternalBorduino.g:1051:4: lv_value_0_0= ruleEString
+            // InternalBorduino.g:1069:3: (lv_value_0_0= ruleEString )
+            // InternalBorduino.g:1070:4: lv_value_0_0= ruleEString
             {
 
             				newCompositeNode(grammarAccess.getStringSignalAccess().getValueEStringParserRuleCall_0());
@@ -2675,7 +2726,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperator"
-    // InternalBorduino.g:1071:1: ruleOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'and' ) | (enumLiteral_1= 'or' ) ) ;
+    // InternalBorduino.g:1090:1: ruleOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'and' ) | (enumLiteral_1= 'or' ) ) ;
     public final Enumerator ruleOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -2686,31 +2737,31 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:1077:2: ( ( (enumLiteral_0= 'and' ) | (enumLiteral_1= 'or' ) ) )
-            // InternalBorduino.g:1078:2: ( (enumLiteral_0= 'and' ) | (enumLiteral_1= 'or' ) )
+            // InternalBorduino.g:1096:2: ( ( (enumLiteral_0= 'and' ) | (enumLiteral_1= 'or' ) ) )
+            // InternalBorduino.g:1097:2: ( (enumLiteral_0= 'and' ) | (enumLiteral_1= 'or' ) )
             {
-            // InternalBorduino.g:1078:2: ( (enumLiteral_0= 'and' ) | (enumLiteral_1= 'or' ) )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalBorduino.g:1097:2: ( (enumLiteral_0= 'and' ) | (enumLiteral_1= 'or' ) )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==24) ) {
-                alt11=1;
+            if ( (LA12_0==24) ) {
+                alt12=1;
             }
-            else if ( (LA11_0==25) ) {
-                alt11=2;
+            else if ( (LA12_0==25) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // InternalBorduino.g:1079:3: (enumLiteral_0= 'and' )
+                    // InternalBorduino.g:1098:3: (enumLiteral_0= 'and' )
                     {
-                    // InternalBorduino.g:1079:3: (enumLiteral_0= 'and' )
-                    // InternalBorduino.g:1080:4: enumLiteral_0= 'and'
+                    // InternalBorduino.g:1098:3: (enumLiteral_0= 'and' )
+                    // InternalBorduino.g:1099:4: enumLiteral_0= 'and'
                     {
                     enumLiteral_0=(Token)match(input,24,FOLLOW_2); 
 
@@ -2724,10 +2775,10 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBorduino.g:1087:3: (enumLiteral_1= 'or' )
+                    // InternalBorduino.g:1106:3: (enumLiteral_1= 'or' )
                     {
-                    // InternalBorduino.g:1087:3: (enumLiteral_1= 'or' )
-                    // InternalBorduino.g:1088:4: enumLiteral_1= 'or'
+                    // InternalBorduino.g:1106:3: (enumLiteral_1= 'or' )
+                    // InternalBorduino.g:1107:4: enumLiteral_1= 'or'
                     {
                     enumLiteral_1=(Token)match(input,25,FOLLOW_2); 
 
@@ -2763,7 +2814,7 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDigitalSignalEnum"
-    // InternalBorduino.g:1098:1: ruleDigitalSignalEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'HIGH' ) | (enumLiteral_1= 'LOW' ) ) ;
+    // InternalBorduino.g:1117:1: ruleDigitalSignalEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'HIGH' ) | (enumLiteral_1= 'LOW' ) ) ;
     public final Enumerator ruleDigitalSignalEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -2774,31 +2825,31 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBorduino.g:1104:2: ( ( (enumLiteral_0= 'HIGH' ) | (enumLiteral_1= 'LOW' ) ) )
-            // InternalBorduino.g:1105:2: ( (enumLiteral_0= 'HIGH' ) | (enumLiteral_1= 'LOW' ) )
+            // InternalBorduino.g:1123:2: ( ( (enumLiteral_0= 'HIGH' ) | (enumLiteral_1= 'LOW' ) ) )
+            // InternalBorduino.g:1124:2: ( (enumLiteral_0= 'HIGH' ) | (enumLiteral_1= 'LOW' ) )
             {
-            // InternalBorduino.g:1105:2: ( (enumLiteral_0= 'HIGH' ) | (enumLiteral_1= 'LOW' ) )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalBorduino.g:1124:2: ( (enumLiteral_0= 'HIGH' ) | (enumLiteral_1= 'LOW' ) )
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA12_0==26) ) {
-                alt12=1;
+            if ( (LA13_0==26) ) {
+                alt13=1;
             }
-            else if ( (LA12_0==27) ) {
-                alt12=2;
+            else if ( (LA13_0==27) ) {
+                alt13=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 13, 0, input);
 
                 throw nvae;
             }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
-                    // InternalBorduino.g:1106:3: (enumLiteral_0= 'HIGH' )
+                    // InternalBorduino.g:1125:3: (enumLiteral_0= 'HIGH' )
                     {
-                    // InternalBorduino.g:1106:3: (enumLiteral_0= 'HIGH' )
-                    // InternalBorduino.g:1107:4: enumLiteral_0= 'HIGH'
+                    // InternalBorduino.g:1125:3: (enumLiteral_0= 'HIGH' )
+                    // InternalBorduino.g:1126:4: enumLiteral_0= 'HIGH'
                     {
                     enumLiteral_0=(Token)match(input,26,FOLLOW_2); 
 
@@ -2812,10 +2863,10 @@ public class InternalBorduinoParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBorduino.g:1114:3: (enumLiteral_1= 'LOW' )
+                    // InternalBorduino.g:1133:3: (enumLiteral_1= 'LOW' )
                     {
-                    // InternalBorduino.g:1114:3: (enumLiteral_1= 'LOW' )
-                    // InternalBorduino.g:1115:4: enumLiteral_1= 'LOW'
+                    // InternalBorduino.g:1133:3: (enumLiteral_1= 'LOW' )
+                    // InternalBorduino.g:1134:4: enumLiteral_1= 'LOW'
                     {
                     enumLiteral_1=(Token)match(input,27,FOLLOW_2); 
 

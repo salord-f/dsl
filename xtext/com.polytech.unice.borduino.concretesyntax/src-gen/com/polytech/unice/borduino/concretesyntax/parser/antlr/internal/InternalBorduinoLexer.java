@@ -409,10 +409,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1124:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalBorduino.g:1124:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalBorduino.g:1143:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalBorduino.g:1143:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalBorduino.g:1124:11: ( '^' )?
+            // InternalBorduino.g:1143:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -421,7 +421,7 @@ public class InternalBorduinoLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalBorduino.g:1124:11: '^'
+                    // InternalBorduino.g:1143:11: '^'
                     {
                     match('^'); 
 
@@ -439,7 +439,7 @@ public class InternalBorduinoLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalBorduino.g:1124:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalBorduino.g:1143:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -488,10 +488,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1126:10: ( ( '0' .. '9' )+ )
-            // InternalBorduino.g:1126:12: ( '0' .. '9' )+
+            // InternalBorduino.g:1145:10: ( ( '0' .. '9' )+ )
+            // InternalBorduino.g:1145:12: ( '0' .. '9' )+
             {
-            // InternalBorduino.g:1126:12: ( '0' .. '9' )+
+            // InternalBorduino.g:1145:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -505,7 +505,7 @@ public class InternalBorduinoLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalBorduino.g:1126:13: '0' .. '9'
+            	    // InternalBorduino.g:1145:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -537,10 +537,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1128:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalBorduino.g:1128:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalBorduino.g:1147:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalBorduino.g:1147:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalBorduino.g:1128:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalBorduino.g:1147:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -558,10 +558,10 @@ public class InternalBorduinoLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalBorduino.g:1128:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalBorduino.g:1147:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalBorduino.g:1128:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalBorduino.g:1147:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -577,7 +577,7 @@ public class InternalBorduinoLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalBorduino.g:1128:21: '\\\\' .
+                    	    // InternalBorduino.g:1147:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -585,7 +585,7 @@ public class InternalBorduinoLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalBorduino.g:1128:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalBorduino.g:1147:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -610,10 +610,10 @@ public class InternalBorduinoLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalBorduino.g:1128:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalBorduino.g:1147:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalBorduino.g:1128:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalBorduino.g:1147:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -629,7 +629,7 @@ public class InternalBorduinoLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalBorduino.g:1128:54: '\\\\' .
+                    	    // InternalBorduino.g:1147:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -637,7 +637,7 @@ public class InternalBorduinoLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalBorduino.g:1128:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalBorduino.g:1147:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -680,12 +680,12 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1130:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalBorduino.g:1130:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalBorduino.g:1149:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalBorduino.g:1149:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalBorduino.g:1130:24: ( options {greedy=false; } : . )*
+            // InternalBorduino.g:1149:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -710,7 +710,7 @@ public class InternalBorduinoLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalBorduino.g:1130:52: .
+            	    // InternalBorduino.g:1149:52: .
             	    {
             	    matchAny(); 
 
@@ -740,12 +740,12 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1132:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalBorduino.g:1132:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalBorduino.g:1151:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalBorduino.g:1151:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalBorduino.g:1132:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalBorduino.g:1151:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -758,7 +758,7 @@ public class InternalBorduinoLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalBorduino.g:1132:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalBorduino.g:1151:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -778,7 +778,7 @@ public class InternalBorduinoLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalBorduino.g:1132:40: ( ( '\\r' )? '\\n' )?
+            // InternalBorduino.g:1151:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -787,9 +787,9 @@ public class InternalBorduinoLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalBorduino.g:1132:41: ( '\\r' )? '\\n'
+                    // InternalBorduino.g:1151:41: ( '\\r' )? '\\n'
                     {
-                    // InternalBorduino.g:1132:41: ( '\\r' )?
+                    // InternalBorduino.g:1151:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -798,7 +798,7 @@ public class InternalBorduinoLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalBorduino.g:1132:41: '\\r'
+                            // InternalBorduino.g:1151:41: '\\r'
                             {
                             match('\r'); 
 
@@ -830,10 +830,10 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1134:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalBorduino.g:1134:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalBorduino.g:1153:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalBorduino.g:1153:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalBorduino.g:1134:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalBorduino.g:1153:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -887,8 +887,8 @@ public class InternalBorduinoLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalBorduino.g:1136:16: ( . )
-            // InternalBorduino.g:1136:18: .
+            // InternalBorduino.g:1155:16: ( . )
+            // InternalBorduino.g:1155:18: .
             {
             matchAny(); 
 

@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduinoML" nsURI="http://www.example.org/arduinoML" nsPrefix="arduinoML">
   <eClassifiers xsi:type="ecore:EClass" name="Brick" abstract="true" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pins" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Actuator" eSuperTypes="#//Brick"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Brick"/>
@@ -52,9 +52,7 @@
     <eLiterals name="OR" value="1"/>
     <eLiterals name="NONE" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LCDScreenActuator" eSuperTypes="#//Actuator">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pins" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LCDScreenActuator" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Signal" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="DigitalSignal" eSuperTypes="#//Signal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//DigitalSignalEnum"
