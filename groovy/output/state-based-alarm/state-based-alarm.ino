@@ -1,14 +1,10 @@
 // Wiring code generated from an ArduinoML model
 // Application name: StateBasedAlarm
 
-#include <LiquidCrystal.h>
-
 void setup(){
   pinMode(11, OUTPUT); // red_led [Actuator]
   pinMode(9, OUTPUT); // buzzer [Actuator]
   pinMode(12, INPUT);  // button [Sensor]
-  Serial.begin(9600);
-  while (! Serial); // Wait untilSerial is ready
 }
 
 long time = 0; long debounce = 200;

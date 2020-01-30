@@ -24,11 +24,10 @@ public class Generator extends Visitor<StringBuilder> {
         write("// Wiring code generated from an ArduinoML model");
         write(String.format("// Application name: %s\n", app.getName()));
 
-        for (Brick brick : app.getBricks()){
-            if (brick instanceof LCDScreenActuator) {
-                write("#include <LiquidCrystal.h>\n");
-                break;
-            }
+        boolean hasLCD = app.getBricks().stream().anyMatch(b -> b instanceof LCDScreenActuator);
+
+        if (hasLCD) {
+            write("#include <LiquidCrystal.h>\n");
         }
 
         for (Brick brick : app.getBricks()) {
@@ -48,14 +47,6 @@ public class Generator extends Visitor<StringBuilder> {
         write("void setup(){");
         for (Brick brick : app.getBricks()) {
             brick.accept(this);
-        }
-
-        for (Brick brick : app.getBricks()){
-            if (brick instanceof LCDScreenActuator) {
-                write("  Serial.begin(9600);\n" +
-                        "  while (! Serial); // Wait untilSerial is ready");
-                break;
-            }
         }
         write("}\n");
 
@@ -91,21 +82,21 @@ public class Generator extends Visitor<StringBuilder> {
 
     }
 
-             /*   else if (sensor instanceof KeyboardSensor){
-        conditions.append("if(Serial.available() > 0) {");
-        conditions.append("String ");
-        conditions.append(sensor.getName());
-        conditions.append(" = Serial.readString();");
-        ch = Serial.read();");
-        conditions.append("}");
-    }
+    /*   else if (sensor instanceof KeyboardSensor){
+conditions.append("if(Serial.available() > 0) {");
+conditions.append("String ");
+conditions.append(sensor.getName());
+conditions.append(" = Serial.readString();");
+ch = Serial.read();");
+conditions.append("}");
+}
 
-            conditions.append(condition.getOperator().value)
-            .append(" digitalRead(")
-                    .append(condition.getSensor().getPin())
-            .append(") == ")
-                    .append(condition.getSignal())
-            .append(" ");
+   conditions.append(condition.getOperator().value)
+   .append(" digitalRead(")
+           .append(condition.getSensor().getPin())
+   .append(") == ")
+           .append(condition.getSignal())
+   .append(" ");
 */
     @Override
     public void visit(Transition transition) {
@@ -113,15 +104,15 @@ public class Generator extends Visitor<StringBuilder> {
         //Sensor sensor = condition.getSensor();
         for (Condition condition : transition.getConditions()) {
             Sensor sensor = condition.getSensor();
-            if (condition.getSignal() instanceof DigitalSignal){
-                conditions.append(transition.getConditions().get(0) != condition ? condition.getOperator().value : "")
+
+            if (condition.getSignal() instanceof DigitalSignal) {
+                conditions.append(transition.getConditions().get(0) != condition ? condition.getOperator().value : "") // To avoid having a first operand where it should not be.
                         .append(" digitalRead(")
-                        .append(((SimplePinSensor)sensor).getPin())
+                        .append(((SimplePinSensor) sensor).getPin())
                         .append(") == ")
                         .append(condition.getSignal().toString())
                         .append(" ");
-            }
-            else {
+            } else if (condition.getSignal() instanceof StringSignal) {
                 conditions.append(condition.getOperator().value)
                         .append(" Serial.readString()")
                         //.append(((KeyboardSensor)sensor))
@@ -130,9 +121,10 @@ public class Generator extends Visitor<StringBuilder> {
                         .append(condition.getSignal().toString())
                         .append("\"")
                         .append(" ");
+            } else {
+                throw new UnsupportedOperationException("This signal is not known by the kernel");
             }
         }
-
 
         write(String.format("  if( (%s) && guard ) {", conditions.toString()));
         write("    time = millis();");
@@ -163,11 +155,13 @@ public class Generator extends Visitor<StringBuilder> {
     @Override
     public void visit(LCDScreenActuator actuator) {
         write(String.format("  %s.begin(16,2); // %s [Actuator]", actuator.getName(), actuator.getName()));
+        write("  Serial.begin(9600);\n" +
+                "  while (! Serial); // Wait until Serial is ready");
     }
 
     @Override
     public void visit(SimplePinSensor sensor) {
-        write(String.format("  pinMode(%d, INPUT);  // %s [Sensor]", ((SimplePinSensor)sensor).getPin(), sensor.getName()));
+        write(String.format("  pinMode(%d, INPUT);  // %s [Sensor]", sensor.getPin(), sensor.getName()));
     }
 
     @Override

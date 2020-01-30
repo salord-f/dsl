@@ -1,12 +1,8 @@
 // Wiring code generated from an ArduinoML model
 // Application name: KeyboardAlarm
 
-#include <LiquidCrystal.h>
-
 void setup(){
   pinMode(9, OUTPUT); // buzzer [Actuator]
-  Serial.begin(9600);
-  while (! Serial); // Wait untilSerial is ready
 }
 
 long time = 0; long debounce = 200;
