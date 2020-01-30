@@ -1,5 +1,5 @@
 // Wiring code generated from an ArduinoML model
-// Application name: RedButton
+// Application name: KeyboardAlarm
 
 #include <LiquidCrystal.h>
 
@@ -11,18 +11,29 @@ void setup(){
 
 long time = 0; long debounce = 200;
 
-void state_onoff() {
+void state_off() {
   digitalWrite(9,LOW);
   boolean guard = millis() - time > debounce;
   if( ( Serial.readString() == "SWITCH" ) && guard ) {
     time = millis();
-    state_onoff();
+    state_on();
   } else {
-    state_onoff();
+    state_off();
+  }
+}
+
+void state_on() {
+  digitalWrite(9,HIGH);
+  boolean guard = millis() - time > debounce;
+  if( ( Serial.readString() == "SWITCH" ) && guard ) {
+    time = millis();
+    state_off();
+  } else {
+    state_on();
   }
 }
 
 void loop() {
-  state_onoff();
+  state_off();
 }
 

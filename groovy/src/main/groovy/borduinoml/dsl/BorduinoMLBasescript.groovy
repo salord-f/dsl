@@ -22,17 +22,14 @@ abstract class BorduinoMLBasescript extends Script {
         this.defining = DEFINING.BRICKS
     }
 
-    // actuator "name", number
-    def actuator(String name, int number) {
+    // actuator "name" type "type" pin number
+    def actuator(String name) {
         if (this.defining == DEFINING.BRICKS) {
-            ((BorduinoMLBinding) this.getBinding()).getModel().createActuator(name, number)
-        }
-    }
-
-    def actuator(String name, Integer... pins) {
-        if (this.defining == DEFINING.BRICKS) {
-            assert pins.length == 7
-            ((BorduinoMLBinding) this.getBinding()).getModel().createActuator(name, pins)
+            [type: { String type ->
+                [pins: { Integer[] numbers -> ((BorduinoMLBinding) this.getBinding()).getModel().createActuator(name, ACTUATOR_TYPES.valueOf(type.toUpperCase()), numbers) },
+                 pin : { Integer number -> ((BorduinoMLBinding) this.getBinding()).getModel().createActuator(name, ACTUATOR_TYPES.valueOf(type.toUpperCase()), number) },
+                 ""  : { ((BorduinoMLBinding) this.getBinding()).getModel().createActuator(name, ACTUATOR_TYPES.valueOf(type.toUpperCase())) }]
+            }]
         }
     }
 
@@ -41,19 +38,17 @@ abstract class BorduinoMLBasescript extends Script {
         ((BorduinoMLBinding) this.getBinding()).getModel().setInitialState((State) ((BorduinoMLBinding) this.getBinding()).getVariable(state))
     }
 
-    // sensor "name", number
-    def sensor(String name, int number) {
+    // sensor "name" type "type" pin int
+    def sensor(String name) {
         if (this.defining == DEFINING.BRICKS) {
-            ((BorduinoMLBinding) this.getBinding()).getModel().createSensor(name, number)
-        }
-        //[pin  : { n -> ((BorduinoMLBinding) this.getBinding()).getModel().createSensor(name, n) },
-        // onPin: { n -> ((BorduinoMLBinding) this.getBinding()).getModel().createSensor(name, n) }]
-    }
-
-    def sensor(String name, Integer... pins) {
-        if (this.defining == DEFINING.BRICKS) {
-            assert pins.length == 0
-            ((BorduinoMLBinding) this.getBinding()).getModel().createSensor(name)
+            [type: { String type ->
+                SENSOR_TYPES sensorType = SENSOR_TYPES.valueOf(type.toUpperCase())
+                if (sensorType.hasPins) {
+                    [pin: { int number -> ((BorduinoMLBinding) this.getBinding()).getModel().createSensor(name, sensorType, number) }]
+                } else {
+                    ((BorduinoMLBinding) this.getBinding()).getModel().createSensor(name, sensorType)
+                }
+            }]
         }
     }
 
@@ -62,78 +57,60 @@ abstract class BorduinoMLBasescript extends Script {
         this.defining = DEFINING.STATES
     }
 
-    // state "name", {}
-    def state(String name, Closure closure) {
+    // state "name"
+    def state(String name) {
         if (this.defining != DEFINING.STATES) {
             return;
         }
         List<Action> actions = new ArrayList<Action>()
         currentState = ((BorduinoMLBinding) this.getBinding()).getModel().createState(name, actions)
-
-        closure.call()
     }
 
-    // action "actuator", "signal"
-    def action(actuator, signal) {
+    // action "actuator" to "signal"
+    def action(String actuator) {
         if (this.defining != DEFINING.STATES) {
             return;
         }
-        Action action
-        try {
-            DigitalSignal digitalSignal = new DigitalSignal(DigitalSignalEnum.valueOf(signal))
-            action = ((BorduinoMLBinding) this.getBinding())
-                    .getModel()
-                    .createAction((Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator), digitalSignal)
-        } catch (IllegalArgumentException e) {
-            // ignore exception, it's expected
-            StringSignal stringSignal = new StringSignal().setValue(signal)
-            action = ((BorduinoMLBinding) this.getBinding())
-                    .getModel()
-                    .createAction((Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator), stringSignal);
-        }
-        this.currentState.actions.add(action)
+        State state = currentState
+        [to: { String signal ->
+            try {
+                DigitalSignal digitalSignal = new DigitalSignal(DigitalSignalEnum.valueOf(signal))
+                state.actions.add(((BorduinoMLBinding) this.getBinding())
+                        .getModel()
+                        .createAction((Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator), digitalSignal))
+            } catch (IllegalArgumentException e) {
+                // ignore exception, it's expected
+                StringSignal stringSignal = new StringSignal().setValue(signal)
+                state.actions.add(((BorduinoMLBinding) this.getBinding())
+                        .getModel()
+                        .createAction((Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator), stringSignal));
+            }
+        }]
     }
 
-    /*def action(actuator, String signal) {
+    // transition "state" when "sensor" becomes "signal" [and|or "sensor" becomes "signal"]*
+    def transition(String state) {
         if (this.defining != DEFINING.STATES) {
             return;
         }
-        Action action = new Action()
-                .setActuator(actuator instanceof String ? (Actuator) ((BorduinoMLBinding) this.getBinding()).getVariable(actuator) : (Actuator) actuator)
-                .setValue(signal)
-        this.currentState.actions.add(action)
-    }*/
-
-    // transition "sensor", "signal", "state"
-    def transition(String... conditions) {
-        if (this.defining != DEFINING.STATES) {
-            return;
-        }
-        Transition transition;
-        try{
-            DigitalSignal digitalSignal = new DigitalSignal(DigitalSignalEnum.valueOf(conditions[1]))
-            transition = new Transition()
-                    .setNext(new State().setName(conditions[conditions.length - 1]))
-                    .addCondition((Sensor) binding.getVariable(conditions[0]), digitalSignal)
-        }
-        catch (IllegalArgumentException e){
-            StringSignal stringSignal = new StringSignal().setValue(conditions[1])
-            transition = new Transition()
-                    .setNext(new State().setName(conditions[conditions.length - 1]))
-                    .addCondition((Sensor) binding.getVariable(conditions[0]), stringSignal)
-        }
-
-        for (int i = 2; i < conditions.length - 2; i += 2) {
-            try{
-                DigitalSignal digitalSignal = new DigitalSignal(DigitalSignalEnum.valueOf(conditions[i + 2]))
-                transition.addCondition((Sensor) binding.getVariable(conditions[i + 1]), digitalSignal, OPERATOR.valueOf(conditions[i]))
-            }
-            catch (IllegalArgumentException e){
-                StringSignal stringSignal = new StringSignal().setValue(conditions[i + 2])
-                transition.addCondition((Sensor) binding.getVariable(conditions[i + 1]), stringSignal, OPERATOR.valueOf(conditions[i]))
-            }
-        }
+        Transition transition = new Transition().setNext(new State().setName(state))
         ((BorduinoMLBinding) this.getBinding()).getModel().createTransition(this.currentState, transition)
+        def closure
+        closure = { String sensor, OPERATOR operator = OPERATOR.NONE ->
+            [becomes: { String action ->
+                Signal signal
+                try {
+                    signal = new DigitalSignal(DigitalSignalEnum.valueOf(action))
+                }
+                catch (IllegalArgumentException e) {
+                    signal = new StringSignal().setValue(action)
+                }
+                transition.addCondition((Sensor) binding.getVariable(sensor), signal, operator)
+                [and: { String sens -> closure(sens, OPERATOR.AND) },
+                 or : { String sens -> closure(sens, OPERATOR.OR) }]
+            }]
+        }
+        [when: closure]
     }
 
     // disable run method while running

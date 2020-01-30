@@ -29,35 +29,42 @@ public class BorduinoMLModel {
         this.name = name;
     }
 
-    public void createSensor(String name, Integer pinNumber) {
-        Sensor sensor = new SimplePinSensor()
-                .setPin(pinNumber)
-                .setName(name);
-        this.bricks.add(sensor);
-        this.binding.setVariable(name, sensor);
+    public void createSensor(String name, SENSOR_TYPES type, Integer... pins) {
+        switch (type) {
+            case DIGITAL:
+                SimplePinSensor sensor = new SimplePinSensor()
+                        .setPin(pins[0]);
+                sensor.setName(name);
+                this.bricks.add(sensor);
+                this.binding.setVariable(name, sensor);
+                break;
+            case KEYBOARD:
+                KeyboardSensor keyboard = new KeyboardSensor();
+                keyboard.setName(name);
+                this.bricks.add(keyboard);
+                this.binding.setVariable(name, keyboard);
+        }
+
+
     }
 
-    public void createSensor(String name) {
-        Sensor sensor = new KeyboardSensor()
-                .setName(name);
-        this.bricks.add(sensor);
-        this.binding.setVariable(name, sensor);
-    }
+    public void createActuator(String name, ACTUATOR_TYPES type, Integer... pins) {
+        switch (type) {
+            case DIGITAL:
+                SimplePinActuator actuator = new SimplePinActuator()
+                        .setPin(pins[0])
+                        .setName(name);
+                this.bricks.add(actuator);
+                this.binding.setVariable(name, actuator);
+                break;
+            case LCD:
+                LCDScreenActuator lcd = new LCDScreenActuator()
+                        .setPins(Arrays.asList(pins))
+                        .setName(name);
+                this.bricks.add(lcd);
+                this.binding.setVariable(name, lcd);
+        }
 
-    public void createActuator(String name, Integer pinNumber) {
-        SimplePinActuator actuator = new SimplePinActuator()
-                .setPin(pinNumber)
-                .setName(name);
-        this.bricks.add(actuator);
-        this.binding.setVariable(name, actuator);
-    }
-
-    public void createActuator(String name, Integer... pins) {
-        LCDScreenActuator actuator = new LCDScreenActuator()
-                .setPins(Arrays.asList(pins))
-                .setName(name);
-        this.bricks.add(actuator);
-        this.binding.setVariable(name, actuator);
     }
 
     public State createState(String name, List<Action> actions) {

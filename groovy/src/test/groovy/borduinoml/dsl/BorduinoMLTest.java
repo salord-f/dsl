@@ -7,53 +7,53 @@ import java.io.File;
 
 public class BorduinoMLTest {
 
-    @Test
-    public void alarm() {
+    private void runScript(String name) {
         String[] args = new String[1];
-        args[0] = this.getClass().getClassLoader().getResource("Alarm.bsl").getFile();
-
+        args[0] = this.getClass().getClassLoader().getResource(name).getFile();
         BorduinoMLDSL dsl = new BorduinoMLDSL();
         dsl.eval(new File(args[0]));
+    }
 
+
+    @Test
+    public void alarm() {
+        runScript("Alarm.groovy");
     }
 
     @Test
     public void buttonControlScreen() {
-        String[] args = new String[1];
-        args[0] = this.getClass().getClassLoader().getResource("ButtonControlScreen.bsl").getFile();
+        runScript("ButtonControlScreen.groovy");
+    }
 
-        BorduinoMLDSL dsl = new BorduinoMLDSL();
-        dsl.eval(new File(args[0]));
-
+    @Test
+    public void chainedOperators() {
+        runScript("ChainedOperators.groovy");
     }
 
     @Test
     public void dualAlarm() {
-        String[] args = new String[1];
-        args[0] = this.getClass().getClassLoader().getResource("DualAlarm.bsl").getFile();
-
-        BorduinoMLDSL dsl = new BorduinoMLDSL();
-        dsl.eval(new File(args[0]));
-
+        runScript("DualAlarm.groovy");
     }
 
     @Test
-    public void stateBasedAlarm() {
-        String[] args = new String[1];
-        args[0] = this.getClass().getClassLoader().getResource("StateBasedAlarm.bsl").getFile();
+    public void keyboardAlarm() {
+        runScript("KeyboardAlarm.groovy");
+    }
 
-        BorduinoMLDSL dsl = new BorduinoMLDSL();
-        dsl.eval(new File(args[0]));
-
+    @Test
+    public void keyboardControlScreen() {
+        runScript("KeyboardControlScreen.groovy");
     }
 
     @Test
     public void multiStateAlarm() {
-        String[] args = new String[1];
-        args[0] = this.getClass().getClassLoader().getResource("MultiStateAlarm.bsl").getFile();
-
-        BorduinoMLDSL dsl = new BorduinoMLDSL();
-        dsl.eval(new File(args[0]));
-
+        runScript("MultiStateAlarm.groovy");
     }
+
+    @Test
+    public void stateBasedAlarm() {
+        runScript("StateBasedAlarm.groovy");
+    }
+
+
 }

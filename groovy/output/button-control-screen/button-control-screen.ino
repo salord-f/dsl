@@ -1,5 +1,5 @@
 // Wiring code generated from an ArduinoML model
-// Application name: RedButton
+// Application name: ButtonControlScreen
 
 #include <LiquidCrystal.h>
 
@@ -7,7 +7,6 @@ LiquidCrystal screen(2, 3, 4, 5, 6, 7, 8);
 
 void setup(){
   pinMode(11, OUTPUT); // red_led [Actuator]
-  pinMode(9, OUTPUT); // buzzer [Actuator]
   screen.begin(16,2); // screen [Actuator]
   pinMode(12, INPUT);  // button [Sensor]
   Serial.begin(9600);
