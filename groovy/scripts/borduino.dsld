@@ -12,6 +12,7 @@ contribute(currentType(subType('groovy.lang.Script'))) {
 //	property name : 'buzzer', type : Object, provider: 'groovy', doc: 'A variable'
 //	property name : 'button', type : Object, provider: 'groovy', doc: 'A variable'
 //	property name : 'screen', type : Object, provider: 'groovy', doc: 'A variable'
+//	property name : 'keyboard', type : Object, provider: 'groovy', doc: 'A variable'
 //	property name : 'on', type : Object, provider: 'groovy', doc: 'A variable'
 //	property name : 'off', type : Object, provider: 'groovy', doc: 'A variable'
 
@@ -37,6 +38,7 @@ contribute(currentType(subType('groovy.lang.Script'))) {
 	method type: Script, name: 'transition', params: [name:String], doc: 'Create a new transition'
 	method type: Script, name: 'when', params: [name:String], doc: 'Associate transition with it's trigger'
 	method type: Script, name: 'becomes', params: [name:String], doc: 'Associate transition with it's actionTrigger'
+	method type: Script, name: 'and', params: [name:String], doc: 'Add an additional condition an action'
 
 
 	method type: Script, name: 'initial', params: [name:String], doc: 'Specify the init state'
