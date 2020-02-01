@@ -21,7 +21,7 @@ package arduinoML;
 public interface StringSignal extends Signal {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The default value is <code>"HIGH"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
@@ -31,7 +31,7 @@ public interface StringSignal extends Signal {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see arduinoML.ArduinoMLPackage#getStringSignal_Value()
-	 * @model default="HIGH"
+	 * @model default=""
 	 * @generated
 	 */
 	String getValue();

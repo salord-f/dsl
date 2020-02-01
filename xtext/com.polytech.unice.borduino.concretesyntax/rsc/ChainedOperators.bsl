@@ -12,6 +12,6 @@ app ChainedOperators initial state off {
 		
 		on {
 			buzzer : HIGH
-			keyboard is "SWITCH" and button is LOW : off
+			keyboard is "SWITCH" or button is LOW : off
 		}
 }
