@@ -41,11 +41,6 @@ public class BorduinoMLTest {
     }
 
     @Test
-    public void keyboardControlScreen() {
-        runScript("KeyboardControlScreen.groovy");
-    }
-
-    @Test
     public void multiStateAlarm() {
         runScript("MultiStateAlarm.groovy");
     }
