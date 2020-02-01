@@ -21,7 +21,7 @@ package arduinoML;
 public interface DigitalSignal extends Signal {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The default value is <code>"HIGH"</code>.
+	 * The default value is <code>""</code>.
 	 * The literals are from the enumeration {@link arduinoML.DigitalSignalEnum}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -33,7 +33,7 @@ public interface DigitalSignal extends Signal {
 	 * @see arduinoML.DigitalSignalEnum
 	 * @see #setValue(DigitalSignalEnum)
 	 * @see arduinoML.ArduinoMLPackage#getDigitalSignal_Value()
-	 * @model default="HIGH"
+	 * @model default=""
 	 * @generated
 	 */
 	DigitalSignalEnum getValue();

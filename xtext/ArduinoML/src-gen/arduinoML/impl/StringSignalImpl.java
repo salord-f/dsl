@@ -33,7 +33,7 @@ public class StringSignalImpl extends SignalImpl implements StringSignal {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALUE_EDEFAULT = "HIGH";
+	protected static final String VALUE_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.

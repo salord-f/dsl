@@ -698,13 +698,12 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 
 		initEClass(digitalSignalEClass, DigitalSignal.class, "DigitalSignal", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDigitalSignal_Value(), this.getDigitalSignalEnum(), "value", "HIGH", 0, 1,
-				DigitalSignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDigitalSignal_Value(), this.getDigitalSignalEnum(), "value", "", 0, 1, DigitalSignal.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stringSignalEClass, StringSignal.class, "StringSignal", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStringSignal_Value(), ecorePackage.getEString(), "value", "HIGH", 0, 1, StringSignal.class,
+		initEAttribute(getStringSignal_Value(), ecorePackage.getEString(), "value", "", 0, 1, StringSignal.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(keyboardSensorEClass, KeyboardSensor.class, "KeyboardSensor", !IS_ABSTRACT, !IS_INTERFACE,

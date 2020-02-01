@@ -56,11 +56,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Signal" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="DigitalSignal" eSuperTypes="#//Signal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//DigitalSignalEnum"
-        defaultValueLiteral="HIGH"/>
+        defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringSignal" eSuperTypes="#//Signal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="HIGH"/>
+        defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KeyboardSensor" eSuperTypes="#//Sensor"/>
 </ecore:EPackage>
