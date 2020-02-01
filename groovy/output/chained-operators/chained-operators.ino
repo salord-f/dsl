@@ -1,5 +1,5 @@
 // Wiring code generated from an ArduinoML model
-// Application name: RedButton
+// Application name: ChainedOperators
 
 void setup(){
   pinMode(9, OUTPUT); // buzzer [Actuator]

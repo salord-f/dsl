@@ -1,4 +1,4 @@
-app "RedButton", {
+app "ChainedOperators", {
     bricks
         actuator "buzzer" type "digital" pin 9
         sensor "button" type "digital" pin 12
