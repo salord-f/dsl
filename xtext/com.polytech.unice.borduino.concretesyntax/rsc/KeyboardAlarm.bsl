@@ -1,4 +1,4 @@
-app DualAlarm initial state off {
+app KeyboardAlarm initial state off {
 	bricks
 		actuator buzzer : 9
 		keyboardSensor keyboard
