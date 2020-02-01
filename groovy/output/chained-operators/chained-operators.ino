@@ -22,7 +22,7 @@ void state_off() {
 void state_on() {
   digitalWrite(9,HIGH);
   boolean guard = millis() - time > debounce;
-  if( ( Serial.readString() == "SWITCH" && digitalRead(12) == LOW ) && guard ) {
+  if( ( Serial.readString() == "SWITCH" || digitalRead(12) == LOW ) && guard ) {
     time = millis();
     state_off();
   } else {
