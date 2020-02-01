@@ -67,8 +67,6 @@ public class Generator extends Visitor<StringBuilder> {
     public void visit(State state) {
         write(String.format("void state_%s() {", state.getName()));
 
-        // TODO code keyboard dynamic
-
         for (Action action : state.getActions()) {
             action.accept(this);
         }

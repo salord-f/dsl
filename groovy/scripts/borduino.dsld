@@ -1,0 +1,48 @@
+import java.lang.reflect.Method;
+
+// this is a DSLD file
+// start off creating a custom DSL Descriptor for your Groovy DSL
+
+// The following snippet adds the 'newProp' to all types that are a subtype of GroovyObjects
+contribute(currentType(subType('groovy.lang.Script'))) {
+	property name : 'high', type: Object, provider: 'groovy', doc: 'Stands for SIGNAL.HIGH'
+	property name : 'low', type: Object, provider: 'groovy', doc: 'Stands for SIGNAL.LOW'
+
+//	property name : 'red_led', type : Object, provider: 'groovy', doc: 'A variable'
+//	property name : 'buzzer', type : Object, provider: 'groovy', doc: 'A variable'
+//	property name : 'button', type : Object, provider: 'groovy', doc: 'A variable'
+//	property name : 'screen', type : Object, provider: 'groovy', doc: 'A variable'
+//	property name : 'on', type : Object, provider: 'groovy', doc: 'A variable'
+//	property name : 'off', type : Object, provider: 'groovy', doc: 'A variable'
+
+//	property name : 'lcd', type : Object, provider: 'groovy', doc: 'type of the actuator / sensor'
+//	property name : 'digital', type : Object, provider: 'groovy', doc: 'type of the actuator / sensor'
+
+//	property name : 'LOW', type : Object, provider: 'groovy', doc: 'enum for SIGNAL.LOW'
+//	property name : 'HIGH', type : Object, provider: 'groovy', doc: 'enum for SIGNAL.HIGH'
+
+	method type: Script, name: 'app', params: [name:String], doc: 'Create a new app'
+
+	method type: Script, name: 'bricks', params: [brickList:List<Object>], doc: 'Create a List of bricks'
+	method type: Script, name: 'actuator', params: [name:String], doc: 'Create a new Actuator'
+	method type: Script, name: 'sensor', params: [name:String], doc: 'Create a new Sensor'
+	method type: Script, name: 'type', params: [name:String], doc: 'Associate a sensor / actuator with a type'
+	method type: void, name: 'pin', params: [pinNumber:Integer], doc: 'Associate a sensor / actuator with the pin '
+	method type: void, name: 'pins', params: [pinNumber:List<Integer>], doc: 'Associate a sensor / actuator with the pins'
+
+	method type: Script, name: 'states', params: [stateList:List<Object>], doc: 'Create a List of states'
+	method type: Script, name: 'state', params: [name:String, actions:List<Object>, transition:Object], doc: 'Create a new State'
+	method type: Script, name: 'action', params: [name:String], doc: 'Create a new action'
+	method type: Script, name: 'to', params: [name:String], doc: 'Associate the target of an action with the action'
+	method type: Script, name: 'transition', params: [name:String], doc: 'Create a new transition'
+	method type: Script, name: 'when', params: [name:String], doc: 'Associate transition with it's trigger'
+	method type: Script, name: 'becomes', params: [name:String], doc: 'Associate transition with it's actionTrigger'
+
+
+	method type: Script, name: 'initial', params: [name:String], doc: 'Specify the init state'
+
+
+
+
+
+}
