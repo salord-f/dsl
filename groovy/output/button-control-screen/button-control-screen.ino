@@ -18,7 +18,7 @@ long time = 0; long debounce = 200;
 void state_off() {
   digitalWrite(11,LOW);
   screen.clear();
-  screen.print("I A OFF");
+  screen.print("I AM OFF");
   boolean guard = millis() - time > debounce;
   if( ( digitalRead(12) == HIGH ) && guard ) {
     time = millis();

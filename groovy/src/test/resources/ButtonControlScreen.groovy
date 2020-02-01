@@ -6,7 +6,7 @@ app "ButtonControlScreen", {
     states
         state "off"
             action "red_led" to "LOW"
-            action "screen" to "I A OFF"
+            action "screen" to "I AM OFF"
             transition "on" when "button" becomes "HIGH"
 
         state "on"
