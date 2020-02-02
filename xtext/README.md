@@ -25,11 +25,11 @@ Lancer Gemoc Studio sur sa machine, et importer le dossier Xtext dans Gemoc :
   * Une nouvelle Fenetre Gemoc apparaîtra, et vous pourrez créer des fichier `.bsl` pour les éditer avec l'auto-complétion.
 
 * Pour générer un fichier ino : 
-  * Dans `dsl/xtext` lancer le fichier `./run.sh <nom_du_fichier_bsl>`. Le résultat sortira dans le fichier `output/result.ino`
+  * Dans `dsl/xtext` lancer le fichier `./run.sh <nom_du_fichier_bsl>`. Le résultat sortira dans le fichier `output/result.ino`. Attention, l'extension du fichier d'entrée doit systématiquement être `.bsl`
   
   Exemple : `./run.sh com.polytech.unice.borduino.concretesyntax/rsc/Alarm.bsl`  
   
-  Note : Le dossier `com.polytech.unice.borduino.concretesyntax/rsc` contient de nombreux fichiers bsl sur lesquels il est possible de réaliser des tests 
+  Note : Le dossier `com.polytech.unice.borduino.concretesyntax/rsc` contient de nombreux fichiers bsl sur lesquels il est possible de réaliser des tests.
 
 ## Exemple de script
 
