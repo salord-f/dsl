@@ -7,6 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src-gen"/>
-	<classpathentry kind="lib" path="/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/xtext/lib/borduino-kernel-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/dorian/Desktop/Polytech/2019-2020/Periode_2/DSL/delivery_1/dsl/xtext/lib/borduino-kernel-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

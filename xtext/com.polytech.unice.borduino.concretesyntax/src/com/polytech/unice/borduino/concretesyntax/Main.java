@@ -20,8 +20,9 @@ import arduinoML.homemade.ArduinoMLSwitchPrinter;
 public class Main {
 
 	public static void main(String[] args) {
-		String modelPath = "rsc/ChainedOperators.bsl";
-		String destinationPath= "rsc/ChainedOperators.xmi";
+		String modelPath = args[0];		
+		String fileName = modelPath.split(".bsl")[0];
+		String destinationPath= "./com.polytech.unice.borduino.concretesyntax/rsc/" + fileName  +  ".xmi";
 		String code ="";
 		try {
 			ArduinoML2xmi(modelPath, destinationPath);
