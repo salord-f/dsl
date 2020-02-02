@@ -10,7 +10,7 @@ app "ChainedOperators", {
 
         state "on"
             action "buzzer" to "HIGH"
-            transition "off" when "keyboard" becomes "SWITCH" and "button" becomes "LOW"
+            transition "off" when "keyboard" becomes "SWITCH" or "button" becomes "LOW"
 
     initial "off"
 }
