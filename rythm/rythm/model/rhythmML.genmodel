@@ -12,5 +12,6 @@
     <genClasses ecoreClass="rhythmML.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//NamedElement/name"/>
     </genClasses>
+    <genClasses ecoreClass="rhythmML.ecore#//Rhythm"/>
   </genPackages>
 </genmodel:GenModel>

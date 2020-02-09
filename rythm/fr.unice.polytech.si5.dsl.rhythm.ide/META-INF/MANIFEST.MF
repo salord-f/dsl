@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: fr.unice.polytech.si5.dsl.rhythm.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.unice.polytech.si5.dsl.rhythm.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.unice.polytech.si5.dsl.rhythm.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: fr.unice.polytech.si5.dsl.rhythm,
+ rhythmML,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
