@@ -3,7 +3,7 @@
  */
 package fr.unice.polytech.si5.dsl.rhythm.formatting2
 
-import com.google.inject.Inject
+
 import fr.unice.polytech.si5.dsl.rhythm.services.RhythmGrammarAccess
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
@@ -12,7 +12,6 @@ import rhythmML.Track
 
 class RhythmFormatter extends AbstractFormatter2 {
 	
-	@Inject extension RhythmGrammarAccess
 
 	def dispatch void format(Rhythm rhythm, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 

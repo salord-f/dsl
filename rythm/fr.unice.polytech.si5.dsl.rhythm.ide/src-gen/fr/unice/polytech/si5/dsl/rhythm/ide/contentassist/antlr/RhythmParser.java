@@ -37,10 +37,9 @@ public class RhythmParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTrackAccess().getGroup(), "rule__Track__Group__0");
 			builder.put(grammarAccess.getTrackAccess().getGroup_3(), "rule__Track__Group_3__0");
 			builder.put(grammarAccess.getPatternAccess().getGroup(), "rule__Pattern__Group__0");
+			builder.put(grammarAccess.getPatternAccess().getGroup_4(), "rule__Pattern__Group_4__0");
 			builder.put(grammarAccess.getBeatAccess().getGroup(), "rule__Beat__Group__0");
 			builder.put(grammarAccess.getBeatAccess().getGroup_1(), "rule__Beat__Group_1__0");
-			builder.put(grammarAccess.getPatternBarAccess().getGroup(), "rule__PatternBar__Group__0");
-			builder.put(grammarAccess.getPatternBarAccess().getGroup_2(), "rule__PatternBar__Group_2__0");
 			builder.put(grammarAccess.getSectionAccess().getGroup(), "rule__Section__Group__0");
 			builder.put(grammarAccess.getSectionAccess().getGroup_4(), "rule__Section__Group_4__0");
 			builder.put(grammarAccess.getPatternLoopAccess().getGroup(), "rule__PatternLoop__Group__0");
@@ -58,11 +57,10 @@ public class RhythmParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTrackAccess().getSectionsAssignment_5(), "rule__Track__SectionsAssignment_5");
 			builder.put(grammarAccess.getTrackAccess().getSectionsAssignment_6(), "rule__Track__SectionsAssignment_6");
 			builder.put(grammarAccess.getPatternAccess().getNameAssignment_0(), "rule__Pattern__NameAssignment_0");
-			builder.put(grammarAccess.getPatternAccess().getBarAssignment_2(), "rule__Pattern__BarAssignment_2");
+			builder.put(grammarAccess.getPatternAccess().getBeatsAssignment_3(), "rule__Pattern__BeatsAssignment_3");
+			builder.put(grammarAccess.getPatternAccess().getBeatsAssignment_4_1(), "rule__Pattern__BeatsAssignment_4_1");
 			builder.put(grammarAccess.getBeatAccess().getTicksAssignment_0(), "rule__Beat__TicksAssignment_0");
 			builder.put(grammarAccess.getBeatAccess().getTicksAssignment_1_1(), "rule__Beat__TicksAssignment_1_1");
-			builder.put(grammarAccess.getPatternBarAccess().getBeatsAssignment_1(), "rule__PatternBar__BeatsAssignment_1");
-			builder.put(grammarAccess.getPatternBarAccess().getBeatsAssignment_2_1(), "rule__PatternBar__BeatsAssignment_2_1");
 			builder.put(grammarAccess.getSectionAccess().getNameAssignment_0(), "rule__Section__NameAssignment_0");
 			builder.put(grammarAccess.getSectionAccess().getPatternLoopsAssignment_3(), "rule__Section__PatternLoopsAssignment_3");
 			builder.put(grammarAccess.getSectionAccess().getPatternLoopsAssignment_4_1(), "rule__Section__PatternLoopsAssignment_4_1");

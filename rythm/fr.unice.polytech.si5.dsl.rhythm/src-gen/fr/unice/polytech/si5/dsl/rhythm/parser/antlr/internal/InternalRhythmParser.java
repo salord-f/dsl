@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRhythmParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'rhythm'", "'tempo'", "'BPM'", "'resolution:'", "'offset:'", "'tick'", "'track'", "'{'", "'patterns:'", "'sections:'", "'}'", "','", "'beat:'", "'pattern:'", "'times'", "'(iteration:'", "',beat:'", "'):'", "'.'", "'bd'", "'sd'", "'_'", "'ch'", "'oh'", "'cc'", "'rc'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'rhythm'", "'tempo'", "'BPM'", "'resolution:'", "'offset:'", "'tick'", "'track'", "'{'", "'patterns:'", "'sections:'", "'}'", "'beat:'", "','", "'pattern:'", "'times'", "'(iteration:'", "',beat:'", "'):'", "'.'", "'bd'", "'sd'", "'_'", "'ch'", "'oh'", "'cc'", "'rc'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -772,26 +772,30 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePattern"
-    // InternalRhythm.g:365:1: rulePattern returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_bar_2_0= rulePatternBar ) ) otherlv_3= '}' ) ;
+    // InternalRhythm.g:365:1: rulePattern returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) (otherlv_4= 'beat:' ( (lv_beats_5_0= ruleBeat ) ) )* otherlv_6= '}' ) ;
     public final EObject rulePattern() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token otherlv_3=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
         AntlrDatatypeRuleToken lv_name_0_0 = null;
 
-        EObject lv_bar_2_0 = null;
+        EObject lv_beats_3_0 = null;
+
+        EObject lv_beats_5_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRhythm.g:371:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_bar_2_0= rulePatternBar ) ) otherlv_3= '}' ) )
-            // InternalRhythm.g:372:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_bar_2_0= rulePatternBar ) ) otherlv_3= '}' )
+            // InternalRhythm.g:371:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) (otherlv_4= 'beat:' ( (lv_beats_5_0= ruleBeat ) ) )* otherlv_6= '}' ) )
+            // InternalRhythm.g:372:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) (otherlv_4= 'beat:' ( (lv_beats_5_0= ruleBeat ) ) )* otherlv_6= '}' )
             {
-            // InternalRhythm.g:372:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_bar_2_0= rulePatternBar ) ) otherlv_3= '}' )
-            // InternalRhythm.g:373:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_bar_2_0= rulePatternBar ) ) otherlv_3= '}'
+            // InternalRhythm.g:372:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) (otherlv_4= 'beat:' ( (lv_beats_5_0= ruleBeat ) ) )* otherlv_6= '}' )
+            // InternalRhythm.g:373:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) (otherlv_4= 'beat:' ( (lv_beats_5_0= ruleBeat ) ) )* otherlv_6= '}'
             {
             // InternalRhythm.g:373:3: ( (lv_name_0_0= ruleEString ) )
             // InternalRhythm.g:374:4: (lv_name_0_0= ruleEString )
@@ -828,17 +832,21 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getPatternAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalRhythm.g:396:3: ( (lv_bar_2_0= rulePatternBar ) )
-            // InternalRhythm.g:397:4: (lv_bar_2_0= rulePatternBar )
+            otherlv_2=(Token)match(input,22,FOLLOW_17); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getPatternAccess().getBeatKeyword_2());
+            		
+            // InternalRhythm.g:400:3: ( (lv_beats_3_0= ruleBeat ) )
+            // InternalRhythm.g:401:4: (lv_beats_3_0= ruleBeat )
             {
-            // InternalRhythm.g:397:4: (lv_bar_2_0= rulePatternBar )
-            // InternalRhythm.g:398:5: lv_bar_2_0= rulePatternBar
+            // InternalRhythm.g:401:4: (lv_beats_3_0= ruleBeat )
+            // InternalRhythm.g:402:5: lv_beats_3_0= ruleBeat
             {
 
-            					newCompositeNode(grammarAccess.getPatternAccess().getBarPatternBarParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getPatternAccess().getBeatsBeatParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_17);
-            lv_bar_2_0=rulePatternBar();
+            pushFollow(FOLLOW_18);
+            lv_beats_3_0=ruleBeat();
 
             state._fsp--;
 
@@ -846,11 +854,11 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
             					if (current==null) {
             						current = createModelElementForParent(grammarAccess.getPatternRule());
             					}
-            					set(
+            					add(
             						current,
-            						"bar",
-            						lv_bar_2_0,
-            						"fr.unice.polytech.si5.dsl.rhythm.Rhythm.PatternBar");
+            						"beats",
+            						lv_beats_3_0,
+            						"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Beat");
             					afterParserOrEnumRuleCall();
             				
 
@@ -859,9 +867,68 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,21,FOLLOW_2); 
+            // InternalRhythm.g:419:3: (otherlv_4= 'beat:' ( (lv_beats_5_0= ruleBeat ) ) )*
+            loop5:
+            do {
+                int alt5=2;
+                int LA5_0 = input.LA(1);
 
-            			newLeafNode(otherlv_3, grammarAccess.getPatternAccess().getRightCurlyBracketKeyword_3());
+                if ( (LA5_0==22) ) {
+                    alt5=1;
+                }
+
+
+                switch (alt5) {
+            	case 1 :
+            	    // InternalRhythm.g:420:4: otherlv_4= 'beat:' ( (lv_beats_5_0= ruleBeat ) )
+            	    {
+            	    otherlv_4=(Token)match(input,22,FOLLOW_17); 
+
+            	    				newLeafNode(otherlv_4, grammarAccess.getPatternAccess().getBeatKeyword_4_0());
+            	    			
+            	    // InternalRhythm.g:424:4: ( (lv_beats_5_0= ruleBeat ) )
+            	    // InternalRhythm.g:425:5: (lv_beats_5_0= ruleBeat )
+            	    {
+            	    // InternalRhythm.g:425:5: (lv_beats_5_0= ruleBeat )
+            	    // InternalRhythm.g:426:6: lv_beats_5_0= ruleBeat
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getPatternAccess().getBeatsBeatParserRuleCall_4_1_0());
+            	    					
+            	    pushFollow(FOLLOW_18);
+            	    lv_beats_5_0=ruleBeat();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getPatternRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"beats",
+            	    							lv_beats_5_0,
+            	    							"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Beat");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop5;
+                }
+            } while (true);
+
+            otherlv_6=(Token)match(input,21,FOLLOW_2); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getPatternAccess().getRightCurlyBracketKeyword_5());
             		
 
             }
@@ -886,7 +953,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBeat"
-    // InternalRhythm.g:423:1: entryRuleBeat returns [EObject current=null] : iv_ruleBeat= ruleBeat EOF ;
+    // InternalRhythm.g:452:1: entryRuleBeat returns [EObject current=null] : iv_ruleBeat= ruleBeat EOF ;
     public final EObject entryRuleBeat() throws RecognitionException {
         EObject current = null;
 
@@ -894,8 +961,8 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRhythm.g:423:45: (iv_ruleBeat= ruleBeat EOF )
-            // InternalRhythm.g:424:2: iv_ruleBeat= ruleBeat EOF
+            // InternalRhythm.g:452:45: (iv_ruleBeat= ruleBeat EOF )
+            // InternalRhythm.g:453:2: iv_ruleBeat= ruleBeat EOF
             {
              newCompositeNode(grammarAccess.getBeatRule()); 
             pushFollow(FOLLOW_1);
@@ -922,7 +989,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBeat"
-    // InternalRhythm.g:430:1: ruleBeat returns [EObject current=null] : ( ( (lv_ticks_0_0= ruleNote ) ) (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )* ) ;
+    // InternalRhythm.g:459:1: ruleBeat returns [EObject current=null] : ( ( (lv_ticks_0_0= ruleNote ) ) (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )* ) ;
     public final EObject ruleBeat() throws RecognitionException {
         EObject current = null;
 
@@ -936,22 +1003,22 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRhythm.g:436:2: ( ( ( (lv_ticks_0_0= ruleNote ) ) (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )* ) )
-            // InternalRhythm.g:437:2: ( ( (lv_ticks_0_0= ruleNote ) ) (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )* )
+            // InternalRhythm.g:465:2: ( ( ( (lv_ticks_0_0= ruleNote ) ) (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )* ) )
+            // InternalRhythm.g:466:2: ( ( (lv_ticks_0_0= ruleNote ) ) (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )* )
             {
-            // InternalRhythm.g:437:2: ( ( (lv_ticks_0_0= ruleNote ) ) (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )* )
-            // InternalRhythm.g:438:3: ( (lv_ticks_0_0= ruleNote ) ) (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )*
+            // InternalRhythm.g:466:2: ( ( (lv_ticks_0_0= ruleNote ) ) (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )* )
+            // InternalRhythm.g:467:3: ( (lv_ticks_0_0= ruleNote ) ) (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )*
             {
-            // InternalRhythm.g:438:3: ( (lv_ticks_0_0= ruleNote ) )
-            // InternalRhythm.g:439:4: (lv_ticks_0_0= ruleNote )
+            // InternalRhythm.g:467:3: ( (lv_ticks_0_0= ruleNote ) )
+            // InternalRhythm.g:468:4: (lv_ticks_0_0= ruleNote )
             {
-            // InternalRhythm.g:439:4: (lv_ticks_0_0= ruleNote )
-            // InternalRhythm.g:440:5: lv_ticks_0_0= ruleNote
+            // InternalRhythm.g:468:4: (lv_ticks_0_0= ruleNote )
+            // InternalRhythm.g:469:5: lv_ticks_0_0= ruleNote
             {
 
             					newCompositeNode(grammarAccess.getBeatAccess().getTicksNoteEnumRuleCall_0_0());
             				
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_19);
             lv_ticks_0_0=ruleNote();
 
             state._fsp--;
@@ -973,35 +1040,35 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRhythm.g:457:3: (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )*
-            loop5:
+            // InternalRhythm.g:486:3: (otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) ) )*
+            loop6:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA5_0==22) ) {
-                    alt5=1;
+                if ( (LA6_0==23) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt6) {
             	case 1 :
-            	    // InternalRhythm.g:458:4: otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) )
+            	    // InternalRhythm.g:487:4: otherlv_1= ',' ( (lv_ticks_2_0= ruleNote ) )
             	    {
-            	    otherlv_1=(Token)match(input,22,FOLLOW_19); 
+            	    otherlv_1=(Token)match(input,23,FOLLOW_17); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getBeatAccess().getCommaKeyword_1_0());
             	    			
-            	    // InternalRhythm.g:462:4: ( (lv_ticks_2_0= ruleNote ) )
-            	    // InternalRhythm.g:463:5: (lv_ticks_2_0= ruleNote )
+            	    // InternalRhythm.g:491:4: ( (lv_ticks_2_0= ruleNote ) )
+            	    // InternalRhythm.g:492:5: (lv_ticks_2_0= ruleNote )
             	    {
-            	    // InternalRhythm.g:463:5: (lv_ticks_2_0= ruleNote )
-            	    // InternalRhythm.g:464:6: lv_ticks_2_0= ruleNote
+            	    // InternalRhythm.g:492:5: (lv_ticks_2_0= ruleNote )
+            	    // InternalRhythm.g:493:6: lv_ticks_2_0= ruleNote
             	    {
 
             	    						newCompositeNode(grammarAccess.getBeatAccess().getTicksNoteEnumRuleCall_1_1_0());
             	    					
-            	    pushFollow(FOLLOW_18);
+            	    pushFollow(FOLLOW_19);
             	    lv_ticks_2_0=ruleNote();
 
             	    state._fsp--;
@@ -1015,180 +1082,6 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
             	    							"ticks",
             	    							lv_ticks_2_0,
             	    							"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Note");
-            	    						afterParserOrEnumRuleCall();
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop5;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleBeat"
-
-
-    // $ANTLR start "entryRulePatternBar"
-    // InternalRhythm.g:486:1: entryRulePatternBar returns [EObject current=null] : iv_rulePatternBar= rulePatternBar EOF ;
-    public final EObject entryRulePatternBar() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_rulePatternBar = null;
-
-
-        try {
-            // InternalRhythm.g:486:51: (iv_rulePatternBar= rulePatternBar EOF )
-            // InternalRhythm.g:487:2: iv_rulePatternBar= rulePatternBar EOF
-            {
-             newCompositeNode(grammarAccess.getPatternBarRule()); 
-            pushFollow(FOLLOW_1);
-            iv_rulePatternBar=rulePatternBar();
-
-            state._fsp--;
-
-             current =iv_rulePatternBar; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRulePatternBar"
-
-
-    // $ANTLR start "rulePatternBar"
-    // InternalRhythm.g:493:1: rulePatternBar returns [EObject current=null] : (otherlv_0= 'beat:' ( (lv_beats_1_0= ruleBeat ) ) (otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) )* ) ;
-    public final EObject rulePatternBar() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_2=null;
-        EObject lv_beats_1_0 = null;
-
-        EObject lv_beats_3_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalRhythm.g:499:2: ( (otherlv_0= 'beat:' ( (lv_beats_1_0= ruleBeat ) ) (otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) )* ) )
-            // InternalRhythm.g:500:2: (otherlv_0= 'beat:' ( (lv_beats_1_0= ruleBeat ) ) (otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) )* )
-            {
-            // InternalRhythm.g:500:2: (otherlv_0= 'beat:' ( (lv_beats_1_0= ruleBeat ) ) (otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) )* )
-            // InternalRhythm.g:501:3: otherlv_0= 'beat:' ( (lv_beats_1_0= ruleBeat ) ) (otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) )*
-            {
-            otherlv_0=(Token)match(input,23,FOLLOW_19); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getPatternBarAccess().getBeatKeyword_0());
-            		
-            // InternalRhythm.g:505:3: ( (lv_beats_1_0= ruleBeat ) )
-            // InternalRhythm.g:506:4: (lv_beats_1_0= ruleBeat )
-            {
-            // InternalRhythm.g:506:4: (lv_beats_1_0= ruleBeat )
-            // InternalRhythm.g:507:5: lv_beats_1_0= ruleBeat
-            {
-
-            					newCompositeNode(grammarAccess.getPatternBarAccess().getBeatsBeatParserRuleCall_1_0());
-            				
-            pushFollow(FOLLOW_20);
-            lv_beats_1_0=ruleBeat();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getPatternBarRule());
-            					}
-            					add(
-            						current,
-            						"beats",
-            						lv_beats_1_0,
-            						"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Beat");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalRhythm.g:524:3: (otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) ) )*
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
-
-                if ( (LA6_0==23) ) {
-                    alt6=1;
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // InternalRhythm.g:525:4: otherlv_2= 'beat:' ( (lv_beats_3_0= ruleBeat ) )
-            	    {
-            	    otherlv_2=(Token)match(input,23,FOLLOW_19); 
-
-            	    				newLeafNode(otherlv_2, grammarAccess.getPatternBarAccess().getBeatKeyword_2_0());
-            	    			
-            	    // InternalRhythm.g:529:4: ( (lv_beats_3_0= ruleBeat ) )
-            	    // InternalRhythm.g:530:5: (lv_beats_3_0= ruleBeat )
-            	    {
-            	    // InternalRhythm.g:530:5: (lv_beats_3_0= ruleBeat )
-            	    // InternalRhythm.g:531:6: lv_beats_3_0= ruleBeat
-            	    {
-
-            	    						newCompositeNode(grammarAccess.getPatternBarAccess().getBeatsBeatParserRuleCall_2_1_0());
-            	    					
-            	    pushFollow(FOLLOW_20);
-            	    lv_beats_3_0=ruleBeat();
-
-            	    state._fsp--;
-
-
-            	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getPatternBarRule());
-            	    						}
-            	    						add(
-            	    							current,
-            	    							"beats",
-            	    							lv_beats_3_0,
-            	    							"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Beat");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -1225,11 +1118,11 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "rulePatternBar"
+    // $ANTLR end "ruleBeat"
 
 
     // $ANTLR start "entryRuleSection"
-    // InternalRhythm.g:553:1: entryRuleSection returns [EObject current=null] : iv_ruleSection= ruleSection EOF ;
+    // InternalRhythm.g:515:1: entryRuleSection returns [EObject current=null] : iv_ruleSection= ruleSection EOF ;
     public final EObject entryRuleSection() throws RecognitionException {
         EObject current = null;
 
@@ -1237,8 +1130,8 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRhythm.g:553:48: (iv_ruleSection= ruleSection EOF )
-            // InternalRhythm.g:554:2: iv_ruleSection= ruleSection EOF
+            // InternalRhythm.g:515:48: (iv_ruleSection= ruleSection EOF )
+            // InternalRhythm.g:516:2: iv_ruleSection= ruleSection EOF
             {
              newCompositeNode(grammarAccess.getSectionRule()); 
             pushFollow(FOLLOW_1);
@@ -1265,7 +1158,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSection"
-    // InternalRhythm.g:560:1: ruleSection returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'pattern:' ( (lv_patternLoops_3_0= rulePatternLoop ) ) (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )* ( (lv_patternModifications_6_0= rulePatternModification ) )* otherlv_7= '}' ) ;
+    // InternalRhythm.g:522:1: ruleSection returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'pattern:' ( (lv_patternLoops_3_0= rulePatternLoop ) ) (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )* ( (lv_patternModifications_6_0= rulePatternModification ) )* otherlv_7= '}' ) ;
     public final EObject ruleSection() throws RecognitionException {
         EObject current = null;
 
@@ -1286,17 +1179,17 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRhythm.g:566:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'pattern:' ( (lv_patternLoops_3_0= rulePatternLoop ) ) (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )* ( (lv_patternModifications_6_0= rulePatternModification ) )* otherlv_7= '}' ) )
-            // InternalRhythm.g:567:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'pattern:' ( (lv_patternLoops_3_0= rulePatternLoop ) ) (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )* ( (lv_patternModifications_6_0= rulePatternModification ) )* otherlv_7= '}' )
+            // InternalRhythm.g:528:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'pattern:' ( (lv_patternLoops_3_0= rulePatternLoop ) ) (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )* ( (lv_patternModifications_6_0= rulePatternModification ) )* otherlv_7= '}' ) )
+            // InternalRhythm.g:529:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'pattern:' ( (lv_patternLoops_3_0= rulePatternLoop ) ) (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )* ( (lv_patternModifications_6_0= rulePatternModification ) )* otherlv_7= '}' )
             {
-            // InternalRhythm.g:567:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'pattern:' ( (lv_patternLoops_3_0= rulePatternLoop ) ) (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )* ( (lv_patternModifications_6_0= rulePatternModification ) )* otherlv_7= '}' )
-            // InternalRhythm.g:568:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'pattern:' ( (lv_patternLoops_3_0= rulePatternLoop ) ) (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )* ( (lv_patternModifications_6_0= rulePatternModification ) )* otherlv_7= '}'
+            // InternalRhythm.g:529:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'pattern:' ( (lv_patternLoops_3_0= rulePatternLoop ) ) (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )* ( (lv_patternModifications_6_0= rulePatternModification ) )* otherlv_7= '}' )
+            // InternalRhythm.g:530:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'pattern:' ( (lv_patternLoops_3_0= rulePatternLoop ) ) (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )* ( (lv_patternModifications_6_0= rulePatternModification ) )* otherlv_7= '}'
             {
-            // InternalRhythm.g:568:3: ( (lv_name_0_0= ruleEString ) )
-            // InternalRhythm.g:569:4: (lv_name_0_0= ruleEString )
+            // InternalRhythm.g:530:3: ( (lv_name_0_0= ruleEString ) )
+            // InternalRhythm.g:531:4: (lv_name_0_0= ruleEString )
             {
-            // InternalRhythm.g:569:4: (lv_name_0_0= ruleEString )
-            // InternalRhythm.g:570:5: lv_name_0_0= ruleEString
+            // InternalRhythm.g:531:4: (lv_name_0_0= ruleEString )
+            // InternalRhythm.g:532:5: lv_name_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getSectionAccess().getNameEStringParserRuleCall_0_0());
@@ -1323,7 +1216,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,18,FOLLOW_21); 
+            otherlv_1=(Token)match(input,18,FOLLOW_20); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSectionAccess().getLeftCurlyBracketKeyword_1());
             		
@@ -1331,16 +1224,16 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getSectionAccess().getPatternKeyword_2());
             		
-            // InternalRhythm.g:595:3: ( (lv_patternLoops_3_0= rulePatternLoop ) )
-            // InternalRhythm.g:596:4: (lv_patternLoops_3_0= rulePatternLoop )
+            // InternalRhythm.g:557:3: ( (lv_patternLoops_3_0= rulePatternLoop ) )
+            // InternalRhythm.g:558:4: (lv_patternLoops_3_0= rulePatternLoop )
             {
-            // InternalRhythm.g:596:4: (lv_patternLoops_3_0= rulePatternLoop )
-            // InternalRhythm.g:597:5: lv_patternLoops_3_0= rulePatternLoop
+            // InternalRhythm.g:558:4: (lv_patternLoops_3_0= rulePatternLoop )
+            // InternalRhythm.g:559:5: lv_patternLoops_3_0= rulePatternLoop
             {
 
             					newCompositeNode(grammarAccess.getSectionAccess().getPatternLoopsPatternLoopParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             lv_patternLoops_3_0=rulePatternLoop();
 
             state._fsp--;
@@ -1362,35 +1255,35 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRhythm.g:614:3: (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )*
+            // InternalRhythm.g:576:3: (otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) ) )*
             loop7:
             do {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( (LA7_0==22) ) {
+                if ( (LA7_0==23) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalRhythm.g:615:4: otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) )
+            	    // InternalRhythm.g:577:4: otherlv_4= ',' ( (lv_patternLoops_5_0= rulePatternLoop ) )
             	    {
-            	    otherlv_4=(Token)match(input,22,FOLLOW_3); 
+            	    otherlv_4=(Token)match(input,23,FOLLOW_3); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getSectionAccess().getCommaKeyword_4_0());
             	    			
-            	    // InternalRhythm.g:619:4: ( (lv_patternLoops_5_0= rulePatternLoop ) )
-            	    // InternalRhythm.g:620:5: (lv_patternLoops_5_0= rulePatternLoop )
+            	    // InternalRhythm.g:581:4: ( (lv_patternLoops_5_0= rulePatternLoop ) )
+            	    // InternalRhythm.g:582:5: (lv_patternLoops_5_0= rulePatternLoop )
             	    {
-            	    // InternalRhythm.g:620:5: (lv_patternLoops_5_0= rulePatternLoop )
-            	    // InternalRhythm.g:621:6: lv_patternLoops_5_0= rulePatternLoop
+            	    // InternalRhythm.g:582:5: (lv_patternLoops_5_0= rulePatternLoop )
+            	    // InternalRhythm.g:583:6: lv_patternLoops_5_0= rulePatternLoop
             	    {
 
             	    						newCompositeNode(grammarAccess.getSectionAccess().getPatternLoopsPatternLoopParserRuleCall_4_1_0());
             	    					
-            	    pushFollow(FOLLOW_22);
+            	    pushFollow(FOLLOW_21);
             	    lv_patternLoops_5_0=rulePatternLoop();
 
             	    state._fsp--;
@@ -1421,7 +1314,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalRhythm.g:639:3: ( (lv_patternModifications_6_0= rulePatternModification ) )*
+            // InternalRhythm.g:601:3: ( (lv_patternModifications_6_0= rulePatternModification ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1434,10 +1327,10 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalRhythm.g:640:4: (lv_patternModifications_6_0= rulePatternModification )
+            	    // InternalRhythm.g:602:4: (lv_patternModifications_6_0= rulePatternModification )
             	    {
-            	    // InternalRhythm.g:640:4: (lv_patternModifications_6_0= rulePatternModification )
-            	    // InternalRhythm.g:641:5: lv_patternModifications_6_0= rulePatternModification
+            	    // InternalRhythm.g:602:4: (lv_patternModifications_6_0= rulePatternModification )
+            	    // InternalRhythm.g:603:5: lv_patternModifications_6_0= rulePatternModification
             	    {
 
             	    					newCompositeNode(grammarAccess.getSectionAccess().getPatternModificationsPatternModificationParserRuleCall_5_0());
@@ -1497,7 +1390,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePatternLoop"
-    // InternalRhythm.g:666:1: entryRulePatternLoop returns [EObject current=null] : iv_rulePatternLoop= rulePatternLoop EOF ;
+    // InternalRhythm.g:628:1: entryRulePatternLoop returns [EObject current=null] : iv_rulePatternLoop= rulePatternLoop EOF ;
     public final EObject entryRulePatternLoop() throws RecognitionException {
         EObject current = null;
 
@@ -1505,8 +1398,8 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRhythm.g:666:52: (iv_rulePatternLoop= rulePatternLoop EOF )
-            // InternalRhythm.g:667:2: iv_rulePatternLoop= rulePatternLoop EOF
+            // InternalRhythm.g:628:52: (iv_rulePatternLoop= rulePatternLoop EOF )
+            // InternalRhythm.g:629:2: iv_rulePatternLoop= rulePatternLoop EOF
             {
              newCompositeNode(grammarAccess.getPatternLoopRule()); 
             pushFollow(FOLLOW_1);
@@ -1533,7 +1426,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePatternLoop"
-    // InternalRhythm.g:673:1: rulePatternLoop returns [EObject current=null] : ( ( ( ruleEString ) ) ( (lv_loopNumber_1_0= ruleEInt ) ) otherlv_2= 'times' ) ;
+    // InternalRhythm.g:635:1: rulePatternLoop returns [EObject current=null] : ( ( ( ruleEString ) ) ( (lv_loopNumber_1_0= ruleEInt ) ) otherlv_2= 'times' ) ;
     public final EObject rulePatternLoop() throws RecognitionException {
         EObject current = null;
 
@@ -1545,17 +1438,17 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRhythm.g:679:2: ( ( ( ( ruleEString ) ) ( (lv_loopNumber_1_0= ruleEInt ) ) otherlv_2= 'times' ) )
-            // InternalRhythm.g:680:2: ( ( ( ruleEString ) ) ( (lv_loopNumber_1_0= ruleEInt ) ) otherlv_2= 'times' )
+            // InternalRhythm.g:641:2: ( ( ( ( ruleEString ) ) ( (lv_loopNumber_1_0= ruleEInt ) ) otherlv_2= 'times' ) )
+            // InternalRhythm.g:642:2: ( ( ( ruleEString ) ) ( (lv_loopNumber_1_0= ruleEInt ) ) otherlv_2= 'times' )
             {
-            // InternalRhythm.g:680:2: ( ( ( ruleEString ) ) ( (lv_loopNumber_1_0= ruleEInt ) ) otherlv_2= 'times' )
-            // InternalRhythm.g:681:3: ( ( ruleEString ) ) ( (lv_loopNumber_1_0= ruleEInt ) ) otherlv_2= 'times'
+            // InternalRhythm.g:642:2: ( ( ( ruleEString ) ) ( (lv_loopNumber_1_0= ruleEInt ) ) otherlv_2= 'times' )
+            // InternalRhythm.g:643:3: ( ( ruleEString ) ) ( (lv_loopNumber_1_0= ruleEInt ) ) otherlv_2= 'times'
             {
-            // InternalRhythm.g:681:3: ( ( ruleEString ) )
-            // InternalRhythm.g:682:4: ( ruleEString )
+            // InternalRhythm.g:643:3: ( ( ruleEString ) )
+            // InternalRhythm.g:644:4: ( ruleEString )
             {
-            // InternalRhythm.g:682:4: ( ruleEString )
-            // InternalRhythm.g:683:5: ruleEString
+            // InternalRhythm.g:644:4: ( ruleEString )
+            // InternalRhythm.g:645:5: ruleEString
             {
 
             					if (current==null) {
@@ -1579,16 +1472,16 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRhythm.g:697:3: ( (lv_loopNumber_1_0= ruleEInt ) )
-            // InternalRhythm.g:698:4: (lv_loopNumber_1_0= ruleEInt )
+            // InternalRhythm.g:659:3: ( (lv_loopNumber_1_0= ruleEInt ) )
+            // InternalRhythm.g:660:4: (lv_loopNumber_1_0= ruleEInt )
             {
-            // InternalRhythm.g:698:4: (lv_loopNumber_1_0= ruleEInt )
-            // InternalRhythm.g:699:5: lv_loopNumber_1_0= ruleEInt
+            // InternalRhythm.g:660:4: (lv_loopNumber_1_0= ruleEInt )
+            // InternalRhythm.g:661:5: lv_loopNumber_1_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getPatternLoopAccess().getLoopNumberEIntParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             lv_loopNumber_1_0=ruleEInt();
 
             state._fsp--;
@@ -1637,7 +1530,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePatternModification"
-    // InternalRhythm.g:724:1: entryRulePatternModification returns [EObject current=null] : iv_rulePatternModification= rulePatternModification EOF ;
+    // InternalRhythm.g:686:1: entryRulePatternModification returns [EObject current=null] : iv_rulePatternModification= rulePatternModification EOF ;
     public final EObject entryRulePatternModification() throws RecognitionException {
         EObject current = null;
 
@@ -1645,8 +1538,8 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRhythm.g:724:60: (iv_rulePatternModification= rulePatternModification EOF )
-            // InternalRhythm.g:725:2: iv_rulePatternModification= rulePatternModification EOF
+            // InternalRhythm.g:686:60: (iv_rulePatternModification= rulePatternModification EOF )
+            // InternalRhythm.g:687:2: iv_rulePatternModification= rulePatternModification EOF
             {
              newCompositeNode(grammarAccess.getPatternModificationRule()); 
             pushFollow(FOLLOW_1);
@@ -1673,7 +1566,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePatternModification"
-    // InternalRhythm.g:731:1: rulePatternModification returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= '(iteration:' ( (lv_iteration_2_0= ruleEInt ) ) otherlv_3= ',beat:' ( (lv_beatNumber_4_0= ruleEInt ) ) otherlv_5= '):' ( (lv_beat_6_0= ruleBeat ) ) ) ;
+    // InternalRhythm.g:693:1: rulePatternModification returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= '(iteration:' ( (lv_iteration_2_0= ruleEInt ) ) otherlv_3= ',beat:' ( (lv_beatNumber_4_0= ruleEInt ) ) otherlv_5= '):' ( (lv_beat_6_0= ruleBeat ) ) ) ;
     public final EObject rulePatternModification() throws RecognitionException {
         EObject current = null;
 
@@ -1691,17 +1584,17 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRhythm.g:737:2: ( ( ( ( ruleEString ) ) otherlv_1= '(iteration:' ( (lv_iteration_2_0= ruleEInt ) ) otherlv_3= ',beat:' ( (lv_beatNumber_4_0= ruleEInt ) ) otherlv_5= '):' ( (lv_beat_6_0= ruleBeat ) ) ) )
-            // InternalRhythm.g:738:2: ( ( ( ruleEString ) ) otherlv_1= '(iteration:' ( (lv_iteration_2_0= ruleEInt ) ) otherlv_3= ',beat:' ( (lv_beatNumber_4_0= ruleEInt ) ) otherlv_5= '):' ( (lv_beat_6_0= ruleBeat ) ) )
+            // InternalRhythm.g:699:2: ( ( ( ( ruleEString ) ) otherlv_1= '(iteration:' ( (lv_iteration_2_0= ruleEInt ) ) otherlv_3= ',beat:' ( (lv_beatNumber_4_0= ruleEInt ) ) otherlv_5= '):' ( (lv_beat_6_0= ruleBeat ) ) ) )
+            // InternalRhythm.g:700:2: ( ( ( ruleEString ) ) otherlv_1= '(iteration:' ( (lv_iteration_2_0= ruleEInt ) ) otherlv_3= ',beat:' ( (lv_beatNumber_4_0= ruleEInt ) ) otherlv_5= '):' ( (lv_beat_6_0= ruleBeat ) ) )
             {
-            // InternalRhythm.g:738:2: ( ( ( ruleEString ) ) otherlv_1= '(iteration:' ( (lv_iteration_2_0= ruleEInt ) ) otherlv_3= ',beat:' ( (lv_beatNumber_4_0= ruleEInt ) ) otherlv_5= '):' ( (lv_beat_6_0= ruleBeat ) ) )
-            // InternalRhythm.g:739:3: ( ( ruleEString ) ) otherlv_1= '(iteration:' ( (lv_iteration_2_0= ruleEInt ) ) otherlv_3= ',beat:' ( (lv_beatNumber_4_0= ruleEInt ) ) otherlv_5= '):' ( (lv_beat_6_0= ruleBeat ) )
+            // InternalRhythm.g:700:2: ( ( ( ruleEString ) ) otherlv_1= '(iteration:' ( (lv_iteration_2_0= ruleEInt ) ) otherlv_3= ',beat:' ( (lv_beatNumber_4_0= ruleEInt ) ) otherlv_5= '):' ( (lv_beat_6_0= ruleBeat ) ) )
+            // InternalRhythm.g:701:3: ( ( ruleEString ) ) otherlv_1= '(iteration:' ( (lv_iteration_2_0= ruleEInt ) ) otherlv_3= ',beat:' ( (lv_beatNumber_4_0= ruleEInt ) ) otherlv_5= '):' ( (lv_beat_6_0= ruleBeat ) )
             {
-            // InternalRhythm.g:739:3: ( ( ruleEString ) )
-            // InternalRhythm.g:740:4: ( ruleEString )
+            // InternalRhythm.g:701:3: ( ( ruleEString ) )
+            // InternalRhythm.g:702:4: ( ruleEString )
             {
-            // InternalRhythm.g:740:4: ( ruleEString )
-            // InternalRhythm.g:741:5: ruleEString
+            // InternalRhythm.g:702:4: ( ruleEString )
+            // InternalRhythm.g:703:5: ruleEString
             {
 
             					if (current==null) {
@@ -1711,7 +1604,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getPatternModificationAccess().getPatternPatternCrossReference_0_0());
             				
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             ruleEString();
 
             state._fsp--;
@@ -1729,16 +1622,16 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getPatternModificationAccess().getIterationKeyword_1());
             		
-            // InternalRhythm.g:759:3: ( (lv_iteration_2_0= ruleEInt ) )
-            // InternalRhythm.g:760:4: (lv_iteration_2_0= ruleEInt )
+            // InternalRhythm.g:721:3: ( (lv_iteration_2_0= ruleEInt ) )
+            // InternalRhythm.g:722:4: (lv_iteration_2_0= ruleEInt )
             {
-            // InternalRhythm.g:760:4: (lv_iteration_2_0= ruleEInt )
-            // InternalRhythm.g:761:5: lv_iteration_2_0= ruleEInt
+            // InternalRhythm.g:722:4: (lv_iteration_2_0= ruleEInt )
+            // InternalRhythm.g:723:5: lv_iteration_2_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getPatternModificationAccess().getIterationEIntParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             lv_iteration_2_0=ruleEInt();
 
             state._fsp--;
@@ -1764,16 +1657,16 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getPatternModificationAccess().getBeatKeyword_3());
             		
-            // InternalRhythm.g:782:3: ( (lv_beatNumber_4_0= ruleEInt ) )
-            // InternalRhythm.g:783:4: (lv_beatNumber_4_0= ruleEInt )
+            // InternalRhythm.g:744:3: ( (lv_beatNumber_4_0= ruleEInt ) )
+            // InternalRhythm.g:745:4: (lv_beatNumber_4_0= ruleEInt )
             {
-            // InternalRhythm.g:783:4: (lv_beatNumber_4_0= ruleEInt )
-            // InternalRhythm.g:784:5: lv_beatNumber_4_0= ruleEInt
+            // InternalRhythm.g:745:4: (lv_beatNumber_4_0= ruleEInt )
+            // InternalRhythm.g:746:5: lv_beatNumber_4_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getPatternModificationAccess().getBeatNumberEIntParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             lv_beatNumber_4_0=ruleEInt();
 
             state._fsp--;
@@ -1795,15 +1688,15 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,28,FOLLOW_19); 
+            otherlv_5=(Token)match(input,28,FOLLOW_17); 
 
             			newLeafNode(otherlv_5, grammarAccess.getPatternModificationAccess().getRightParenthesisColonKeyword_5());
             		
-            // InternalRhythm.g:805:3: ( (lv_beat_6_0= ruleBeat ) )
-            // InternalRhythm.g:806:4: (lv_beat_6_0= ruleBeat )
+            // InternalRhythm.g:767:3: ( (lv_beat_6_0= ruleBeat ) )
+            // InternalRhythm.g:768:4: (lv_beat_6_0= ruleBeat )
             {
-            // InternalRhythm.g:806:4: (lv_beat_6_0= ruleBeat )
-            // InternalRhythm.g:807:5: lv_beat_6_0= ruleBeat
+            // InternalRhythm.g:768:4: (lv_beat_6_0= ruleBeat )
+            // InternalRhythm.g:769:5: lv_beat_6_0= ruleBeat
             {
 
             					newCompositeNode(grammarAccess.getPatternModificationAccess().getBeatBeatParserRuleCall_6_0());
@@ -1853,7 +1746,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalRhythm.g:828:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalRhythm.g:790:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -1861,8 +1754,8 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRhythm.g:828:47: (iv_ruleEString= ruleEString EOF )
-            // InternalRhythm.g:829:2: iv_ruleEString= ruleEString EOF
+            // InternalRhythm.g:790:47: (iv_ruleEString= ruleEString EOF )
+            // InternalRhythm.g:791:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -1889,7 +1782,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalRhythm.g:835:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalRhythm.g:797:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1900,10 +1793,10 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRhythm.g:841:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalRhythm.g:842:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalRhythm.g:803:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalRhythm.g:804:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalRhythm.g:842:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalRhythm.g:804:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1921,7 +1814,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalRhythm.g:843:3: this_STRING_0= RULE_STRING
+                    // InternalRhythm.g:805:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1934,7 +1827,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRhythm.g:851:3: this_ID_1= RULE_ID
+                    // InternalRhythm.g:813:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1969,7 +1862,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // InternalRhythm.g:862:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalRhythm.g:824:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -1977,8 +1870,8 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRhythm.g:862:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalRhythm.g:863:2: iv_ruleEInt= ruleEInt EOF
+            // InternalRhythm.g:824:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalRhythm.g:825:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -2005,7 +1898,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // InternalRhythm.g:869:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // InternalRhythm.g:831:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2015,8 +1908,8 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRhythm.g:875:2: (this_INT_0= RULE_INT )
-            // InternalRhythm.g:876:2: this_INT_0= RULE_INT
+            // InternalRhythm.g:837:2: (this_INT_0= RULE_INT )
+            // InternalRhythm.g:838:2: this_INT_0= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2045,7 +1938,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFloat"
-    // InternalRhythm.g:886:1: entryRuleEFloat returns [String current=null] : iv_ruleEFloat= ruleEFloat EOF ;
+    // InternalRhythm.g:848:1: entryRuleEFloat returns [String current=null] : iv_ruleEFloat= ruleEFloat EOF ;
     public final String entryRuleEFloat() throws RecognitionException {
         String current = null;
 
@@ -2053,8 +1946,8 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRhythm.g:886:46: (iv_ruleEFloat= ruleEFloat EOF )
-            // InternalRhythm.g:887:2: iv_ruleEFloat= ruleEFloat EOF
+            // InternalRhythm.g:848:46: (iv_ruleEFloat= ruleEFloat EOF )
+            // InternalRhythm.g:849:2: iv_ruleEFloat= ruleEFloat EOF
             {
              newCompositeNode(grammarAccess.getEFloatRule()); 
             pushFollow(FOLLOW_1);
@@ -2081,7 +1974,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFloat"
-    // InternalRhythm.g:893:1: ruleEFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
+    // InternalRhythm.g:855:1: ruleEFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEFloat() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2093,13 +1986,13 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRhythm.g:899:2: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
-            // InternalRhythm.g:900:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // InternalRhythm.g:861:2: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
+            // InternalRhythm.g:862:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
             {
-            // InternalRhythm.g:900:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
-            // InternalRhythm.g:901:3: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
+            // InternalRhythm.g:862:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // InternalRhythm.g:863:3: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_27); 
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_26); 
 
             			current.merge(this_INT_0);
             		
@@ -2141,7 +2034,7 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNote"
-    // InternalRhythm.g:924:1: ruleNote returns [Enumerator current=null] : ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'sd' ) | (enumLiteral_2= '_' ) | (enumLiteral_3= 'ch' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'cc' ) | (enumLiteral_6= 'rc' ) ) ;
+    // InternalRhythm.g:886:1: ruleNote returns [Enumerator current=null] : ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'sd' ) | (enumLiteral_2= '_' ) | (enumLiteral_3= 'ch' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'cc' ) | (enumLiteral_6= 'rc' ) ) ;
     public final Enumerator ruleNote() throws RecognitionException {
         Enumerator current = null;
 
@@ -2157,10 +2050,10 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRhythm.g:930:2: ( ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'sd' ) | (enumLiteral_2= '_' ) | (enumLiteral_3= 'ch' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'cc' ) | (enumLiteral_6= 'rc' ) ) )
-            // InternalRhythm.g:931:2: ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'sd' ) | (enumLiteral_2= '_' ) | (enumLiteral_3= 'ch' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'cc' ) | (enumLiteral_6= 'rc' ) )
+            // InternalRhythm.g:892:2: ( ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'sd' ) | (enumLiteral_2= '_' ) | (enumLiteral_3= 'ch' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'cc' ) | (enumLiteral_6= 'rc' ) ) )
+            // InternalRhythm.g:893:2: ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'sd' ) | (enumLiteral_2= '_' ) | (enumLiteral_3= 'ch' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'cc' ) | (enumLiteral_6= 'rc' ) )
             {
-            // InternalRhythm.g:931:2: ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'sd' ) | (enumLiteral_2= '_' ) | (enumLiteral_3= 'ch' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'cc' ) | (enumLiteral_6= 'rc' ) )
+            // InternalRhythm.g:893:2: ( (enumLiteral_0= 'bd' ) | (enumLiteral_1= 'sd' ) | (enumLiteral_2= '_' ) | (enumLiteral_3= 'ch' ) | (enumLiteral_4= 'oh' ) | (enumLiteral_5= 'cc' ) | (enumLiteral_6= 'rc' ) )
             int alt10=7;
             switch ( input.LA(1) ) {
             case 30:
@@ -2207,10 +2100,10 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
 
             switch (alt10) {
                 case 1 :
-                    // InternalRhythm.g:932:3: (enumLiteral_0= 'bd' )
+                    // InternalRhythm.g:894:3: (enumLiteral_0= 'bd' )
                     {
-                    // InternalRhythm.g:932:3: (enumLiteral_0= 'bd' )
-                    // InternalRhythm.g:933:4: enumLiteral_0= 'bd'
+                    // InternalRhythm.g:894:3: (enumLiteral_0= 'bd' )
+                    // InternalRhythm.g:895:4: enumLiteral_0= 'bd'
                     {
                     enumLiteral_0=(Token)match(input,30,FOLLOW_2); 
 
@@ -2224,10 +2117,10 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRhythm.g:940:3: (enumLiteral_1= 'sd' )
+                    // InternalRhythm.g:902:3: (enumLiteral_1= 'sd' )
                     {
-                    // InternalRhythm.g:940:3: (enumLiteral_1= 'sd' )
-                    // InternalRhythm.g:941:4: enumLiteral_1= 'sd'
+                    // InternalRhythm.g:902:3: (enumLiteral_1= 'sd' )
+                    // InternalRhythm.g:903:4: enumLiteral_1= 'sd'
                     {
                     enumLiteral_1=(Token)match(input,31,FOLLOW_2); 
 
@@ -2241,10 +2134,10 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRhythm.g:948:3: (enumLiteral_2= '_' )
+                    // InternalRhythm.g:910:3: (enumLiteral_2= '_' )
                     {
-                    // InternalRhythm.g:948:3: (enumLiteral_2= '_' )
-                    // InternalRhythm.g:949:4: enumLiteral_2= '_'
+                    // InternalRhythm.g:910:3: (enumLiteral_2= '_' )
+                    // InternalRhythm.g:911:4: enumLiteral_2= '_'
                     {
                     enumLiteral_2=(Token)match(input,32,FOLLOW_2); 
 
@@ -2258,10 +2151,10 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRhythm.g:956:3: (enumLiteral_3= 'ch' )
+                    // InternalRhythm.g:918:3: (enumLiteral_3= 'ch' )
                     {
-                    // InternalRhythm.g:956:3: (enumLiteral_3= 'ch' )
-                    // InternalRhythm.g:957:4: enumLiteral_3= 'ch'
+                    // InternalRhythm.g:918:3: (enumLiteral_3= 'ch' )
+                    // InternalRhythm.g:919:4: enumLiteral_3= 'ch'
                     {
                     enumLiteral_3=(Token)match(input,33,FOLLOW_2); 
 
@@ -2275,10 +2168,10 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalRhythm.g:964:3: (enumLiteral_4= 'oh' )
+                    // InternalRhythm.g:926:3: (enumLiteral_4= 'oh' )
                     {
-                    // InternalRhythm.g:964:3: (enumLiteral_4= 'oh' )
-                    // InternalRhythm.g:965:4: enumLiteral_4= 'oh'
+                    // InternalRhythm.g:926:3: (enumLiteral_4= 'oh' )
+                    // InternalRhythm.g:927:4: enumLiteral_4= 'oh'
                     {
                     enumLiteral_4=(Token)match(input,34,FOLLOW_2); 
 
@@ -2292,10 +2185,10 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalRhythm.g:972:3: (enumLiteral_5= 'cc' )
+                    // InternalRhythm.g:934:3: (enumLiteral_5= 'cc' )
                     {
-                    // InternalRhythm.g:972:3: (enumLiteral_5= 'cc' )
-                    // InternalRhythm.g:973:4: enumLiteral_5= 'cc'
+                    // InternalRhythm.g:934:3: (enumLiteral_5= 'cc' )
+                    // InternalRhythm.g:935:4: enumLiteral_5= 'cc'
                     {
                     enumLiteral_5=(Token)match(input,35,FOLLOW_2); 
 
@@ -2309,10 +2202,10 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalRhythm.g:980:3: (enumLiteral_6= 'rc' )
+                    // InternalRhythm.g:942:3: (enumLiteral_6= 'rc' )
                     {
-                    // InternalRhythm.g:980:3: (enumLiteral_6= 'rc' )
-                    // InternalRhythm.g:981:4: enumLiteral_6= 'rc'
+                    // InternalRhythm.g:942:3: (enumLiteral_6= 'rc' )
+                    // InternalRhythm.g:943:4: enumLiteral_6= 'rc'
                     {
                     enumLiteral_6=(Token)match(input,36,FOLLOW_2); 
 
@@ -2366,17 +2259,16 @@ public class InternalRhythmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000180000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100030L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200030L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000001FC0000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000600030L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000001FC0000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000A00030L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000020000000L});
 
 }

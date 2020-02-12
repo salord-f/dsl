@@ -15,7 +15,6 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import rhythmML.Bar;
 import rhythmML.Beat;
 import rhythmML.Pattern;
 import rhythmML.PatternLoop;
@@ -39,9 +38,6 @@ public class RhythmSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == RhythmMLPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case RhythmMLPackage.BAR:
-				sequence_PatternBar(context, (Bar) semanticObject); 
-				return; 
 			case RhythmMLPackage.BEAT:
 				sequence_Beat(context, (Beat) semanticObject); 
 				return; 
@@ -76,18 +72,6 @@ public class RhythmSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (ticks+=Note ticks+=Note*)
 	 */
 	protected void sequence_Beat(ISerializationContext context, Beat semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     PatternBar returns Bar
-	 *
-	 * Constraint:
-	 *     (beats+=Beat beats+=Beat*)
-	 */
-	protected void sequence_PatternBar(ISerializationContext context, Bar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -145,19 +129,10 @@ public class RhythmSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Pattern returns Pattern
 	 *
 	 * Constraint:
-	 *     (name=EString bar=PatternBar)
+	 *     (name=EString beats+=Beat beats+=Beat*)
 	 */
 	protected void sequence_Pattern(ISerializationContext context, Pattern semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RhythmMLPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RhythmMLPackage.Literals.NAMED_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, RhythmMLPackage.Literals.PATTERN__BAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RhythmMLPackage.Literals.PATTERN__BAR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPatternAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getPatternAccess().getBarPatternBarParserRuleCall_2_0(), semanticObject.getBar());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

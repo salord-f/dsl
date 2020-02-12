@@ -203,18 +203,23 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cBarAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cBarPatternBarParserRuleCall_2_0 = (RuleCall)cBarAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cBeatKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cBeatsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cBeatsBeatParserRuleCall_3_0 = (RuleCall)cBeatsAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cBeatKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cBeatsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cBeatsBeatParserRuleCall_4_1_0 = (RuleCall)cBeatsAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Pattern:
 		//	name=EString
 		//	'{'
-		//	bar=PatternBar
+		//	'beat:' beats+=Beat ('beat:' beats+=Beat)*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=EString '{' bar=PatternBar '}'
+		//name=EString '{' 'beat:' beats+=Beat ('beat:' beats+=Beat)* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//name=EString
@@ -226,14 +231,29 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//bar=PatternBar
-		public Assignment getBarAssignment_2() { return cBarAssignment_2; }
+		//'beat:'
+		public Keyword getBeatKeyword_2() { return cBeatKeyword_2; }
 		
-		//PatternBar
-		public RuleCall getBarPatternBarParserRuleCall_2_0() { return cBarPatternBarParserRuleCall_2_0; }
+		//beats+=Beat
+		public Assignment getBeatsAssignment_3() { return cBeatsAssignment_3; }
+		
+		//Beat
+		public RuleCall getBeatsBeatParserRuleCall_3_0() { return cBeatsBeatParserRuleCall_3_0; }
+		
+		//('beat:' beats+=Beat)*
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'beat:'
+		public Keyword getBeatKeyword_4_0() { return cBeatKeyword_4_0; }
+		
+		//beats+=Beat
+		public Assignment getBeatsAssignment_4_1() { return cBeatsAssignment_4_1; }
+		
+		//Beat
+		public RuleCall getBeatsBeatParserRuleCall_4_1_0() { return cBeatsBeatParserRuleCall_4_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class BeatElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.si5.dsl.rhythm.Rhythm.Beat");
@@ -269,45 +289,6 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Note
 		public RuleCall getTicksNoteEnumRuleCall_1_1_0() { return cTicksNoteEnumRuleCall_1_1_0; }
-	}
-	public class PatternBarElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.si5.dsl.rhythm.Rhythm.PatternBar");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBeatKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cBeatsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cBeatsBeatParserRuleCall_1_0 = (RuleCall)cBeatsAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cBeatKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cBeatsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cBeatsBeatParserRuleCall_2_1_0 = (RuleCall)cBeatsAssignment_2_1.eContents().get(0);
-		
-		//PatternBar Bar:
-		//	'beat:' beats+=Beat ('beat:' beats+=Beat)*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'beat:' beats+=Beat ('beat:' beats+=Beat)*
-		public Group getGroup() { return cGroup; }
-		
-		//'beat:'
-		public Keyword getBeatKeyword_0() { return cBeatKeyword_0; }
-		
-		//beats+=Beat
-		public Assignment getBeatsAssignment_1() { return cBeatsAssignment_1; }
-		
-		//Beat
-		public RuleCall getBeatsBeatParserRuleCall_1_0() { return cBeatsBeatParserRuleCall_1_0; }
-		
-		//('beat:' beats+=Beat)*
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'beat:'
-		public Keyword getBeatKeyword_2_0() { return cBeatKeyword_2_0; }
-		
-		//beats+=Beat
-		public Assignment getBeatsAssignment_2_1() { return cBeatsAssignment_2_1; }
-		
-		//Beat
-		public RuleCall getBeatsBeatParserRuleCall_2_1_0() { return cBeatsBeatParserRuleCall_2_1_0; }
 	}
 	public class SectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.si5.dsl.rhythm.Rhythm.Section");
@@ -597,7 +578,6 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 	private final TrackElements pTrack;
 	private final PatternElements pPattern;
 	private final BeatElements pBeat;
-	private final PatternBarElements pPatternBar;
 	private final SectionElements pSection;
 	private final PatternLoopElements pPatternLoop;
 	private final PatternModificationElements pPatternModification;
@@ -619,7 +599,6 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTrack = new TrackElements();
 		this.pPattern = new PatternElements();
 		this.pBeat = new BeatElements();
-		this.pPatternBar = new PatternBarElements();
 		this.pSection = new SectionElements();
 		this.pPatternLoop = new PatternLoopElements();
 		this.pPatternModification = new PatternModificationElements();
@@ -690,7 +669,7 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 	//Pattern:
 	//	name=EString
 	//	'{'
-	//	bar=PatternBar
+	//	'beat:' beats+=Beat ('beat:' beats+=Beat)*
 	//	'}';
 	public PatternElements getPatternAccess() {
 		return pPattern;
@@ -708,16 +687,6 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getBeatRule() {
 		return getBeatAccess().getRule();
-	}
-	
-	//PatternBar Bar:
-	//	'beat:' beats+=Beat ('beat:' beats+=Beat)*;
-	public PatternBarElements getPatternBarAccess() {
-		return pPatternBar;
-	}
-	
-	public ParserRule getPatternBarRule() {
-		return getPatternBarAccess().getRule();
 	}
 	
 	//Section:

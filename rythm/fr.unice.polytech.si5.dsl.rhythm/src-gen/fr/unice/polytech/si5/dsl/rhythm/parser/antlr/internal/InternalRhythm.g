@@ -393,28 +393,57 @@ rulePattern returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getPatternAccess().getLeftCurlyBracketKeyword_1());
 		}
+		otherlv_2='beat:'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getPatternAccess().getBeatKeyword_2());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPatternAccess().getBarPatternBarParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getPatternAccess().getBeatsBeatParserRuleCall_3_0());
 				}
-				lv_bar_2_0=rulePatternBar
+				lv_beats_3_0=ruleBeat
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPatternRule());
 					}
-					set(
+					add(
 						$current,
-						"bar",
-						lv_bar_2_0,
-						"fr.unice.polytech.si5.dsl.rhythm.Rhythm.PatternBar");
+						"beats",
+						lv_beats_3_0,
+						"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Beat");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_3='}'
+		(
+			otherlv_4='beat:'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getPatternAccess().getBeatKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPatternAccess().getBeatsBeatParserRuleCall_4_1_0());
+					}
+					lv_beats_5_0=ruleBeat
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPatternRule());
+						}
+						add(
+							$current,
+							"beats",
+							lv_beats_5_0,
+							"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Beat");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getPatternAccess().getRightCurlyBracketKeyword_3());
+			newLeafNode(otherlv_6, grammarAccess.getPatternAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -474,73 +503,6 @@ ruleBeat returns [EObject current=null]
 							"ticks",
 							lv_ticks_2_0,
 							"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Note");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-	)
-;
-
-// Entry rule entryRulePatternBar
-entryRulePatternBar returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPatternBarRule()); }
-	iv_rulePatternBar=rulePatternBar
-	{ $current=$iv_rulePatternBar.current; }
-	EOF;
-
-// Rule PatternBar
-rulePatternBar returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='beat:'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getPatternBarAccess().getBeatKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getPatternBarAccess().getBeatsBeatParserRuleCall_1_0());
-				}
-				lv_beats_1_0=ruleBeat
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPatternBarRule());
-					}
-					add(
-						$current,
-						"beats",
-						lv_beats_1_0,
-						"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Beat");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_2='beat:'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getPatternBarAccess().getBeatKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPatternBarAccess().getBeatsBeatParserRuleCall_2_1_0());
-					}
-					lv_beats_3_0=ruleBeat
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPatternBarRule());
-						}
-						add(
-							$current,
-							"beats",
-							lv_beats_3_0,
-							"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Beat");
 						afterParserOrEnumRuleCall();
 					}
 				)
