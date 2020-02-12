@@ -1,2 +1,6 @@
 
 kernel/target/
+
+**/xtend-gen
+**/bin
+rythm/rythm/src-gen/
