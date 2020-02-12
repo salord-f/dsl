@@ -2,19 +2,24 @@ package rhythmML.generator;
 
 import rhythmML.Rhythm;
 
-public class Generator extends Visitor<StringBuilder> {
+public class Generator {
+
+    private StringBuilder builder;
+
+    public String getResult() {
+        return builder.toString();
+    }
 
     public Generator() {
-        super.result = new StringBuilder();
+        this.builder = new StringBuilder();
     }
 
     private void write(String s) {
-        result.append(String.format("%s\n", s));
+        builder.append(String.format("%s\n", s));
     }
 
 
-    @Override
-    public void visit(Rhythm rhythm) {
+    public void generate(Rhythm rhythm) {
         write("// MIDI code generation");
         write(String.format("// Rhythm name: %s\n", rhythm.getName()));
     }

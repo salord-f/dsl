@@ -13,7 +13,7 @@ public class RhythmMLSwitchPrinter extends RhythmMLSwitch<String> {
 
     @Override
     public String caseRhythm(Rhythm rhythm) {
-        generator.visit(rhythm);
-        return generator.getResult().toString();
+        generator.generate(rhythm);
+        return generator.getResult();
     }
 }
