@@ -9,5 +9,19 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: rhythmML,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.5.0"
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.unice.polytech.si5.dsl.rhythm.scoping,
+ fr.unice.polytech.si5.dsl.rhythm.services,
+ fr.unice.polytech.si5.dsl.rhythm.formatting2,
+ fr.unice.polytech.si5.dsl.rhythm.parser.antlr,
+ fr.unice.polytech.si5.dsl.rhythm.generator,
+ fr.unice.polytech.si5.dsl.rhythm.parser.antlr.internal,
+ fr.unice.polytech.si5.dsl.rhythm.validation,
+ fr.unice.polytech.si5.dsl.rhythm.serializer,
+ fr.unice.polytech.si5.dsl.rhythm
+Import-Package: org.apache.log4j

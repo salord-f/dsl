@@ -31,6 +31,69 @@ public interface RhythmMLFactory extends EFactory {
 	Rhythm createRhythm();
 
 	/**
+	 * Returns a new object of class '<em>Track</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Track</em>'.
+	 * @generated
+	 */
+	Track createTrack();
+
+	/**
+	 * Returns a new object of class '<em>Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Section</em>'.
+	 * @generated
+	 */
+	Section createSection();
+
+	/**
+	 * Returns a new object of class '<em>Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pattern</em>'.
+	 * @generated
+	 */
+	Pattern createPattern();
+
+	/**
+	 * Returns a new object of class '<em>Bar</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bar</em>'.
+	 * @generated
+	 */
+	Bar createBar();
+
+	/**
+	 * Returns a new object of class '<em>Beat</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Beat</em>'.
+	 * @generated
+	 */
+	Beat createBeat();
+
+	/**
+	 * Returns a new object of class '<em>Pattern Loop</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pattern Loop</em>'.
+	 * @generated
+	 */
+	PatternLoop createPatternLoop();
+
+	/**
+	 * Returns a new object of class '<em>Pattern Modification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pattern Modification</em>'.
+	 * @generated
+	 */
+	PatternModification createPatternModification();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

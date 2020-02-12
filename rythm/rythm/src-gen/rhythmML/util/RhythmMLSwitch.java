@@ -82,6 +82,61 @@ public class RhythmMLSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case RhythmMLPackage.TRACK: {
+			Track track = (Track) theEObject;
+			T result = caseTrack(track);
+			if (result == null)
+				result = caseNamedElement(track);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmMLPackage.SECTION: {
+			Section section = (Section) theEObject;
+			T result = caseSection(section);
+			if (result == null)
+				result = caseNamedElement(section);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmMLPackage.PATTERN: {
+			Pattern pattern = (Pattern) theEObject;
+			T result = casePattern(pattern);
+			if (result == null)
+				result = caseNamedElement(pattern);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmMLPackage.BAR: {
+			Bar bar = (Bar) theEObject;
+			T result = caseBar(bar);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmMLPackage.BEAT: {
+			Beat beat = (Beat) theEObject;
+			T result = caseBeat(beat);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmMLPackage.PATTERN_LOOP: {
+			PatternLoop patternLoop = (PatternLoop) theEObject;
+			T result = casePatternLoop(patternLoop);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RhythmMLPackage.PATTERN_MODIFICATION: {
+			PatternModification patternModification = (PatternModification) theEObject;
+			T result = casePatternModification(patternModification);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -114,6 +169,111 @@ public class RhythmMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRhythm(Rhythm object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Track</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Track</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTrack(Track object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSection(Section object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pattern</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePattern(Pattern object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bar</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bar</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBar(Bar object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Beat</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Beat</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBeat(Beat object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pattern Loop</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pattern Loop</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePatternLoop(PatternLoop object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pattern Modification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pattern Modification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePatternModification(PatternModification object) {
 		return null;
 	}
 

@@ -1,8 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rhythmML" nsURI="http://www.polytech.unice.fr/rhythmML" nsPrefix="rml">
-  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Rhythm" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Rhythm" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resolution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="BPM" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tracks" lowerBound="1"
+        upperBound="-1" eType="#//Track" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Track" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" lowerBound="1"
+        upperBound="-1" eType="#//Section" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patterns" upperBound="-1"
+        eType="#//Pattern" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patternLoops" upperBound="-1"
+        eType="#//PatternLoop" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patternModifications" upperBound="-1"
+        eType="#//PatternModification" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pattern" eSuperTypes="#//NamedElement #//Bar"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bar">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="beats" lowerBound="1" upperBound="-1"
+        eType="#//Beat" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Beat">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ticks" upperBound="-1"
+        eType="#//DRUM_NOTES"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DRUM_NOTES">
+    <eLiterals name="BD"/>
+    <eLiterals name="SD" value="1"/>
+    <eLiterals name="BLANK" value="2"/>
+    <eLiterals name="CH" value="3"/>
+    <eLiterals name="OH" value="4"/>
+    <eLiterals name="CC" value="5"/>
+    <eLiterals name="RC" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternLoop">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="loopNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//Pattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternModification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//Pattern"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iteration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beatNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="beat" eType="#//Beat" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

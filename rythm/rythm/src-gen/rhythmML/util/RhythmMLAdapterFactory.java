@@ -77,6 +77,41 @@ public class RhythmMLAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseTrack(Track object) {
+			return createTrackAdapter();
+		}
+
+		@Override
+		public Adapter caseSection(Section object) {
+			return createSectionAdapter();
+		}
+
+		@Override
+		public Adapter casePattern(Pattern object) {
+			return createPatternAdapter();
+		}
+
+		@Override
+		public Adapter caseBar(Bar object) {
+			return createBarAdapter();
+		}
+
+		@Override
+		public Adapter caseBeat(Beat object) {
+			return createBeatAdapter();
+		}
+
+		@Override
+		public Adapter casePatternLoop(PatternLoop object) {
+			return createPatternLoopAdapter();
+		}
+
+		@Override
+		public Adapter casePatternModification(PatternModification object) {
+			return createPatternModificationAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -120,6 +155,104 @@ public class RhythmMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRhythmAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rhythmML.Track <em>Track</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rhythmML.Track
+	 * @generated
+	 */
+	public Adapter createTrackAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rhythmML.Section <em>Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rhythmML.Section
+	 * @generated
+	 */
+	public Adapter createSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rhythmML.Pattern <em>Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rhythmML.Pattern
+	 * @generated
+	 */
+	public Adapter createPatternAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rhythmML.Bar <em>Bar</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rhythmML.Bar
+	 * @generated
+	 */
+	public Adapter createBarAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rhythmML.Beat <em>Beat</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rhythmML.Beat
+	 * @generated
+	 */
+	public Adapter createBeatAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rhythmML.PatternLoop <em>Pattern Loop</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rhythmML.PatternLoop
+	 * @generated
+	 */
+	public Adapter createPatternLoopAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rhythmML.PatternModification <em>Pattern Modification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rhythmML.PatternModification
+	 * @generated
+	 */
+	public Adapter createPatternModificationAdapter() {
 		return null;
 	}
 
