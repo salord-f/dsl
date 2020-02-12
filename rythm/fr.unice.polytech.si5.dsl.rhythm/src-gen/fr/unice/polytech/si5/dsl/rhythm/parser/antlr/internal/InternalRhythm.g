@@ -347,9 +347,32 @@ ruleTrack returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_9='}'
+		otherlv_9='composition:'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getTrackAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getTrackAccess().getCompositionKeyword_7());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTrackAccess().getCompositionCompositionParserRuleCall_8_0());
+				}
+				lv_composition_10_0=ruleComposition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTrackRule());
+					}
+					set(
+						$current,
+						"composition",
+						lv_composition_10_0,
+						"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Composition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_11='}'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getTrackAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;
@@ -503,6 +526,63 @@ ruleBeat returns [EObject current=null]
 							"ticks",
 							lv_ticks_2_0,
 							"fr.unice.polytech.si5.dsl.rhythm.Rhythm.Note");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleComposition
+entryRuleComposition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCompositionRule()); }
+	iv_ruleComposition=ruleComposition
+	{ $current=$iv_ruleComposition.current; }
+	EOF;
+
+// Rule Composition
+ruleComposition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCompositionRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getCompositionAccess().getSectionsSectionCrossReference_0_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_1=','
+			{
+				newLeafNode(otherlv_1, grammarAccess.getCompositionAccess().getCommaKeyword_1_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCompositionRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getCompositionAccess().getSectionsSectionCrossReference_1_1_0());
+					}
+					ruleEString
+					{
 						afterParserOrEnumRuleCall();
 					}
 				)

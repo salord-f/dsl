@@ -24,6 +24,9 @@ Track returns Track :
 		'sections:'
 		sections+=Section
 		(sections+=Section)*
+		
+		'composition:'
+		composition=Composition
 	'}'
 	
 ;
@@ -40,6 +43,9 @@ Beat returns Beat :
 	 ticks+=Note (','ticks+=Note)*
 ;
 
+Composition returns Composition:
+	sections +=[Section|EString] (','sections +=[Section|EString])*
+;
 
 Section returns Section : 
 	name=EString

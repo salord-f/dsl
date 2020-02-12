@@ -16,6 +16,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import rhythmML.Beat;
+import rhythmML.Composition;
 import rhythmML.Pattern;
 import rhythmML.PatternLoop;
 import rhythmML.PatternModification;
@@ -40,6 +41,9 @@ public class RhythmSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			switch (semanticObject.eClass().getClassifierID()) {
 			case RhythmMLPackage.BEAT:
 				sequence_Beat(context, (Beat) semanticObject); 
+				return; 
+			case RhythmMLPackage.COMPOSITION:
+				sequence_Composition(context, (Composition) semanticObject); 
 				return; 
 			case RhythmMLPackage.PATTERN:
 				sequence_Pattern(context, (Pattern) semanticObject); 
@@ -72,6 +76,18 @@ public class RhythmSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (ticks+=Note ticks+=Note*)
 	 */
 	protected void sequence_Beat(ISerializationContext context, Beat semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Composition returns Composition
+	 *
+	 * Constraint:
+	 *     (sections+=[Section|EString] sections+=[Section|EString]*)
+	 */
+	protected void sequence_Composition(ISerializationContext context, Composition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -172,7 +188,7 @@ public class RhythmSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Track returns Track
 	 *
 	 * Constraint:
-	 *     (name=EString (patterns+=Pattern patterns+=Pattern*)? sections+=Section sections+=Section*)
+	 *     (name=EString (patterns+=Pattern patterns+=Pattern*)? sections+=Section sections+=Section* composition=Composition)
 	 */
 	protected void sequence_Track(ISerializationContext context, Track semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

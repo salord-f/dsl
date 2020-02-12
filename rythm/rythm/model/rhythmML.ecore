@@ -16,6 +16,8 @@
         upperBound="-1" eType="#//Section" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="patterns" upperBound="-1"
         eType="#//Pattern" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composition" lowerBound="1"
+        eType="#//Composition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="patternLoops" upperBound="-1"
@@ -43,7 +45,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PatternLoop">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="loopNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//Pattern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
+        eType="#//Pattern"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PatternModification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//Pattern"/>
@@ -51,4 +54,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="beatNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="beat" eType="#//Beat" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Composition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" lowerBound="1"
+        upperBound="-1" eType="#//Section"/>
+  </eClassifiers>
 </ecore:EPackage>
+

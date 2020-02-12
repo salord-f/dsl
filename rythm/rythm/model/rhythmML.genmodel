@@ -30,6 +30,7 @@
     <genClasses ecoreClass="rhythmML.ecore#//Track">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Track/sections"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Track/patterns"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Track/composition"/>
     </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//Section">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Section/patternLoops"/>
@@ -52,5 +53,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//PatternModification/beatNumber"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//PatternModification/beat"/>
     </genClasses>
+    <genClasses ecoreClass="rhythmML.ecore#//Composition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Composition/sections"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
+

@@ -132,7 +132,10 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSectionsSectionParserRuleCall_5_0 = (RuleCall)cSectionsAssignment_5.eContents().get(0);
 		private final Assignment cSectionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cSectionsSectionParserRuleCall_6_0 = (RuleCall)cSectionsAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cCompositionKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cCompositionAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cCompositionCompositionParserRuleCall_8_0 = (RuleCall)cCompositionAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Track:
 		//	'track' name=EString
@@ -142,11 +145,13 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 		//	'sections:'
 		//	sections+=Section
 		//	sections+=Section*
+		//	'composition:'
+		//	composition=Composition
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'track' name=EString '{' ('patterns:' patterns+=Pattern patterns+=Pattern*)? 'sections:' sections+=Section
-		//sections+=Section* '}'
+		//sections+=Section* 'composition:' composition=Composition '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'track'
@@ -194,8 +199,17 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 		//Section
 		public RuleCall getSectionsSectionParserRuleCall_6_0() { return cSectionsSectionParserRuleCall_6_0; }
 		
+		//'composition:'
+		public Keyword getCompositionKeyword_7() { return cCompositionKeyword_7; }
+		
+		//composition=Composition
+		public Assignment getCompositionAssignment_8() { return cCompositionAssignment_8; }
+		
+		//Composition
+		public RuleCall getCompositionCompositionParserRuleCall_8_0() { return cCompositionCompositionParserRuleCall_8_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class PatternElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.si5.dsl.rhythm.Rhythm.Pattern");
@@ -289,6 +303,49 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Note
 		public RuleCall getTicksNoteEnumRuleCall_1_1_0() { return cTicksNoteEnumRuleCall_1_1_0; }
+	}
+	public class CompositionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.si5.dsl.rhythm.Rhythm.Composition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cSectionsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cSectionsSectionCrossReference_0_0 = (CrossReference)cSectionsAssignment_0.eContents().get(0);
+		private final RuleCall cSectionsSectionEStringParserRuleCall_0_0_1 = (RuleCall)cSectionsSectionCrossReference_0_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cSectionsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cSectionsSectionCrossReference_1_1_0 = (CrossReference)cSectionsAssignment_1_1.eContents().get(0);
+		private final RuleCall cSectionsSectionEStringParserRuleCall_1_1_0_1 = (RuleCall)cSectionsSectionCrossReference_1_1_0.eContents().get(1);
+		
+		//Composition:
+		//	sections+=[Section|EString] (',' sections+=[Section|EString])*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//sections+=[Section|EString] (',' sections+=[Section|EString])*
+		public Group getGroup() { return cGroup; }
+		
+		//sections+=[Section|EString]
+		public Assignment getSectionsAssignment_0() { return cSectionsAssignment_0; }
+		
+		//[Section|EString]
+		public CrossReference getSectionsSectionCrossReference_0_0() { return cSectionsSectionCrossReference_0_0; }
+		
+		//EString
+		public RuleCall getSectionsSectionEStringParserRuleCall_0_0_1() { return cSectionsSectionEStringParserRuleCall_0_0_1; }
+		
+		//(',' sections+=[Section|EString])*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//','
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		
+		//sections+=[Section|EString]
+		public Assignment getSectionsAssignment_1_1() { return cSectionsAssignment_1_1; }
+		
+		//[Section|EString]
+		public CrossReference getSectionsSectionCrossReference_1_1_0() { return cSectionsSectionCrossReference_1_1_0; }
+		
+		//EString
+		public RuleCall getSectionsSectionEStringParserRuleCall_1_1_0_1() { return cSectionsSectionEStringParserRuleCall_1_1_0_1; }
 	}
 	public class SectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.si5.dsl.rhythm.Rhythm.Section");
@@ -578,6 +635,7 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 	private final TrackElements pTrack;
 	private final PatternElements pPattern;
 	private final BeatElements pBeat;
+	private final CompositionElements pComposition;
 	private final SectionElements pSection;
 	private final PatternLoopElements pPatternLoop;
 	private final PatternModificationElements pPatternModification;
@@ -599,6 +657,7 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTrack = new TrackElements();
 		this.pPattern = new PatternElements();
 		this.pBeat = new BeatElements();
+		this.pComposition = new CompositionElements();
 		this.pSection = new SectionElements();
 		this.pPatternLoop = new PatternLoopElements();
 		this.pPatternModification = new PatternModificationElements();
@@ -657,6 +716,8 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 	//	'sections:'
 	//	sections+=Section
 	//	sections+=Section*
+	//	'composition:'
+	//	composition=Composition
 	//	'}';
 	public TrackElements getTrackAccess() {
 		return pTrack;
@@ -687,6 +748,16 @@ public class RhythmGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getBeatRule() {
 		return getBeatAccess().getRule();
+	}
+	
+	//Composition:
+	//	sections+=[Section|EString] (',' sections+=[Section|EString])*;
+	public CompositionElements getCompositionAccess() {
+		return pComposition;
+	}
+	
+	public ParserRule getCompositionRule() {
+		return getCompositionAccess().getRule();
 	}
 	
 	//Section:
