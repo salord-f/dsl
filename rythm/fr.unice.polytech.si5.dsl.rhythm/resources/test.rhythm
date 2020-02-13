@@ -1,0 +1,23 @@
+rhythm MyRythm tempo 150 BPM
+resolution: 2
+offset: 0.1 tick
+track MyTrack {
+	patterns:
+		bar1 {
+			beat: bd,_,sd
+			beat: ch,_,_
+		}
+		ttt{
+			beat: cc
+		}
+	sections:
+		mySection {
+			pattern: bar1 10 times
+			bar1 (iteration:0,beat:0): bd,_
+		}
+		mySection2 {
+			pattern: bar1 10 times
+			bar1 (iteration:0,beat:0): bd,_
+		}
+		composition:mySection, mySection2
+}

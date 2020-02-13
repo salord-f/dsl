@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="MyRythm" resolution="2" offset="0.1" BPM="150">
+  <tracks name="MyTrack">
+    <sections name="mySection">
+      <patternLoops loopNumber="10" pattern="//@tracks.0/@patterns.0"/>
+      <patternModifications pattern="//@tracks.0/@patterns.0">
+        <beat>
+          <ticks>BD</ticks>
+          <ticks>BLANK</ticks>
+        </beat>
+      </patternModifications>
+    </sections>
+    <sections name="mySection2">
+      <patternLoops loopNumber="10" pattern="//@tracks.0/@patterns.0"/>
+      <patternModifications pattern="//@tracks.0/@patterns.0">
+        <beat>
+          <ticks>BD</ticks>
+          <ticks>BLANK</ticks>
+        </beat>
+      </patternModifications>
+    </sections>
+    <patterns name="bar1">
+      <beats>
+        <ticks>BD</ticks>
+        <ticks>BLANK</ticks>
+        <ticks>SD</ticks>
+      </beats>
+      <beats>
+        <ticks>CH</ticks>
+        <ticks>BLANK</ticks>
+      </beats>
+    </patterns>
+    <patterns name="ttt">
+      <beats>
+        <ticks>CC</ticks>
+      </beats>
+    </patterns>
+    <composition sections="//@tracks.0/@sections.0 //@tracks.0/@sections.1"/>
+  </tracks>
+</rml:Rhythm>
