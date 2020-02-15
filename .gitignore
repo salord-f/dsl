@@ -4,3 +4,4 @@ kernel/target/
 **/xtend-gen
 **/bin
 **/src-gen
+*.mid

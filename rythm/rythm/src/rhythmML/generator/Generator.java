@@ -13,7 +13,12 @@ import javax.sound.midi.Sequencer;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
 
+import rhythmML.Beat;
+import rhythmML.Composition;
+import rhythmML.DRUM_NOTES;
+import rhythmML.PatternLoop;
 import rhythmML.Rhythm;
+import rhythmML.Section;
 
 import static rhythmML.generator.DrumerUtils.addDrumHit;
 import static rhythmML.generator.DrumerUtils.toTick;
@@ -37,21 +42,25 @@ public class Generator {
     public static final String[] NOTE_NAMES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
     public static final int NOTE_ON = 0x90;
     public static final int NOTE_OFF = 0x80;
+    
+    
     public void generate(Rhythm rhythm) throws MidiUnavailableException, IOException, InvalidMidiDataException {
         write("// MIDI code generation");
         write(String.format("// Rhythm name: %s\n", rhythm.getName()));
 
         rhythm.getTracks().get(0).getSections().get(0).getPatternLoops().get(0).getPattern().getBeats().get(0).getTicks().get(0).getValue();
+        
         Sequencer sequencer = MidiSystem.getSequencer();
         sequencer.open();
-
-        int tempo = 80;
-        Sequence sequence = test2();
-
-        File f = new File("midifile.mid");
+        
+        int tempo = rhythm.getBPM();
+        write("" + tempo);
+        write(rhythm.getName());
+        Sequence sequence = generateSequence(rhythm);
+        File f = new File("./result/" + rhythm.getName() + ".mid");
         MidiSystem.write(sequence,1,f);
         
-        Sequence sequence2 = MidiSystem.getSequence(new File("midifile.mid"));
+        Sequence sequence2 = MidiSystem.getSequence(new File("./result/" + rhythm.getName() + ".mid"));
 
         sequencer.setSequence(sequence2);
         sequencer.setTempoInBPM(tempo);
@@ -69,15 +78,65 @@ public class Generator {
         while (true);
     }
     
-    public static Sequence test2() throws InvalidMidiDataException {
+    public Sequence generateSequence(Rhythm rhythm) throws InvalidMidiDataException {
+    	
+    	
         int nbBar = 5;
         int nbBeatPerBar = 2;
         int resolution = 200; // in slices per beat
 
         Sequence sequence = new Sequence(Sequence.PPQ, resolution);
         Track track = sequence.createTrack();
+        int bar = 0;
+        int beat = 0;
+        double tickPos = 0;
+        
+        for (rhythmML.Track t : rhythm.getTracks()) {
+        	Composition c = t.getComposition();
+        	for (Section s : c.getSections()) {
+        		for (PatternLoop p : s.getPatternLoops()) {
+        			for(int i = 0; i < p.getLoopNumber(); i++) {
+        				for(Beat b : p.getPattern().getBeats()) {
+            				for(DRUM_NOTES tick : b.getTicks()) {
+            					System.out.println(tick.getName());
+            					int pos = toTick(bar, beat, tickPos, nbBeatPerBar, resolution, 0.5);
+            					switch (tick) {
+	            					case BD:
+	            		                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
+	            		                break;
+	    							case CC:
+	    								break;
+	    							case CH:
+	            		                addDrumHit(track, DrumerUtils.DrumElement.ClosedHiHat, pos, 90);
+	    								break;
+	    							case OH:
+	    								break;
+	    							case RC:
+	    								break;
+	    							case SD:
+	    				                addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos, 90);
+	    								break;
+	    							case BLANK:
+	    								break;
+	    							default:
+	    								break;
+            					}
+            					tickPos += 0.25;
+            				}
+            				tickPos = 0;
+    		                beat++;
+            			}
+            			beat = 0;
+            			bar++;
+        			}
+        			
+        		}
+        	}
+        }
 
-        for (int bar = 0; bar < nbBar; bar++) {
+        /*
+          for (int bar = 0; bar < nbBar; bar++) {
+         
             for (int beat = 0; beat < nbBeatPerBar; beat += 5) {
                 int pos = toTick(bar, beat, 0, nbBeatPerBar, resolution, 0.5);
                 addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
@@ -96,6 +155,7 @@ public class Generator {
                 addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos2, 90);
             }
         }
+        */
 
         return sequence;
     }

@@ -119,7 +119,7 @@ public class DrumerUtils {
 	 * Partial list of Drum elements to ease the reading
 	 */
 	public enum DrumElement {
-		AcousticBassDrum(35), BassDrum1(36), SideStick(37), AcousticSnare(38), HandClap(39), ElectricSnare(40),
+		AcousticBassDrum(35), BassDrum(36), SideStick(37), AcousticSnare(38), HandClap(39), ElectricSnare(40),
 		LowFloorTom(41), ClosedHiHat(42), OpenHiHat(46);
 
 		/*
