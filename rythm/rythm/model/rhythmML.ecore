@@ -31,7 +31,7 @@
         eType="#//Beat" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Beat">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ticks" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ticks" unique="false" upperBound="-1"
         eType="#//DRUM_NOTES"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DRUM_NOTES">
@@ -59,4 +59,3 @@
         upperBound="-1" eType="#//Section"/>
   </eClassifiers>
 </ecore:EPackage>
-
