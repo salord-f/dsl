@@ -120,7 +120,7 @@ public class DrumerUtils {
 	 */
 	public enum DrumElement {
 		AcousticBassDrum(35), BassDrum(36), SideStick(37), AcousticSnare(38), HandClap(39), ElectricSnare(40),
-		LowFloorTom(41), ClosedHiHat(42), OpenHiHat(46);
+		LowFloorTom(41), ClosedHiHat(42), OpenHiHat(46), CrashCymbal(49), RideCymbal(51);
 
 		/*
 		 * "High floor tom", "Pedal hi-hat", "Low tom", "Open hi-hat", "Low-mid tom",

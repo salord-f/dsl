@@ -118,13 +118,16 @@ public class Generator {
 	            		                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
 	            		                break;
 	    							case CC:
+	    								addDrumHit(track, DrumerUtils.DrumElement.CrashCymbal, pos, 90);
 	    								break;
 	    							case CH:
 	            		                addDrumHit(track, DrumerUtils.DrumElement.ClosedHiHat, pos, 90);
 	    								break;
 	    							case OH:
+	    								addDrumHit(track, DrumerUtils.DrumElement.OpenHiHat, pos, 90);
 	    								break;
 	    							case RC:
+	    								addDrumHit(track, DrumerUtils.DrumElement.RideCymbal, pos, 90);
 	    								break;
 	    							case SD:
 	    				                addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos, 90);
