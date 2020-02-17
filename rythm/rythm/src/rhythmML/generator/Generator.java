@@ -13,10 +13,13 @@ import javax.sound.midi.Sequencer;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
 
+import org.eclipse.emf.common.util.EList;
+
 import rhythmML.Beat;
 import rhythmML.Composition;
 import rhythmML.DRUM_NOTES;
 import rhythmML.PatternLoop;
+import rhythmML.PatternModification;
 import rhythmML.Rhythm;
 import rhythmML.Section;
 
@@ -91,12 +94,22 @@ public class Generator {
         int beat = 0;
         double tickPos = 0;
         
+        // TODO : refactor this crap
         for (rhythmML.Track t : rhythm.getTracks()) {
         	Composition c = t.getComposition();
         	for (Section s : c.getSections()) {
         		for (PatternLoop p : s.getPatternLoops()) {
         			for(int i = 0; i < p.getLoopNumber(); i++) {
-        				for(Beat b : p.getPattern().getBeats()) {
+        				EList<Beat> beats = p.getPattern().getBeats();
+        				for(int j = 0; j < beats.size(); j++) {
+        					
+        					Beat b = beats.get(j);
+        					for(PatternModification m : s.getPatternModifications()) {
+        						if(i == m.getIteration() && j == m.getBeatNumber()) {
+        							b = m.getBeat();
+        						}
+        	        		}
+        					
             				for(DRUM_NOTES tick : b.getTicks()) {
             					System.out.println(tick.getName());
             					int pos = toTick(bar, beat, tickPos, nbBeatPerBar, resolution, 0.5);
@@ -121,6 +134,7 @@ public class Generator {
 	    							default:
 	    								break;
             					}
+            					// TODO : remove hardcoded value
             					tickPos += 0.25;
             				}
             				tickPos = 0;
