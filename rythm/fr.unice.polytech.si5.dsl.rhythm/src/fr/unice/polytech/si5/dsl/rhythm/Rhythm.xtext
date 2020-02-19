@@ -40,8 +40,11 @@ Pattern returns Pattern :
 ;
 
 Beat returns Beat :
-	 ticks+=Note (','ticks+=Note)*
+	 ticks+=Notes (', 'ticks+=Notes)*
 ;
+
+//Notes return e
+
 
 Composition returns Composition:
 	sections +=[Section|EString] (','sections +=[Section|EString])*

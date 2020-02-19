@@ -10,13 +10,28 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="RhythmML" disposableProviderFactory="true" ecorePackage="rhythmML.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rhythmML.ecore#//DRUM_NOTES">
-      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//DRUM_NOTES/BD"/>
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//DRUM_NOTES/SD"/>
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//DRUM_NOTES/BLANK"/>
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//DRUM_NOTES/CH"/>
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//DRUM_NOTES/OH"/>
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//DRUM_NOTES/CC"/>
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//DRUM_NOTES/RC"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//DRUM_NOTES/BD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rhythmML.ecore#//NOTES">
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/DO"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/DO_SHARP"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/RE"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/RE_SHARP"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/MI"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/FA"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/FA_SHARP"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/SOL"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/SOL_SHARP"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/LA"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/LA_SHARP"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/SI"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/BLANK"/>
     </genEnums>
     <genClasses ecoreClass="rhythmML.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//NamedElement/name"/>
@@ -41,7 +56,7 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Bar/beats"/>
     </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//Beat">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//Beat/ticks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Beat/ticks"/>
     </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//PatternLoop">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//PatternLoop/loopNumber"/>
@@ -56,6 +71,8 @@
     <genClasses ecoreClass="rhythmML.ecore#//Composition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Composition/sections"/>
     </genClasses>
+    <genClasses ecoreClass="rhythmML.ecore#//Tick">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//Tick/notes"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
-

@@ -10,11 +10,14 @@
         <ticks>BLANK</ticks>
         <ticks>SD</ticks>
         <ticks>BLANK</ticks>
+        <ticks>BDTEST</ticks>
+        <ticks>BDTEST</ticks>
       </beats>
       <beats>
-        <ticks>BD</ticks>
+        <ticks>BDTEST</ticks>
         <ticks>BLANK</ticks>
         <ticks>SD</ticks>
+        <ticks>BDTEST</ticks>
       </beats>
       <beats>
         <ticks>CH</ticks>
