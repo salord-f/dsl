@@ -6,13 +6,15 @@
     </sections>
     <patterns name="bar1">
       <beats>
-        <ticks>BD</ticks>
+        <ticks>SD</ticks>
+        <ticks>BLANK</ticks>
+        <ticks>SD</ticks>
+        <ticks>BLANK</ticks>
       </beats>
       <beats>
-        <ticks>SD</ticks>
+        <ticks>BD</ticks>
         <ticks>BLANK</ticks>
         <ticks>SD</ticks>
-        <ticks>BLANK</ticks>
       </beats>
       <beats>
         <ticks>CH</ticks>
