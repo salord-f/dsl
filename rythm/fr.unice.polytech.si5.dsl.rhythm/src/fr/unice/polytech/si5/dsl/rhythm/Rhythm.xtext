@@ -40,10 +40,12 @@ Pattern returns Pattern :
 ;
 
 Beat returns Beat :
-	 ticks+=Notes (', 'ticks+=Notes)*
+	 ticks+=Tick (', 'ticks+=Tick)*
 ;
 
-//Notes return e
+Tick returns Tick:
+	notes+=Note (notes+=Note)*
+;
 
 
 Composition returns Composition:
