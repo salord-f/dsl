@@ -15,6 +15,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Random;
 
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiEvent;
@@ -72,11 +73,21 @@ public class DrumerUtils {
 	 * @param resolution
 	 * @return
 	 */
-	public static int toTick(int bar, int beat, double division, int nbBeatPerBar, int resolution, double offset) {
+	public static int toTick(int bar, int beat, double division, int nbBeatPerBar, int resolution, double offset, double offsetNote) {
 		int pos = bar * nbBeatPerBar * resolution;
 		pos += beat * resolution;
 		pos += division * resolution;
-		pos += offset * resolution;
+		
+		double nbTicks = resolution / nbBeatPerBar;
+		offsetNote = 0.2;
+		
+		double concreteOffset = (nbTicks * offsetNote)  / 2;
+		
+		pos += new Random().nextInt((int)concreteOffset * 2) - concreteOffset;
+		if (pos < 0){
+			pos = 0;
+		}
+		//pos += offset * resolution;
 		return pos;
 	}
 
@@ -89,6 +100,7 @@ public class DrumerUtils {
 	public static void addDrumHit(Track track, DrumElement de, long tick, int velocity) {
 		final int NOTEON = 144;
 		final int NOTEOFF = 128;
+		
 
 		createEvent(track, NOTEON, 9, de, tick, velocity);
 		createEvent(track, NOTEOFF, 9, de, tick + 1, velocity);
