@@ -50,8 +50,6 @@ public class Generator {
     public void generate(Rhythm rhythm) throws MidiUnavailableException, IOException, InvalidMidiDataException {
         write("// MIDI code generation");
         write(String.format("// Rhythm name: %s\n", rhythm.getName()));
-
-        rhythm.getTracks().get(0).getSections().get(0).getPatternLoops().get(0).getPattern().getBeats().get(0).getTicks().get(0).getValue();
         
         Sequencer sequencer = MidiSystem.getSequencer();
         sequencer.open();
@@ -99,10 +97,9 @@ public class Generator {
         	Composition c = t.getComposition();
         	for (Section s : c.getSections()) {
         		for (PatternLoop p : s.getPatternLoops()) {
+    				EList<Beat> beats = p.getPattern().getBeats();
         			for(int i = 0; i < p.getLoopNumber(); i++) {
-        				EList<Beat> beats = p.getPattern().getBeats();
         				for(int j = 0; j < beats.size(); j++) {
-        					
         					Beat b = beats.get(j);
         					for(PatternModification m : s.getPatternModifications()) {
         						if(i == m.getIteration() && j == m.getBeatNumber()) {
@@ -112,7 +109,7 @@ public class Generator {
         					
             				for(DRUM_NOTES tick : b.getTicks()) {
             					System.out.println(tick.getName());
-            					int pos = toTick(bar, beat, tickPos, nbBeatPerBar, resolution, 0.5);
+            					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, 0.5);
             					switch (tick) {
 	            					case BD:
 	            		                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
@@ -133,12 +130,14 @@ public class Generator {
 	    				                addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos, 90);
 	    								break;
 	    							case BLANK:
+	    				                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 0);
 	    								break;
 	    							default:
 	    								break;
             					}
             					// TODO : remove hardcoded value
-            					tickPos += 0.25;
+            					tickPos += 1.0 / b.getTicks().size();
+            					System.out.println(tickPos);
             				}
             				tickPos = 0;
     		                beat++;

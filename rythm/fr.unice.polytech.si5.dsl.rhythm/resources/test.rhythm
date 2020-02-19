@@ -4,24 +4,16 @@ offset: 0.1 tick
 track MyTrack {
 	patterns:
 		bar1 {
-			beat: bd,_,_,_
-			beat: sd,_,_,_
+			beat: bd,bd,bd,bd
+			beat: sd,_,sd,_
 			beat: ch,_,_,_
-			beat: oh,_,_,_
-			beat: cc,_,_,_
-			beat: rc,_,_,_
-		}
-		ttt{
-			beat: ch
-		}
-	sections:
-		mySection {
-			pattern: bar1 1 times
 			
 		}
-		mySection2 {
-			pattern: ttt 5 times
-			bar1 (iteration:0,beat:0): bd,_
+		
+	sections:
+		mySection {
+			pattern: bar1 2 times
 		}
+		
 		composition:mySection
 }
