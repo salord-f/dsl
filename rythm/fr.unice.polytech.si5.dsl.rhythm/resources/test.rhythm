@@ -1,18 +1,15 @@
-rhythm MyRythm tempo 150 BPM
-resolution: 2
+rhythm MyRythm tempo 60 BPM
+resolution: 4
 offset: 0.1 tick
 track MyTrack {
 	patterns:
 		bar1 {
-			beat: sd,_,sd,_, bd, bd
-			beat: bd,_,sd, bd
-			beat: ch,_,_,_
-			
+			beat: ch bd, ch, ch sd, ch
 		}
 		
 	sections:
 		mySection {
-			pattern: bar1 2 times
+			pattern: bar1 12 times
 		}
 		
 		composition:mySection

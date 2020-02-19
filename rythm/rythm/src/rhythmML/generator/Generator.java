@@ -22,6 +22,7 @@ import rhythmML.PatternLoop;
 import rhythmML.PatternModification;
 import rhythmML.Rhythm;
 import rhythmML.Section;
+import rhythmML.Tick;
 
 import static rhythmML.generator.DrumerUtils.addDrumHit;
 import static rhythmML.generator.DrumerUtils.toTick;
@@ -106,7 +107,7 @@ public class Generator {
         int beat = 0;
         double tickPos = 0;
         double offset = 0;
-        double offsetNote = 0.2;
+        double offsetNote = 0.05;
         
         // TODO : refactor this crap
         for (rhythmML.Track t : rhythm.getTracks()) {
@@ -123,36 +124,36 @@ public class Generator {
         						}
         	        		}
         					
-            				for(DRUM_NOTES tick : b.getTicks()) {
-            					System.out.println(tick.getName());            					
-            					
-            					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset, offsetNote);
-            					switch (tick) {
-	            					case BD:
-	            		                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
-	            		                break;
-	    							case CC:
-	    								addDrumHit(track, DrumerUtils.DrumElement.CrashCymbal, pos, 90);
-	    								break;
-	    							case CH:
-	            		                addDrumHit(track, DrumerUtils.DrumElement.ClosedHiHat, pos, 90);
-	    								break;
-	    							case OH:
-	    								addDrumHit(track, DrumerUtils.DrumElement.OpenHiHat, pos, 90);
-	    								break;
-	    							case RC:
-	    								addDrumHit(track, DrumerUtils.DrumElement.RideCymbal, pos, 90);
-	    								break;
-	    							case SD:
-	    				                addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos, 90);
-	    								break;
-	    							case BLANK:
-	    				                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 0);
-	    								break;
-	    							default:
-	    								break;
+            				for(Tick tick : b.getTicks()) {
+            					for(DRUM_NOTES n : tick.getNotes()) {
+            						System.out.println(n.getName());
+                					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, 0, offsetNote);
+                					switch (n) {
+    	            					case BD:
+    	            		                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
+    	            		                break;
+    	    							case CC:
+    	    								addDrumHit(track, DrumerUtils.DrumElement.CrashCymbal, pos, 90);
+    	    								break;
+    	    							case CH:
+    	            		                addDrumHit(track, DrumerUtils.DrumElement.ClosedHiHat, pos, 90);
+    	    								break;
+    	    							case OH:
+    	    								addDrumHit(track, DrumerUtils.DrumElement.OpenHiHat, pos, 90);
+    	    								break;
+    	    							case RC:
+    	    								addDrumHit(track, DrumerUtils.DrumElement.RideCymbal, pos, 90);
+    	    								break;
+    	    							case SD:
+    	    				                addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos, 90);
+    	    								break;
+    	    							case BLANK:
+    	    				                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 0);
+    	    								break;
+    	    							default:
+    	    								break;
+                					}                					
             					}
-            					// TODO : remove hardcoded value
             					tickPos += 1.0 / b.getTicks().size();
             					System.out.println(tickPos);
             				}

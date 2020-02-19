@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="ASCII"?>
-<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="MyRythm" resolution="2" offset="0.1" BPM="150">
+<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="MyRythm" resolution="4" offset="0.1" BPM="60">
   <tracks name="MyTrack">
     <sections name="mySection">
-      <patternLoops loopNumber="2" pattern="//@tracks.0/@patterns.0"/>
+      <patternLoops loopNumber="12" pattern="//@tracks.0/@patterns.0"/>
     </sections>
     <patterns name="bar1">
       <beats>
-        <ticks>SD</ticks>
-        <ticks>BLANK</ticks>
-        <ticks>SD</ticks>
-        <ticks>BLANK</ticks>
-        <ticks>BDTEST</ticks>
-        <ticks>BDTEST</ticks>
-      </beats>
-      <beats>
-        <ticks>BDTEST</ticks>
-        <ticks>BLANK</ticks>
-        <ticks>SD</ticks>
-        <ticks>BDTEST</ticks>
-      </beats>
-      <beats>
-        <ticks>CH</ticks>
-        <ticks>BLANK</ticks>
-        <ticks>BLANK</ticks>
-        <ticks>BLANK</ticks>
+        <ticks>
+          <notes>CH</notes>
+          <notes>BD</notes>
+        </ticks>
+        <ticks>
+          <notes>CH</notes>
+        </ticks>
+        <ticks>
+          <notes>CH</notes>
+          <notes>SD</notes>
+        </ticks>
+        <ticks>
+          <notes>CH</notes>
+        </ticks>
       </beats>
     </patterns>
     <composition sections="//@tracks.0/@sections.0"/>

@@ -79,7 +79,6 @@ public class DrumerUtils {
 		pos += division * resolution;
 		
 		double nbTicks = resolution / nbBeatPerBar;
-		offsetNote = 0.2;
 		
 		double concreteOffset = (nbTicks * offsetNote)  / 2;
 		
