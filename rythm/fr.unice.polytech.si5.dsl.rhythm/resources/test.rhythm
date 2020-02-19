@@ -4,8 +4,8 @@ offset: 0.1 tick
 track MyTrack {
 	patterns:
 		bar1 {
-			beat: bd,bd,bd,bd
 			beat: sd,_,sd,_
+			beat: bd,_,sd,bd
 			beat: ch,_,_,_
 			
 		}

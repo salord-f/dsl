@@ -91,6 +91,7 @@ public class Generator {
         int bar = 0;
         int beat = 0;
         double tickPos = 0;
+        double offset = 0;
         
         // TODO : refactor this crap
         for (rhythmML.Track t : rhythm.getTracks()) {
@@ -109,7 +110,7 @@ public class Generator {
         					
             				for(DRUM_NOTES tick : b.getTicks()) {
             					System.out.println(tick.getName());
-            					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, 0.5);
+            					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset);
             					switch (tick) {
 	            					case BD:
 	            		                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
@@ -139,6 +140,7 @@ public class Generator {
             					tickPos += 1.0 / b.getTicks().size();
             					System.out.println(tickPos);
             				}
+            				offset += 1.0 / b.getTicks().size();
             				tickPos = 0;
     		                beat++;
             			}
