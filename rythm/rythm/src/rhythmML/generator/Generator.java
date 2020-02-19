@@ -76,7 +76,21 @@ public class Generator {
         //System.out.println("stop sleeping");
         //seq1uencer.stop();
         //sequencer.close();
-        while (true);
+        
+        int durationOfTheTrackMicroSec = (int) sequence2.getMicrosecondLength() + 1000000;
+		//int durationOfTheTrackMS = nbBar * nbBeatPerBar * 60000 / tempo;
+		System.out.println("sleeping " + (durationOfTheTrackMicroSec) + " microsec");
+		try {
+			Thread.sleep(durationOfTheTrackMicroSec / 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
+		System.out.println("stop sleeping");
+		sequencer.stop();
+		sequencer.close();
+		
+		System.exit(1);
     }
     
     public Sequence generateSequence(Rhythm rhythm) throws InvalidMidiDataException {
