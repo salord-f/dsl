@@ -7,18 +7,18 @@
     <patterns name="bar1">
       <beats>
         <ticks>
-          <notes>CH</notes>
-          <notes>BD</notes>
+          <notes note="CH"/>
+          <notes note="BD"/>
         </ticks>
         <ticks>
-          <notes>CH</notes>
+          <notes note="CH"/>
         </ticks>
         <ticks>
-          <notes>CH</notes>
-          <notes>SD</notes>
+          <notes note="CH"/>
+          <notes/>
         </ticks>
         <ticks>
-          <notes>CH</notes>
+          <notes note="CH"/>
         </ticks>
       </beats>
     </patterns>

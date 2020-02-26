@@ -18,6 +18,9 @@ import org.eclipse.emf.common.util.EList;
 import rhythmML.Beat;
 import rhythmML.Composition;
 import rhythmML.DRUM_NOTES;
+import rhythmML.DrumNote;
+import rhythmML.NOTES;
+import rhythmML.Note;
 import rhythmML.PatternLoop;
 import rhythmML.PatternModification;
 import rhythmML.Rhythm;
@@ -125,34 +128,25 @@ public class Generator {
         	        		}
         					
             				for(Tick tick : b.getTicks()) {
-            					for(DRUM_NOTES n : tick.getNotes()) {
-            						System.out.println(n.getName());
-                					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, 0, offsetNote);
-                					switch (n) {
-    	            					case BD:
-    	            		                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
-    	            		                break;
-    	    							case CC:
-    	    								addDrumHit(track, DrumerUtils.DrumElement.CrashCymbal, pos, 90);
-    	    								break;
-    	    							case CH:
-    	            		                addDrumHit(track, DrumerUtils.DrumElement.ClosedHiHat, pos, 90);
-    	    								break;
-    	    							case OH:
-    	    								addDrumHit(track, DrumerUtils.DrumElement.OpenHiHat, pos, 90);
-    	    								break;
-    	    							case RC:
-    	    								addDrumHit(track, DrumerUtils.DrumElement.RideCymbal, pos, 90);
-    	    								break;
-    	    							case SD:
-    	    				                addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos, 90);
-    	    								break;
-    	    							case BLANK:
-    	    				                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 0);
-    	    								break;
-    	    							default:
-    	    								break;
-                					}                					
+            					for(Note note : tick.getNotes()) {
+            						
+            						if (note instanceof DrumNote ) {
+            							
+            							DRUM_NOTES n = ((DrumNote) note).getDrumNote();
+                						
+                						System.out.println(n.getName());
+                    					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, 0, offsetNote);
+                    					addDrumNote(track, n, pos);
+            							
+            						} else {
+            							
+            							NOTES n = note.getNote();
+                						System.out.println(n.getName());
+                    					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, 0, offsetNote);
+                    					addNote(track, n, pos);
+            						}
+            						
+            					               					
             					}
             					tickPos += 1.0 / b.getTicks().size();
             					System.out.println(tickPos);
@@ -196,6 +190,67 @@ public class Generator {
 
         return sequence;
     }
+
+	private void addNote(Track track, NOTES n, int pos) {
+		switch (n) {
+			case BLANK :
+				break;
+			case DO :
+				break;
+			case DO_SHARP :
+				break;
+			case FA :
+				break;
+			case FA_SHARP :
+				break;
+			case LA :
+				break;
+			case LA_SHARP :
+				break;
+			case MI :
+				break;
+			case RE :
+				break;
+			case RE_SHARP :
+				break;
+			case SI :
+				break;
+			case SOL :
+				break;
+			case SOL_SHARP :
+				break;
+			default:
+				break;
+		}
+	}
+
+	private void addDrumNote(Track track, DRUM_NOTES n, int pos) {
+		switch (n) {
+			case BD:
+		        addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
+		        break;
+			case CC:
+				addDrumHit(track, DrumerUtils.DrumElement.CrashCymbal, pos, 90);
+				break;
+			case CH:
+		        addDrumHit(track, DrumerUtils.DrumElement.ClosedHiHat, pos, 90);
+				break;
+			case OH:
+				addDrumHit(track, DrumerUtils.DrumElement.OpenHiHat, pos, 90);
+				break;
+			case RC:
+				addDrumHit(track, DrumerUtils.DrumElement.RideCymbal, pos, 90);
+				break;
+			case SD:
+		        addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos, 90);
+				break;
+			case BLANK:
+		        addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 0);
+				break;
+			default:
+				break;
+		}
+	}
     
     public static void analyzeSequence(Sequence sequence) {
         int trackNumber = 0;
