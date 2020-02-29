@@ -63,9 +63,10 @@
     </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//PatternModification">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//PatternModification/pattern"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//PatternModification/iteration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//PatternModification/iterationBegin"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//PatternModification/beatNumber"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//PatternModification/beat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//PatternModification/iterationEnd"/>
     </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//Composition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Composition/sections"/>
@@ -74,11 +75,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Tick/notes"/>
     </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//DrumTrack"/>
-    <genClasses ecoreClass="rhythmML.ecore#//Note">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//Note/note"/>
-    </genClasses>
+    <genClasses ecoreClass="rhythmML.ecore#//Note"/>
     <genClasses ecoreClass="rhythmML.ecore#//DrumNote">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//DrumNote/drumNote"/>
+    </genClasses>
+    <genClasses ecoreClass="rhythmML.ecore#//ClassicTrack"/>
+    <genClasses ecoreClass="rhythmML.ecore#//ClassicNote">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//ClassicNote/note"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

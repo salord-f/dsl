@@ -17,14 +17,14 @@ DrumTrackImpl returns DrumTrack :
 	
 ;
 
-TrackImpl returns Track :
-	{Track}
+ClassicTrackImpl returns ClassicTrack :
+	{ClassicTrack}
 	'track'
 ;
 
 
 Track returns Track :
-	(TrackImpl | DrumTrackImpl) name=EString 
+	(ClassicTrackImpl | DrumTrackImpl) name=EString 
 	'{'
 		('patterns:' 
 			patterns+=Pattern 
@@ -58,7 +58,7 @@ Tick returns Tick:
 	 ( notes+=Note (notes+=Note)* ) |  ( notes+=DrumNote (notes+=DrumNote)* )
 ;
 
-Note returns Note:
+Note returns ClassicNote:
 	note=NoteEnum
 ;
 
@@ -86,7 +86,7 @@ PatternLoop returns PatternLoop :
 ;
 
 PatternModification returns PatternModification :
-	pattern =[Pattern|EString] '(iteration:'iteration=EInt ',beat:' beatNumber=EInt'):' beat=Beat
+	pattern =[Pattern|EString] '(iteration:['(iterationBegin=EInt)?':'(iterationEnd=EInt)?'],beat:' beatNumber=EInt'):' beat=Beat
 ;
 
 enum NoteEnum returns NOTES :

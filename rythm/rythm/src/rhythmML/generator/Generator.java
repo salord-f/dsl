@@ -16,6 +16,7 @@ import javax.sound.midi.Track;
 import org.eclipse.emf.common.util.EList;
 
 import rhythmML.Beat;
+import rhythmML.ClassicNote;
 import rhythmML.Composition;
 import rhythmML.DRUM_NOTES;
 import rhythmML.DrumNote;
@@ -122,7 +123,8 @@ public class Generator {
         				for(int j = 0; j < beats.size(); j++) {
         					Beat b = beats.get(j);
         					for(PatternModification m : s.getPatternModifications()) {
-        						if(i == m.getIteration() && j == m.getBeatNumber()) {
+        						//TODO check if working
+        						if(i >= m.getIterationBegin() && i<=m.getIterationEnd() && j == m.getBeatNumber()) {
         							b = m.getBeat();
         						}
         	        		}
@@ -138,9 +140,9 @@ public class Generator {
                     					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, 0, offsetNote);
                     					addDrumNote(track, n, pos);
             							
-            						} else {
+            						} else if (note instanceof ClassicNote )  {
             							
-            							NOTES n = note.getNote();
+            							NOTES n = ((ClassicNote) note).getNote();
                 						System.out.println(n.getName());
                     					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, 0, offsetNote);
                     					addNote(track, n, pos);
