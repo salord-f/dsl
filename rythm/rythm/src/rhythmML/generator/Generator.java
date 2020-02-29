@@ -193,8 +193,6 @@ public class Generator {
 
 	private void addNote(Track track, NOTES n, int pos) {
 		switch (n) {
-			case BLANK :
-				break;
 			case DO :
 				break;
 			case DO_SHARP :

@@ -11,8 +11,20 @@ Rhythm returns Rhythm:
 	(tracks+=Track)*
 	;
 
+DrumTrackImpl returns DrumTrack :
+	{DrumTrack}
+	'drumTrack'
+	
+;
+
+TrackImpl returns Track :
+	{Track}
+	'track'
+;
+
+
 Track returns Track :
-	'track' name=EString 
+	(TrackImpl | DrumTrackImpl) name=EString 
 	'{'
 		('patterns:' 
 			patterns+=Pattern 
@@ -28,6 +40,7 @@ Track returns Track :
 	'}'
 	
 ;
+
 
 Pattern returns Pattern :
 	name=EString 
@@ -77,7 +90,7 @@ PatternModification returns PatternModification :
 ;
 
 enum NoteEnum returns NOTES :
-	BLANK = "_" | DO = "do" | DO_SHARP = "do#" | FA = "fa" | FA_SHARP = "fa#" | LA = "la" 
+	 DO = "do" | DO_SHARP = "do#" | FA = "fa" | FA_SHARP = "fa#" | LA = "la" 
 	| LA_SHARP = "la#" | MI = "mi" | RE = "re" | RE_SHARP = "re#" | SI = "si" | SOL = "sol" | SOL_SHARP = "sol#"
 ;
 enum DrumNoteEnum returns DRUM_NOTES :
