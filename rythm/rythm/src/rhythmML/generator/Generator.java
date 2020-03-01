@@ -138,16 +138,11 @@ public class Generator {
             							DRUM_NOTES n = ((DrumNote) note).getDrumNote();
 
                 						for(NoteOffset o : t.getOffsets()) {
-                							
-                							if (o.getNote() instanceof DrumNote) {
-                								if (n.getName().equals(((DrumNote) o.getNote()).getDrumNote().getName())) {
-                        		        			offset = o.getValue() * resolution / b.getTicks().size();
-                        		        			System.out.println(offset);
-                        		        			break;
-                        		        		}
-                							} 
-                							
-                    		        		
+            								if (n.getName().equals(((DrumNote) o.getNote()).getDrumNote().getName())) {
+                    		        			offset = o.getValue() * resolution / b.getTicks().size();
+                    		        			System.out.println(offset);
+                    		        			break;
+                    		        		}
                     		        	}
                 						
                 						System.out.println(n.getName());
@@ -159,14 +154,11 @@ public class Generator {
             							NOTES n = ((ClassicNote) note).getNote();
             							
             							for(NoteOffset o : t.getOffsets()) {
-                							if (o.getNote() instanceof Note) {
-                								if (n.getName().equals(((ClassicNote) o.getNote()).getNote().getName())) {
-                        		        			offset = (o.getValue() * 1.0 / b.getTicks().size()) * 50;
-                        		        			System.out.println(offset);
-                        		        			break;
-                        		        		}
-                							}
-                    		        		
+            								if (n.getName().equals(((ClassicNote) o.getNote()).getNote().getName())) {
+                    		        			offset = (o.getValue() * 1.0 / b.getTicks().size()) * 50;
+                    		        			System.out.println(offset);
+                    		        			break;
+                    		        		}
                     		        	}
                 						System.out.println(n.getName());
                     					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset, offsetNote);

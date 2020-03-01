@@ -1,6 +1,6 @@
 rhythm MyRythm tempo 60 BPM
-resolution: 4
-offset: 0.1 tick
+
+
 drum track MyTrack {
 
 	offsets:
