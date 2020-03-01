@@ -26,9 +26,10 @@ ClassicTrackImpl returns ClassicTrack :
 	{ClassicTrack}
 	'track' name=EString 
 	'{'
-	'offsets:'
+	('offsets:'
 		offsets+=ClassicNoteOffset
 		(offsets+=ClassicNoteOffset)*
+	)?
 ;
 
 
