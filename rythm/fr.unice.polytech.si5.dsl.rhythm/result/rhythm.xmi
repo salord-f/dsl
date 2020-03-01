@@ -23,8 +23,8 @@
       </beats>
     </patterns>
     <composition sections="//@tracks.0/@sections.0"/>
-    <offsets xsi:type="rml:DrumNoteOffset" value="-0.5">
-      <note drumNote="BD"/>
+    <offsets value="-0.5">
+      <note xsi:type="rml:DrumNote" drumNote="BD"/>
     </offsets>
   </tracks>
 </rml:Rhythm>

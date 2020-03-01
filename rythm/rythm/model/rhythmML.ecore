@@ -88,7 +88,6 @@
     <eLiterals name="LA" value="9"/>
     <eLiterals name="LA_SHARP" value="10"/>
     <eLiterals name="SI" value="11"/>
-    <eLiterals name="BLANK" value="12"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tick">
     <eStructuralFeatures xsi:type="ecore:EReference" name="notes" upperBound="-1"
@@ -96,10 +95,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DrumTrack" eSuperTypes="#//Track">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="drumNotesOnly"/>
+      <details key="constraints" value="drumNotesOnly offsetDrumNotesOnly"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="drumNotesOnly" value="self.patterns.beats.ticks.notes -> forAll(oclIsKindOf(DrumNote))"/>
+      <details key="offsetDrumNotesOnly" value="self.offsets -> forAll( offset | offset.note.oclIsKindOf(DrumNote))"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Note" abstract="true"/>
@@ -109,10 +109,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassicTrack" eSuperTypes="#//Track">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="classicNotesOnly"/>
+      <details key="constraints" value="classicNotesOnly offsetClassicNotesOnly"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="classicNotesOnly" value="self.patterns.beats.ticks.notes -> forAll(oclIsKindOf(ClassicNote))"/>
+      <details key="offsetClassicNotesOnly" value="self.offsets -> forAll( offset | offset.note.oclIsKindOf(ClassicNote))"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassicNote" eSuperTypes="#//Note">
@@ -120,7 +121,7 @@
         defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NoteOffset">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
         defaultValueLiteral="0.0"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="note" lowerBound="1" eType="#//Note"
         containment="true"/>
