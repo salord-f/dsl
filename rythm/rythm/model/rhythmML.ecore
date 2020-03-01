@@ -119,16 +119,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="note" eType="#//NOTES"
         defaultValueLiteral=""/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassicNoteOffset" eSuperTypes="#//NoteOffset">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="note" lowerBound="1" eType="#//ClassicNote"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DrumNoteOffset" eSuperTypes="#//NoteOffset">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="note" lowerBound="1" eType="#//DrumNote"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NoteOffset" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="NoteOffset">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
         defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="note" lowerBound="1" eType="#//Note"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

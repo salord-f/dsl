@@ -13,28 +13,23 @@ Rhythm returns Rhythm:
 
 DrumTrackImpl returns DrumTrack :
 	{DrumTrack}
-	'drum track' name=EString 
-	'{'
-	('offsets:'
-		offsets+=DrumNoteOffset
-		(offsets+=DrumNoteOffset)*
-		
-	)?
+	'drum track'
 ;
 
 ClassicTrackImpl returns ClassicTrack :
 	{ClassicTrack}
-	'track' name=EString 
-	'{'
-	('offsets:'
-		offsets+=ClassicNoteOffset
-		(offsets+=ClassicNoteOffset)*
-	)?
+	'track'
 ;
 
 
 Track returns Track :
-	(ClassicTrackImpl | DrumTrackImpl) 
+	(ClassicTrackImpl | DrumTrackImpl) name=EString
+	'{'
+		('offsets:'
+			offsets+=NoteOffset
+			(offsets+=NoteOffset)*
+			
+		)?
 		('patterns:' 
 			patterns+=Pattern 
 			(patterns+=Pattern)*
@@ -50,13 +45,10 @@ Track returns Track :
 	
 ;
 
-ClassicNoteOffset returns ClassicNoteOffset:
-	'note:' note = Note  value = (EPlusFloat | EMinusFloat) 'ticks'
+NoteOffset returns NoteOffset:
+	'note:' note = (Note|DrumNote)  value = (EPlusFloat | EMinusFloat) 'ticks'
 ;
 
-DrumNoteOffset returns DrumNoteOffset:
-	'note:' note = DrumNote  value = (EPlusFloat | EMinusFloat) 'ticks'
-;
 
 
 Pattern returns Pattern :
@@ -108,7 +100,7 @@ PatternModification returns PatternModification :
 
 enum NoteEnum returns NOTES :
 	 DO = "do" | DO_SHARP = "do#" | FA = "fa" | FA_SHARP = "fa#" | LA = "la" 
-	| LA_SHARP = "la#" | MI = "mi" | RE = "re" | RE_SHARP = "re#" | SI = "si" | SOL = "sol" | SOL_SHARP = "sol#" | BLANK = "_"
+	| LA_SHARP = "la#" | MI = "mi" | RE = "re" | RE_SHARP = "re#" | SI = "si" | SOL = "sol" | SOL_SHARP = "sol#" /* | BLANK = "_"*/
 ;
 
 enum DrumNoteEnum returns DRUM_NOTES :

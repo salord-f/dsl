@@ -85,14 +85,9 @@
     <genClasses ecoreClass="rhythmML.ecore#//ClassicNote">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//ClassicNote/note"/>
     </genClasses>
-    <genClasses ecoreClass="rhythmML.ecore#//ClassicNoteOffset">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//ClassicNoteOffset/note"/>
-    </genClasses>
-    <genClasses ecoreClass="rhythmML.ecore#//DrumNoteOffset">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//DrumNoteOffset/note"/>
-    </genClasses>
     <genClasses image="false" ecoreClass="rhythmML.ecore#//NoteOffset">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//NoteOffset/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//NoteOffset/note"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
