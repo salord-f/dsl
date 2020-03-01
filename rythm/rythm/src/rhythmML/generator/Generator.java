@@ -17,11 +17,14 @@ import org.eclipse.emf.common.util.EList;
 
 import rhythmML.Beat;
 import rhythmML.ClassicNote;
+import rhythmML.ClassicNoteOffset;
 import rhythmML.Composition;
 import rhythmML.DRUM_NOTES;
 import rhythmML.DrumNote;
+import rhythmML.DrumNoteOffset;
 import rhythmML.NOTES;
 import rhythmML.Note;
+import rhythmML.NoteOffset;
 import rhythmML.PatternLoop;
 import rhythmML.PatternModification;
 import rhythmML.Rhythm;
@@ -110,7 +113,6 @@ public class Generator {
         int bar = 0;
         int beat = 0;
         double tickPos = 0;
-        double offset = 0;
         double offsetNote = 0.05;
         
         // TODO : refactor this crap
@@ -122,6 +124,7 @@ public class Generator {
         			for(int i = 0; i < p.getLoopNumber(); i++) {
         				for(int j = 0; j < beats.size(); j++) {
         					Beat b = beats.get(j);
+        					
         					for(PatternModification m : s.getPatternModifications()) {
         						//TODO check if working
         						if(i >= m.getIterationBegin() && i<=m.getIterationEnd() && j == m.getBeatNumber()) {
@@ -131,20 +134,38 @@ public class Generator {
         					
             				for(Tick tick : b.getTicks()) {
             					for(Note note : tick.getNotes()) {
-            						
+        							double offset = 0.0;
+
             						if (note instanceof DrumNote ) {
-            							
             							DRUM_NOTES n = ((DrumNote) note).getDrumNote();
+
+                						for(NoteOffset o : t.getOffsets()) {
+                							
+                    		        		if (n.getName().equals(((DrumNoteOffset)o).getNote().getDrumNote().getName())) {
+                    		        			offset = o.getValue() * resolution / b.getTicks().size();
+                    		        			System.out.println(offset);
+                    		        			break;
+                    		        		}
+                    		        	}
                 						
                 						System.out.println(n.getName());
-                    					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, 0, offsetNote);
+                    					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset, offsetNote);
                     					addDrumNote(track, n, pos);
             							
             						} else if (note instanceof ClassicNote )  {
             							
             							NOTES n = ((ClassicNote) note).getNote();
+            							
+            							for(NoteOffset o : t.getOffsets()) {
+                						
+                    		        		if (n.getName().equals(((ClassicNoteOffset)o).getNote().getNote().getName())) {
+                    		        			offset = (o.getValue() * 1.0 / b.getTicks().size()) * 50;
+                    		        			System.out.println(offset);
+                    		        			break;
+                    		        		}
+                    		        	}
                 						System.out.println(n.getName());
-                    					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, 0, offsetNote);
+                    					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset, offsetNote);
                     					addNote(track, n, pos);
             						}
             						
@@ -154,9 +175,7 @@ public class Generator {
             					System.out.println(tickPos);
             				}
 
-            				
-            				offset += 1.0 / b.getTicks().size();
-            				tickPos = 0;
+              				tickPos = 0;
     		                beat++;
             			}
             			beat = 0;
@@ -167,29 +186,7 @@ public class Generator {
         	}
         }
 
-        /*
-          for (int bar = 0; bar < nbBar; bar++) {
-         
-            for (int beat = 0; beat < nbBeatPerBar; beat += 5) {
-                int pos = toTick(bar, beat, 0, nbBeatPerBar, resolution, 0.5);
-                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
-
-                int pos2 = toTick(bar, beat + 1, 0, nbBeatPerBar, resolution, 0.5);
-                addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos2, 90);
-            }
-        }
-
-        for (int bar = 0; bar < nbBar; bar++) {
-            for (int beat = 0; beat < nbBeatPerBar; beat += 5) {
-                int pos = toTick(bar, beat, 0.75, nbBeatPerBar, resolution, 0.5);
-                addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos, 90);
-
-                int pos2 = toTick(bar, beat + 1, 0.75, nbBeatPerBar, resolution, 0.5);
-                addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos2, 90);
-            }
-        }
-        */
-
+      
         return sequence;
     }
 

@@ -1,7 +1,11 @@
 rhythm MyRythm tempo 60 BPM
 resolution: 4
 offset: 0.1 tick
-track MyTrack {
+drum track MyTrack {
+
+	offsets:
+		note: bd -0.5 ticks
+
 	patterns:
 		bar1 {
 			beat: ch bd, ch, ch sd, ch

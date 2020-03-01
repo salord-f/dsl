@@ -80,14 +80,14 @@ public class DrumerUtils {
 		
 		double nbTicks = resolution / nbBeatPerBar;
 		
-		double concreteOffset = (nbTicks * offsetNote)  / 2;
+		/*double concreteOffset = (nbTicks * offsetNote)  / 2;
 		
 		pos += new Random().nextInt((int)concreteOffset * 2) - concreteOffset;
 		if (pos < 0){
 			pos = 0;
-		}
-		//pos += offset * resolution;
-		return pos;
+		}*/
+		pos += offset;
+		return pos <= 0 ? 0 : pos;
 	}
 
 	/**

@@ -31,6 +31,7 @@
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/LA"/>
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/LA_SHARP"/>
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/SI"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/BLANK"/>
     </genEnums>
     <genClasses ecoreClass="rhythmML.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//NamedElement/name"/>
@@ -45,6 +46,7 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Track/sections"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Track/patterns"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Track/composition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Track/offsets"/>
     </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//Section">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Section/patternLoops"/>
@@ -82,6 +84,15 @@
     <genClasses ecoreClass="rhythmML.ecore#//ClassicTrack"/>
     <genClasses ecoreClass="rhythmML.ecore#//ClassicNote">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//ClassicNote/note"/>
+    </genClasses>
+    <genClasses ecoreClass="rhythmML.ecore#//ClassicNoteOffset">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//ClassicNoteOffset/note"/>
+    </genClasses>
+    <genClasses ecoreClass="rhythmML.ecore#//DrumNoteOffset">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//DrumNoteOffset/note"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rhythmML.ecore#//NoteOffset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//NoteOffset/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
