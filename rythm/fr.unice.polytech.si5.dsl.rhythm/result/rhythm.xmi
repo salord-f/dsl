@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="ASCII"?>
-<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="MyRythm" BPM="60">
+<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="MyRythm" BPM="100">
   <tracks xsi:type="rml:DrumTrack" name="MyTrack">
     <sections name="mySection">
-      <patternLoops loopNumber="12" pattern="//@tracks.0/@patterns.0"/>
+      <patternLoops loopNumber="10" pattern="//@tracks.0/@patterns.0"/>
+      <patternModifications pattern="//@tracks.0/@patterns.0" iterationBegin="1" iterationEnd="2">
+        <beat>
+          <ticks>
+            <notes xsi:type="rml:DrumNote" drumNote="CC"/>
+          </ticks>
+        </beat>
+      </patternModifications>
+      <patternModifications pattern="//@tracks.0/@patterns.0" everyIteration="4">
+        <beat>
+          <ticks>
+            <notes xsi:type="rml:DrumNote" drumNote="BD"/>
+          </ticks>
+        </beat>
+      </patternModifications>
     </sections>
     <patterns name="bar1">
       <beats>
-        <ticks>
-          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
-          <notes xsi:type="rml:DrumNote" drumNote="BD"/>
-        </ticks>
-        <ticks>
-          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
-        </ticks>
-        <ticks>
-          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
-          <notes xsi:type="rml:DrumNote"/>
-        </ticks>
         <ticks>
           <notes xsi:type="rml:DrumNote" drumNote="CH"/>
         </ticks>
       </beats>
     </patterns>
     <composition sections="//@tracks.0/@sections.0"/>
-    <offsets value="-0.5">
-      <note xsi:type="rml:DrumNote" drumNote="BD"/>
-    </offsets>
   </tracks>
 </rml:Rhythm>

@@ -1,19 +1,24 @@
-rhythm MyRythm tempo 60 BPM
+rhythm MyRythm tempo 100 BPM
 
 
 drum track MyTrack {
 
 	offsets:
-		note: bd -0.5 ticks
+		note ch -0.5 ticks
+
 
 	patterns:
 		bar1 {
-			beat: ch bd, ch, ch sd, ch
+			beat: ch
 		}
 		
 	sections:
 		mySection {
-			pattern: bar1 12 times
+			pattern: bar1 10 times
+			bar1 (iteration:[1:2],beat:0): cc
+			bar1 (iteration:every 4,beat:0): bd
+			
+			
 		}
 		
 		composition:mySection

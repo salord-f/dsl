@@ -94,8 +94,25 @@ PatternLoop returns PatternLoop :
 	pattern =[Pattern|EString] loopNumber=EInt 'times'
 ;
 
+
 PatternModification returns PatternModification :
-	pattern =[Pattern|EString] '(iteration:['(iterationBegin=EInt)?':'(iterationEnd=EInt)?'],beat:' beatNumber=EInt'):' beat=Beat
+	(PatternModificationArray) | (PatternModificationEvery)
+;
+
+PatternModificationArray returns PatternModification :
+	pattern =[Pattern|EString] 
+	
+	'(iteration:' 
+	'['(iterationBegin=EInt)?':'(iterationEnd=EInt)?']'
+	 ',beat:' beatNumber=EInt'):' beat=Beat  	
+;
+
+PatternModificationEvery returns PatternModification :
+	pattern =[Pattern|EString] 
+	
+	'(iteration:' 
+	'every' everyIteration=EInt
+	 ',beat:' beatNumber=EInt'):' beat=Beat  
 ;
 
 enum NoteEnum returns NOTES :

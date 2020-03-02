@@ -125,9 +125,16 @@ public class Generator {
         					
         					for(PatternModification m : s.getPatternModifications()) {
         						//TODO check if working
-        						if(i >= m.getIterationBegin() && i<=m.getIterationEnd() && j == m.getBeatNumber()) {
-        							b = m.getBeat();
+        						if (m.getEveryIteration() == -1) {
+        							if(i >= m.getIterationBegin() && i<=m.getIterationEnd() && j == m.getBeatNumber()) {
+            							b = m.getBeat();
+            						}
+        						}else {
+        							if ( j == m.getBeatNumber() && (i % m.getEveryIteration() ) == 0  ) {
+        								b = m.getBeat();
+        							}
         						}
+        						
         	        		}
         					
             				for(Tick tick : b.getTicks()) {
