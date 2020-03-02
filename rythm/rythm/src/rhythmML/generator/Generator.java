@@ -3,7 +3,9 @@ package rhythmML.generator;
 import java.io.File;
 import java.io.IOException;
 
+import javax.sound.midi.Instrument;
 import javax.sound.midi.InvalidMidiDataException;
+import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiEvent;
 import javax.sound.midi.MidiMessage;
 import javax.sound.midi.MidiSystem;
@@ -11,12 +13,15 @@ import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Sequence;
 import javax.sound.midi.Sequencer;
 import javax.sound.midi.ShortMessage;
+import javax.sound.midi.Soundbank;
+import javax.sound.midi.Synthesizer;
 import javax.sound.midi.Track;
 
 import org.eclipse.emf.common.util.EList;
 
 import rhythmML.Beat;
 import rhythmML.ClassicNote;
+import rhythmML.ClassicTrack;
 import rhythmML.Composition;
 import rhythmML.DRUM_NOTES;
 import rhythmML.DrumNote;
@@ -28,8 +33,15 @@ import rhythmML.PatternModification;
 import rhythmML.Rhythm;
 import rhythmML.Section;
 import rhythmML.Tick;
+import rhythmML.generator.DrumerUtils.InstrumentElement;
+import rhythmML.impl.ClassicTrackImpl;
+import rhythmML.impl.DrumTrackImpl;
 
 import static rhythmML.generator.DrumerUtils.addDrumHit;
+import static rhythmML.generator.DrumerUtils.addHit;
+
+import static rhythmML.generator.DrumerUtils.setInstrument;
+
 import static rhythmML.generator.DrumerUtils.toTick;
 
 public class Generator {
@@ -116,6 +128,17 @@ public class Generator {
         // TODO : refactor this crap
         for (rhythmML.Track t : rhythm.getTracks()) {
         	Composition c = t.getComposition();
+        	
+        	if (t instanceof DrumTrackImpl) {
+        		// special case as we have to use the dedicated track 10
+        	}
+        	else if (t instanceof ClassicTrackImpl) {
+        		String instrument = (((ClassicTrackImpl)t).getInstrument());
+        		InstrumentElement instrumentElement = DrumerUtils.InstrumentElement.convert(instrument);
+                DrumerUtils.setInstrument(track, instrumentElement);	
+        	}
+        	
+        	
         	for (Section s : c.getSections()) {
         		for (PatternLoop p : s.getPatternLoops()) {
     				EList<Beat> beats = p.getPattern().getBeats();
@@ -154,11 +177,14 @@ public class Generator {
                 						
                 						System.out.println(n.getName());
                     					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset, offsetNote);
-                    					addDrumNote(track, n, pos);
+                    					addDrumNote(track,9, n, pos);
             							
             						} else if (note instanceof ClassicNote )  {
             							
             							NOTES n = ((ClassicNote) note).getNote();
+            							int pitch = note.getPitch();
+                						System.out.println("pitch : " + pitch);
+
             							
             							for(NoteOffset o : t.getOffsets()) {
             								if (n.getName().equals(((ClassicNote) o.getNote()).getNote().getName())) {
@@ -169,7 +195,7 @@ public class Generator {
                     		        	}
                 						System.out.println(n.getName());
                     					int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset, offsetNote);
-                    					addNote(track, n, pos);
+                    					addNote(track, n, pos, pitch);
             						}
             						
             					               					
@@ -193,38 +219,50 @@ public class Generator {
         return sequence;
     }
 
-	private void addNote(Track track, NOTES n, int pos) {
+	private void addNote(Track track, NOTES n, int pos, int pitch) {
 		switch (n) {
 			case DO :
+		        addHit(track, DrumerUtils.Element.DO, pos, 90, pitch);
 				break;
 			case DO_SHARP :
+		        addHit(track, DrumerUtils.Element.DO_SHARP, pos, 90, pitch);
 				break;
 			case FA :
+		        addHit(track, DrumerUtils.Element.FA, pos, 90, pitch);
 				break;
 			case FA_SHARP :
+		        addHit(track, DrumerUtils.Element.FA_SHARP, pos, 90, pitch);
 				break;
 			case LA :
+		        addHit(track, DrumerUtils.Element.LA, pos, 90, pitch);
 				break;
 			case LA_SHARP :
+		        addHit(track, DrumerUtils.Element.LA_SHARP, pos, 90, pitch);
 				break;
 			case MI :
+		        addHit(track, DrumerUtils.Element.MI, pos, 90, pitch);
 				break;
 			case RE :
+		        addHit(track, DrumerUtils.Element.RE, pos, 90, pitch);
 				break;
 			case RE_SHARP :
+		        addHit(track, DrumerUtils.Element.RE_SHARP, pos, 90, pitch);
 				break;
 			case SI :
+		        addHit(track, DrumerUtils.Element.SI, pos, 90, pitch);
 				break;
 			case SOL :
+		        addHit(track, DrumerUtils.Element.SOL, pos, 90, pitch);
 				break;
 			case SOL_SHARP :
+		        addHit(track, DrumerUtils.Element.SOL_SHARP, pos, 90, pitch);
 				break;
 			default:
 				break;
 		}
 	}
 
-	private void addDrumNote(Track track, DRUM_NOTES n, int pos) {
+	private void addDrumNote(Track track,int chan, DRUM_NOTES n, int pos) {
 		switch (n) {
 			case BD:
 		        addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);

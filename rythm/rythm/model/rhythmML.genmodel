@@ -77,11 +77,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Tick/notes"/>
     </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//DrumTrack"/>
-    <genClasses ecoreClass="rhythmML.ecore#//Note"/>
+    <genClasses ecoreClass="rhythmML.ecore#//Note">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//Note/pitch"/>
+    </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//DrumNote">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//DrumNote/drumNote"/>
     </genClasses>
-    <genClasses ecoreClass="rhythmML.ecore#//ClassicTrack"/>
+    <genClasses ecoreClass="rhythmML.ecore#//ClassicTrack">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//ClassicTrack/instrument"/>
+    </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//ClassicNote">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//ClassicNote/note"/>
     </genClasses>

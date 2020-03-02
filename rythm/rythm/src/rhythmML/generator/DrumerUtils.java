@@ -96,13 +96,42 @@ public class DrumerUtils {
 	 * @param note the {@link DrumElement} id
 	 * @param tick the beat where the kick appends
 	 */
+
+	
 	public static void addDrumHit(Track track, DrumElement de, long tick, int velocity) {
 		final int NOTEON = 144;
 		final int NOTEOFF = 128;
 		
 
-		createEvent(track, NOTEON, 9, de, tick, velocity);
-		createEvent(track, NOTEOFF, 9, de, tick + 1, velocity);
+		createEvent(track, NOTEON, 9, de.noteNumber, tick, velocity);
+		createEvent(track, NOTEOFF, 9, de.noteNumber, tick + 1, velocity);
+	}
+	
+	public static void addHit(Track track, Element elem, long tick, int velocity, int pitch) {
+		final int NOTEON = 144;
+		final int NOTEOFF = 128;
+		
+
+		createEvent(track, NOTEON, 0, elem.noteNumber + pitch * 12, tick, velocity);
+		createEvent(track, NOTEOFF, 0, elem.noteNumber + pitch * 12, tick + 1, velocity);
+	}
+	
+	public static void setInstrument(Track track, 
+			InstrumentElement instrument) {
+		
+		ShortMessage sm = new ShortMessage( );
+		try {
+			// 1
+			// 25
+			// 115 
+			// 57 
+			// 106
+			sm.setMessage(ShortMessage.PROGRAM_CHANGE, 0, instrument.instrumentID, 0);
+			track.add(new MidiEvent(sm, 0));
+		} catch (InvalidMidiDataException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	/**
@@ -114,11 +143,11 @@ public class DrumerUtils {
 	 * @param tick
 	 * @param velocity
 	 */
-	private static void createEvent(Track track, int type, int chan, DrumElement de, long tick, int velocity) {
+	private static void createEvent(Track track, int type, int chan, int noteNumber, long tick, int velocity) {
 		ShortMessage message = new ShortMessage();
 
 		try {
-			message.setMessage(type, chan, de.noteNumber, velocity);
+			message.setMessage(type, chan, noteNumber, velocity);
 			MidiEvent event = new MidiEvent(message, tick);
 			track.add(event);
 		} catch (Exception ex) {
@@ -148,6 +177,45 @@ public class DrumerUtils {
 
 		private DrumElement(int noteNumber) {
 			this.noteNumber = noteNumber;
+		}
+	}
+	
+	public enum Element {
+		DO(0),
+		DO_SHARP(1), 
+		RE(2),
+		RE_SHARP(3),
+		MI(4), 
+		FA(5),
+		FA_SHARP(6), 
+		SOL(7), 
+		SOL_SHARP(8),
+		LA(9),
+		LA_SHARP(10),
+		SI(11);
+
+		public int noteNumber;
+
+		private Element(int noteNumber) {
+			this.noteNumber = noteNumber;
+		}
+	}
+	
+	public enum InstrumentElement {
+		Piano(1),
+		Guitar(25),
+		Trumpet(57),
+		Banjo(106);
+
+		public int instrumentID;
+
+		private InstrumentElement(int instrumentID) {
+			this.instrumentID = instrumentID;
+		}
+		
+		public static InstrumentElement convert(String name) {
+			InstrumentElement instrumentElement = InstrumentElement.valueOf(name);
+			return instrumentElement;
 		}
 	}
 }

@@ -18,6 +18,7 @@ DrumTrackImpl returns DrumTrack :
 
 ClassicTrackImpl returns ClassicTrack :
 	{ClassicTrack}
+	'instru'instrument=EString
 	'track'
 ;
 
@@ -68,11 +69,14 @@ Tick returns Tick:
 ;
 
 Note returns ClassicNote:
-	note=NoteEnum
+	note=NoteEnum 
+	"("
+	(pitch=EInt)
+	")"
 ;
 
 DrumNote returns DrumNote:
-	drumNote=DrumNoteEnum
+	(drumNote=DrumNoteEnum)
 ;
 
 
