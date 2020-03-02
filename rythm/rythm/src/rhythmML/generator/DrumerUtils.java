@@ -87,6 +87,7 @@ public class DrumerUtils {
 			pos = 0;
 		}*/
 		pos += offset;
+		//pos += resolution;
 		return pos <= 0 ? 0 : pos;
 	}
 

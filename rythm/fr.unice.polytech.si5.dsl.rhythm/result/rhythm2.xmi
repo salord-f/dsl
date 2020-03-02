@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="MyRythm" BPM="1000">
+  <tracks xsi:type="rml:ClassicTrack" name="MyTrack" instrument="Trumpet">
+    <sections name="mySection">
+      <patternLoops loopNumber="10" pattern="//@tracks.0/@patterns.0"/>
+    </sections>
+    <patterns name="bar1">
+      <beats>
+        <ticks>
+          <notes xsi:type="rml:ClassicNote" pitch="10" note="FA"/>
+        </ticks>
+      </beats>
+    </patterns>
+    <composition sections="//@tracks.0/@sections.0"/>
+  </tracks>
+</rml:Rhythm>

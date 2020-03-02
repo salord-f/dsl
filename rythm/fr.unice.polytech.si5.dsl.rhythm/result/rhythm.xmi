@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="MyRythm" BPM="100">
+<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="MyRythm" BPM="150">
   <tracks xsi:type="rml:DrumTrack" name="MyTrack">
     <sections name="mySection">
       <patternLoops loopNumber="10" pattern="//@tracks.0/@patterns.0"/>
@@ -26,5 +26,8 @@
       </beats>
     </patterns>
     <composition sections="//@tracks.0/@sections.0"/>
+    <offsets>
+      <note xsi:type="rml:DrumNote" drumNote="CH"/>
+    </offsets>
   </tracks>
 </rml:Rhythm>
