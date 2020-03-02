@@ -1,0 +1,23 @@
+rhythm MyRythm tempo 200 BPM
+
+
+instru Trumpet track MyTrack {
+
+	offsets:
+		note fa(8) -0.5 ticks
+
+
+	patterns:
+		bar1 {
+			beat: fa(4)
+		}
+		
+	sections:
+		mySection {
+			pattern: bar1 10 times
+			bar1 (iteration:[1:2],beat:0): fa(2)
+			bar1 (iteration:every 4,beat:0): fa(6)
+		}
+		
+		composition:mySection
+}
