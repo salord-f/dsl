@@ -71,7 +71,7 @@ Tick returns Tick:
 Note returns ClassicNote:
 	note=NoteEnum 
 	"("
-	(pitch=EInt)
+	(pitch=(EInt|EIntMinus))
 	")"
 ;
 
@@ -132,6 +132,9 @@ EString returns ecore::EString:
 
 EInt returns ecore::EInt:
 	INT;
+	
+EIntMinus returns ecore::EInt:
+	'-' INT;	
 	
 EFloat returns ecore::EFloat:
 	INT '.' INT

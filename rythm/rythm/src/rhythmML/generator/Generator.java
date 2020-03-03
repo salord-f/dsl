@@ -83,6 +83,7 @@ public class Generator {
 			}
 		}
 		// Close the MidiDevice & free resources
+		
 		sequencer.stop();
 		sequencer.close();
 	}
@@ -154,7 +155,7 @@ public class Generator {
 									} else if (note instanceof ClassicNote) {
 
 										NOTES n = ((ClassicNote) note).getNote();
-										int pitch = note.getPitch();
+										int pitch = note.getPitch() + 1;
 										System.out.println("pitch : " + pitch);
 
 										for (NoteOffset o : t.getOffsets()) {

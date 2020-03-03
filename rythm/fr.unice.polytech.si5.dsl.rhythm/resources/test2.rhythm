@@ -1,12 +1,13 @@
-rhythm MyRythm tempo 1000 BPM
+rhythm MyRythm tempo 200 BPM
 
 
-instru Trumpet track MyTrack {
+instru Piano track MyTrack {
 
 	patterns:
 		bar1 {
-			beat: fa(10)
+			beat: fa(-1)
 		}
+
 		
 	sections:
 		mySection {
