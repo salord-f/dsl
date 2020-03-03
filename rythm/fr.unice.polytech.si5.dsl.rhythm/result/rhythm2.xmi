@@ -7,23 +7,35 @@
     <patterns name="bar1">
       <beats>
         <ticks>
+          <notes xsi:type="rml:ClassicNote" pitch="4" note="FA"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="BLANK"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="BLANK"/>
+        </ticks>
+        <ticks>
           <notes xsi:type="rml:ClassicNote" pitch="5" note="FA"/>
         </ticks>
       </beats>
     </patterns>
     <composition sections="//@tracks.0/@sections.0"/>
   </tracks>
-  <tracks xsi:type="rml:ClassicTrack" name="MyTrack" instrument="piano">
-    <sections name="mySection">
-      <patternLoops loopNumber="10" pattern="//@tracks.0/@patterns.0"/>
+  <tracks xsi:type="rml:ClassicTrack" name="MyTrack" instrument="banjo">
+    <sections name="mySection2">
+      <patternLoops loopNumber="10" pattern="//@tracks.1/@patterns.0"/>
     </sections>
-    <patterns name="bar1">
+    <patterns name="bar2">
       <beats>
         <ticks>
-          <notes xsi:type="rml:ClassicNote" pitch="5" note="LA"/>
+          <notes xsi:type="rml:ClassicNote" pitch="5"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:ClassicNote" pitch="4" note="FA"/>
         </ticks>
       </beats>
     </patterns>
-    <composition sections="//@tracks.0/@sections.0"/>
+    <composition sections="//@tracks.1/@sections.0"/>
   </tracks>
 </rml:Rhythm>

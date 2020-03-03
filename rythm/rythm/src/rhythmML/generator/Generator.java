@@ -84,7 +84,7 @@ public class Generator {
 			}
 		}
 		// Close the MidiDevice & free resources
-		
+
 		sequencer.stop();
 		sequencer.close();
 	}
@@ -105,16 +105,15 @@ public class Generator {
 		for (rhythmML.Track t : rhythm.getTracks()) {
 			Composition c = t.getComposition();
 
-			if (t instanceof DrumTrackImpl) {
-				// special case as we have to use the dedicated track 10
-			} else if (t instanceof ClassicTrackImpl) {
+			if (t instanceof ClassicTrackImpl) {
 				try {
 					String instrument = (((ClassicTrackImpl) t).getInstrument());
-					InstrumentElement instrumentElement = DrumerUtils.InstrumentElement.convert(instrument.toLowerCase());
+					InstrumentElement instrumentElement = DrumerUtils.InstrumentElement
+							.convert(instrument.toLowerCase());
 					DrumerUtils.setInstrument(track, instrumentElement, trackNumber);
-				}
-				catch(Exception e){
-					System.out.println("--------------------WARNING --------------------------The instrument you selected is unknown, piano is selected as default");
+				} catch (Exception e) {
+					System.out.println(
+							"--------------------WARNING --------------------------The instrument you selected is unknown, piano is selected as default");
 				}
 			}
 
@@ -127,34 +126,27 @@ public class Generator {
 
 							for (PatternModification m : s.getPatternModifications()) {
 								// TODO check if working
-								if (m.getEveryIteration() == -1) {
-									if (i >= m.getIterationBegin() && i <= m.getIterationEnd()
-											&& j == m.getBeatNumber()) {
+								if (j == m.getBeatNumber()) {
+									if (m.getEveryIteration() == -1) {
+										if (i >= m.getIterationBegin() && i <= m.getIterationEnd()) {
+											b = m.getBeat();
+											break;
+										}
+									} else if ((i % m.getEveryIteration()) == 0) {
 										b = m.getBeat();
+										break;
 									}
-								} else {
-									if (j == m.getBeatNumber() && (i % m.getEveryIteration()) == 0) {
-										b = m.getBeat();
-									}
+
 								}
+
 							}
 
 							for (Tick tick : b.getTicks()) {
 								for (Note note : tick.getNotes()) {
-									double offset = 0.0;
 
 									if (note instanceof DrumNote) {
 										DRUM_NOTES n = ((DrumNote) note).getDrumNote();
-
-										for (NoteOffset o : t.getOffsets()) {
-											if (n.getName().equals(((DrumNote) o.getNote()).getDrumNote().getName())) {
-												offset = o.getValue() * resolution / b.getTicks().size();
-												System.out.println(offset);
-												break;
-											}
-										}
-
-										System.out.println(n.getName());
+										double offset = applyOffset(t, n, b);
 										int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset,
 												offsetNote);
 										addDrumNote(track, 9, n, pos);
@@ -162,33 +154,22 @@ public class Generator {
 									} else if (note instanceof ClassicNote) {
 
 										NOTES n = ((ClassicNote) note).getNote();
+										double offset = applyOffset(t, n, b);
 										int pitch = note.getPitch() + 1;
-										System.out.println("pitch : " + pitch);
-
-										for (NoteOffset o : t.getOffsets()) {
-											if (n.getName().equals(((ClassicNote) o.getNote()).getNote().getName())) {
-												offset = (o.getValue() * 1.0 / b.getTicks().size()) * 50;
-												System.out.println(offset);
-												break;
-											}
-										}
-										System.out.println(n.getName());
+										//System.out.println("pitch : " + pitch);
 										int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset,
 												offsetNote);
-										addNote(track,trackNumber, n, pos, pitch);
+										addNote(track, trackNumber, n, pos, pitch);
 									}
 								}
 								tickPos += 1.0 / b.getTicks().size();
-								// System.out.println(tickPos);
 							}
-
 							tickPos = 0;
 							beat++;
 						}
 						beat = 0;
 						bar++;
 					}
-
 				}
 			}
 			bar = 0;
@@ -201,45 +182,14 @@ public class Generator {
 	}
 
 	private void addNote(Track track, int trackNumber, NOTES n, int pos, int pitch) {
-		switch (n) {
-		case DO:
-			addHit(track,trackNumber, DrumerUtils.Element.DO, pos, 90, pitch);
-			break;
-		case DO_SHARP:
-			addHit(track,trackNumber, DrumerUtils.Element.DO_SHARP, pos, 90, pitch);
-			break;
-		case FA:
-			addHit(track,trackNumber, DrumerUtils.Element.FA, pos, 90, pitch);
-			break;
-		case FA_SHARP:
-			addHit(track,trackNumber, DrumerUtils.Element.FA_SHARP, pos, 90, pitch);
-			break;
-		case LA:
-			addHit(track,trackNumber, DrumerUtils.Element.LA, pos, 90, pitch);
-			break;
-		case LA_SHARP:
-			addHit(track,trackNumber, DrumerUtils.Element.LA_SHARP, pos, 90, pitch);
-			break;
-		case MI:
-			addHit(track,trackNumber, DrumerUtils.Element.MI, pos, 90, pitch);
-			break;
-		case RE:
-			addHit(track,trackNumber, DrumerUtils.Element.RE, pos, 90, pitch);
-			break;
-		case RE_SHARP:
-			addHit(track,trackNumber, DrumerUtils.Element.RE_SHARP, pos, 90, pitch);
-			break;
-		case SI:
-			addHit(track,trackNumber, DrumerUtils.Element.SI, pos, 90, pitch);
-			break;
-		case SOL:
-			addHit(track,trackNumber, DrumerUtils.Element.SOL, pos, 90, pitch);
-			break;
-		case SOL_SHARP:
-			addHit(track,trackNumber, DrumerUtils.Element.SOL_SHARP, pos, 90, pitch);
-			break;
-		default:
-			break;
+		if(DrumerUtils.Element.valueOf(n.toString()) == DrumerUtils.Element.BLANK) {
+			addHit(track, trackNumber, DrumerUtils.Element.valueOf(n.toString()), pos, 0, pitch);
+			return;
+		}
+		try {
+			addHit(track, trackNumber, DrumerUtils.Element.valueOf(n.toString()), pos, 90, pitch);
+		} catch (Exception e) {
+			System.out.println(e.getCause());
 		}
 	}
 
@@ -269,6 +219,24 @@ public class Generator {
 		default:
 			break;
 		}
+	}
+
+	private double applyOffset(rhythmML.Track t, DRUM_NOTES n, Beat b) {
+		for (NoteOffset o : t.getOffsets()) {
+			if (n.getName().equals(((DrumNote) o.getNote()).getDrumNote().getName())) {
+				return (o.getValue() * 1.0 / b.getTicks().size()) * 50;
+			}
+		}
+		return 0.0;
+	}
+
+	private double applyOffset(rhythmML.Track t, NOTES n, Beat b) {
+		for (NoteOffset o : t.getOffsets()) {
+			if (n.getName().equals(((ClassicNote) o.getNote()).getNote().getName())) {
+				return (o.getValue() * 1.0 / b.getTicks().size()) * 50;
+			}
+		}
+		return 0.0;
 	}
 
 	public static void analyzeSequence(Sequence sequence) {

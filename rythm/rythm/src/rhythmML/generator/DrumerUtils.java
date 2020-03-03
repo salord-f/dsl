@@ -15,13 +15,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Random;
-
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiEvent;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
-import javax.sound.midi.Sequence;
 import javax.sound.midi.Sequencer;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Soundbank;
@@ -29,10 +26,10 @@ import javax.sound.midi.Synthesizer;
 import javax.sound.midi.Track;
 import javax.sound.midi.Transmitter;
 
-
 public class DrumerUtils {
 	/**
 	 * load a new soundBank
+	 * 
 	 * @param sequencer
 	 * @param soundBankPath
 	 * @throws FileNotFoundException
@@ -65,7 +62,10 @@ public class DrumerUtils {
 	}
 
 	/**
-	 * give the ``global'' tick position based on the relatives bar, beat and tick numbers; for a specific settings in term of numbers of beats per Bar and the chosen resolution
+	 * give the ``global'' tick position based on the relatives bar, beat and tick
+	 * numbers; for a specific settings in term of numbers of beats per Bar and the
+	 * chosen resolution
+	 * 
 	 * @param bar
 	 * @param beat
 	 * @param division
@@ -73,21 +73,22 @@ public class DrumerUtils {
 	 * @param resolution
 	 * @return
 	 */
-	public static int toTick(int bar, int beat, double division, int nbBeatPerBar, int resolution, double offset, double offsetNote) {
+	public static int toTick(int bar, int beat, double division, int nbBeatPerBar, int resolution, double offset,
+			double offsetNote) {
 		int pos = bar * nbBeatPerBar * resolution;
 		pos += beat * resolution;
 		pos += division * resolution;
-		
-		double nbTicks = resolution / nbBeatPerBar;
-		
-		/*double concreteOffset = (nbTicks * offsetNote)  / 2;
-		
-		pos += new Random().nextInt((int)concreteOffset * 2) - concreteOffset;
-		if (pos < 0){
-			pos = 0;
-		}*/
+
+		//double nbTicks = resolution / nbBeatPerBar;
+
+		/*
+		 * double concreteOffset = (nbTicks * offsetNote) / 2;
+		 * 
+		 * pos += new Random().nextInt((int)concreteOffset * 2) - concreteOffset; if
+		 * (pos < 0){ pos = 0; }
+		 */
 		pos += offset;
-		//pos += resolution;
+		// pos += resolution;
 		return pos <= 0 ? 0 : pos;
 	}
 
@@ -98,45 +99,42 @@ public class DrumerUtils {
 	 * @param tick the beat where the kick appends
 	 */
 
-	
 	public static void addDrumHit(Track track, DrumElement de, long tick, int velocity) {
 		final int NOTEON = 144;
 		final int NOTEOFF = 128;
-		
 
 		createEvent(track, NOTEON, 9, de.noteNumber, tick, velocity);
 		createEvent(track, NOTEOFF, 9, de.noteNumber, tick + 1, velocity);
 	}
-	
-	public static void addHit(Track track,int trackNumber, Element elem, long tick, int velocity, int pitch) {
+
+	public static void addHit(Track track, int trackNumber, Element elem, long tick, int velocity, int pitch) {
 		final int NOTEON = 144;
 		final int NOTEOFF = 128;
-		
 
 		createEvent(track, NOTEON, trackNumber, elem.noteNumber + pitch * 12, tick, velocity);
 		createEvent(track, NOTEOFF, trackNumber, elem.noteNumber + pitch * 12, tick + 1, velocity);
 	}
-	
-	public static void setInstrument(Track track, 
-			InstrumentElement instrument, int trackNumero) {
-		
-		ShortMessage sm = new ShortMessage( );
+
+	public static void setInstrument(Track track, InstrumentElement instrument, int trackNumero) {
+
+		ShortMessage sm = new ShortMessage();
 		try {
 			// 1
 			// 25
-			// 115 
-			// 57 
+			// 115
+			// 57
 			// 106
 			sm.setMessage(ShortMessage.PROGRAM_CHANGE, trackNumero, instrument.instrumentID, 0);
 			track.add(new MidiEvent(sm, 0));
 		} catch (InvalidMidiDataException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	/**
 	 * create a MIDI message in the current Track
+	 * 
 	 * @param track
 	 * @param type
 	 * @param chan
@@ -180,20 +178,10 @@ public class DrumerUtils {
 			this.noteNumber = noteNumber;
 		}
 	}
-	
+
 	public enum Element {
-		DO(0),
-		DO_SHARP(1), 
-		RE(2),
-		RE_SHARP(3),
-		MI(4), 
-		FA(5),
-		FA_SHARP(6), 
-		SOL(7), 
-		SOL_SHARP(8),
-		LA(9),
-		LA_SHARP(10),
-		SI(11);
+		DO(0), DO_SHARP(1), RE(2), RE_SHARP(3), MI(4), FA(5), FA_SHARP(6), SOL(7), SOL_SHARP(8), LA(9), LA_SHARP(10),
+		SI(11), BLANK(0);
 
 		public int noteNumber;
 
@@ -201,19 +189,16 @@ public class DrumerUtils {
 			this.noteNumber = noteNumber;
 		}
 	}
-	
+
 	public enum InstrumentElement {
-		piano(1),
-		guitar(25),
-		trumpet(57),
-		banjo(106);
+		piano(1), guitar(25), trumpet(57), banjo(106);
 
 		public int instrumentID;
 
 		private InstrumentElement(int instrumentID) {
 			this.instrumentID = instrumentID;
 		}
-		
+
 		public static InstrumentElement convert(String name) {
 			InstrumentElement instrumentElement = InstrumentElement.valueOf(name);
 			return instrumentElement;

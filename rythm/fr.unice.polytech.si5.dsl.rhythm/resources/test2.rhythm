@@ -5,7 +5,7 @@ piano track MyTrack {
 
 	patterns:
 		bar1 {
-			beat: fa(4)
+			beat: fa(4), _, _, fa(5)
 		}
 
 		
@@ -14,17 +14,17 @@ piano track MyTrack {
 			pattern: bar1 10 times
 		}
 		
-		composition:mySection
+	composition:mySection
 }
 
-piano track MyTrack {
+banjo track MyTrack {
 
 
 
 
 	patterns:
 		bar2 {
-			beat: do(5),fa(4)
+			beat: do(5), fa(4)
 		}
 		
 	sections:
@@ -32,5 +32,5 @@ piano track MyTrack {
 			pattern: bar2 10 times
 		}
 		
-		composition:mySection2
+	composition:mySection2
 }

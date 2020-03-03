@@ -121,7 +121,7 @@ PatternModificationEvery returns PatternModification :
 
 enum NoteEnum returns NOTES :
 	 DO = "do" | DO_SHARP = "do#" | FA = "fa" | FA_SHARP = "fa#" | LA = "la" 
-	| LA_SHARP = "la#" | MI = "mi" | RE = "re" | RE_SHARP = "re#" | SI = "si" | SOL = "sol" | SOL_SHARP = "sol#" /* | BLANK = "_"*/
+	| LA_SHARP = "la#" | MI = "mi" | RE = "re" | RE_SHARP = "re#" | SI = "si" | SOL = "sol" | SOL_SHARP = "sol#" | BLANK = "_"
 ;
 
 enum DrumNoteEnum returns DRUM_NOTES :

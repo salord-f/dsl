@@ -267,6 +267,10 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_P979wVMCEeqZRKHyiHst3w" fontName="Cantarell" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_P979wlMCEeqZRKHyiHst3w"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_WfqEoF2SEeqiUMQQ-73NUQ" type="3010" element="_WefnAF2SEeqiUMQQ-73NUQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WfqEoV2SEeqiUMQQ-73NUQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WfqEol2SEeqiUMQQ-73NUQ"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_y2Qc8VMBEeqZRKHyiHst3w"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_y2Qc8lMBEeqZRKHyiHst3w"/>
           </children>
@@ -1284,6 +1288,14 @@
         <target xmi:type="ecore:EEnumLiteral" href="rhythmML.ecore#//NOTES/SI"/>
         <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythmML.ecore#//NOTES/SI"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_P90B8VMCEeqZRKHyiHst3w" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WefnAF2SEeqiUMQQ-73NUQ" name="BLANK" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="rhythmML.ecore#//NOTES/BLANK"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="rhythmML.ecore#//NOTES/BLANK"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Weg1IF2SEeqiUMQQ-73NUQ" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
