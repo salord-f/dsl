@@ -99,6 +99,7 @@ public class Generator {
 		int beat = 0;
 		double tickPos = 0;
 		double offsetNote = 0.05;
+		int trackNumber = 0;
 
 		// TODO : refactor this crap
 		for (rhythmML.Track t : rhythm.getTracks()) {
@@ -110,7 +111,7 @@ public class Generator {
 				try {
 					String instrument = (((ClassicTrackImpl) t).getInstrument());
 					InstrumentElement instrumentElement = DrumerUtils.InstrumentElement.convert(instrument.toLowerCase());
-					DrumerUtils.setInstrument(track, instrumentElement);
+					DrumerUtils.setInstrument(track, instrumentElement, trackNumber);
 				}
 				catch(Exception e){
 					System.out.println("--------------------WARNING --------------------------The instrument you selected is unknown, piano is selected as default");
@@ -174,7 +175,7 @@ public class Generator {
 										System.out.println(n.getName());
 										int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset,
 												offsetNote);
-										addNote(track, n, pos, pitch);
+										addNote(track,trackNumber, n, pos, pitch);
 									}
 								}
 								tickPos += 1.0 / b.getTicks().size();
@@ -190,48 +191,52 @@ public class Generator {
 
 				}
 			}
+			bar = 0;
+			beat = 0;
+			tickPos = 0;
+			trackNumber++;
 		}
 
 		return sequence;
 	}
 
-	private void addNote(Track track, NOTES n, int pos, int pitch) {
+	private void addNote(Track track, int trackNumber, NOTES n, int pos, int pitch) {
 		switch (n) {
 		case DO:
-			addHit(track, DrumerUtils.Element.DO, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.DO, pos, 90, pitch);
 			break;
 		case DO_SHARP:
-			addHit(track, DrumerUtils.Element.DO_SHARP, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.DO_SHARP, pos, 90, pitch);
 			break;
 		case FA:
-			addHit(track, DrumerUtils.Element.FA, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.FA, pos, 90, pitch);
 			break;
 		case FA_SHARP:
-			addHit(track, DrumerUtils.Element.FA_SHARP, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.FA_SHARP, pos, 90, pitch);
 			break;
 		case LA:
-			addHit(track, DrumerUtils.Element.LA, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.LA, pos, 90, pitch);
 			break;
 		case LA_SHARP:
-			addHit(track, DrumerUtils.Element.LA_SHARP, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.LA_SHARP, pos, 90, pitch);
 			break;
 		case MI:
-			addHit(track, DrumerUtils.Element.MI, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.MI, pos, 90, pitch);
 			break;
 		case RE:
-			addHit(track, DrumerUtils.Element.RE, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.RE, pos, 90, pitch);
 			break;
 		case RE_SHARP:
-			addHit(track, DrumerUtils.Element.RE_SHARP, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.RE_SHARP, pos, 90, pitch);
 			break;
 		case SI:
-			addHit(track, DrumerUtils.Element.SI, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.SI, pos, 90, pitch);
 			break;
 		case SOL:
-			addHit(track, DrumerUtils.Element.SOL, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.SOL, pos, 90, pitch);
 			break;
 		case SOL_SHARP:
-			addHit(track, DrumerUtils.Element.SOL_SHARP, pos, 90, pitch);
+			addHit(track,trackNumber, DrumerUtils.Element.SOL_SHARP, pos, 90, pitch);
 			break;
 		default:
 			break;

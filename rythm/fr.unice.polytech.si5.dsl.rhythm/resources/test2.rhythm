@@ -5,7 +5,7 @@ piano track MyTrack {
 
 	patterns:
 		bar1 {
-			beat: fa(5)
+			beat: fa(4)
 		}
 
 		
@@ -23,14 +23,14 @@ piano track MyTrack {
 
 
 	patterns:
-		bar1 {
-			beat: la(5)
+		bar2 {
+			beat: do(5),fa(4)
 		}
 		
 	sections:
-		mySection {
-			pattern: bar1 10 times
+		mySection2 {
+			pattern: bar2 10 times
 		}
 		
-		composition:mySection
+		composition:mySection2
 }

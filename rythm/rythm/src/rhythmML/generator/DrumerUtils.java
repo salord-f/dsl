@@ -108,17 +108,17 @@ public class DrumerUtils {
 		createEvent(track, NOTEOFF, 9, de.noteNumber, tick + 1, velocity);
 	}
 	
-	public static void addHit(Track track, Element elem, long tick, int velocity, int pitch) {
+	public static void addHit(Track track,int trackNumber, Element elem, long tick, int velocity, int pitch) {
 		final int NOTEON = 144;
 		final int NOTEOFF = 128;
 		
 
-		createEvent(track, NOTEON, 0, elem.noteNumber + pitch * 12, tick, velocity);
-		createEvent(track, NOTEOFF, 0, elem.noteNumber + pitch * 12, tick + 1, velocity);
+		createEvent(track, NOTEON, trackNumber, elem.noteNumber + pitch * 12, tick, velocity);
+		createEvent(track, NOTEOFF, trackNumber, elem.noteNumber + pitch * 12, tick + 1, velocity);
 	}
 	
 	public static void setInstrument(Track track, 
-			InstrumentElement instrument) {
+			InstrumentElement instrument, int trackNumero) {
 		
 		ShortMessage sm = new ShortMessage( );
 		try {
@@ -127,7 +127,7 @@ public class DrumerUtils {
 			// 115 
 			// 57 
 			// 106
-			sm.setMessage(ShortMessage.PROGRAM_CHANGE, 0, instrument.instrumentID, 0);
+			sm.setMessage(ShortMessage.PROGRAM_CHANGE, trackNumero, instrument.instrumentID, 0);
 			track.add(new MidiEvent(sm, 0));
 		} catch (InvalidMidiDataException e) {
 			e.printStackTrace();
