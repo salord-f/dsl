@@ -1,13 +1,31 @@
 rhythm MyRythm tempo 200 BPM
 
 
-instru Piano track MyTrack {
+piano track MyTrack {
 
 	patterns:
 		bar1 {
-			beat: fa(-1)
+			beat: fa(5)
 		}
 
+		
+	sections:
+		mySection {
+			pattern: bar1 10 times
+		}
+		
+		composition:mySection
+}
+
+piano track MyTrack {
+
+
+
+
+	patterns:
+		bar1 {
+			beat: la(5)
+		}
 		
 	sections:
 		mySection {

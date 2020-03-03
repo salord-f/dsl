@@ -18,7 +18,7 @@ DrumTrackImpl returns DrumTrack :
 
 ClassicTrackImpl returns ClassicTrack :
 	{ClassicTrack}
-	'instru'instrument=EString
+	instrument=EString
 	'track'
 ;
 
