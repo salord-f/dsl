@@ -1,6 +1,5 @@
 package rhythmML.generator;
 
-import java.io.Console;
 import java.io.File;
 import java.io.IOException;
 
@@ -16,23 +15,9 @@ import javax.sound.midi.Track;
 
 import org.eclipse.emf.common.util.EList;
 
-import rhythmML.Beat;
-import rhythmML.ClassicNote;
-import rhythmML.Composition;
-import rhythmML.DRUM_NOTES;
-import rhythmML.DrumNote;
-import rhythmML.NOTES;
-import rhythmML.Note;
-import rhythmML.NoteOffset;
-import rhythmML.PatternLoop;
-import rhythmML.PatternModification;
-import rhythmML.Rhythm;
-import rhythmML.Section;
-import rhythmML.Tick;
+import rhythmML.*;
 import rhythmML.generator.DrumerUtils.InstrumentElement;
 import rhythmML.impl.ClassicTrackImpl;
-import rhythmML.impl.DrumTrackImpl;
-
 import static rhythmML.generator.DrumerUtils.addDrumHit;
 import static rhythmML.generator.DrumerUtils.addHit;
 import static rhythmML.generator.DrumerUtils.toTick;

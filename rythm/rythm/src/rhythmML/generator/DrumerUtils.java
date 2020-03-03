@@ -1,35 +1,22 @@
 /**
-* --------------------------------------------------------------------------------------
-* "THE BEER-WARE LICENSE" (Revision 42):
-* Julien Deantoni and Luc Hogie wrote this file.  As long as you retain this notice you
-* can do whatever you want with this stuff. If we meet some day, and you think
-* this stuff is worth it, you can buy me/us a beer in return. 
-* --------------------------------------------------------------------------------------
-**/
+ * --------------------------------------------------------------------------------------
+ * "THE BEER-WARE LICENSE" (Revision 42):
+ * Julien Deantoni and Luc Hogie wrote this file.  As long as you retain this notice you
+ * can do whatever you want with this stuff. If we meet some day, and you think
+ * this stuff is worth it, you can buy me/us a beer in return.
+ * --------------------------------------------------------------------------------------
+ **/
 
 package rhythmML.generator;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import javax.sound.midi.*;
+import java.io.*;
 import java.util.Arrays;
-import javax.sound.midi.InvalidMidiDataException;
-import javax.sound.midi.MidiEvent;
-import javax.sound.midi.MidiSystem;
-import javax.sound.midi.MidiUnavailableException;
-import javax.sound.midi.Sequencer;
-import javax.sound.midi.ShortMessage;
-import javax.sound.midi.Soundbank;
-import javax.sound.midi.Synthesizer;
-import javax.sound.midi.Track;
-import javax.sound.midi.Transmitter;
 
 public class DrumerUtils {
 	/**
 	 * load a new soundBank
-	 * 
+	 *
 	 * @param sequencer
 	 * @param soundBankPath
 	 * @throws FileNotFoundException
@@ -58,44 +45,28 @@ public class DrumerUtils {
 			tm.close();
 		}
 		sequencer.getTransmitter().setReceiver(synthesizer.getReceiver());
-		return;
 	}
 
 	/**
 	 * give the ``global'' tick position based on the relatives bar, beat and tick
 	 * numbers; for a specific settings in term of numbers of beats per Bar and the
 	 * chosen resolution
-	 * 
-	 * @param bar
-	 * @param beat
-	 * @param division
-	 * @param nbBeatPerBar
-	 * @param resolution
-	 * @return
 	 */
 	public static int toTick(int bar, int beat, double division, int nbBeatPerBar, int resolution, double offset,
 			double offsetNote) {
 		int pos = bar * nbBeatPerBar * resolution;
 		pos += beat * resolution;
 		pos += division * resolution;
-
-		//double nbTicks = resolution / nbBeatPerBar;
-
-		/*
-		 * double concreteOffset = (nbTicks * offsetNote) / 2;
-		 * 
-		 * pos += new Random().nextInt((int)concreteOffset * 2) - concreteOffset; if
-		 * (pos < 0){ pos = 0; }
-		 */
 		pos += offset;
-		// pos += resolution;
-		return pos <= 0 ? 0 : pos;
+		pos += Math.random() < 0.5 ? offsetNote : -offsetNote;
+
+		return Math.max(pos, 0);
 	}
 
 	/**
 	 * add a note on a drum element at a specific beat(tick)
 	 *
-	 * @param note the {@link DrumElement} id
+	 * @param de   the {@link DrumElement} id
 	 * @param tick the beat where the kick appends
 	 */
 
@@ -134,13 +105,6 @@ public class DrumerUtils {
 
 	/**
 	 * create a MIDI message in the current Track
-	 * 
-	 * @param track
-	 * @param type
-	 * @param chan
-	 * @param de
-	 * @param tick
-	 * @param velocity
 	 */
 	private static void createEvent(Track track, int type, int chan, int noteNumber, long tick, int velocity) {
 		ShortMessage message = new ShortMessage();
@@ -185,7 +149,7 @@ public class DrumerUtils {
 
 		public int noteNumber;
 
-		private Element(int noteNumber) {
+		Element(int noteNumber) {
 			this.noteNumber = noteNumber;
 		}
 	}
@@ -195,13 +159,12 @@ public class DrumerUtils {
 
 		public int instrumentID;
 
-		private InstrumentElement(int instrumentID) {
+		InstrumentElement(int instrumentID) {
 			this.instrumentID = instrumentID;
 		}
 
 		public static InstrumentElement convert(String name) {
-			InstrumentElement instrumentElement = InstrumentElement.valueOf(name);
-			return instrumentElement;
+			return InstrumentElement.valueOf(name);
 		}
 	}
 }
