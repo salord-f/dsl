@@ -13,7 +13,7 @@ import javax.sound.midi.*;
 import java.io.*;
 import java.util.Arrays;
 
-public class DrumerUtils {
+public class MusicUtils {
 	/**
 	 * load a new soundBank
 	 *
@@ -122,8 +122,8 @@ public class DrumerUtils {
 	 * Partial list of Drum elements to ease the reading
 	 */
 	public enum DrumElement {
-		AcousticBassDrum(35), BassDrum(36), SideStick(37), AcousticSnare(38), HandClap(39), ElectricSnare(40),
-		LowFloorTom(41), ClosedHiHat(42), OpenHiHat(46), CrashCymbal(49), RideCymbal(51);
+		AcousticBassDrum(35, "ABD"), BassDrum(36, "BD"), SideStick(37, "SS"), AcousticSnare(38, "AS"), HandClap(39, "HC"), ElectricSnare(40, "SD"),
+		LowFloorTom(41, "LFT"), ClosedHiHat(42, "CH"), OpenHiHat(46, "OH"), CrashCymbal(49, "CC"), RideCymbal(51, "RC");
 
 		/*
 		 * "High floor tom", "Pedal hi-hat", "Low tom", "Open hi-hat", "Low-mid tom",
@@ -137,15 +137,27 @@ public class DrumerUtils {
 		 * "Open triangle" };
 		 */
 		public int noteNumber;
-
-		private DrumElement(int noteNumber) {
+		public String name;
+		
+		private DrumElement(int noteNumber, String name) {
 			this.noteNumber = noteNumber;
+			this.name = name;
 		}
+		
+		public static DrumElement getFromName(String name) {
+			for(DrumElement e : DrumElement.values()) {
+				if(name.equals(e.name)) {
+					return e;
+				}
+			}
+			return null;
+		}
+		
 	}
 
 	public enum Element {
 		DO(0), DO_SHARP(1), RE(2), RE_SHARP(3), MI(4), FA(5), FA_SHARP(6), SOL(7), SOL_SHARP(8), LA(9), LA_SHARP(10),
-		SI(11), BLANK(0);
+		SI(11);
 
 		public int noteNumber;
 

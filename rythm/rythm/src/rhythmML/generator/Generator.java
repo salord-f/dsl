@@ -16,11 +16,11 @@ import javax.sound.midi.Track;
 import org.eclipse.emf.common.util.EList;
 
 import rhythmML.*;
-import rhythmML.generator.DrumerUtils.InstrumentElement;
+import rhythmML.generator.MusicUtils.InstrumentElement;
 import rhythmML.impl.ClassicTrackImpl;
-import static rhythmML.generator.DrumerUtils.addDrumHit;
-import static rhythmML.generator.DrumerUtils.addHit;
-import static rhythmML.generator.DrumerUtils.toTick;
+import static rhythmML.generator.MusicUtils.addDrumHit;
+import static rhythmML.generator.MusicUtils.addHit;
+import static rhythmML.generator.MusicUtils.toTick;
 
 public class Generator {
 
@@ -93,9 +93,9 @@ public class Generator {
 			if (t instanceof ClassicTrackImpl) {
 				try {
 					String instrument = (((ClassicTrackImpl) t).getInstrument());
-					InstrumentElement instrumentElement = DrumerUtils.InstrumentElement
+					InstrumentElement instrumentElement = MusicUtils.InstrumentElement
 							.convert(instrument.toLowerCase());
-					DrumerUtils.setInstrument(track, instrumentElement, trackNumber);
+					MusicUtils.setInstrument(track, instrumentElement, trackNumber);
 				} catch (Exception e) {
 					System.out.println(
 							"--------------------WARNING --------------------------The instrument you selected is unknown, piano is selected as default");
@@ -107,25 +107,12 @@ public class Generator {
 					EList<Beat> beats = p.getPattern().getBeats();
 					for (int i = 0; i < p.getLoopNumber(); i++) {
 						for (int j = 0; j < beats.size(); j++) {
-							Beat b = beats.get(j);
-
-							for (PatternModification m : s.getPatternModifications()) {
-								// TODO check if working
-								if (j == m.getBeatNumber()) {
-									if (m.getEveryIteration() == -1) {
-										if (i >= m.getIterationBegin() && i <= m.getIterationEnd()) {
-											b = m.getBeat();
-											break;
-										}
-									} else if ((i % m.getEveryIteration()) == 0) {
-										b = m.getBeat();
-										break;
-									}
-
-								}
-
+							
+							Beat b = applyPatternModification(s, i, j);
+							if (b == null) {
+								b = beats.get(j);
 							}
-
+									
 							for (Tick tick : b.getTicks()) {
 								for (Note note : tick.getNotes()) {
 
@@ -167,43 +154,34 @@ public class Generator {
 	}
 
 	private void addNote(Track track, int trackNumber, NOTES n, int pos, int pitch) {
-		if(DrumerUtils.Element.valueOf(n.toString()) == DrumerUtils.Element.BLANK) {
-			addHit(track, trackNumber, DrumerUtils.Element.valueOf(n.toString()), pos, 0, pitch);
-			return;
-		}
 		try {
-			addHit(track, trackNumber, DrumerUtils.Element.valueOf(n.toString()), pos, 90, pitch);
+			addHit(track, trackNumber, MusicUtils.Element.valueOf(n.toString()), pos, 90, pitch);
 		} catch (Exception e) {
-			System.out.println(e.getCause());
+			addHit(track, trackNumber, MusicUtils.Element.DO, pos, 0, pitch);
 		}
 	}
 
 	private void addDrumNote(Track track, int chan, DRUM_NOTES n, int pos) {
-		switch (n) {
-		case BD:
-			addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 90);
-			break;
-		case CC:
-			addDrumHit(track, DrumerUtils.DrumElement.CrashCymbal, pos, 90);
-			break;
-		case CH:
-			addDrumHit(track, DrumerUtils.DrumElement.ClosedHiHat, pos, 90);
-			break;
-		case OH:
-			addDrumHit(track, DrumerUtils.DrumElement.OpenHiHat, pos, 90);
-			break;
-		case RC:
-			addDrumHit(track, DrumerUtils.DrumElement.RideCymbal, pos, 90);
-			break;
-		case SD:
-			addDrumHit(track, DrumerUtils.DrumElement.ElectricSnare, pos, 90);
-			break;
-		case BLANK:
-			addDrumHit(track, DrumerUtils.DrumElement.AcousticBassDrum, pos, 0);
-			break;
-		default:
-			break;
+		try {
+			addDrumHit(track, MusicUtils.DrumElement.getFromName(n.toString()), pos, 90);
+		} catch (Exception e) {
+			addDrumHit(track, MusicUtils.DrumElement.AcousticBassDrum, pos, 0);
 		}
+	}
+	
+	private Beat applyPatternModification(Section s, int i, int j) {
+		for (PatternModification m : s.getPatternModifications()) {
+			if (j == m.getBeatNumber()) {
+				if (m.getEveryIteration() == -1) {
+					if (i >= m.getIterationBegin() && i <= m.getIterationEnd()) {
+						return m.getBeat();
+					}
+				} else if ((i % m.getEveryIteration()) == 0) {
+					return m.getBeat();
+				}
+			}
+		}
+		return null;
 	}
 
 	private double applyOffset(rhythmML.Track t, DRUM_NOTES n, Beat b) {

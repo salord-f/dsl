@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="MyRythm" BPM="200">
+<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="MyRythm" BPM="100">
   <tracks xsi:type="rml:ClassicTrack" name="MyTrack" instrument="piano">
     <sections name="mySection">
       <patternLoops loopNumber="10" pattern="//@tracks.0/@patterns.0"/>
@@ -7,32 +7,38 @@
     <patterns name="bar1">
       <beats>
         <ticks>
-          <notes xsi:type="rml:ClassicNote" pitch="4" note="FA"/>
-        </ticks>
-        <ticks>
-          <notes xsi:type="rml:DrumNote" drumNote="BLANK"/>
-        </ticks>
-        <ticks>
-          <notes xsi:type="rml:DrumNote" drumNote="BLANK"/>
-        </ticks>
-        <ticks>
           <notes xsi:type="rml:ClassicNote" pitch="5" note="FA"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="BLANK"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="BLANK"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="BLANK"/>
         </ticks>
       </beats>
     </patterns>
     <composition sections="//@tracks.0/@sections.0"/>
   </tracks>
-  <tracks xsi:type="rml:ClassicTrack" name="MyTrack" instrument="banjo">
+  <tracks xsi:type="rml:DrumTrack" name="MyTrack">
     <sections name="mySection2">
       <patternLoops loopNumber="10" pattern="//@tracks.1/@patterns.0"/>
     </sections>
     <patterns name="bar2">
       <beats>
         <ticks>
-          <notes xsi:type="rml:ClassicNote" pitch="5"/>
+          <notes xsi:type="rml:DrumNote" drumNote="BLANK"/>
         </ticks>
         <ticks>
-          <notes xsi:type="rml:ClassicNote" pitch="4" note="FA"/>
+          <notes xsi:type="rml:DrumNote" drumNote="BLANK"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="BD"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="BLANK"/>
         </ticks>
       </beats>
     </patterns>

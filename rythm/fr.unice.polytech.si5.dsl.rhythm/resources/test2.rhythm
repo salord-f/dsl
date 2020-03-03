@@ -1,11 +1,11 @@
-rhythm MyRythm tempo 200 BPM
+rhythm MyRythm tempo 100 BPM
 
 
 piano track MyTrack {
 
 	patterns:
 		bar1 {
-			beat: fa(4), _, _, fa(5)
+			beat: fa(5), _, _, _
 		}
 
 		
@@ -17,14 +17,11 @@ piano track MyTrack {
 	composition:mySection
 }
 
-banjo track MyTrack {
-
-
-
+drum track MyTrack {
 
 	patterns:
 		bar2 {
-			beat: do(5), fa(4)
+			beat: _, _, bd, _
 		}
 		
 	sections:
