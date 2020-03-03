@@ -203,10 +203,10 @@ public class DrumerUtils {
 	}
 	
 	public enum InstrumentElement {
-		Piano(1),
-		Guitar(25),
-		Trumpet(57),
-		Banjo(106);
+		piano(1),
+		guitar(25),
+		trumpet(57),
+		banjo(106);
 
 		public int instrumentID;
 

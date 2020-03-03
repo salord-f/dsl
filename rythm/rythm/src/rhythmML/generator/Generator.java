@@ -1,5 +1,6 @@
 package rhythmML.generator;
 
+import java.io.Console;
 import java.io.File;
 import java.io.IOException;
 
@@ -106,9 +107,14 @@ public class Generator {
 			if (t instanceof DrumTrackImpl) {
 				// special case as we have to use the dedicated track 10
 			} else if (t instanceof ClassicTrackImpl) {
-				String instrument = (((ClassicTrackImpl) t).getInstrument());
-				InstrumentElement instrumentElement = DrumerUtils.InstrumentElement.convert(instrument);
-				DrumerUtils.setInstrument(track, instrumentElement);
+				try {
+					String instrument = (((ClassicTrackImpl) t).getInstrument());
+					InstrumentElement instrumentElement = DrumerUtils.InstrumentElement.convert(instrument.toLowerCase());
+					DrumerUtils.setInstrument(track, instrumentElement);
+				}
+				catch(Exception e){
+					System.out.println("--------------------WARNING --------------------------The instrument you selected is unknown, piano is selected as default");
+				}
 			}
 
 			for (Section s : c.getSections()) {
