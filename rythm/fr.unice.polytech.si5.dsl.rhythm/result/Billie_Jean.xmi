@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="Mickael_Jackson" BPM="200">
-  <tracks xsi:type="rml:DrumTrack" name="Billie_Jean">
+<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="Mickael_Jackson" BPM="50">
+  <tracks xsi:type="rml:DrumTrack" name="Billie_Jean_Drum">
     <sections name="beat">
       <patternLoops loopNumber="34" pattern="//@tracks.0/@patterns.0"/>
     </sections>
@@ -10,24 +10,54 @@
           <notes xsi:type="rml:DrumNote" drumNote="CH"/>
           <notes xsi:type="rml:DrumNote" drumNote="BD"/>
         </ticks>
-      </beats>
-      <beats>
         <ticks>
           <notes xsi:type="rml:DrumNote" drumNote="CH"/>
         </ticks>
-      </beats>
-      <beats>
         <ticks>
           <notes xsi:type="rml:DrumNote" drumNote="CH"/>
           <notes xsi:type="rml:DrumNote"/>
         </ticks>
-      </beats>
-      <beats>
         <ticks>
           <notes xsi:type="rml:DrumNote" drumNote="CH"/>
         </ticks>
       </beats>
     </patterns>
     <composition sections="//@tracks.0/@sections.0"/>
+  </tracks>
+  <tracks xsi:type="rml:ClassicTrack" name="Billie_Jean_Piano">
+    <sections name="empty_section">
+      <patternLoops loopNumber="10" pattern="//@tracks.1/@patterns.0"/>
+    </sections>
+    <sections name="refrain">
+      <patternLoops loopNumber="8" pattern="//@tracks.1/@patterns.1"/>
+    </sections>
+    <patterns name="empty">
+      <beats>
+        <ticks/>
+        <ticks/>
+        <ticks/>
+        <ticks/>
+      </beats>
+    </patterns>
+    <patterns name="main_piano">
+      <beats>
+        <ticks>
+          <notes xsi:type="rml:ClassicNote" pitch="5" note="MI"/>
+          <notes xsi:type="rml:ClassicNote" pitch="5" note="SOL"/>
+          <notes xsi:type="rml:ClassicNote" pitch="5" note="SI"/>
+        </ticks>
+        <ticks/>
+        <ticks/>
+      </beats>
+      <beats>
+        <ticks>
+          <notes xsi:type="rml:ClassicNote" pitch="5" note="RE"/>
+          <notes xsi:type="rml:ClassicNote" pitch="5" note="LA"/>
+        </ticks>
+        <ticks/>
+        <ticks/>
+      </beats>
+    </patterns>
+    <composition sections="//@tracks.1/@sections.0 //@tracks.1/@sections.1"/>
   </tracks>
 </rml:Rhythm>

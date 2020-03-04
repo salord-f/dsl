@@ -1,23 +1,40 @@
-rhythm Mickael_Jackson tempo 200 BPM
+rhythm Mickael_Jackson tempo 50 BPM
 
-drum track Billie_Jean {
+drum track Billie_Jean_Drum {
 
 
 	patterns:
 		main {
-			beat: ch bd
-			beat: ch 
-			beat: ch sd
-			beat: ch
+			beat: ch bd, ch, ch sd, ch
 		}
-		
-
 		
 	sections:
 		beat {
 			pattern: main 34 times
 		}
 		 
-		composition:beat 
+	composition:beat 
 }
 
+piano track Billie_Jean_Piano {
+
+	
+	patterns:
+		empty {
+			beat: _, _, _, _
+		}
+		main_piano {
+			beat: mi(5) sol(5) si(5), _, _
+			beat: re(5) la(5), _, _
+		}
+		
+	sections:
+		empty_section {
+			pattern: empty 10 times
+		}
+		refrain {
+			pattern: main_piano 8 times
+		}
+		 
+	composition: empty_section,refrain
+}
