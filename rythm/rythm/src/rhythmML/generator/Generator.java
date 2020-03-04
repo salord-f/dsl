@@ -11,6 +11,7 @@ import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Sequence;
 import javax.sound.midi.Sequencer;
 import javax.sound.midi.ShortMessage;
+import javax.sound.midi.Synthesizer;
 import javax.sound.midi.Track;
 
 import org.eclipse.emf.common.util.EList;
@@ -51,10 +52,18 @@ public class Generator {
 		Sequence sequence2 = MidiSystem.getSequence(new File("./result/" + rhythm.getName() + ".mid"));
 
 		analyzeSequence(sequence2);
+		
 
-		sequencer.setSequence(sequence2);
+		sequencer.setSequence(sequence);
 		System.out.println(tempo);
 		sequencer.setTempoInBPM(tempo);
+		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		sequencer.start();
 
 		while (true) {
@@ -154,7 +163,7 @@ public class Generator {
 		try {
 			addHit(track, trackNumber, MusicUtils.Element.valueOf(n.toString()), pos, 90, pitch);
 		} catch (Exception e) {
-			addHit(track, trackNumber, MusicUtils.Element.DO, pos, 0, pitch);
+			//addHit(track, trackNumber, MusicUtils.Element.DO, pos, 0, pitch);
 		}
 	}
 
@@ -162,7 +171,7 @@ public class Generator {
 		try {
 			addDrumHit(track, MusicUtils.DrumElement.getFromName(n.toString()), pos, 90);
 		} catch (Exception e) {
-			addDrumHit(track, MusicUtils.DrumElement.AcousticBassDrum, pos, 0);
+			//addDrumHit(track, MusicUtils.DrumElement.AcousticBassDrum, pos, 0);
 		}
 	}
 	
