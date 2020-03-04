@@ -43,8 +43,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//NamedElement/name"/>
     </genClasses>
     <genClasses ecoreClass="rhythmML.ecore#//Rhythm">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//Rhythm/resolution"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//Rhythm/offset"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//Rhythm/BPM"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rhythmML.ecore#//Rhythm/tracks"/>
     </genClasses>
