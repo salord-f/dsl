@@ -31,10 +31,10 @@ Track returns Track :
 			(offsets+=NoteOffset)*
 			
 		)?
-		('patterns:' 
+		'patterns:' 
 			patterns+=Pattern 
 			(patterns+=Pattern)*
-		)?
+		
 		
 		'sections:'
 		sections+=Section
@@ -70,9 +70,9 @@ Tick returns Tick:
 
 Note returns ClassicNote:
 	note=NoteEnum 
-	"("
+	("("
 	(pitch=(EInt|EIntMinus))
-	")"
+	")")?
 ;
 
 DrumNote returns DrumNote:
