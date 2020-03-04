@@ -1,0 +1,42 @@
+rhythm MyRythm tempo 150 BPM
+
+
+drum track MyTrack {
+
+	offsets:
+		note: ch +0.0 ticks
+
+
+	patterns:
+		bar1 {
+			beat: ch, _
+		}
+		
+	sections:
+		mySection {
+			pattern: bar1 10 times
+			
+		}
+		
+		composition:mySection
+}
+
+piano track MyTrack {
+
+
+	patterns:
+		bar2 {
+			beat: _, la(5)
+			
+		}
+		
+	sections:
+		mySection2 {
+			pattern: bar2 10 times
+			
+			
+			
+		}
+		
+		composition:mySection2
+}

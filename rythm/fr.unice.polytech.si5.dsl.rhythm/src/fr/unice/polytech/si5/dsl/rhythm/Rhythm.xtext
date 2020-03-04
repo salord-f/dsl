@@ -69,14 +69,15 @@ Tick returns Tick:
 ;
 
 Note returns ClassicNote:
-	note=NoteEnum 
+	note=NoteEnum
 	("("
 	(pitch=(EInt|EIntMinus))
 	")")?
+	| "_"
 ;
 
 DrumNote returns DrumNote:
-	(drumNote=DrumNoteEnum)
+	(drumNote=DrumNoteEnum | "_")
 ;
 
 
@@ -125,11 +126,12 @@ enum InstumentEnum returns Instrument:
 
 enum NoteEnum returns NOTES :
 	 DO = "do" | DO_SHARP = "do#" | FA = "fa" | FA_SHARP = "fa#" | LA = "la" 
-	| LA_SHARP = "la#" | MI = "mi" | RE = "re" | RE_SHARP = "re#" | SI = "si" | SOL = "sol" | SOL_SHARP = "sol#" | BLANK = "_"
+	| LA_SHARP = "la#" | MI = "mi" | RE = "re" | RE_SHARP = "re#" | SI = "si" | SOL = "sol" | SOL_SHARP = "sol#"
 ;
 
 enum DrumNoteEnum returns DRUM_NOTES :
-	BD = "bd" | SD = "sd" | BLANK = "_" | CH = "ch" | OH = "oh" | CC = "cc" | RC = "rc";
+	BD = "bd" | SD = "sd" | CH = "ch" | OH = "oh" | CC = "cc" | RC = "rc";
+
 
 EString returns ecore::EString:
 	STRING | ID;
