@@ -52,13 +52,18 @@ public class MusicUtils {
 	 * numbers; for a specific settings in term of numbers of beats per Bar and the
 	 * chosen resolution
 	 */
-	public static int toTick(int bar, int beat, double division, int nbBeatPerBar, int resolution, double offset,
-			double offsetNote) {
+	public static int toTick(int bar, int beat, double division, int nbBeatPerBar, int resolution, double offset) {
 		int pos = bar * nbBeatPerBar * resolution;
 		pos += beat * resolution;
 		pos += division * resolution;
 		pos += offset;
-		pos += Math.random() < 0.5 ? offsetNote : -offsetNote;
+		
+		if (offset != 0.0) {
+			double random =  Math.random();
+			pos += random > 0.66 ? 1 
+					: random < 0.33 ? -1
+					: 0;
+		}
 
 		return Math.max(pos, 0);
 	}

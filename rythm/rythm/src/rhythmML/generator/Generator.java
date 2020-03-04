@@ -83,7 +83,6 @@ public class Generator {
 		int bar = 0;
 		int beat = 0;
 		double tickPos = 0;
-		double offsetNote = 0.05;
 		int trackNumber = 0;
 
 		// TODO : refactor this crap
@@ -119,8 +118,7 @@ public class Generator {
 									if (note instanceof DrumNote) {
 										DRUM_NOTES n = ((DrumNote) note).getDrumNote();
 										double offset = applyOffset(t, n, b);
-										int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset,
-												offsetNote);
+										int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset);
 										addDrumNote(track, 9, n, pos);
 
 									} else if (note instanceof ClassicNote) {
@@ -129,8 +127,7 @@ public class Generator {
 										double offset = applyOffset(t, n, b);
 										int pitch = note.getPitch() + 1;
 										//System.out.println("pitch : " + pitch);
-										int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset,
-												offsetNote);
+										int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset);
 										addNote(track, trackNumber, n, pos, pitch);
 									}
 								}
