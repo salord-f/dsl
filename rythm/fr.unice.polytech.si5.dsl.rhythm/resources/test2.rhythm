@@ -5,7 +5,7 @@ piano track MyTrack {
 
 	patterns:
 		bar1 {
-			beat: fa(5), _, _, _
+			beat: fa(3), _, _, _
 		}
 
 		

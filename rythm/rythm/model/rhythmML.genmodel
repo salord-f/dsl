@@ -33,6 +33,12 @@
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/SI"/>
       <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//NOTES/BLANK"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rhythmML.ecore#//Instrument">
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//Instrument/piano"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//Instrument/guitar"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//Instrument/trumpet"/>
+      <genEnumLiterals ecoreEnumLiteral="rhythmML.ecore#//Instrument/banjo"/>
+    </genEnums>
     <genClasses ecoreClass="rhythmML.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rhythmML.ecore#//NamedElement/name"/>
     </genClasses>

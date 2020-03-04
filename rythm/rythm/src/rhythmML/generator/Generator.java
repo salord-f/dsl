@@ -91,7 +91,7 @@ public class Generator {
 
 			if (t instanceof ClassicTrackImpl) {
 				try {
-					String instrument = (((ClassicTrackImpl) t).getInstrument());
+					String instrument = (((ClassicTrackImpl) t).getInstrument().getName());
 					InstrumentElement instrumentElement = MusicUtils.InstrumentElement
 							.convert(instrument.toLowerCase());
 					MusicUtils.setInstrument(track, instrumentElement, trackNumber);

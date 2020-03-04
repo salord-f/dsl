@@ -129,7 +129,7 @@
       <details key="offsetClassicNotesOnly" value="self.offsets -> forAll( offset | offset.note.oclIsKindOf(ClassicNote))"/>
       <details key="patternModifClassicNotesOnly" value="self.sections.patternModifications.beat.ticks.notes -> forAll(oclIsKindOf(ClassicNote))"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instrument" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instrument" eType="#//Instrument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassicNote" eSuperTypes="#//Note">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="note" eType="#//NOTES"
@@ -140,5 +140,11 @@
         defaultValueLiteral="0.0"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="note" lowerBound="1" eType="#//Note"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Instrument">
+    <eLiterals name="piano" literal="piano"/>
+    <eLiterals name="guitar" value="1" literal="guitar"/>
+    <eLiterals name="trumpet" value="2" literal="trumpet"/>
+    <eLiterals name="banjo" value="3" literal="banjo"/>
   </eClassifiers>
 </ecore:EPackage>

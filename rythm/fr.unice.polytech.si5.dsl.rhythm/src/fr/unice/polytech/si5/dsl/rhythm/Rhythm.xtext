@@ -18,7 +18,7 @@ DrumTrackImpl returns DrumTrack :
 
 ClassicTrackImpl returns ClassicTrack :
 	{ClassicTrack}
-	instrument=EString
+	instrument=InstumentEnum
 	'track'
 ;
 
@@ -117,6 +117,10 @@ PatternModificationEvery returns PatternModification :
 	'(iteration:' 
 	'every' everyIteration=EInt
 	 ',beat:' beatNumber=EInt'):' beat=Beat  
+;
+
+enum InstumentEnum returns Instrument:
+	banjo = "banjo" | guitar = "guitar" | piano = "piano" | trumpet = "trumpet" | banjo = "Banjo" | guitar = "Guitar" | piano = "Piano" | trumpet = "Trumpet" 
 ;
 
 enum NoteEnum returns NOTES :
