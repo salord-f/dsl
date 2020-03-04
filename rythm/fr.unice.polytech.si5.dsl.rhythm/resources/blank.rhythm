@@ -1,4 +1,4 @@
-rhythm MyRythm tempo 150 BPM
+rhythm MyRythm tempo 100 BPM
 
 
 drum track MyTrack {
@@ -9,7 +9,7 @@ drum track MyTrack {
 
 	patterns:
 		bar1 {
-			beat: ch, _
+			beat: ch, _, _, bd
 		}
 		
 	sections:
@@ -26,7 +26,7 @@ piano track MyTrack {
 
 	patterns:
 		bar2 {
-			beat: _, la(5)
+			beat: _, _, _, la(5)
 			
 		}
 		
