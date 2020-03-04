@@ -1,0 +1,21 @@
+rhythm Chuck_Berry tempo 170 BPM
+
+drum track Johnny_B_Goode {
+
+
+	patterns:
+		main {
+			beat: rc bd
+			beat: rc 
+			beat: rc sd
+			beat: rc
+		}
+		
+	sections:
+		beat {
+			pattern: main 55 times
+		}
+		 
+		composition:beat 
+}
+

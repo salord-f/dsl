@@ -1,0 +1,23 @@
+rhythm Mickael_Jackson tempo 200 BPM
+
+drum track Billie_Jean {
+
+
+	patterns:
+		main {
+			beat: ch bd
+			beat: ch 
+			beat: ch sd
+			beat: ch
+		}
+		
+
+		
+	sections:
+		beat {
+			pattern: main 34 times
+		}
+		 
+		composition:beat 
+}
+
