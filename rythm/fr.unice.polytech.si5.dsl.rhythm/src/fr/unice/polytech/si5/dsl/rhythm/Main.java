@@ -20,8 +20,8 @@ import rhythmML.RhythmMLSwitchPrinter;
 public class Main {
 
 	public static void main(String[] args) {
-		String modelPath = "./resources/test2.rhythm";
-		String destinationPath = "./result/rhythm2.xmi";
+		String modelPath = "./resources/test3.rhythm";
+		String destinationPath = "./result/rhythm3.xmi";
 		try {
 			rhythmML2xmi(modelPath, destinationPath);
 			xmi2NativeMidi(destinationPath);
