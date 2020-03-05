@@ -17,7 +17,7 @@ drum track Normal_Drum {
 }
 
 
-drum track Late_Drum {
+drum track Early_Drum {
 
 	offsets:
 		note: sd -0.2 ticks
@@ -35,9 +35,9 @@ drum track Late_Drum {
 		refrain_empty {
 			pattern: empty 5 times	
 		}
-		refrain_late {
+		refrain_early {
 			pattern: main 5 times
 		}
 		
-		composition: refrain_empty,refrain_late
+		composition: refrain_empty,refrain_early
 }
