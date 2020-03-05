@@ -1,21 +1,43 @@
 rhythm Offset tempo 60 BPM
 
 
-drum track Drum {
+drum track Normal_Drum {
+
+	patterns:
+		main_normal {
+			beat: ch bd, ch, ch sd, ch
+		}
+		
+	sections:
+		refrain_normal {
+			pattern: main_normal 5 times	
+		}
+		
+		composition: refrain_normal
+}
+
+
+drum track Late_Drum {
 
 	offsets:
 		note: sd -0.2 ticks
 
 
 	patterns:
+		empty {
+			beat: _, _, _, _
+		}
 		main {
 			beat: ch bd, ch, ch sd, ch
 		}
 		
 	sections:
-		refrain {
-			pattern: main 10 times	
+		refrain_empty {
+			pattern: empty 5 times	
+		}
+		refrain_late {
+			pattern: main 5 times
 		}
 		
-		composition: refrain
+		composition: refrain_empty,refrain_late
 }

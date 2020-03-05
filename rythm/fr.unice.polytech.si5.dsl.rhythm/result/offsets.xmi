@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="Offset" BPM="60">
-  <tracks xsi:type="rml:DrumTrack" name="Drum">
-    <sections name="refrain">
-      <patternLoops loopNumber="10" pattern="//@tracks.0/@patterns.0"/>
+  <tracks xsi:type="rml:DrumTrack" name="Normal_Drum">
+    <sections name="refrain_normal">
+      <patternLoops loopNumber="5" pattern="//@tracks.0/@patterns.0"/>
     </sections>
-    <patterns name="main">
+    <patterns name="main_normal">
       <beats>
         <ticks>
           <notes xsi:type="rml:DrumNote" drumNote="CH"/>
@@ -23,6 +23,41 @@
       </beats>
     </patterns>
     <composition sections="//@tracks.0/@sections.0"/>
+  </tracks>
+  <tracks xsi:type="rml:DrumTrack" name="Late_Drum">
+    <sections name="refrain_empty">
+      <patternLoops loopNumber="5" pattern="//@tracks.1/@patterns.0"/>
+    </sections>
+    <sections name="refrain_late">
+      <patternLoops loopNumber="5" pattern="//@tracks.1/@patterns.1"/>
+    </sections>
+    <patterns name="empty">
+      <beats>
+        <ticks/>
+        <ticks/>
+        <ticks/>
+        <ticks/>
+      </beats>
+    </patterns>
+    <patterns name="main">
+      <beats>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
+          <notes xsi:type="rml:DrumNote" drumNote="BD"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
+          <notes xsi:type="rml:DrumNote"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
+        </ticks>
+      </beats>
+    </patterns>
+    <composition sections="//@tracks.1/@sections.0 //@tracks.1/@sections.1"/>
     <offsets value="-0.2">
       <note xsi:type="rml:DrumNote"/>
     </offsets>
