@@ -126,16 +126,15 @@ public class Generator {
 
 									if (note instanceof DrumNote) {
 										DRUM_NOTES n = ((DrumNote) note).getDrumNote();
-										double offset = applyOffset(t, n, b);
+										double offset = applyOffset(t, n, b, resolution);
 										int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset);
 										addDrumNote(track, 9, n, pos);
 
 									} else if (note instanceof ClassicNote) {
 
 										NOTES n = ((ClassicNote) note).getNote();
-										double offset = applyOffset(t, n, b);
+										double offset = applyOffset(t, n, b, resolution);
 										int pitch = note.getPitch() + 1;
-										//System.out.println("pitch : " + pitch);
 										int pos = toTick(bar, beat, tickPos, beats.size(), resolution, offset);
 										addNote(track, trackNumber, n, pos, pitch);
 									}
@@ -190,19 +189,19 @@ public class Generator {
 		return null;
 	}
 
-	private double applyOffset(rhythmML.Track t, DRUM_NOTES n, Beat b) {
+	private double applyOffset(rhythmML.Track t, DRUM_NOTES n, Beat b, int resolution) {
 		for (NoteOffset o : t.getOffsets()) {
 			if (n.getName().equals(((DrumNote) o.getNote()).getDrumNote().getName())) {
-				return (o.getValue() * 1.0 / b.getTicks().size()) * 50;
+				return (o.getValue() * 1.0 / b.getTicks().size()) * resolution;
 			}
 		}
 		return 0.0;
 	}
 
-	private double applyOffset(rhythmML.Track t, NOTES n, Beat b) {
+	private double applyOffset(rhythmML.Track t, NOTES n, Beat b, int resolution) {
 		for (NoteOffset o : t.getOffsets()) {
 			if (n.getName().equals(((ClassicNote) o.getNote()).getNote().getName())) {
-				return (o.getValue() * 1.0 / b.getTicks().size()) * 50;
+				return (o.getValue() * 1.0 / b.getTicks().size()) * resolution;
 			}
 		}
 		return 0.0;

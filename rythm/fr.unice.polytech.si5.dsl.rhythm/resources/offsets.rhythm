@@ -1,0 +1,21 @@
+rhythm Offset tempo 60 BPM
+
+
+drum track Drum {
+
+	offsets:
+		note: sd -0.2 ticks
+
+
+	patterns:
+		main {
+			beat: ch bd, ch, ch sd, ch
+		}
+		
+	sections:
+		refrain {
+			pattern: main 10 times	
+		}
+		
+		composition: refrain
+}

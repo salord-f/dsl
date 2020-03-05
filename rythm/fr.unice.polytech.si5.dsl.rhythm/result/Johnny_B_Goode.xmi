@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="Chuck_Berry" BPM="170">
+<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="Chuck_Berry" BPM="50">
   <tracks xsi:type="rml:DrumTrack" name="Johnny_B_Goode">
     <sections name="beat">
       <patternLoops loopNumber="55" pattern="//@tracks.0/@patterns.0"/>
@@ -7,24 +7,18 @@
     <patterns name="main">
       <beats>
         <ticks>
-          <notes xsi:type="rml:DrumNote" drumNote="RC"/>
+          <notes xsi:type="rml:DrumNote" drumNote="CC"/>
           <notes xsi:type="rml:DrumNote" drumNote="BD"/>
         </ticks>
-      </beats>
-      <beats>
         <ticks>
-          <notes xsi:type="rml:DrumNote" drumNote="RC"/>
+          <notes xsi:type="rml:DrumNote" drumNote="CC"/>
         </ticks>
-      </beats>
-      <beats>
         <ticks>
-          <notes xsi:type="rml:DrumNote" drumNote="RC"/>
+          <notes xsi:type="rml:DrumNote" drumNote="CC"/>
           <notes xsi:type="rml:DrumNote"/>
         </ticks>
-      </beats>
-      <beats>
         <ticks>
-          <notes xsi:type="rml:DrumNote" drumNote="RC"/>
+          <notes xsi:type="rml:DrumNote" drumNote="CC"/>
         </ticks>
       </beats>
     </patterns>

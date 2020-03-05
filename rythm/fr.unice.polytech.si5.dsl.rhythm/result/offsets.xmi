@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rml:Rhythm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rml="http://www.polytech.unice.fr/rhythmML" name="Offset" BPM="60">
+  <tracks xsi:type="rml:DrumTrack" name="Drum">
+    <sections name="refrain">
+      <patternLoops loopNumber="10" pattern="//@tracks.0/@patterns.0"/>
+    </sections>
+    <patterns name="main">
+      <beats>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
+          <notes xsi:type="rml:DrumNote" drumNote="BD"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
+          <notes xsi:type="rml:DrumNote"/>
+        </ticks>
+        <ticks>
+          <notes xsi:type="rml:DrumNote" drumNote="CH"/>
+        </ticks>
+      </beats>
+    </patterns>
+    <composition sections="//@tracks.0/@sections.0"/>
+    <offsets value="-0.2">
+      <note xsi:type="rml:DrumNote"/>
+    </offsets>
+  </tracks>
+</rml:Rhythm>
