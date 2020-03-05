@@ -3,14 +3,27 @@
 
 ## Requirements
 
-- Gemoc Studio : https://ci.eclipse.org/gemoc/job/gemoc-studio-integration/job/master/lastSuccessfulBuild/artifact/gemoc-studio/gemoc_studio/releng/org.eclipse.gemoc.gemoc_studio.updatesite/target/products/
+- [Gemoc Studio](https://ci.eclipse.org/gemoc/job/gemoc-studio-integration/job/master/lastSuccessfulBuild/artifact/gemoc-studio/gemoc_studio/releng/org.eclipse.gemoc.gemoc_studio.updatesite/target/products/)
 
 ## Importer le projet
 
 Lancer Gemoc Studio sur sa machine, et importer le dossier Xtext dans Gemoc :
+
 - File > Open Projects from File System
 - Cliquer sur Directory et selectionner le dossier Xtext
-- Inclure les projets suivants : `rythm`, `fr.unice.polytech.si5.dsl.rhythm`, `fr.unice.polytech.si5.dsl.rhythm.ide`, `fr.unice.polytech.si5.dsl.rhythm.ui	`   
+- Inclure les projets suivants : 
+	- `rythm`
+	- `fr.unice.polytech.si5.dsl.rhythm`
+	- `fr.unice.polytech.si5.dsl.rhythm.ide`
+	- `fr.unice.polytech.si5.dsl.rhythm.ui`   
+
+## Génération des artefacts
+
+La génération des artefacts se nécessaires au projet se fait en deux étapes : 
+
+1. Ouvrir les fichier `rhythmML/model/rhythmML.genmodel`
+	Clique droit sur `RhytmML` et `Generate Model Code` 
+- Clique droit sur `fr.unice.polytech.si5.dsl.rhythm/src/fr.unice.polytech.si5.dsl.rhythm/GenerateRhythm.mwe2` et `Run as MWE2 Workflow`
 
 ## Exécution
 
