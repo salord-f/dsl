@@ -20,8 +20,13 @@ import rhythmML.RhythmMLSwitchPrinter;
 public class Main {
 
 	public static void main(String[] args) {
-
-		String modelPath = "./" + args[0];
+		String modelPath;
+		if(args.length == 1) {
+			modelPath = "./" + args[0];
+		} else {
+			modelPath = "./resources/Billie_Jean.rhythm";
+		}
+		
 		String destinationPath = "./result/results.xmi";
 		try {
 			rhythmML2xmi(modelPath, destinationPath);
