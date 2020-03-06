@@ -4,7 +4,7 @@ rhythm MyRythm tempo 150 BPM
 drum track Multiple_Modifications_Patern {
 
 	offsets:
-		note: ch 0 ticks
+		note: ch +0.0 ticks
 
 
 	patterns:
