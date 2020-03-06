@@ -59,9 +59,9 @@ public class Generator {
 		sequencer.setTempoInBPM(tempo);
 		
 		try {
+			// the sequencer is bugged (randomly speed up or slow down the music) without this sleep. 
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		sequencer.start();
@@ -94,7 +94,7 @@ public class Generator {
 		double tickPos = 0;
 		int trackNumber = 0;
 
-		// TODO : refactor this crap
+		// TODO : way too many nested loops, should be refactor.
 		for (rhythmML.Track t : rhythm.getTracks()) {
 			Composition c = t.getComposition();
 

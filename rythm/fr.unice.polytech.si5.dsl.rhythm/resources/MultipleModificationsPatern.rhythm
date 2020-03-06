@@ -1,0 +1,25 @@
+rhythm MyRythm tempo 150 BPM
+
+
+drum track Multiple_Modifications_Patern {
+
+	offsets:
+		note: ch 0 ticks
+
+
+	patterns:
+		bar1 {
+			beat: ch
+		}
+		
+	sections:
+		beat {
+			pattern: 
+			bar1 17 times
+			bar1 (iteration:[1:2],beat:0): cc
+			bar1 (iteration:[3:3],beat:0): oh	
+			bar1 (iteration:every 5,beat:0): bd		
+		}
+		
+		composition:beat
+}
